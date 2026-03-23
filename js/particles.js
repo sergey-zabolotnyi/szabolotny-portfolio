@@ -127,6 +127,13 @@ function drawGalaxy(g) {
 }
 
 const meteors = [];
+let lastTimestamp = null;
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    lastTimestamp = null;
+  }
+});
 
 function spawnMeteor() {
   const angle = Math.PI / 6 + Math.random() * Math.PI / 8;
@@ -142,13 +149,17 @@ function spawnMeteor() {
   });
 }
 
-setInterval(() => {
-  if (Math.random() < 0.6) spawnMeteor();
+const meteorInterval = setInterval(() => {
+  if (!document.hidden && Math.random() < 0.6) spawnMeteor();
 }, 1800);
 
 let tick = 0;
 
-(function draw() {
+(function draw(timestamp) {
+  if (document.hidden) {
+    requestAnimationFrame(draw);
+    return;
+  }
   tick++;
   ctx.clearRect(0, 0, W(), H());
   nebulae.forEach(drawNebula);

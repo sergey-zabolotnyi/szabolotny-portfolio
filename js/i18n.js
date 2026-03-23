@@ -10,10 +10,10 @@ const translations = {
     about_p3: 'Basiert in Dresden. Offen für Festanstellung und Freelance-Projekte.',
     stat_projects: 'Projekte', stat_exp: 'Jahre Erfahrung', stat_german: 'Deutsch 2025', stat_lang: 'Sprachen',
     skill_frontend: 'Frontend', skill_backend: 'Backend & Datenbanken', skill_ai: 'AI & Integrationen', skill_cloud: 'Cloud & Weitere',
-    timeline_title: 'Career', timeline_1_title: 'AI SaaS Developer', timeline_1_desc: 'Smart-Letter, GeschenkFox, HandwerkerAI — solo-built AI products from concept to production.',
-    timeline_2_title: 'Fullstack Developer', timeline_2_desc: 'React, SvelteKit, FastAPI — client projects, integrations, deployments on Vercel & Railway.',
-    timeline_3_title: 'CTO / Technical Leadership', timeline_3_desc: 'Led development team, architecture decisions, roadmap and hiring for a tech startup.',
-    timeline_4_title: 'Software Developer', timeline_4_desc: 'Java, Spring Boot, REST APIs — enterprise backend development and database design.',
+    timeline_title: 'Karriere', timeline_1_title: 'AI SaaS Developer', timeline_1_desc: 'Smart-Letter, GeschenkFox, HandwerkerAI — eigenständig entwickelte AI-Produkte vom Konzept bis zur Produktion.',
+    timeline_2_title: 'Fullstack Developer', timeline_2_desc: 'React, SvelteKit, FastAPI — Kundenprojekte, Integrationen, Deployments auf Vercel & Railway.',
+    timeline_3_title: 'CTO', timeline_3_desc: 'Verantwortlich für technische Strategie, Architektur und Aufbau des Engineering-Stacks bei einem Tech-Startup.',
+    timeline_4_title: 'Software Developer', timeline_4_desc: 'Java, Spring Boot, REST APIs — Enterprise-Backend-Entwicklung und Datenbankdesign.',
     filter_all: 'All', filter_live: 'Live', filter_dev: 'In Dev', filter_done: 'Done',
     status_dev: 'In Entwicklung', status_live: 'MVP live', status_done: 'Abgeschlossen', status_study: 'Abschlussarbeit',
     proj_handwerker_desc: 'AI-Assistent für Handwerksbetriebe: automatische Antworten via Telegram, Terminbuchung und Angebotsgenerierung 24/7.',
@@ -46,10 +46,10 @@ const translations = {
     about_p3: 'Based in Dresden. Open for full-time and freelance projects.',
     stat_projects: 'Projects', stat_exp: 'Years Experience', stat_german: 'German 2025', stat_lang: 'Languages',
     skill_frontend: 'Frontend', skill_backend: 'Backend & Databases', skill_ai: 'AI & Integrations', skill_cloud: 'Cloud & More',
-    timeline_title: 'Career', timeline_1_title: 'AI SaaS Developer', timeline_1_desc: 'Smart-Letter, GeschenkFox, HandwerkerAI — solo-built AI products from concept to production.',
-    timeline_2_title: 'Fullstack Developer', timeline_2_desc: 'React, SvelteKit, FastAPI — client projects, integrations, deployments on Vercel & Railway.',
-    timeline_3_title: 'CTO / Technical Leadership', timeline_3_desc: 'Led development team, architecture decisions, roadmap and hiring for a tech startup.',
-    timeline_4_title: 'Software Developer', timeline_4_desc: 'Java, Spring Boot, REST APIs — enterprise backend development and database design.',
+    timeline_title: 'Karriere', timeline_1_title: 'AI SaaS Developer', timeline_1_desc: 'Smart-Letter, GeschenkFox, HandwerkerAI — eigenständig entwickelte AI-Produkte vom Konzept bis zur Produktion.',
+    timeline_2_title: 'Fullstack Developer', timeline_2_desc: 'React, SvelteKit, FastAPI — Kundenprojekte, Integrationen, Deployments auf Vercel & Railway.',
+    timeline_3_title: 'CTO', timeline_3_desc: 'Verantwortlich für technische Strategie, Architektur und Aufbau des Engineering-Stacks bei einem Tech-Startup.',
+    timeline_4_title: 'Software Developer', timeline_4_desc: 'Java, Spring Boot, REST APIs — Enterprise-Backend-Entwicklung und Datenbankdesign.',
     filter_all: 'All', filter_live: 'Live', filter_dev: 'In Dev', filter_done: 'Done',
     status_dev: 'In Development', status_live: 'MVP live', status_done: 'Completed', status_study: 'Thesis Project',
     proj_handwerker_desc: 'AI assistant for crafts businesses: automated replies via Telegram, appointment scheduling, and quote generation 24/7.',
@@ -82,9 +82,9 @@ const translations = {
     about_p3: 'Нахожусь в Дрездене. Открыт для найма и фриланс-проектов.',
     stat_projects: 'Проектов', stat_exp: 'Лет опыта', stat_german: 'Немецкий 2025', stat_lang: 'Языков',
     skill_frontend: 'Frontend', skill_backend: 'Backend & Базы данных', skill_ai: 'AI и интеграции', skill_cloud: 'Cloud и другое',
-    timeline_title: 'Карьера', timeline_1_title: 'AI SaaS разработчик', timeline_1_desc: 'Smart-Letter, GeschenkFox, HandwerkerAI — самостоятельная разработка AI продуктов от концепции до продакшена.',
+    timeline_title: 'Карьера', timeline_1_title: 'AI SaaS разработчик', timeline_1_desc: 'Smart-Letter, GeschenkFox, HandwerkerAI — самостоятельная разработка AI-продуктов от концепции до продакшена.',
     timeline_2_title: 'Fullstack разработчик', timeline_2_desc: 'React, SvelteKit, FastAPI — клиентские проекты, интеграции, деплой на Vercel и Railway.',
-    timeline_3_title: 'CTO / Техническое лидерство', timeline_3_desc: 'Руководство командой разработки, архитектурные решения, роадмап и найм для технологического стартапа.',
+    timeline_3_title: 'CTO', timeline_3_desc: 'Ответственность за техническую стратегию, архитектуру и построение всего инженерного стека в технологическом стартапе.',
     timeline_4_title: 'Разработчик ПО', timeline_4_desc: 'Java, Spring Boot, REST API — разработка бэкенда и дизайн баз данных для enterprise.',
     filter_all: 'Все', filter_live: 'В работе', filter_dev: 'В разработке', filter_done: 'Завершено',
     status_dev: 'В разработке', status_live: 'MVP запущен', status_done: 'Завершен', status_study: 'Дипломный проект',
@@ -118,9 +118,9 @@ const translations = {
     about_p3: 'У Дрездені. Відкритий до найму та фриланс-проєктів.',
     stat_projects: 'Проєктів', stat_exp: 'Років досвіду', stat_german: 'Німецька 2025', stat_lang: 'Мов',
     skill_frontend: 'Frontend', skill_backend: 'Backend & Бази даних', skill_ai: 'AI та інтеграції', skill_cloud: 'Cloud та інше',
-    timeline_title: 'Кар\'єра', timeline_1_title: 'AI SaaS розробник', timeline_1_desc: 'Smart-Letter, GeschenkFox, HandwerkerAI — самостійна розробка AI продуктів від концепції до продакшену.',
+    timeline_title: 'Кар\'єра', timeline_1_title: 'AI SaaS розробник', timeline_1_desc: 'Smart-Letter, GeschenkFox, HandwerkerAI — самостійна розробка AI-продуктів від концепції до продакшену.',
     timeline_2_title: 'Fullstack розробник', timeline_2_desc: 'React, SvelteKit, FastAPI — клієнтські проєкти, інтеграції, деплой на Vercel та Railway.',
-    timeline_3_title: 'CTO / Технічне лідерство', timeline_3_desc: 'Керівництво командою розробки, архітектурні рішення, роадмап та найм для технологічного стартапу.',
+    timeline_3_title: 'CTO', timeline_3_desc: 'Відповідальність за технічну стратегію, архітектуру та побудову всього інженерного стеку в технологічному стартапі.',
     timeline_4_title: 'Розробник ПЗ', timeline_4_desc: 'Java, Spring Boot, REST API — розробка бекенду та дизайн баз даних для enterprise.',
     filter_all: 'Всі', filter_live: 'В роботі', filter_dev: 'В розробці', filter_done: 'Завершено',
     status_dev: 'В розробці', status_live: 'MVP запущено', status_done: 'Завершено', status_study: 'Дипломний проєкт',
@@ -171,7 +171,8 @@ function setLang(lang) {
   else if (lang === 'ua') currentPhrases = phrasesUA;
   
   pi = 0; ci = 0; del = false; wait = 0; tel.textContent = '';
-  setTimeout(() => { tw(); }, 100);
+  if (typeof twTimer !== 'undefined' && twTimer) clearTimeout(twTimer);
+  twTimer = setTimeout(() => { tw(); }, 100);
   initChatWelcome(lang);
 }
 

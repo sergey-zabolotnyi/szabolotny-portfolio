@@ -49,9 +49,9 @@ document.addEventListener('mousemove', e => {
 /* ========== ORBIT DOTS ========== */
 const ow = document.getElementById('orbitWrap');
 const orbits = [
-  { r: 148, size: 8, color: '#4dffb4', dur: 6, delay: 0 },
-  { r: 162, size: 6, color: '#ff6b6b', dur: 9, delay: -3 },
-  { r: 155, size: 5, color: '#7c6fff', dur: 12, delay: -6 }
+  { r: 222, size: 8, color: '#4dffb4', dur: 6, delay: 0 },
+  { r: 240, size: 6, color: '#ff6b6b', dur: 9, delay: -3 },
+  { r: 232, size: 5, color: '#7c6fff', dur: 12, delay: -6 }
 ];
 
 orbits.forEach(o => {
@@ -80,11 +80,17 @@ const phrasesUA = ['AI Fullstack Developer', 'Python · React · SvelteKit', 'AI
 let currentPhrases = phrasesDE;
 let pi = 0, ci = 0, del = false, wait = 0;
 const tel = document.getElementById('ttext');
+let twTimer = null;
 
 function tw() {
+  if (twTimer) clearTimeout(twTimer);
+  if (document.hidden) {
+    twTimer = setTimeout(tw, 200);
+    return;
+  }
   if (wait > 0) {
     wait--;
-    setTimeout(tw, 40);  
+    twTimer = setTimeout(tw, 40);
     return;
   }
   const ph = currentPhrases[pi];
@@ -92,21 +98,29 @@ function tw() {
     tel.textContent = ph.slice(0, ++ci);
     if (ci === ph.length) {
       del = true;
-      wait = 50;  
+      wait = 50;
     }
-    setTimeout(tw, 65);  
+    twTimer = setTimeout(tw, 65);
   } else {
     tel.textContent = ph.slice(0, --ci);
     if (ci === 0) {
       del = false;
       pi = (pi + 1) % currentPhrases.length;
-      wait = 8;  
+      wait = 8;
     }
-    setTimeout(tw, 30);  
+    twTimer = setTimeout(tw, 30);
   }
 }
 
-setTimeout(tw, 1200);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    if (twTimer) clearTimeout(twTimer);
+    wait = 0;
+    twTimer = setTimeout(tw, 100);
+  }
+});
+
+twTimer = setTimeout(tw, 1200);
 
 /* ========== SCROLL REVEAL ========== */
 const revealClasses = ['reveal', 'reveal-left', 'reveal-right', 'reveal-scale'];
