@@ -266,13 +266,23 @@
 
 <!-- AI CHAT -->
 <div id="ai-chat">
-  <div class="chat-head">
-    <div class="chat-head-info"><div class="chat-head-dot"></div><span data-i18n="chat_title">Ask AI about Serge</span></div>
-    <button class="chat-tog" id="chatTog" onclick="toggleChat()">−</button>
+  <div class="chat-head" onclick="toggleChat()">
+    <div class="chat-head-inner">
+      <div class="chat-head-info">
+        <div class="chat-head-dot"></div>
+        <div class="chat-avatar-badge">SZ</div>
+        <div class="chat-head-texts">
+          <div class="chat-head-title" id="chatTitle">Ask AI about Serge</div>
+          <div class="chat-head-sub">Powered by Groq · llama-3.1</div>
+        </div>
+      </div>
+      <button class="chat-tog" id="chatTog" onclick="event.stopPropagation(); toggleChat()">+</button>
+    </div>
   </div>
   <div class="chat-body" id="chatBody"></div>
+  <div class="chat-suggestions" id="chatSuggestions"></div>
   <div class="chat-input-row">
-    <input id="chatinput" data-i18n-ph="chat_placeholder" placeholder="Ask about projects, skills..." onkeydown="if(event.key==='Enter')sendChat()">
+    <input id="chatinput" placeholder="Ask about projects, skills..." onkeydown="if(event.key==='Enter')sendChat()">
     <button class="chat-send" onclick="sendChat()">→</button>
   </div>
 </div>

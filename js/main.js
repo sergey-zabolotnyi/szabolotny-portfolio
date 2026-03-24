@@ -120,7 +120,7 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
-twTimer = setTimeout(tw, 1200);
+twTimer = setTimeout(tw, 600);
 
 /* ========== SCROLL REVEAL ========== */
 const revealClasses = ['reveal', 'reveal-left', 'reveal-right', 'reveal-scale'];
@@ -184,14 +184,72 @@ document.getElementById('contactForm').addEventListener('submit', async e => {
 });
 
 /* ========== AI CHAT ========== */
-let chatOpen = true;
-const chatBody = document.getElementById('chatBody');
-const chatHistory = [];
+let chatOpen = false;
+const aiChat = document.getElementById('ai-chat');
+
+aiChat.classList.add('collapsed');
+document.getElementById('chatTog').textContent = '+';
+
+setTimeout(() => {
+  if (!chatOpen) {
+    chatOpen = true;
+    aiChat.classList.remove('collapsed');
+    document.getElementById('chatTog').textContent = '−';
+    aiChat.classList.add('popping');
+    setTimeout(() => aiChat.classList.remove('popping'), 500);
+  }
+}, 2 * 60 * 1000);
 
 function toggleChat() {
   chatOpen = !chatOpen;
-  document.getElementById('ai-chat').classList.toggle('collapsed', !chatOpen);
+  aiChat.classList.toggle('collapsed', !chatOpen);
   document.getElementById('chatTog').textContent = chatOpen ? '−' : '+';
+}
+
+const chatBody = document.getElementById('chatBody');
+const chatHistory = [];
+
+const chatTitles = {
+  de: 'Frag AI über Serge',
+  en: 'Ask AI about Serge',
+  ru: 'Спросите AI о Сергее',
+  ua: 'Запитай AI про Сергія'
+};
+
+const chatPlaceholders = {
+  de: 'Frag über Projekte, Skills...',
+  en: 'Ask about projects, skills...',
+  ru: 'Спроси о проектах, навыках...',
+  ua: 'Запитай про проєкти, навички...'
+};
+
+const chatSuggestions = {
+  de: ['Verfügbar?', 'Tech-Stack?', 'Projekte ansehen?'],
+  en: ['Available?', 'Tech stack?', 'View projects?'],
+  ru: ['Доступен?', 'Стек технологий?', 'Проекты?'],
+  ua: ['Доступний?', 'Стек технологій?', 'Проєкти?']
+};
+
+function updateChatLang(lang) {
+  const titleEl = document.getElementById('chatTitle');
+  const inputEl = document.getElementById('chatinput');
+  if (titleEl) titleEl.textContent = chatTitles[lang] || chatTitles.en;
+  if (inputEl) inputEl.placeholder = chatPlaceholders[lang] || chatPlaceholders.en;
+  renderSuggestions(lang);
+}
+
+function renderSuggestions(lang) {
+  const wrap = document.getElementById('chatSuggestions');
+  if (!wrap) return;
+  const sugs = chatSuggestions[lang] || chatSuggestions.en;
+  wrap.innerHTML = sugs.map(s =>
+    `<button class="chat-sug" onclick="sendSuggestion('${s}')">${s}</button>`
+  ).join('');
+}
+
+function sendSuggestion(text) {
+  document.getElementById('chatinput').value = text;
+  sendChat();
 }
 
 function addMsg(text, role) {
@@ -211,10 +269,11 @@ function initChatWelcome(lang) {
   const welcomeMsgs = {
     de: 'Hallo! Frag mich alles über Serge — Projekte, Skills, Verfügbarkeit.',
     en: 'Hi! Ask me anything about Serge — projects, skills, availability.',
-    ru: 'Привет! Спроси меня о Серге — проекты, навыки, доступность.',
+    ru: 'Привет! Спроси меня о Сергее — проекты, навыки, доступность.',
     ua: 'Привіт! Запитай мене про Сергія — проєкти, навички, доступність.'
   };
   addMsg(welcomeMsgs[lang] || welcomeMsgs.en, 'a');
+  updateChatLang(lang);
 }
 
 async function sendChat() {
@@ -222,25 +281,23 @@ async function sendChat() {
   const text = input.value.trim();
   if (!text) return;
   input.value = '';
+  const sugsWrap = document.getElementById('chatSuggestions');
+  if (sugsWrap) sugsWrap.style.display = 'none';
   addMsg(text, 'user');
   chatHistory.push({ role: 'user', content: text });
   const typing = addMsg('...', 'a');
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const currentLang = localStorage.getItem('lang') || 'de';
+    const res = await fetch('https://zabolotny.szabolotnyi777.workers.dev', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 300,
-        system: `You are a helpful assistant on Serge Zabolotny's portfolio website. Serge is an AI Fullstack Developer based in Dresden, Germany. Stack: Python, FastAPI, React, SvelteKit, OpenAI API, LangChain, Groq, PostgreSQL, Supabase, Docker. Projects: Smart-Letter.net (live), GeschenkFox.de (live), HandwerkerAI (in dev). 10+ years experience, ex-CTO. Open to full-time and freelance. Answer in 2-3 sentences max.`,
-        messages: chatHistory
-      })
+      body: JSON.stringify({ lang: currentLang, messages: chatHistory })
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || 'Sorry, something went wrong.';
+    const reply = data.choices?.[0]?.message?.content || 'Sorry, something went wrong.';
     typing.textContent = reply;
     chatHistory.push({ role: 'assistant', content: reply });
   } catch (err) {
-    typing.textContent = 'Connection error — API key needed on backend.';
+    typing.textContent = 'Connection error.';
   }
 }
