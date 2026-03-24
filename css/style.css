@@ -149,7 +149,7 @@ nav.scrolled {
    ============================================ */
 
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 150px);
   display: flex;
   align-items: center;
   padding: 120px 56px 80px;
@@ -329,6 +329,36 @@ nav.scrolled {
   border-color: var(--accent3);
   color: var(--accent3);
   box-shadow: 0 0 20px rgba(77, 255, 180, 0.1);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 60px 24px 40px;
+    min-height: auto;
+    gap: 30px;
+  }
+  
+  .avatar-outer {
+    width: 200px; 
+    height: 200px;
+  }
+  
+  .avatar-circle {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
 }
 
 
