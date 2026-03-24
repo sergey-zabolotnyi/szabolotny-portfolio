@@ -224,10 +224,10 @@ const chatPlaceholders = {
 };
 
 const chatSuggestions = {
-  de: ['Verfügbar?', 'Tech-Stack?', 'Projekte ansehen?'],
-  en: ['Available?', 'Tech stack?', 'View projects?'],
-  ru: ['Доступен?', 'Стек технологий?', 'Проекты?'],
-  ua: ['Доступний?', 'Стек технологій?', 'Проєкти?']
+  de: ['Verfügbar?', 'Was kostet ein Projekt?', 'Wie schnell?', 'Erfahrung & Portfolio?', 'Zusammenarbeit starten?', 'Tech-Stack?'],
+  en: ['Available?', 'Project cost?', 'How fast?', 'Experience & portfolio?', 'How to start?', 'Tech stack?'],
+  ru: ['Доступен?', 'Сколько стоит проект?', 'Как быстро?', 'Опыт и портфолио?', 'Как начать?', 'Стек технологий?'],
+  ua: ['Доступний?', 'Скільки коштує проєкт?', 'Як швидко?', 'Досвід і портфоліо?', 'Як розпочати?', 'Стек технологій?']
 };
 
 function updateChatLang(lang) {
@@ -274,6 +274,10 @@ function initChatWelcome(lang) {
   };
   addMsg(welcomeMsgs[lang] || welcomeMsgs.en, 'a');
   updateChatLang(lang);
+  const titleEl = document.getElementById('chatTitle');
+  const inputEl = document.getElementById('chatinput');
+  if (titleEl && chatTitles[lang]) titleEl.textContent = chatTitles[lang];
+  if (inputEl && chatPlaceholders[lang]) inputEl.placeholder = chatPlaceholders[lang];
 }
 
 async function sendChat() {
