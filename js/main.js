@@ -134,6 +134,15 @@ revealClasses.forEach(cls => {
   });
 });
 
+/* ========== FOOTER YEAR AUTO UPDATE ========== */
+function updateFooterYear() {
+  const yearSpan = document.getElementById('currentYear');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+}
+document.addEventListener('DOMContentLoaded', updateFooterYear);
+
 /* ========== COUNTERS ========== */
 new IntersectionObserver(entries => {
   entries.forEach(e => {

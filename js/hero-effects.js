@@ -1,4 +1,4 @@
-// hero-effects.js - Партиклы и анимации для Hero
+// hero-effects.js - for Hero
 
 function createHeroParticles() {
   const container = document.getElementById('heroParticles');
