@@ -9,6 +9,24 @@
 <!-- FAVICON SVG inline -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%237c6fff'/><text x='50%25' y='54%25' font-family='sans-serif' font-weight='800' font-size='14' fill='white' text-anchor='middle' dominant-baseline='middle'>SZ</text></svg>">
 
+
+<!-- SEO & Open Graph -->
+<meta name="robots" content="index, follow">
+<meta name="author" content="Serge Zabolotny">
+<meta name="keywords" content="AI Developer, Fullstack Developer, Dresden, FastAPI, React, SvelteKit, OpenAI, LangChain, Python">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zabolotny.de">
+<meta property="og:title" content="Serge Zabolotny — AI Fullstack Developer">
+<meta property="og:description" content="AI Fullstack Developer in Dresden. I build intelligent web apps with FastAPI, React, SvelteKit, OpenAI & LangChain.">
+<meta property="og:image" content="https://zabolotny.de/assets/og-image.png">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Serge Zabolotny — AI Fullstack Developer">
+<meta name="twitter:description" content="AI Fullstack Developer in Dresden. FastAPI · React · SvelteKit · OpenAI.">
+<meta name="twitter:image" content="https://zabolotny.de/assets/og-image.png">
+<link rel="canonical" href="https://zabolotny.de">
+<meta name="theme-color" content="#7c6fff">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
 
@@ -220,8 +238,8 @@
 <section id="github">
   <div class="sec-head"><span class="sec-num">04A / <span data-i18n="github_title">GitHub</span></span><div class="sec-line"></div></div>
   <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center">
-    <img src="https://github-readme-stats.vercel.app/api?username=sergey-zabolotnyi&show_icons=true&theme=tokyonight" style="max-width:420px;width:100%">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sergey-zabolotnyi&layout=compact&theme=tokyonight" style="max-width:420px;width:100%">
+    <img src="https://github-readme-stats.vercel.app/api?username=sergey-zabolotnyi&show_icons=true&theme=tokyonight" style="max-width:420px;width:100%;border-radius:8px" loading="lazy" onerror="this.style.display='none'">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sergey-zabolotnyi&layout=compact&theme=tokyonight" style="max-width:420px;width:100%;border-radius:8px" loading="lazy" onerror="this.style.display='none'">
   </div>
 </section>
 
@@ -233,7 +251,7 @@
       <h2><span data-i18n="contact_title1">Lass uns</span> <span class="grad" data-i18n="contact_title2">zusammen</span> <span data-i18n="contact_title3">etwas bauen.</span></h2>
       <p data-i18n="contact_p">Offen für Festanstellungen, Freelance-Projekte und Kooperationen rund um AI-Entwicklung — in Dresden und remote.</p>
       <div class="contact-items">
-        <a href="mailto:szabolotnyi@icloud.com" class="ci"><span class="cil">Email</span><span class="civ">szаbolоtnyi@icloud.com</span></a>
+        <a href="/cdn-cgi/l/email-protection#0d7e776c6f626162796374644d646e61627869236e6260" class="ci"><span class="cil">Email</span><span class="civ">szаbolо<span class="__cf_email__" data-cfemail="c3b7adbaaa83aaa0afacb6a7eda0acae">[email&#160;protected]</span></span></a>
         <a href="https://linkedin.com/in/szabolotnyi" target="_blank" class="ci"><span class="cil">LinkedIn</span><span class="civ">linkedin.com/in/szabolotnyi</span></a>
         <a href="https://github.com/sergey-zabolotnyi" target="_blank" class="ci"><span class="cil">GitHub</span><span class="civ">github.com/sergey-zabolotnyi</span></a>
         <a href="tel:+4917887274170" class="ci"><span class="cil" data-i18n="contact_phone">Telefon</span><span class="civ">+49 178 8727417</span></a>
@@ -291,28 +309,31 @@
 <div class="pcard-preview" id="pcardPreview">
   <img class="pcard-preview-img" id="pcardPreviewImg" src="" alt="">
 </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+
+<!-- PROJECT HOVER PREVIEW -->
+<div class="pcard-preview" id="pcardPreview">
+  <img class="pcard-preview-img" id="pcardPreviewImg" src="" alt="">
+</div>
 <script>
 (function() {
   var preview = document.getElementById('pcardPreview');
   var img = document.getElementById('pcardPreviewImg');
   var cache = {};
   var moveHandler = null;
-
   document.querySelectorAll('.pcard[data-url]').forEach(function(card) {
     var url = card.dataset.url;
     var localPreview = card.dataset.preview || null;
-    
     card.addEventListener('mouseenter', function() {
       if (localPreview) {
         img.src = localPreview;
-      } 
-      else {
+      } else {
         if (!cache[url]) {
           cache[url] = 'https://v1.screenshot.11ty.dev/' + encodeURIComponent(url) + '/opengraph/';
         }
         img.src = cache[url];
       }
-      
       preview.classList.add('visible');
       moveHandler = function(e) {
         var pw = 320, ph = 200, margin = 24;
@@ -327,7 +348,6 @@
       };
       document.addEventListener('mousemove', moveHandler);
     });
-    
     card.addEventListener('mouseleave', function() {
       preview.classList.remove('visible');
       if (moveHandler) {

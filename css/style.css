@@ -1766,7 +1766,7 @@ section {
 footer {
   position: relative;
   z-index: 1;
-  padding: 36px 56px;
+  padding: 36px 400px 36px 56px;
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
@@ -2242,4 +2242,36 @@ footer p {
   .hero-data-streams {
     opacity: 0.2;
   }
+}
+/* ===== HOVER SCREENSHOT PREVIEW ===== */
+.pcard-preview {
+  position: fixed;
+  width: 320px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(8px) scale(0.97);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  border: 1px solid rgba(124, 111, 255, 0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
+}
+.pcard-preview.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.pcard-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  background: #1a1a2e;
+}
+
+@media (max-width: 900px) {
+  .cursor, .cursor-ring { display: none !important; }
+  .pcard-preview { display: none !important; }
 }

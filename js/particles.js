@@ -1,4 +1,4 @@
-// particles.js - Звездное поле и галактики
+// particles.js - Star field, nebulae and galaxies
 
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');

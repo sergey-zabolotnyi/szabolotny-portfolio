@@ -1,4 +1,4 @@
-// main.js - Основная логика приложения
+// main.js - Main application logic
 
 /* ========== CURSOR ========== */
 const cur = document.getElementById('cur');
@@ -190,6 +190,9 @@ document.getElementById('contactForm').addEventListener('submit', async e => {
     });
   } catch (err) { }
   document.getElementById('formSuccess').classList.add('show');
+  e.target.reset();
+  btn.textContent = document.documentElement.lang === 'de' ? 'Nachricht senden →' : 'Send Message →';
+  btn.disabled = false;
 });
 
 /* ========== AI CHAT ========== */
