@@ -35,7 +35,8 @@ const translations = {
     form_name: 'Name', form_msg: 'Nachricht', form_ph_name: 'Max Mustermann', form_ph_msg: 'Ich habe ein interessantes Projekt...', form_btn: 'Nachricht senden →',
     success_msg: 'Nachricht gesendet!', success_sub: 'Ich melde mich bald bei dir.',
     footer_deployed: 'Deployed auf',
-    chat_title: 'Frag die KI über Serge', chat_placeholder: 'Frage nach Projekten, Fähigkeiten...'
+    chat_title: 'Frag die KI über Serge', chat_placeholder: 'Frage nach Projekten, Fähigkeiten...',
+    cal_btn: 'Termin buchen →'
   },
   en: {
     nav_about: 'About', nav_skills: 'Skills', nav_projects: 'Projects', nav_contact: 'Contact',
@@ -71,7 +72,8 @@ const translations = {
     form_name: 'Name', form_msg: 'Message', form_ph_name: 'John Smith', form_ph_msg: 'I have an interesting project...', form_btn: 'Send Message →',
     success_msg: 'Message sent!', success_sub: 'I\'ll get back to you soon.',
     footer_deployed: 'Deployed on',
-    chat_title: 'Ask AI about Serge', chat_placeholder: 'Ask about projects, skills...'
+    chat_title: 'Ask AI about Serge', chat_placeholder: 'Ask about projects, skills...',
+    cal_btn: 'Book a call →'
   },
   ru: {
     nav_about: 'Обо мне', nav_skills: 'Навыки', nav_projects: 'Проекты', nav_contact: 'Контакты',
@@ -107,7 +109,8 @@ const translations = {
     form_name: 'Имя', form_msg: 'Сообщение', form_ph_name: 'Иван Иванов', form_ph_msg: 'У меня есть интересный проект...', form_btn: 'Отправить →',
     success_msg: 'Сообщение отправлено!', success_sub: 'Я скоро свяжусь с вами.',
     footer_deployed: 'Деплой на',
-    chat_title: 'Спросите AI о Сергее', chat_placeholder: 'Спросите о проектах, навыках...'
+    chat_title: 'Спросите AI о Сергее', chat_placeholder: 'Спросите о проектах, навыках...',
+    cal_btn: 'Созвониться →'
   },
   ua: {
     nav_about: 'Про мене', nav_skills: 'Навички', nav_projects: 'Проєкти', nav_contact: 'Контакт',
@@ -143,7 +146,8 @@ const translations = {
     form_name: "Ім'я", form_msg: 'Повідомлення', form_ph_name: 'Іван Іваненко', form_ph_msg: 'У мене є цікавий проєкт...', form_btn: 'Надіслати →',
     success_msg: 'Повідомлення надіслано!', success_sub: 'Я скоро зв\'яжуся з вами.',
     footer_deployed: 'Деплой на',
-    chat_title: 'Запитайте AI про Сергія', chat_placeholder: 'Запитайте про проєкти, навички...'
+    chat_title: 'Запитайте AI про Сергія', chat_placeholder: 'Запитайте про проєкти, навички...',
+    cal_btn: 'Записатись →'
   }
 };
 
@@ -160,7 +164,11 @@ function setLang(lang) {
     const k = el.dataset.i18nPh;
     if (t[k] !== undefined) el.placeholder = t[k];
   });
-  
+
+  // Cal.com floating button
+  const calLabel = document.querySelector('#calFloatBtn .cal-label');
+  if (calLabel && t.cal_btn) calLabel.textContent = t.cal_btn;
+
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang === 'ua' ? 'uk' : lang;

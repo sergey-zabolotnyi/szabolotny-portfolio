@@ -144,7 +144,7 @@ function updateFooterYear() {
 document.addEventListener('DOMContentLoaded', updateFooterYear);
 
 /* ========== COUNTERS ========== */
-new IntersectionObserver(entries => {
+const statsObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.querySelectorAll('[data-target]').forEach(el => {
@@ -159,10 +159,11 @@ new IntersectionObserver(entries => {
           el.textContent = Math.floor(count) + (target >= 6 ? '+' : '');
         }, 22);
       });
-      e.unobserve(e.target);
+      statsObserver.unobserve(e.target);
     }
   });
-}, { threshold: 0.3 }).observe(document.querySelector('.stats-grid'));
+}, { threshold: 0.3 });
+statsObserver.observe(document.querySelector('.stats-grid'));
 
 /* ========== PROJECT FILTERS ========== */
 document.querySelectorAll('.pf-btn').forEach(btn => {
