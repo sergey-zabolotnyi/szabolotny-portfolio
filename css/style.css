@@ -2277,8 +2277,9 @@ footer p {
 
 #calFloatBtn {
   position: fixed;
-  bottom: 110px;
+  top: 70px;       
   right: 28px;
+  bottom: auto;     
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -2342,12 +2343,16 @@ footer p {
 }
 
 @media (max-width: 480px) {
-  .cal-label { display: none; }
+  .cal-label {
+    display: inline;   
+    font-size: 11px;   
+  }
   #calFloatBtn {
-    padding: 12px;
-    border-radius: 50%;
-    bottom: 95px;
-    right: 20px;
+    padding: 9px 14px 9px 11px;
+    border-radius: 14px;   
+    top: 70px;
+    right: 14px;
+    bottom: auto;
   }
 }
 
