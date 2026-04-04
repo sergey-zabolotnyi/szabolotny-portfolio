@@ -211,7 +211,7 @@ setTimeout(() => {
     aiChat.classList.add('popping');
     setTimeout(() => aiChat.classList.remove('popping'), 500);
   }
-}, 2 * 60 * 1000);
+}, 1 * 60 * 1000);
 
 function toggleChat() {
   chatOpen = !chatOpen;
