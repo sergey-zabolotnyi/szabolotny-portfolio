@@ -35,6 +35,70 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="css/style.css">
+<style>
+/* === CURRENTLY BUILDING === */
+.currently-building {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(77,255,180,0.07);
+  border: 1px solid rgba(77,255,180,0.25);
+  border-radius: 30px;
+  padding: 6px 16px;
+  margin-bottom: 18px;
+  font-size: 0.82rem;
+  font-family: 'DM Mono', monospace;
+  color: rgba(232,232,255,0.75);
+  backdrop-filter: blur(6px);
+}
+.cb-hammer { font-size: 1rem; animation: hammerAnim 1.8s ease-in-out infinite; transform-origin: bottom right; }
+@keyframes hammerAnim { 0%,100%{transform:rotate(0deg)} 20%{transform:rotate(-20deg)} 40%{transform:rotate(5deg)} }
+.cb-link { color: #4dffb4; font-weight: 600; text-decoration: none; border-bottom: 1px dashed rgba(77,255,180,0.4); transition: border-color .2s; }
+.cb-link:hover { border-color: #4dffb4; }
+.cb-dot-anim { width: 7px; height: 7px; border-radius: 50%; background: #4dffb4; animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.6)} }
+
+/* === BLOG / TIL === */
+#blog { padding: 80px 6vw; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; margin-top: 40px; }
+.blog-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(124,111,255,0.15);
+  border-radius: 16px;
+  padding: 24px;
+  transition: border-color .3s, transform .3s, background .3s;
+  cursor: default;
+}
+.blog-card:hover { border-color: rgba(124,111,255,0.4); background: rgba(124,111,255,0.06); transform: translateY(-4px); }
+.blog-tag { display: inline-block; font-size: 0.72rem; font-family: 'DM Mono', monospace; color: #7c6fff; background: rgba(124,111,255,0.12); border-radius: 20px; padding: 3px 10px; margin-bottom: 12px; letter-spacing: .04em; }
+.blog-title { font-size: 1rem; font-weight: 700; color: #e8e8ff; margin: 0 0 10px; line-height: 1.4; }
+.blog-desc { font-size: 0.83rem; color: rgba(232,232,255,0.6); line-height: 1.6; margin: 0 0 16px; }
+.blog-date { font-size: 0.75rem; font-family: 'DM Mono', monospace; color: rgba(232,232,255,0.35); }
+
+/* === TESTIMONIALS === */
+#testimonials { padding: 80px 6vw; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; margin-top: 40px; }
+.tcard {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(77,255,180,0.15);
+  border-radius: 20px;
+  padding: 32px;
+  position: relative;
+  transition: border-color .3s, transform .3s;
+}
+.tcard:hover { border-color: rgba(77,255,180,0.35); transform: translateY(-4px); }
+.tcard-quote { position: absolute; top: 18px; right: 24px; font-size: 4rem; line-height: 1; color: rgba(77,255,180,0.15); font-family: Georgia, serif; pointer-events: none; }
+.tcard-text { font-size: 0.9rem; color: rgba(232,232,255,0.75); line-height: 1.7; margin: 0 0 24px; font-style: italic; }
+.tcard-author { display: flex; align-items: center; gap: 14px; }
+.tcard-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg,#7c6fff,#4dffb4); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; color: #0d0d1a; flex-shrink: 0; }
+.tcard-name { font-size: 0.88rem; font-weight: 700; color: #e8e8ff; }
+.tcard-role { font-size: 0.75rem; color: rgba(232,232,255,0.45); margin-top: 2px; font-family: 'DM Mono', monospace; }
+
+/* === VISITOR COUNTER === */
+.footer-visitors { display: flex; align-items: center; gap: 8px; margin-top: 10px; justify-content: center; opacity: .7; }
+.visitor-dot { width: 6px; height: 6px; border-radius: 50%; background: #4dffb4; animation: pulse 2s ease-in-out infinite; }
+.visitor-badge { height: 20px; border-radius: 4px; }
+</style>
 </head>
 <body>
 
@@ -92,6 +156,12 @@
       <span data-i18n="hero_location">zabolotny.de · Dresden, Deutschland</span>
       <span class="badge-new">AI Expert</span>
     </div>
+    <div class="currently-building">
+      <span class="cb-hammer">🔨</span>
+      <span class="cb-label" data-i18n="currently_label">Currently building:</span>
+      <a href="https://remont-online.net" target="_blank" class="cb-link">RenovAI</a>
+      <span class="cb-dot-anim"></span>
+    </div>
     <h1 class="hero-name">
       Serge<br>
       <span class="gradient-text">Zabolotny</span>
@@ -102,11 +172,11 @@
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
-        <span class="stat-number">6+</span>
+        <span class="stat-number">7+</span>
         <span class="stat-label-sm">Projects</span>
       </div>
       <div class="hero-stat">
-        <span class="stat-number">3</span>
+        <span class="stat-number">4</span>
         <span class="stat-label-sm">AI Products</span>
       </div>
       <div class="hero-stat">
@@ -195,7 +265,7 @@
     <div class="tl-item reveal">
       <div class="tl-dot"></div>
       <div class="tl-year">2025</div>
-      <div class="tl-content"><div class="tl-title" data-i18n="timeline_1_title">AI SaaS Developer</div><div class="tl-desc" data-i18n="timeline_1_desc">Smart-Letter, GeschenkFox, HandwerkerAI — solo-built AI products from concept to production.</div></div>
+      <div class="tl-content"><div class="tl-title" data-i18n="timeline_1_title">AI SaaS Developer</div><div class="tl-desc" data-i18n="timeline_1_desc">Smart-Letter, GeschenkFox, RenovAI — solo-built AI products from concept to production.</div></div>
     </div>
     <div class="tl-item reveal d1">
       <div class="tl-dot"></div>
@@ -225,7 +295,7 @@
     <button class="pf-btn" data-filter="done" data-i18n="filter_done">Done</button>
   </div>
   <div class="projects-grid" id="projectsGrid">
-    <a href="https://t.me/handwerky_bot" target="_blank" class="pcard reveal" data-status="dev" data-url="https://t.me/handwerky_bot" data-preview="assets/previews/handwerker.jpg"><div class="pidx">01</div><div class="pbody"><h3>HandwerkerAI <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_handwerker_desc">AI-Assistent für Handwerksbetriebe: automatische Antworten via Telegram, Terminbuchung und Angebotsgenerierung 24/7.</p><p class="prole" data-i18n="proj_handwerker_role">Alleinige Entwicklung: AI-Agent, Backend, Frontend, UX</p><div class="pstack"><span class="ptag">Python</span><span class="ptag">aiogram</span><span class="ptag">FastAPI</span><span class="ptag">Telegram API</span><span class="ptag">PostgreSQL</span></div></div><div class="parr">↗</div></a>
+    <a href="https://remont-online.net" target="_blank" class="pcard reveal" data-status="dev" data-url="https://remont-online.net"><div class="pidx">01</div><div class="pbody"><h3>RenovAI <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_remont_desc">KI analysiert Raumfotos oder Grundrisse und erstellt automatisch eine detaillierte Kostenkalkulation mit Arbeitsleistungen, Materialien, Preisen und Designvorschlägen.</p><p class="prole" data-i18n="proj_remont_role">Alleinige Entwicklung: React, FastAPI, PostgreSQL, OpenAI Vision, VPS-Deployment</p><div class="pstack"><span class="ptag">React</span><span class="ptag">FastAPI</span><span class="ptag">PostgreSQL</span><span class="ptag">OpenAI Vision</span><span class="ptag">VPS</span></div></div><div class="parr">↗</div></a>
     <a href="https://t.me/traumwerk_bot" target="_blank" class="pcard reveal d1" data-status="dev" data-url="https://t.me/traumwerk_bot" data-preview="assets/previews/dreamdeck.jpg"><div class="pidx">02</div><div class="pbody"><h3>DreamDeck <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_dreamdeck_desc">KI-Traumtagebuch als Telegram-Bot: Traumanalyse, Emotionserkennung, wöchentliche Insights und Muster-Erkennung.</p><p class="prole" data-i18n="proj_dreamdeck_role">Alleinige Entwicklung: AI-Integration, Backend, Datenbank, UX</p><div class="pstack"><span class="ptag">Python</span><span class="ptag">Telegram Bot</span><span class="ptag">Groq API</span><span class="ptag">PostgreSQL</span><span class="ptag">aiogram</span></div></div><div class="parr">↗</div></a>
     <a href="https://smart-letter.net" target="_blank" class="pcard reveal d2" data-status="live" data-url="https://smart-letter.net"><div class="pidx">03</div><div class="pbody"><h3>Smart-Letter.net <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_smartletter_desc">KI-Plattform: professionelle Briefe in 17 Sprachen, Spracherkennung, PDF/DOCX/JPEG-Verarbeitung.</p><p class="prole" data-i18n="proj_smartletter_role">Alleinige Entwicklung: Architektur, Frontend, Backend, KI-Integration</p><div class="pstack"><span class="ptag">FastAPI</span><span class="ptag">React + Vite</span><span class="ptag">Groq API</span><span class="ptag">PostgreSQL</span><span class="ptag">Vercel</span></div></div><div class="parr">↗</div></a>
     <a href="https://geschenkfox.de" target="_blank" class="pcard reveal d3" data-status="live" data-url="https://geschenkfox.de" data-preview="assets/previews/geschenkfox.jpg"><div class="pidx">04</div><div class="pbody"><h3>GeschenkFox.de <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_geschenkfox_desc">KI-Geschenkfinder mit interaktivem Quiz für den deutschen Markt. SEO-optimierte Architektur.</p><p class="prole" data-i18n="proj_geschenkfox_role">Alleinige Umsetzung: Design (Figma), Frontend, SEO, UX-Konzept</p><div class="pstack"><span class="ptag">SvelteKit + Vite</span><span class="ptag">Tailwind CSS</span><span class="ptag">OpenAI API</span><span class="ptag">Vercel</span></div></div><div class="parr">↗</div></a>
@@ -235,12 +305,70 @@
   </div>
 </section>
 
-<!-- GITHUB STATS -->
-<section id="github">
-  <div class="sec-head"><span class="sec-num">04A / <span data-i18n="github_title">GitHub</span></span><div class="sec-line"></div></div>
-  <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center">
-    <img src="https://github-readme-stats.vercel.app/api?username=sergey-zabolotnyi&show_icons=true&theme=tokyonight" style="max-width:420px;width:100%;border-radius:8px" loading="lazy" onerror="this.style.display='none'">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sergey-zabolotnyi&layout=compact&theme=tokyonight" style="max-width:420px;width:100%;border-radius:8px" loading="lazy" onerror="this.style.display='none'">
+
+<!-- BLOG / TIL -->
+<section id="blog">
+  <div class="sec-head reveal"><span class="sec-num">04B / <span data-i18n="blog_title">TIL · What I Learned</span></span><div class="sec-line"></div></div>
+  <div class="blog-grid">
+    <div class="blog-card reveal">
+      <div class="blog-tag">VPS · DevOps</div>
+      <h4 class="blog-title" data-i18n="til_1_title">VPS Migration von Scratch</h4>
+      <p class="blog-desc" data-i18n="til_1_desc">Nginx, PostgreSQL, systemd, SSL, automated backups — alles selbst konfiguriert. Von Render/Netlify/Supabase zu eigenem VPS migriert.</p>
+      <div class="blog-date">März 2025</div>
+    </div>
+    <div class="blog-card reveal d1">
+      <div class="blog-tag">Python · aiogram</div>
+      <h4 class="blog-title" data-i18n="til_2_title">Telegram Bot Freemium-Modell</h4>
+      <p class="blog-desc" data-i18n="til_2_desc">Stripe-Integration für Bots, Webhook vs Polling, Callback-Handler-Architektur und PostgreSQL-Subscription-Tracking für DreamDeck.</p>
+      <div class="blog-date">Feb 2025</div>
+    </div>
+    <div class="blog-card reveal d2">
+      <div class="blog-tag">OpenAI · RAG</div>
+      <h4 class="blog-title" data-i18n="til_3_title">Vision API für Dokumentenanalyse</h4>
+      <p class="blog-desc" data-i18n="til_3_desc">PDF/DOCX/JPEG-Extraktion mit OpenAI Vision, Prompt-Engineering für strukturierte Ausgaben und mehrsprachige Brieferstellung in Smart-Letter.</p>
+      <div class="blog-date">Jan 2025</div>
+    </div>
+    <div class="blog-card reveal d3">
+      <div class="blog-tag">React · SvelteKit</div>
+      <h4 class="blog-title" data-i18n="til_4_title">i18n ohne Framework</h4>
+      <p class="blog-desc" data-i18n="til_4_desc">Leichtgewichtiges 4-Sprachen i18n-System (DE/EN/RU/UA) für dieses Portfolio — ohne externe Bibliotheken, nur vanilla JS und localStorage.</p>
+      <div class="blog-date">Dez 2024</div>
+    </div>
+    <div class="blog-card reveal d1">
+      <div class="blog-tag">AI · Prompt Eng.</div>
+      <h4 class="blog-title" data-i18n="til_5_title">Groq API vs OpenAI: Speed vs Qualität</h4>
+      <p class="blog-desc" data-i18n="til_5_desc">Llama 3.1 via Groq für Echtzeit-Chat (10x schneller), GPT-4o für komplexe Analysen. Hybride Architektur senkt Kosten bei gleicher UX.</p>
+      <div class="blog-date">Nov 2024</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="sec-head reveal"><span class="sec-num">04C / <span data-i18n="testimonials_title">Referenzen</span></span><div class="sec-line"></div></div>
+  <div class="testimonials-grid">
+    <div class="tcard reveal">
+      <div class="tcard-quote">"</div>
+      <p class="tcard-text" data-i18n="testimonial_1_text">Serge hat unsere Website schnell und professionell umgesetzt. Die lokale SEO-Optimierung hat unsere Sichtbarkeit in Dresden deutlich verbessert — wir bekommen jetzt deutlich mehr Anfragen über Google.</p>
+      <div class="tcard-author">
+        <div class="tcard-avatar">KB</div>
+        <div>
+          <div class="tcard-name">Kernbohr-Expert.de</div>
+          <div class="tcard-role" data-i18n="testimonial_role_client">Kunde · Dresden</div>
+        </div>
+      </div>
+    </div>
+    <div class="tcard reveal d2">
+      <div class="tcard-quote">"</div>
+      <p class="tcard-text" data-i18n="testimonial_2_text">Sehr zuverlässige Arbeit. Die mobile Optimierung war für uns besonders wichtig — Serge hat das genau so umgesetzt wie wir es uns vorgestellt haben. Schnelle Kommunikation, gutes Ergebnis.</p>
+      <div class="tcard-author">
+        <div class="tcard-avatar">TS</div>
+        <div>
+          <div class="tcard-name">Trockenbauservice-Salcutan.de</div>
+          <div class="tcard-role" data-i18n="testimonial_role_client">Kunde · Berlin</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -298,6 +426,11 @@
 <footer>
   <p>© <span id="currentYear">2026</span> <span class="fa">Serge Zabolotny</span> · zabolotny.de</p>
   <p><span data-i18n="footer_deployed">Deployed auf</span> <span class="fa">Vercel</span> · <span class="fa3">Dresden</span></p>
+  <div class="footer-visitors">
+    <span class="visitor-dot"></span>
+    <span data-i18n="footer_visitors">Besucher:</span>
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=sergey-zabolotnyi.zabolotny.de&left_color=%231a1a2e&right_color=%237c6fff&left_text=visitors" alt="visitors" class="visitor-badge" onerror="this.parentElement.style.display='none'">
+  </div>
 </footer>
 
 <!-- AI CHAT -->
