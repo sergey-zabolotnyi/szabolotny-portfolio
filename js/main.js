@@ -72,10 +72,10 @@ orbits.forEach(o => {
 });
 
 /* ========== TYPEWRITER ========== */
-const phrasesDE = ['AI Fullstack Developer', 'Python · React · SvelteKit', 'KI-Produkte aus Dresden', 'FastAPI · OpenAI · LangChain'];
-const phrasesEN = ['AI Fullstack Developer', 'Python · React · SvelteKit', 'AI Products from Dresden', 'FastAPI · OpenAI · LangChain'];
-const phrasesRU = ['AI Fullstack Developer', 'Python · React · SvelteKit', 'AI-продукты из Дрездена', 'FastAPI · OpenAI · LangChain'];
-const phrasesUA = ['AI Fullstack Developer', 'Python · React · SvelteKit', 'AI-продукти з Дрездена', 'FastAPI · OpenAI · LangChain'];
+const phrasesDE = ['KI-Prototyp in 3–6 Wochen — von der Idee bis zum Launch!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'KI-Produkte aus Dresden', 'FastAPI · OpenAI · LangChain'];
+const phrasesEN = ['AI prototype development in 3–6 weeks — from idea to launch!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'AI Products from Dresden', 'FastAPI · OpenAI · LangChain'];
+const phrasesRU = ['Создание AI-прототипа за 3–6 недель — от идеи до запуска!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'AI-продукты из Дрездена', 'FastAPI · OpenAI · LangChain'];
+const phrasesUA = ['Створення AI-прототипу за 3–6 тижнів — від ідеї до запуску!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'AI-продукти з Дрездена', 'FastAPI · OpenAI · LangChain'];
 
 let currentPhrases = phrasesDE;
 let pi = 0, ci = 0, del = false, wait = 0;
