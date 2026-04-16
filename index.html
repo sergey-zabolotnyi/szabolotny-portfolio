@@ -405,14 +405,14 @@
     </div>
     <div class="reveal-right d2">
       <div class="form-wrap">
-        <form class="contact-form" id="contactForm"><input type="text" name="_gotcha" style="display:none">
+        <form class="contact-form" id="contactForm">
           <div class="form-row">
-            <div class="field"><label data-i18n="form_name">Name</label><input type="text" name="name" data-i18n-ph="form_ph_name" placeholder="Max Mustermann" required></div>
-            <div class="field"><label>Email</label><input type="email" name="email" placeholder="max@firma.de" required></div>
+            <div class="field"><label data-i18n="form_name">Name</label><input type="text" name="name" id="formName" data-i18n-ph="form_ph_name" placeholder="Max Mustermann" required></div>
+            <div class="field"><label>Email</label><input type="email" name="email" id="formEmail" placeholder="max@firma.de" required></div>
           </div>
-          <div class="field"><label data-i18n="form_msg">Nachricht</label><textarea name="message" data-i18n-ph="form_ph_msg" placeholder="Ich habe ein interessantes Projekt..."></textarea></div>
+          <div class="field"><label data-i18n="form_msg">Nachricht</label><textarea name="message" id="formMessage" data-i18n-ph="form_ph_msg" placeholder="Ich habe ein interessantes Projekt..."></textarea></div>
           <button type="submit" class="form-btn" id="formBtn" data-i18n="form_btn">Nachricht senden →</button>
-          <p class="form-note">Powered by <a href="https://formspree.io" target="_blank">Formspree</a></p>
+          <p class="form-note">Nachricht wird sicher per Telegram übermittelt</p>
         </form>
         <div class="form-success" id="formSuccess">
           <div class="fs-icon">✓</div>

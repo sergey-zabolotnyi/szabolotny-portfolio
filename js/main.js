@@ -178,23 +178,54 @@ document.querySelectorAll('.pf-btn').forEach(btn => {
 });
 
 /* ========== CONTACT FORM ========== */
-document.getElementById('contactForm').addEventListener('submit', async e => {
-  e.preventDefault();
-  const btn = document.getElementById('formBtn');
-  btn.textContent = 'Senden...';
-  btn.disabled = true;
-  try {
-    await fetch('https://formspree.io/f/xvzwnayw', {
-      method: 'POST',
-      body: new FormData(e.target),
-      headers: { Accept: 'application/json' }
-    });
-  } catch (err) { }
-  document.getElementById('formSuccess').classList.add('show');
-  e.target.reset();
-  btn.textContent = document.documentElement.lang === 'de' ? 'Nachricht senden →' : 'Send Message →';
-  btn.disabled = false;
-});
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = document.getElementById('formBtn');
+    const originalText = btn.textContent;
+    btn.textContent = 'Senden...';
+    btn.disabled = true;
+    
+    // Получаем данные из формы
+    const name = document.getElementById('formName').value;
+    const email = document.getElementById('formEmail').value;
+    const message = document.getElementById('formMessage').value;
+    const currentLang = localStorage.getItem('lang') || 'de';
+    
+    // Маппинг языков для API
+    const langMap = { de: 'de', en: 'en', ru: 'ru', ua: 'ua' };
+    const apiLang = langMap[currentLang] || 'de';
+    
+    try {
+      const response = await fetch('https://api.zabolotny.de/kontakt', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message, lang: apiLang })
+      });
+      
+      const data = await response.json();
+      
+      if (data.ok) {
+        document.getElementById('formSuccess').classList.add('show');
+        contactForm.reset();
+      } else {
+        alert('Fehler beim Senden: ' + (data.detail || 'Unbekannter Fehler'));
+      }
+    } catch (err) {
+      console.error('Fetch error:', err);
+      alert('Verbindungsfehler. Bitte versuchen Sie es später erneut.');
+    }
+    
+    btn.textContent = originalText;
+    btn.disabled = false;
+    
+    // Скрыть сообщение об успехе через 5 секунд
+    setTimeout(() => {
+      document.getElementById('formSuccess').classList.remove('show');
+    }, 5000);
+  });
+}
 
 /* ========== AI CHAT ========== */
 let chatOpen = false;
