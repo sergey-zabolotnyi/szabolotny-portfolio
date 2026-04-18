@@ -229,27 +229,82 @@ if (contactForm) {
 
 /* ========== AI CHAT ========== */
 let chatOpen = false;
+let autoCloseTimer = null;
+let autoOpenTimer = null;
 const aiChat = document.getElementById('ai-chat');
 
+// Start with collapsed chat
 aiChat.classList.add('collapsed');
 document.getElementById('chatTog').textContent = '+';
 
-setTimeout(() => {
-  if (!chatOpen) {
-    chatOpen = true;
-    aiChat.classList.remove('collapsed');
-    document.getElementById('chatTog').textContent = '−';
-    aiChat.classList.add('popping');
-    setTimeout(() => aiChat.classList.remove('popping'), 500);
-  }
-}, 1 * 60 * 1000);
+// Function to auto open chat after 120 seconds
+function scheduleAutoOpen() {
+  if (autoOpenTimer) clearTimeout(autoOpenTimer);
+  autoOpenTimer = setTimeout(() => {
+    if (!chatOpen && !document.hidden) {
+      chatOpen = true;
+      aiChat.classList.remove('collapsed');
+      document.getElementById('chatTog').textContent = '−';
+      aiChat.classList.add('popping');
+      setTimeout(() => aiChat.classList.remove('popping'), 500);
+      
+      // Start auto-close timer after opening
+      scheduleAutoClose();
+    }
+  }, 120 * 1000); // 120 seconds
+}
 
+// Function to auto close chat after 5 minutes
+function scheduleAutoClose() {
+  if (autoCloseTimer) clearTimeout(autoCloseTimer);
+  autoCloseTimer = setTimeout(() => {
+    if (chatOpen) {
+      chatOpen = false;
+      aiChat.classList.add('collapsed');
+      document.getElementById('chatTog').textContent = '+';
+      
+      // Re-schedule auto-open for next session
+      scheduleAutoOpen();
+    }
+  }, 5 * 60 * 1000); // 5 minutes
+}
+
+// Function to reset timers when user manually interacts
+function resetChatTimers() {
+  // Clear existing timers
+  if (autoOpenTimer) clearTimeout(autoOpenTimer);
+  if (autoCloseTimer) clearTimeout(autoCloseTimer);
+  
+  // If chat is open, schedule auto-close again
+  if (chatOpen) {
+    scheduleAutoClose();
+  } else {
+    // If chat is closed, schedule auto-open again
+    scheduleAutoOpen();
+  }
+}
+
+// Modified toggleChat function
 function toggleChat() {
   chatOpen = !chatOpen;
   aiChat.classList.toggle('collapsed', !chatOpen);
   document.getElementById('chatTog').textContent = chatOpen ? '−' : '+';
+  
+  // Reset timers on manual toggle
+  resetChatTimers();
 }
 
+// Start the auto-open timer when page loads
+scheduleAutoOpen();
+
+// Also start auto-open when page becomes visible again
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    scheduleAutoOpen();
+  }
+});
+
+// Rest of your existing chat code continues here...
 const chatBody = document.getElementById('chatBody');
 const chatHistory = [];
 
@@ -349,3 +404,66 @@ async function sendChat() {
     typing.textContent = 'Connection error.';
   }
 }
+
+/* ============================================
+   MOBILE CHAT - AUTO COLLAPSE ON INACTIVITY
+   ============================================ */
+
+let mobileChatTimeout;
+
+function initMobileChatBehavior() {
+  const isMobile = window.innerWidth <= 768;
+  if (!isMobile) return;
+  
+  const chat = document.getElementById('ai-chat');
+  const input = document.getElementById('chatinput');
+  
+  if (!chat) return;
+  
+  function resetMobileTimer() {
+    clearTimeout(mobileChatTimeout);
+    // Check if chat is open and input is not focused
+    mobileChatTimeout = setTimeout(() => {
+      // Only collapse if chat is open and input is not active
+      const isInputFocused = document.activeElement === input;
+      if (chatOpen && !isInputFocused) {
+        toggleChat(); // Collapse the chat
+        // Reset main timers after mobile collapse
+        resetChatTimers();
+      }
+    }, 8000); // 8 seconds of inactivity
+  }
+  
+  function handleUserActivity() {
+    resetMobileTimer();
+    // Also reset main timers on user activity
+    resetChatTimers();
+  }
+  
+  // Add event listeners
+  chat.addEventListener('click', handleUserActivity);
+  chat.addEventListener('touchstart', handleUserActivity);
+  
+  if (input) {
+    input.addEventListener('focus', handleUserActivity);
+    input.addEventListener('blur', () => {
+      // Start timer when input loses focus
+      resetMobileTimer();
+    });
+  }
+  
+  // Also track scroll and touch on body
+  document.body.addEventListener('touchstart', handleUserActivity);
+  window.addEventListener('scroll', handleUserActivity);
+  
+  // Initial timer
+  resetMobileTimer();
+}
+
+// Run on load and on window resize (in case orientation changes)
+document.addEventListener('DOMContentLoaded', initMobileChatBehavior);
+window.addEventListener('resize', () => {
+  // Re-initialize on resize to handle orientation change
+  clearTimeout(mobileChatTimeout);
+  initMobileChatBehavior();
+});
