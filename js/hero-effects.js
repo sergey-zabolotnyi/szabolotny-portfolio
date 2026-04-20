@@ -31,20 +31,6 @@ function createHeroParticles() {
   }
 }
 
-function animateHeroStats() {
-  const projectsCounter = document.getElementById('projectsCount');
-  if (!projectsCounter) return;
-  
-  let count = 0;
-  const target = 6;
-  const interval = setInterval(() => {
-    count++;
-    projectsCounter.textContent = count;
-    if (count >= target) clearInterval(interval);
-  }, 80);
-}
-
 setTimeout(() => {
   createHeroParticles();
-  animateHeroStats();
 }, 500);

@@ -103,6 +103,7 @@ const translations = {
     testimonial_1_text: 'Serge delivered our website quickly and professionally. The local SEO optimization significantly improved our visibility in Dresden — we now get noticeably more inquiries through Google.',
     testimonial_2_text: 'Very reliable work. Mobile optimization was especially important for us — Serge implemented it exactly as we envisioned. Fast communication, great result.',
     testimonial_role_client: 'Client · Dresden',
+    cal_btn: 'Book a call →',
   },
   ru: {
     nav_about: 'Обо мне', nav_skills: 'Навыки', nav_projects: 'Проекты', nav_contact: 'Контакты',
@@ -153,6 +154,7 @@ const translations = {
     testimonial_1_text: 'Серж сделал наш сайт быстро и профессионально. SEO-оптимизация значительно улучшила нашу видимость в Дрездене — теперь мы получаем заметно больше заявок через Google.',
     testimonial_2_text: 'Очень надёжная работа. Мобильная оптимизация была особенно важна для нас — Серж реализовал всё именно так, как мы хотели. Быстрая коммуникация, отличный результат.',
     testimonial_role_client: 'Клиент · Дрезден',
+    cal_btn: 'Созвонимся →',
   },
   ua: {
     nav_about: 'Про мене', nav_skills: 'Навички', nav_projects: 'Проєкти', nav_contact: 'Контакт',
@@ -204,6 +206,7 @@ const translations = {
     testimonial_1_text: 'Серж зробив наш сайт швидко та професійно. SEO-оптимізація значно покращила нашу видимість у Дрездені — тепер ми отримуємо помітно більше заявок через Google.',
     testimonial_2_text: 'Дуже надійна робота. Мобільна оптимізація була особливо важлива для нас — Серж реалізував все саме так, як ми хотіли. Швидка комунікація, відмінний результат.',
     testimonial_role_client: 'Клієнт · Дрезден',
+    cal_btn: 'Домовимось про дзвінок →',
   }
 };
 
@@ -213,7 +216,7 @@ function setLang(lang) {
   
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const k = el.dataset.i18n;
-    if (t[k] !== undefined) el.innerHTML = t[k];
+    if (t[k] !== undefined) el.textContent = t[k];
   });
   
   document.querySelectorAll('[data-i18n-ph]').forEach(el => {
