@@ -296,6 +296,7 @@
     <button class="pf-btn" data-filter="done" data-i18n="filter_done">Done</button>
   </div>
   <div class="projects-grid" id="projectsGrid">
+    <a href="https://solar-check.ai" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://solar-check.ai"><div class="pidx">09</div><div class="pbody"><h3><span data-i18n="proj_solar_title">SolarCheck AI</span> <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_solar_desc">B2B Lead-Plattform für die Solarbranche: KI analysiert Dachpotenzial per Adresse, berechnet ROI mit echten Strompreisen und KfW-Förderungen — und liefert qualifizierte Leads an Installateure.</p><p class="prole" data-i18n="proj_solar_role">Alleinige Entwicklung: SvelteKit, FastAPI, Google Solar API, PostgreSQL, Stripe, VPS</p><div class="pstack"><span class="ptag">SvelteKit</span><span class="ptag">FastAPI</span><span class="ptag">Google Solar API</span><span class="ptag">PostgreSQL</span><span class="ptag">Stripe</span><span class="ptag">Claude Vision</span></div></div><div class="parr">↗</div></a>
     <a href="https://meisterdesk.vercel.app" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://meisterdesk.vercel.app" data-preview="assets/previews/meisterdeck.jpg"><div class="pidx">08</div><div class="pbody"><h3>MeisterDesk <span class="pbadge b-dev" data-i18n="status_dev">В разработке</span></h3><p class="pdesc" data-i18n="proj_meisterdesk_desc">Управление выездными услугами для мастеров: клиенты, заказы, сотрудники, PWA, ИИ-отчёты, загрузка голоса/фото.</p><p class="prole" data-i18n="proj_meisterdesk_role">Самостоятельная разработка: Next.js, Drizzle ORM, PostgreSQL, PWA, AI-интеграция</p><div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">Drizzle ORM</span><span class="ptag">PostgreSQL</span><span class="ptag">PWA</span><span class="ptag">AI Reports</span></div></div><div class="parr">↗</div></a>
     <a href="https://remont-online.net" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://remont-online.net"><div class="pidx">07</div><div class="pbody"><h3>RenovAI <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_remont_desc">KI analysiert Raumfotos oder Grundrisse und erstellt automatisch eine detaillierte Kostenkalkulation mit Arbeitsleistungen, Materialien, Preisen und Designvorschlägen.</p><p class="prole" data-i18n="proj_remont_role">Alleinige Entwicklung: React, FastAPI, PostgreSQL, OpenAI Vision, VPS-Deployment</p><div class="pstack"><span class="ptag">React</span><span class="ptag">FastAPI</span><span class="ptag">PostgreSQL</span><span class="ptag">OpenAI Vision</span><span class="ptag">VPS</span></div></div><div class="parr">↗</div></a>
     <a href="https://t.me/traumwerk_bot" target="_blank" rel="noopener noreferrer" class="pcard reveal d1" data-status="live" data-url="https://t.me/traumwerk_bot" data-preview="assets/previews/dreamdeck.jpg"><div class="pidx">06</div><div class="pbody"><h3>DreamDeck <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_dreamdeck_desc">KI-Traumtagebuch als Telegram-Bot: Traumanalyse, Emotionserkennung, wöchentliche Insights und Muster-Erkennung.</p><p class="prole" data-i18n="proj_dreamdeck_role">Alleinige Entwicklung: AI-Integration, Backend, Datenbank, UX</p><div class="pstack"><span class="ptag">Python</span><span class="ptag">Telegram Bot</span><span class="ptag">Groq API</span><span class="ptag">PostgreSQL</span><span class="ptag">aiogram</span></div></div><div class="parr">↗</div></a>
@@ -342,6 +343,30 @@
       <p class="blog-desc" data-i18n="til_5_desc">Llama 3.1 via Groq für Echtzeit-Chat (10x schneller), GPT-4o für komplexe Analysen. Hybride Architektur senkt Kosten bei gleicher UX.</p>
       <div class="blog-date">Nov 2024</div>
     </div>
+    <div class="blog-card reveal d2">
+      <div class="blog-tag">SvelteKit · Stripe · API</div>
+      <h4 class="blog-title" data-i18n="til_6_title">Google Solar API + B2B Lead-Monetarisierung</h4>
+      <p class="blog-desc" data-i18n="til_6_desc">Solar Lead Machine: Google Solar API liefert Dachfläche, kWp, kWh/Jahr pro Adresse. FastAPI-Backend verbindet Open Meteo, SMARD und KfW-Scraper für ROI-Kalkulation. Stripe Pay-per-Lead für Installateure.</p>
+      <div class="blog-date">Mai 2025</div>
+    </div>
+    <div class="blog-card reveal d3">
+      <div class="blog-tag">Cloudflare · Edge · AI</div>
+      <h4 class="blog-title" data-i18n="til_7_title">Cloudflare Worker als KI-Proxy</h4>
+      <p class="blog-desc" data-i18n="til_7_desc">AI-Chat-Widget auf zabolotny.de läuft über einen Cloudflare Worker, der den Groq API-Key serverseitig schützt. Zero Cold Start, globales CDN, kein eigener Server nötig.</p>
+      <div class="blog-date">Apr 2025</div>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-tag">FastAPI · Telegram · DevOps</div>
+      <h4 class="blog-title" data-i18n="til_8_title">FastAPI Microservice statt No-Code-Tools</h4>
+      <p class="blog-desc" data-i18n="til_8_desc">Kontaktformular-Microservice ersetzt n8n und Formspree: FastAPI-Endpunkt validiert Eingaben und leitet Nachrichten via Telegram Bot API weiter. Systemd-Service auf eigenem VPS, kein Drittanbieter.</p>
+      <div class="blog-date">Mär 2025</div>
+    </div>
+    <div class="blog-card reveal d1">
+      <div class="blog-tag">nginx · systemd · VPS</div>
+      <h4 class="blog-title" data-i18n="til_9_title">Multi-Projekt nginx + systemd auf einem VPS</h4>
+      <p class="blog-desc" data-i18n="til_9_desc">Mehrere Projekte auf einer 1blu-Instanz: nginx als Reverse Proxy mit SSL via Cloudflare, jeder Dienst als eigener systemd-Unit mit automatischem Neustart.</p>
+      <div class="blog-date">Mär 2025</div>
+    </div>
   </div>
 </section>
 
@@ -351,23 +376,12 @@
   <div class="testimonials-grid">
     <div class="tcard reveal">
       <div class="tcard-quote">"</div>
-      <p class="tcard-text" data-i18n="testimonial_1_text">Serge hat unsere Website schnell und professionell umgesetzt. Die lokale SEO-Optimierung hat unsere Sichtbarkeit in Dresden deutlich verbessert — wir bekommen jetzt deutlich mehr Anfragen über Google.</p>
+      <p class="tcard-text" data-i18n="testimonial_1_text">Serge hat zwei Websites für meine Unternehmen erstellt — Kernbohr-Expert.de und Trockenbauservice-Salcutan.de. Beide sind schnell, mobil-optimiert und performen gut in der lokalen Suche. Sehr strukturierte Arbeitsweise, klare Kommunikation. Kann ich nur empfehlen.</p>
       <div class="tcard-author">
-        <div class="tcard-avatar">KB</div>
+        <div class="tcard-avatar">IS</div>
         <div>
-          <div class="tcard-name">Kernbohr-Expert.de</div>
-          <div class="tcard-role" data-i18n="testimonial_role_client">Kunde · Dresden</div>
-        </div>
-      </div>
-    </div>
-    <div class="tcard reveal d2">
-      <div class="tcard-quote">"</div>
-      <p class="tcard-text" data-i18n="testimonial_2_text">Sehr zuverlässige Arbeit. Die mobile Optimierung war für uns besonders wichtig — Serge hat das genau so umgesetzt wie wir es uns vorgestellt haben. Schnelle Kommunikation, gutes Ergebnis.</p>
-      <div class="tcard-author">
-        <div class="tcard-avatar">TS</div>
-        <div>
-          <div class="tcard-name">Trockenbauservice-Salcutan.de</div>
-          <div class="tcard-role" data-i18n="testimonial_role_client">Kunde · Berlin</div>
+          <div class="tcard-name">Ivan Salcutan</div>
+          <div class="tcard-role" data-i18n="testimonial_role_client">Geschäftsführer · Kernbohr-Expert.de & Trockenbauservice-Salcutan.de</div>
         </div>
       </div>
     </div>
