@@ -60,8 +60,8 @@
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.6)} }
 
 /* === BLOG / TIL === */
-#blog { padding: 80px 6vw; }
-.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px; margin-top: 40px; }
+#blog { padding: 80px max(56px, calc((100vw - 1400px) / 2 + 56px)); }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; }
 .blog-card {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(124,111,255,0.15);
@@ -77,8 +77,8 @@
 .blog-date { font-size: 0.75rem; font-family: 'DM Mono', monospace; color: rgba(232,232,255,0.35); }
 
 /* === TESTIMONIALS === */
-#testimonials { padding: 80px 6vw; }
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; margin-top: 40px; }
+#testimonials { padding: 80px max(56px, calc((100vw - 1400px) / 2 + 56px)); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; margin-top: 40px; max-width: 860px; }
 .tcard {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(77,255,180,0.15);
@@ -96,7 +96,7 @@
 .tcard-role { font-size: 0.75rem; color: rgba(232,232,255,0.45); margin-top: 2px; font-family: 'DM Mono', monospace; }
 
 /* === VISITOR COUNTER === */
-.footer-visitors { display: flex; align-items: center; gap: 8px; margin-top: 10px; justify-content: center; opacity: .7; }
+.footer-visitors { display: flex; align-items: center; gap: 8px; margin-top: 0; justify-content: flex-start; opacity: .7; margin-right: auto; padding-left: 24px; border-left: 1px solid var(--border, #383853); }
 .visitor-dot { width: 6px; height: 6px; border-radius: 50%; background: #4dffb4; animation: pulse 2s ease-in-out infinite; }
 .visitor-badge { height: 20px; border-radius: 4px; }
 </style>
@@ -253,9 +253,10 @@
   <div class="sec-head reveal"><span class="sec-num">02 / <span data-i18n="nav_skills">Skills</span></span><div class="sec-line"></div></div>
   <div class="skills-wrap reveal-scale">
     <div class="skill-group"><div class="sgt" data-i18n="skill_frontend">Frontend</div><div class="skill-pills"><span class="pill">React</span><span class="pill">SvelteKit</span><span class="pill">Tailwind CSS</span><span class="pill">JavaScript ES6+</span><span class="pill">HTML5/CSS3</span><span class="pill">Vite</span></div></div>
-    <div class="skill-group"><div class="sgt" data-i18n="skill_backend">Backend</div><div class="skill-pills"><span class="pill">Python</span><span class="pill">FastAPI</span><span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">REST API</span><span class="pill">PostgreSQL</span><span class="pill">MySQL</span></div></div>
-    <div class="skill-group"><div class="sgt" data-i18n="skill_ai">AI & Integrationen</div><div class="skill-pills"><span class="pill">OpenAI API</span><span class="pill">LangChain</span><span class="pill">Groq API</span><span class="pill">RAG</span><span class="pill">Prompt Engineering</span><span class="pill">Supabase</span><span class="pill">Stripe</span></div></div>
-    <div class="skill-group"><div class="sgt" data-i18n="skill_cloud">Cloud & Weitere</div><div class="skill-pills"><span class="pill">Docker</span><span class="pill">GitHub Actions</span><span class="pill">Vercel</span><span class="pill">Railway</span><span class="pill">Netlify</span><span class="pill">WordPress</span><span class="pill">SEO</span><span class="pill">Linux VPS</span></div></div>
+    <div class="skill-group"><div class="sgt" data-i18n="skill_backend">Backend</div><div class="skill-pills"><span class="pill">Python</span><span class="pill">FastAPI</span><span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">REST API</span><span class="pill">Telegram Bot API</span><span class="pill">aiogram 3</span></div></div>
+    <div class="skill-group"><div class="sgt" data-i18n="skill_db">Datenbanken</div><div class="skill-pills"><span class="pill">PostgreSQL</span><span class="pill">MySQL</span><span class="pill">Supabase</span><span class="pill">Redis</span><span class="pill">GIN Index</span></div></div>
+    <div class="skill-group"><div class="sgt" data-i18n="skill_ai">AI & Integrationen</div><div class="skill-pills"><span class="pill">OpenAI API</span><span class="pill">Groq API</span><span class="pill">LangChain</span><span class="pill">RAG</span><span class="pill">Prompt Engineering</span><span class="pill">Tesseract OCR</span><span class="pill">Google Solar API</span><span class="pill">Stripe</span></div></div>
+    <div class="skill-group"><div class="sgt" data-i18n="skill_cloud">Cloud & DevOps</div><div class="skill-pills"><span class="pill">Linux VPS</span><span class="pill">nginx</span><span class="pill">systemd</span><span class="pill">Docker</span><span class="pill">Cloudflare</span><span class="pill">GitHub Actions</span><span class="pill">Vercel</span><span class="pill">WordPress</span><span class="pill">SEO</span></div></div>
   </div>
 </section>
 
@@ -266,22 +267,27 @@
     <div class="tl-item reveal">
       <div class="tl-dot"></div>
       <div class="tl-year">2025</div>
-      <div class="tl-content"><div class="tl-title" data-i18n="timeline_1_title">AI SaaS Developer</div><div class="tl-desc" data-i18n="timeline_1_desc">Smart-Letter, GeschenkFox, RenovAI — solo-built AI products from concept to production.</div></div>
+      <div class="tl-content"><div class="tl-title" data-i18n="timeline_1_title">AI SaaS Developer</div><div class="tl-desc" data-i18n="timeline_1_desc">SolarCheck AI, MeisterDesk, DreamDeck — solo-built AI products from concept to production deployment on own VPS.</div></div>
     </div>
     <div class="tl-item reveal d1">
       <div class="tl-dot"></div>
       <div class="tl-year">2024</div>
-      <div class="tl-content"><div class="tl-title" data-i18n="timeline_2_title">Fullstack Developer</div><div class="tl-desc" data-i18n="timeline_2_desc">React, SvelteKit, FastAPI — client projects, integrations, deployments on Vercel & Railway.</div></div>
+      <div class="tl-content"><div class="tl-title" data-i18n="timeline_2_title">AI Fullstack Developer</div><div class="tl-desc" data-i18n="timeline_2_desc">Smart-Letter, GeschenkFox, RenovAI — FastAPI + React/SvelteKit, Groq/OpenAI APIs, self-hosted VPS infrastructure.</div></div>
     </div>
     <div class="tl-item reveal d2">
       <div class="tl-dot"></div>
-      <div class="tl-year">2022</div>
-      <div class="tl-content"><div class="tl-title" data-i18n="timeline_3_title">CTO / Technical Leadership</div><div class="tl-desc" data-i18n="timeline_3_desc">Led development team, architecture decisions, roadmap and hiring for a tech startup.</div></div>
+      <div class="tl-year">2023</div>
+      <div class="tl-content"><div class="tl-title" data-i18n="timeline_3_title">Java Backend Developer — Starta Institut (Tel-Ran), Berlin</div><div class="tl-desc" data-i18n="timeline_3_desc">960h Java Web Development: Spring Boot, REST APIs, PostgreSQL, DevOps Basics. Graduation project: CRM system. DEKRA-certified.</div></div>
     </div>
     <div class="tl-item reveal d3">
       <div class="tl-dot"></div>
-      <div class="tl-year">2018</div>
-      <div class="tl-content"><div class="tl-title" data-i18n="timeline_4_title">Software Developer</div><div class="tl-desc" data-i18n="timeline_4_desc">Java, Spring Boot, REST APIs — enterprise backend development and database design.</div></div>
+      <div class="tl-year">2017</div>
+      <div class="tl-content"><div class="tl-title" data-i18n="timeline_4_title">Technical Support — Germany</div><div class="tl-desc" data-i18n="timeline_4_desc">Teleperformance Görlitz (2017–2019), Concentrix Berlin (2021–2022): Apple & Facebook Business Support. Parallel: self-study React, Python, FastAPI.</div></div>
+    </div>
+    <div class="tl-item reveal d3">
+      <div class="tl-dot"></div>
+      <div class="tl-year">2012</div>
+      <div class="tl-content"><div class="tl-title" data-i18n="timeline_5_title">Web Developer & CTO — Ukraine</div><div class="tl-desc" data-i18n="timeline_5_desc">Built monetized websites on WordPress & DLE (contextual ads). CTO at MKP Gazkomplektprylad (2011–2017): tech leadership, process optimization, team coordination.</div></div>
     </div>
   </div>
 </section>
@@ -440,8 +446,7 @@
 </section>
 
 <footer>
-  <p>© <span id="currentYear">2026</span> <span class="fa">Serge Zabolotny</span> · zabolotny.de</p>
-  <p><span data-i18n="footer_deployed">Deployed auf</span> <span class="fa">Vercel</span> · <span class="fa3">Dresden</span></p>
+  <p>© <span id="currentYear">2026</span> <span class="fa">Serge Zabolotny</span> <span class="footer-sep">|</span> zabolotny.de <span class="footer-sep">|</span> <span data-i18n="footer_deployed">Deployed auf</span> <span class="fa">Vercel</span> <span class="footer-sep">|</span> <span class="fa3">Dresden</span></p>
   <div class="footer-visitors">
     <span class="visitor-dot"></span>
     <span data-i18n="footer_visitors">Besucher:</span>

@@ -11,6 +11,7 @@
   --accent3: #4dffb4;
   --muted: #d4d4e8;
   --border: #383853;
+  --edge-right: max(28px, calc((100vw - 1400px) / 2 + 28px));
 }
 
 *,
@@ -85,7 +86,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 56px;
+  padding: 28px max(56px, calc((100vw - 1400px) / 2 + 56px));
   border-bottom: 1px solid transparent;
   transition: all 0.4s;
 }
@@ -93,7 +94,7 @@ nav {
 nav.scrolled {
   background: rgba(5, 5, 8, 0.88);
   backdrop-filter: blur(20px);
-  padding: 18px 56px;
+  padding: 18px max(56px, calc((100vw - 1400px) / 2 + 56px));
   border-color: var(--border);
 }
 
@@ -152,7 +153,7 @@ nav.scrolled {
   min-height: calc(100vh - 150px);
   display: flex;
   align-items: center;
-  padding: 120px 56px 80px;
+  padding: 120px max(56px, calc((100vw - 1400px) / 2 + 56px)) 80px;
   position: relative;
   z-index: 1;
   gap: 80px;
@@ -524,7 +525,7 @@ nav.scrolled {
 .hero-scroll {
   position: absolute;
   bottom: 24px;
-  left: 56px;
+  left: max(56px, calc((100vw - 1400px) / 2 + 56px));
   display: flex;
   align-items: center;
   gap: 14px;
@@ -949,7 +950,7 @@ nav.scrolled {
 section {
   position: relative;
   z-index: 1;
-  padding: 130px 56px;
+  padding: 130px max(56px, calc((100vw - 1400px) / 2 + 56px));
   border-top: 1px solid var(--border);
 }
 
@@ -1135,7 +1136,7 @@ section {
 
 .timeline-wrap {
   max-width: 720px;
-  margin: 0 auto;
+  margin: 0;
   position: relative;
   padding-left: 36px;
 }
@@ -1766,18 +1767,27 @@ section {
 footer {
   position: relative;
   z-index: 1;
-  padding: 36px 400px 36px 56px;
+  padding: 36px max(56px, calc((100vw - 1400px) / 2 + 56px));
+  padding-right: max(400px, calc((100vw - 1400px) / 2 + 400px));
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--bg);
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 footer p {
   font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--muted);
+}
+
+.footer-sep {
+  margin: 0 10px;
+  color: var(--border);
+  font-weight: 300;
 }
 
 .fa {
@@ -1880,7 +1890,7 @@ footer p {
 #ai-chat {
   position: fixed;
   bottom: 28px;
-  right: 28px;
+  right: var(--edge-right);
   width: 340px;
   background: var(--bg2);
   border: 1px solid var(--border);
@@ -2337,7 +2347,13 @@ footer p {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    padding: 28px 24px;
+    align-items: center;
   }
+
+  footer p { font-size: 10px; }
+
+  .footer-visitors { margin-top: 4px; }
 
   .hero-scroll {
     display: none;
@@ -2372,7 +2388,7 @@ footer p {
 #calFloatBtn {
   position: fixed;
   top: 70px;       
-  right: 28px;
+  right: var(--edge-right);
   bottom: auto;     
   z-index: 1000;
   display: flex;
@@ -2457,6 +2473,12 @@ footer p {
 @media (max-width: 900px) {
   .cursor, .cursor-ring { display: none !important; }
   .pcard-preview { display: none !important; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+  .blog-grid { grid-template-columns: 1fr; }
 }
 
 /* Simple fix - hide custom cursor inside chat, show default */
