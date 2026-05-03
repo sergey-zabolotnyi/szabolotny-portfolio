@@ -31,7 +31,25 @@ body {
   color: var(--fg);
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
-  cursor: none;
+  cursor: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
 }
 
 
@@ -284,7 +302,7 @@ nav.scrolled {
   text-decoration: none;
   border-radius: 2px;
   border: none;
-  cursor: none;
+  cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
@@ -858,7 +876,7 @@ nav.scrolled {
   letter-spacing: 0.1em;
 }
 
-/* AI Expert Badge */
+/* Shipped Products Badge */
 .badge-new {
   background: rgba(77, 255, 180, 0.15);
   border: 1px solid rgba(77, 255, 180, 0.3);
@@ -1131,6 +1149,74 @@ section {
 
 
 /* ============================================
+   ENGINEERING PROOF
+   ============================================ */
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.proof-card {
+  min-height: 250px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 30px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s, background 0.3s;
+}
+
+.proof-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(77, 255, 180, 0.06), rgba(124, 111, 255, 0.04));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.proof-card:hover {
+  border-color: rgba(77, 255, 180, 0.32);
+  background: #0a0a1d;
+  transform: translateY(-4px);
+}
+
+.proof-card:hover::before {
+  opacity: 1;
+}
+
+.proof-kicker {
+  position: relative;
+  z-index: 1;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--accent3);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 22px;
+}
+
+.proof-card h3 {
+  position: relative;
+  z-index: 1;
+  font-family: 'Syne', sans-serif;
+  font-size: 21px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.proof-card p {
+  position: relative;
+  z-index: 1;
+  color: #cfcfdd;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* ============================================
    TIMELINE SECTION
    ============================================ */
 
@@ -1225,7 +1311,7 @@ section {
   color: inherit;
   position: relative;
   overflow: hidden;
-  cursor: none;
+  cursor: pointer;
   transition: border-color 0.3s;
 }
 
@@ -1292,6 +1378,26 @@ section {
   font-style: italic;
 }
 
+.pmetrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  max-width: 720px;
+}
+
+.pmetrics span {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #d6fff0;
+  background: rgba(77, 255, 180, 0.06);
+  border: 1px solid rgba(77, 255, 180, 0.18);
+  border-radius: 2px;
+  padding: 5px 9px;
+  letter-spacing: 0.03em;
+}
+
 .pstack {
   display: flex;
   gap: 8px;
@@ -1345,10 +1451,13 @@ section {
 
 .parr {
   font-family: 'DM Mono', monospace;
-  font-size: 24px;
+  font-size: 12px;
   color: var(--border);
   transition: color 0.3s, transform 0.3s;
   padding-top: 6px;
+  white-space: nowrap;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .pcard:hover .parr {
@@ -1527,7 +1636,7 @@ section {
   outline: none;
   resize: none;
   border-radius: 2px;
-  cursor: none;
+  cursor: text;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
@@ -1551,7 +1660,7 @@ section {
   text-transform: uppercase;
   padding: 17px;
   border-radius: 2px;
-  cursor: none;
+  cursor: pointer;
   transition: opacity 0.2s, transform 0.2s, box-shadow 0.3s;
 }
 
@@ -2329,6 +2438,10 @@ footer p {
     grid-template-columns: 1fr;
   }
 
+  .proof-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .pcard {
     grid-template-columns: 48px 1fr 32px;
     gap: 16px;
@@ -2402,7 +2515,7 @@ footer p {
   font-family: 'Syne', sans-serif;
   font-size: 13px;
   font-weight: 600;
-  cursor: none;
+  cursor: pointer;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
@@ -2479,6 +2592,11 @@ footer p {
 
 @media (max-width: 600px) {
   .blog-grid { grid-template-columns: 1fr; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .proof-card { min-height: auto; }
+  .pcard { grid-template-columns: 1fr; }
+  .pidx { display: none; }
+  .parr { padding-top: 0; }
 }
 
 /* Simple fix - hide custom cursor inside chat, show default */
