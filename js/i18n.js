@@ -189,7 +189,7 @@ const translations = {
     about_p3: 'У Дрездені. Відкритий до найму та фриланс-проєктів.',
     stat_projects: 'Проєктів', stat_exp: 'Років досвіду', stat_german: 'Німецька 2025', stat_lang: 'Мов',
     skill_frontend: 'Frontend', skill_backend: 'Backend', skill_db: 'Бази даних', skill_ai: 'AI та інтеграції', skill_cloud: 'Cloud та DevOps',
-    timeline_title: 'Кар'єра', timeline_1_title: 'AI SaaS розробник', timeline_1_desc: 'SolarCheck AI, MeisterDesk, DreamDeck — самостійна розробка AI-продуктів від концепції до деплою на власному VPS.',
+    timeline_title: "Кар'єра", timeline_1_title: 'AI SaaS розробник', timeline_1_desc: 'SolarCheck AI, MeisterDesk, DreamDeck — самостійна розробка AI-продуктів від концепції до деплою на власному VPS.',
     timeline_2_title: 'AI Fullstack розробник', timeline_2_desc: 'Smart-Letter, GeschenkFox, RenovAI — FastAPI + React/SvelteKit, Groq/OpenAI API, власна VPS-інфраструктура.',
     timeline_3_title: 'Java Backend розробник — Starta Institut (Tel-Ran), Берлін', timeline_3_desc: '960г Java Web Development: Spring Boot, REST API, PostgreSQL, DevOps. Дипломний проєкт: CRM-система. Сертифікат DEKRA.',
     timeline_4_title: 'Технічна підтримка — Німеччина', timeline_4_desc: 'Teleperformance Герліц (2017–2019), Concentrix Берлін (2021–2022): підтримка Apple та Facebook Business. Паралельно: самонавчання React, Python, FastAPI.',
