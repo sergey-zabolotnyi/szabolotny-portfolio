@@ -3,8 +3,8 @@
 function createHeroParticles() {
   const container = document.getElementById('heroParticles');
   if (!container) return;
-  
-  const particleCount = 50;
+
+  const particleCount = innerWidth <= 768 ? 15 : 50;
   
   for (let i = 0; i < particleCount; i++) {
     const particle = document.createElement('div');

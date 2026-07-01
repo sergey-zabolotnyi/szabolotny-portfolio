@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Serge Zabolotny — AI Fullstack Developer</title>
-<meta name="description" content="AI Fullstack Developer in Dresden. SvelteKit, FastAPI, OpenAI, LangChain.">
+<meta name="description" content="AI Fullstack Developer in Dresden. Next.js, SvelteKit, FastAPI, OpenAI. Baue u.a. ScamGuard — KI-Betrugserkennung für Jobsuchende.">
 
 <!-- FAVICON SVG inline -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%237c6fff'/><text x='50%25' y='54%25' font-family='sans-serif' font-weight='800' font-size='14' fill='white' text-anchor='middle' dominant-baseline='middle'>SZ</text></svg>">
@@ -13,7 +13,7 @@
 <!-- SEO & Open Graph -->
 <meta name="robots" content="index, follow">
 <meta name="author" content="Serge Zabolotny">
-<meta name="keywords" content="AI Developer, Fullstack Developer, Dresden, FastAPI, React, SvelteKit, OpenAI, LangChain, Python">
+<meta name="keywords" content="AI Developer, Fullstack Developer, Dresden, Next.js, FastAPI, React, SvelteKit, OpenAI, LangChain, Python, Scam Detection">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zabolotny.de">
 <meta property="og:title" content="Serge Zabolotny — AI Fullstack Developer">
@@ -30,6 +30,37 @@
 <link rel="canonical" href="https://zabolotny.de">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- Schema.org structured data for Google rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Serge Zabolotny",
+  "url": "https://zabolotny.de",
+  "image": "https://zabolotny.de/assets/avatar.png",
+  "jobTitle": "AI Fullstack Developer",
+  "description": "AI Fullstack Developer in Dresden. Baue KI-Produkte mit Next.js, SvelteKit, FastAPI und OpenAI — von der Idee bis zum Deployment auf eigener VPS-Infrastruktur.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dresden",
+    "addressCountry": "DE"
+  },
+  "email": "mailto:szabolotnyi@icloud.com",
+  "sameAs": [
+    "https://linkedin.com/in/szabolotnyi",
+    "https://github.com/sergey-zabolotnyi"
+  ],
+  "knowsAbout": [
+    "Next.js", "React", "SvelteKit", "TypeScript", "Python", "FastAPI",
+    "OpenAI API", "LangChain", "PostgreSQL", "Cloud Deployment"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Self-employed / Freelance"
+  }
+}
+</script>
 
 <!-- Vercel Analytics -->
 <script defer src="/_vercel/insights/script.js"></script>
@@ -98,6 +129,17 @@
 .tcard-name { font-size: 0.88rem; font-weight: 700; color: #e8e8ff; }
 .tcard-role { font-size: 0.75rem; color: rgba(232,232,255,0.45); margin-top: 2px; font-family: 'DM Mono', monospace; }
 
+/* === GITHUB ACTIVITY === */
+#github { padding: 70px max(56px, calc((100vw - 1400px) / 2 + 56px)); text-align: center; }
+.github-intro { color: rgba(232,232,255,0.65); font-size: 0.95rem; max-width: 600px; margin: 0 auto 32px; line-height: 1.7; }
+.github-graph-link { display: inline-block; max-width: 100%; }
+.github-graph { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid rgba(124,111,255,0.18); background: rgba(255,255,255,0.02); padding: 16px; transition: border-color .3s; }
+.github-graph-link:hover .github-graph { border-color: rgba(77,255,180,0.35); }
+.github-btn { display: inline-flex; margin-top: 28px; }
+@media (max-width: 900px) {
+  .github-graph { padding: 8px; }
+}
+
 /* === VISITOR COUNTER === */
 .footer-visitors { display: flex; align-items: center; gap: 8px; margin-top: 0; justify-content: flex-start; opacity: .7; margin-right: auto; padding-left: 24px; border-left: 1px solid var(--border, #383853); }
 .visitor-dot { width: 6px; height: 6px; border-radius: 50%; background: #4dffb4; animation: pulse 2s ease-in-out infinite; }
@@ -124,6 +166,7 @@
     <li><a href="#about" onclick="closeMob()"><span data-i18n="nav_about">Über mich</span></a></li>
     <li><a href="#skills" onclick="closeMob()"><span data-i18n="nav_skills">Skills</span></a></li>
     <li><a href="#projects" onclick="closeMob()"><span data-i18n="nav_projects">Projekte</span></a></li>
+    <li><a href="#github" onclick="closeMob()"><span data-i18n="github_title">GitHub</span></a></li>
     <li><a href="#contact" onclick="closeMob()"><span data-i18n="nav_contact">Kontakt</span></a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:10px;">
@@ -235,8 +278,8 @@
 
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span>AI Integration</span><span class="sep">✦</span><span>FastAPI</span><span class="sep">✦</span><span>SvelteKit</span><span class="sep">✦</span><span>React</span><span class="sep">✦</span><span>OpenAI API</span><span class="sep">✦</span><span>LangChain</span><span class="sep">✦</span><span>Python</span><span class="sep">✦</span><span>PostgreSQL</span><span class="sep">✦</span><span>Telegram Bot</span><span class="sep">✦</span><span>WordPress</span><span class="sep">✦</span><span>Java Spring</span><span class="sep">✦</span>
-    <span>AI Integration</span><span class="sep">✦</span><span>FastAPI</span><span class="sep">✦</span><span>SvelteKit</span><span class="sep">✦</span><span>React</span><span class="sep">✦</span><span>OpenAI API</span><span class="sep">✦</span><span>LangChain</span><span class="sep">✦</span><span>Python</span><span class="sep">✦</span><span>PostgreSQL</span><span class="sep">✦</span><span>Telegram Bot</span><span class="sep">✦</span><span>WordPress</span><span class="sep">✦</span><span>Java Spring</span><span class="sep">✦</span>
+    <span>AI Integration</span><span class="sep">✦</span><span>Next.js</span><span class="sep">✦</span><span>FastAPI</span><span class="sep">✦</span><span>SvelteKit</span><span class="sep">✦</span><span>React</span><span class="sep">✦</span><span>OpenAI API</span><span class="sep">✦</span><span>LangChain</span><span class="sep">✦</span><span>Python</span><span class="sep">✦</span><span>PostgreSQL</span><span class="sep">✦</span><span>Telegram Bot</span><span class="sep">✦</span><span>WordPress</span><span class="sep">✦</span><span>Java Spring</span><span class="sep">✦</span>
+    <span>AI Integration</span><span class="sep">✦</span><span>Next.js</span><span class="sep">✦</span><span>FastAPI</span><span class="sep">✦</span><span>SvelteKit</span><span class="sep">✦</span><span>React</span><span class="sep">✦</span><span>OpenAI API</span><span class="sep">✦</span><span>LangChain</span><span class="sep">✦</span><span>Python</span><span class="sep">✦</span><span>PostgreSQL</span><span class="sep">✦</span><span>Telegram Bot</span><span class="sep">✦</span><span>WordPress</span><span class="sep">✦</span><span>Java Spring</span><span class="sep">✦</span>
   </div>
 </div>
 
@@ -277,12 +320,12 @@
         <span>Next.js</span><span>PostgreSQL</span><span>Drizzle ORM</span><span>1Blue</span>
       </div>
     </a>
-    <a href="https://remont-online.net" target="_blank" rel="noopener noreferrer" class="featured-case">
-      <div class="featured-topline"><span data-i18n="featured_2_type">AI MVP · Renovierung</span><span>2025</span></div>
-      <h3>RenovAI</h3>
-      <p data-i18n="featured_2_desc">AI analysiert Raumfotos und erstellt strukturierte Kostenschätzungen mit Arbeiten, Materialien, Preisen und Designvorschlägen.</p>
+    <a href="https://scamguard.zabolotny.de/" target="_blank" rel="noopener noreferrer" class="featured-case">
+      <div class="featured-topline"><span data-i18n="featured_2_type">Social Impact · AI</span><span>2026</span></div>
+      <h3>ScamGuard</h3>
+      <p data-i18n="featured_2_desc">Mehrsprachige Plattform, die Stellenanzeigen in Echtzeit auf Betrugsmuster prüft und Jobsuchende vor Scams schützt.</p>
       <div class="featured-proof">
-        <span>React</span><span>FastAPI</span><span>OpenAI Vision</span>
+        <span>Next.js</span><span>AI Classification</span><span>Multilingual SSR</span>
       </div>
     </a>
     <a href="https://solarnex.zabolotny.de/" target="_blank" rel="noopener noreferrer" class="featured-case">
@@ -300,7 +343,7 @@
 <section id="skills">
   <div class="sec-head reveal"><span class="sec-num">02 / <span data-i18n="nav_skills">Skills</span></span><div class="sec-line"></div></div>
   <div class="skills-wrap reveal-scale">
-    <div class="skill-group"><div class="sgt" data-i18n="skill_frontend">Frontend</div><div class="skill-pills"><span class="pill">React</span><span class="pill">SvelteKit</span><span class="pill">Tailwind CSS</span><span class="pill">JavaScript ES6+</span><span class="pill">HTML5/CSS3</span><span class="pill">Vite</span></div></div>
+    <div class="skill-group"><div class="sgt" data-i18n="skill_frontend">Frontend</div><div class="skill-pills"><span class="pill">Next.js</span><span class="pill">React</span><span class="pill">SvelteKit</span><span class="pill">TypeScript</span><span class="pill">Tailwind CSS</span><span class="pill">JavaScript ES6+</span><span class="pill">HTML5/CSS3</span><span class="pill">Vite</span></div></div>
     <div class="skill-group"><div class="sgt" data-i18n="skill_backend">Backend</div><div class="skill-pills"><span class="pill">Python</span><span class="pill">FastAPI</span><span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">REST API</span><span class="pill">Telegram Bot API</span><span class="pill">aiogram 3</span></div></div>
     <div class="skill-group"><div class="sgt" data-i18n="skill_db">Datenbanken</div><div class="skill-pills"><span class="pill">PostgreSQL</span><span class="pill">MySQL</span><span class="pill">Supabase</span><span class="pill">Redis</span><span class="pill">GIN Index</span></div></div>
     <div class="skill-group"><div class="sgt" data-i18n="skill_ai">AI & Integrationen</div><div class="skill-pills"><span class="pill">OpenAI API</span><span class="pill">Groq API</span><span class="pill">LangChain</span><span class="pill">RAG</span><span class="pill">Prompt Engineering</span><span class="pill">Tesseract OCR</span><span class="pill">Google Solar API</span><span class="pill">Stripe</span></div></div>
@@ -377,6 +420,7 @@
     <button class="pf-btn" data-filter="done" data-i18n="filter_done">Done</button>
   </div>
   <div class="projects-grid" id="projectsGrid">
+    <a href="https://scamguard.zabolotny.de/" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="live" data-url="https://scamguard.zabolotny.de/"><div class="pidx">10</div><div class="pbody"><h3>ScamGuard <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_scamguard_desc">KI-gestützte Plattform, die Stellenanzeigen und Nachrichten automatisch auf Betrugsmuster analysiert — mehrsprachig, mit eigenen SSR-Routen pro Sprache und lokalem Verlauf im Browser.</p><p class="prole" data-i18n="proj_scamguard_role">Alleinige Entwicklung: Next.js App Router, mehrsprachige SSR-Routen, KI-Klassifikation, Deployment auf eigenem VPS</p><div class="pmetrics"><span data-i18n="proj_scamguard_proof_1">Mehrsprachige SSR-Routen ([lang])</span><span data-i18n="proj_scamguard_proof_2">KI-Betrugserkennung in Echtzeit</span><span data-i18n="proj_scamguard_proof_3">Verlaufs-TTL im localStorage</span></div><div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">AI Classification</span><span class="ptag">i18n SSR</span><span class="ptag">VPS · nginx · PM2</span></div></div><div class="parr">Live ↗</div></a>
     <a href="https://meistermeld.de" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://meistermeld.de" data-preview="assets/previews/meisterdeck.jpg"><div class="pidx">09</div><div class="pbody"><h3>MeisterMeld <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_meisterdesk_desc">Feldservice-Management für Handwerker: Kunden-, Auftrags- & Mitarbeiterverwaltung, PWA, KI-Berichte, Sprach-/Foto-Uploads.</p><p class="prole" data-i18n="proj_meisterdesk_role">Alleinige Entwicklung: Next.js, Drizzle ORM, PostgreSQL, PWA, AI-Integration, 1Blue-Deployment</p><div class="pmetrics"><span data-i18n="proj_meisterdesk_proof_1">PWA für mobile Teams</span><span data-i18n="proj_meisterdesk_proof_2">Drizzle ORM Datenmodell</span><span data-i18n="proj_meisterdesk_proof_3">Deployment auf 1Blue Server</span></div><div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">Drizzle ORM</span><span class="ptag">PostgreSQL</span><span class="ptag">PWA</span><span class="ptag">AI Reports</span><span class="ptag">1Blue</span></div></div><div class="parr">Live ↗</div></a>
     <a href="https://remont-online.net" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://remont-online.net"><div class="pidx">08</div><div class="pbody"><h3>RenovAI <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_remont_desc">KI analysiert Raumfotos oder Grundrisse und erstellt automatisch eine detaillierte Kostenkalkulation mit Arbeitsleistungen, Materialien, Preisen und Designvorschlägen.</p><p class="prole" data-i18n="proj_remont_role">Alleinige Entwicklung: React, FastAPI, PostgreSQL, OpenAI Vision, VPS-Deployment</p><div class="pmetrics"><span data-i18n="proj_remont_proof_1">Vision-Analyse von Raumfotos</span><span data-i18n="proj_remont_proof_2">Strukturierte Kostenschätzung</span><span data-i18n="proj_remont_proof_3">FastAPI Backend auf VPS</span></div><div class="pstack"><span class="ptag">React</span><span class="ptag">FastAPI</span><span class="ptag">PostgreSQL</span><span class="ptag">OpenAI Vision</span><span class="ptag">VPS</span></div></div><div class="parr">Live ↗</div></a>
     <a href="https://geschenkfox.de" target="_blank" rel="noopener noreferrer" class="pcard reveal d3" data-status="live" data-url="https://geschenkfox.de" data-preview="assets/previews/geschenkfox.jpg"><div class="pidx">07</div><div class="pbody"><h3>GeschenkFox.de <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_geschenkfox_desc">KI-Geschenkfinder mit interaktivem Quiz für den deutschen Markt. SEO-optimierte Architektur.</p><p class="prole" data-i18n="proj_geschenkfox_role">Alleinige Umsetzung: Design (Figma), Frontend, SEO, UX-Konzept</p><div class="pmetrics"><span data-i18n="proj_geschenkfox_proof_1">SEO-orientierte SvelteKit Architektur</span><span data-i18n="proj_geschenkfox_proof_2">Quiz UX für Kaufintention</span><span data-i18n="proj_geschenkfox_proof_3">AI-Empfehlungslogik</span></div><div class="pstack"><span class="ptag">SvelteKit + Vite</span><span class="ptag">Tailwind CSS</span><span class="ptag">OpenAI API</span><span class="ptag">Vercel</span></div></div><div class="parr">Live ↗</div></a>
@@ -469,9 +513,23 @@
   </div>
 </section>
 
+<!-- GITHUB ACTIVITY -->
+<section id="github">
+  <div class="sec-head reveal"><span class="sec-num">08 / <span data-i18n="github_title">GitHub</span></span><div class="sec-line"></div></div>
+  <p class="github-intro reveal" data-i18n="github_intro">Öffentlicher Code und Commit-Aktivität — für alle, die vor der Zusammenarbeit gerne selbst reinschauen.</p>
+  <a href="https://github.com/sergey-zabolotnyi" target="_blank" rel="noopener noreferrer" class="github-graph-link reveal">
+    <img src="https://ghchart.rshah.org/7c6fff/sergey-zabolotnyi.svg" alt="GitHub contribution graph — sergey-zabolotnyi" class="github-graph" loading="lazy">
+  </a>
+  <div class="reveal">
+    <a href="https://github.com/sergey-zabolotnyi" target="_blank" rel="noopener noreferrer" class="btn-outline github-btn">
+      <span data-i18n="github_cta">GitHub-Profil ansehen →</span>
+    </a>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
-  <div class="sec-head reveal"><span class="sec-num">08 / <span data-i18n="nav_contact">Kontakt</span></span><div class="sec-line"></div></div>
+  <div class="sec-head reveal"><span class="sec-num">09 / <span data-i18n="nav_contact">Kontakt</span></span><div class="sec-line"></div></div>
   <div class="contact-layout">
     <div class="contact-left reveal-left">
       <h2><span data-i18n="contact_title1">Lass uns</span> <span class="grad" data-i18n="contact_title2">zusammen</span> <span data-i18n="contact_title3">etwas bauen.</span></h2>
@@ -547,7 +605,7 @@
         <div class="chat-avatar-badge">SZ</div>
         <div class="chat-head-texts">
           <div class="chat-head-title" id="chatTitle">Ask AI about Serge</div>
-          <div class="chat-head-sub">Powered by Groq · llama-3.1</div>
+          <div class="chat-head-sub" data-i18n="chat_subtitle">AI Assistant</div>
         </div>
       </div>
       <button class="chat-tog" id="chatTog" onclick="event.stopPropagation(); toggleChat()">+</button>

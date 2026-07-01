@@ -5,20 +5,24 @@ const cur = document.getElementById('cur');
 const cring = document.getElementById('cring');
 let mx = 0, my = 0, rx = 0, ry = 0;
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX;
-  my = e.clientY;
-  cur.style.left = (mx - 4) + 'px';
-  cur.style.top = (my - 4) + 'px';
-});
+const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-(function loop() {
-  rx += (mx - rx - 20) * 0.1;
-  ry += (my - ry - 20) * 0.1;
-  cring.style.left = rx + 'px';
-  cring.style.top = ry + 'px';
-  requestAnimationFrame(loop);
-})();
+if (hasFinePointer && cur && cring) {
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX;
+    my = e.clientY;
+    cur.style.left = (mx - 4) + 'px';
+    cur.style.top = (my - 4) + 'px';
+  });
+
+  (function loop() {
+    rx += (mx - rx - 20) * 0.1;
+    ry += (my - ry - 20) * 0.1;
+    cring.style.left = rx + 'px';
+    cring.style.top = ry + 'px';
+    requestAnimationFrame(loop);
+  })();
+}
 
 /* ========== NAVIGATION ========== */
 window.addEventListener('scroll', () => {
@@ -36,15 +40,17 @@ function closeMob() {
 }
 
 /* ========== PARALLAX ========== */
-document.addEventListener('mousemove', e => {
-  const xp = (e.clientX / innerWidth - 0.5) * 24;
-  const yp = (e.clientY / innerHeight - 0.5) * 24;
-  document.getElementById('hglow').style.transform = `translate(calc(-50% + ${xp}px), calc(-50% + ${yp}px))`;
-  const hn = document.querySelector('.hero-name');
-  if (hn) hn.style.transform = `translate(${xp * 0.1}px, ${yp * 0.1}px)`;
-  const av = document.querySelector('.avatar-outer');
-  if (av) av.style.transform = `translate(${xp * -0.08}px, ${yp * -0.08}px)`;
-});
+if (hasFinePointer) {
+  document.addEventListener('mousemove', e => {
+    const xp = (e.clientX / innerWidth - 0.5) * 24;
+    const yp = (e.clientY / innerHeight - 0.5) * 24;
+    document.getElementById('hglow').style.transform = `translate(calc(-50% + ${xp}px), calc(-50% + ${yp}px))`;
+    const hn = document.querySelector('.hero-name');
+    if (hn) hn.style.transform = `translate(${xp * 0.1}px, ${yp * 0.1}px)`;
+    const av = document.querySelector('.avatar-outer');
+    if (av) av.style.transform = `translate(${xp * -0.08}px, ${yp * -0.08}px)`;
+  });
+}
 
 /* ========== ORBIT DOTS ========== */
 const ow = document.getElementById('orbitWrap');

@@ -2,7 +2,10 @@
 
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
-const DPR = devicePixelRatio || 1;
+const DPR = Math.min(devicePixelRatio || 1, 2); // cap DPR: retina 3x wastes fill-rate for no visible gain
+
+const isSmallScreen = innerWidth <= 768;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function resize() {
   canvas.width = innerWidth * DPR;
@@ -38,9 +41,11 @@ function mkStars(n, minR, maxR, alpha) {
   }));
 }
 
-const stars1 = mkStars(300, 0.2, 0.7, 0.5);
-const stars2 = mkStars(150, 0.5, 1.2, 0.75);
-const stars3 = mkStars(55, 1, 2.2, 1);
+// Fewer points on phones/tablets: same visual language, far less per-frame work
+const starScale = isSmallScreen ? 0.35 : 1;
+const stars1 = mkStars(Math.round(300 * starScale), 0.2, 0.7, 0.5);
+const stars2 = mkStars(Math.round(150 * starScale), 0.5, 1.2, 0.75);
+const stars3 = mkStars(Math.round(55 * starScale), 1, 2.2, 1);
 
 const nebulae = [
   { x: 0.15, y: 0.22, rx: 280, ry: 190, color: 'rgba(124,111,255,', a: 0.042 },
@@ -97,7 +102,7 @@ function mkGalaxy(cxf, cyf, radius, angle, color, arms, density) {
   return { pts, cxf, cyf, color, rot: 0, rotSpeed: (Math.random() - 0.5) * 0.00007 };
 }
 
-const galaxies = [
+const galaxies = isSmallScreen ? [] : [
   mkGalaxy(0.83, 0.17, 105, 0.4, 'rgba(180,170,255,', 3, 50),
   mkGalaxy(0.11, 0.66, 78, 1.2, 'rgba(140,220,190,', 2, 38),
   mkGalaxy(0.6, 0.9, 62, 2.5, 'rgba(255,175,155,', 3, 32)
@@ -150,16 +155,12 @@ function spawnMeteor() {
 }
 
 const meteorInterval = setInterval(() => {
-  if (!document.hidden && Math.random() < 0.6) spawnMeteor();
+  if (!isSmallScreen && !prefersReducedMotion && !document.hidden && Math.random() < 0.6) spawnMeteor();
 }, 1800);
 
 let tick = 0;
 
-(function draw(timestamp) {
-  if (document.hidden) {
-    requestAnimationFrame(draw);
-    return;
-  }
+function drawFrame(timestamp) {
   tick++;
   ctx.clearRect(0, 0, W(), H());
   nebulae.forEach(drawNebula);
@@ -208,5 +209,18 @@ let tick = 0;
     ctx.stroke();
     if (m.life >= m.maxLife) meteors.splice(i, 1);
   }
-  requestAnimationFrame(draw);
-})();
+}
+
+if (prefersReducedMotion) {
+  // Respect OS-level motion preference: render once, no animation loop, no CPU/battery drain.
+  drawFrame(0);
+} else {
+  (function draw(timestamp) {
+    if (document.hidden) {
+      requestAnimationFrame(draw);
+      return;
+    }
+    drawFrame(timestamp);
+    requestAnimationFrame(draw);
+  })();
+}
