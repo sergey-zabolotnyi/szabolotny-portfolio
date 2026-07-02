@@ -28,8 +28,7 @@
 <meta name="google-site-verification" content="4xWp3i40V2OTIZ1Z2g99UXm8QYJjhQFD1uGuqKpPHIU" />
 
 <link rel="canonical" href="https://zabolotny.de">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/fonts.css">
 
 <!-- Schema.org structured data for Google rich results -->
 <script type="application/ld+json">
@@ -143,16 +142,24 @@
 /* === VISITOR COUNTER === */
 .footer-visitors { display: flex; align-items: center; gap: 8px; margin-top: 0; justify-content: flex-start; opacity: .7; margin-right: auto; padding-left: 24px; border-left: 1px solid var(--border, #383853); }
 .visitor-dot { width: 6px; height: 6px; border-radius: 50%; background: #4dffb4; animation: pulse 2s ease-in-out infinite; }
-</style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBN83KRBK2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-BBN83KRBK2');
-</script>
+/* === COOKIE CONSENT === */
+.cookie-consent { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10000; padding: 16px; display: none; justify-content: center; pointer-events: none; }
+.cookie-consent.is-visible { display: flex; }
+.cookie-consent-inner { pointer-events: auto; max-width: 720px; width: 100%; background: rgba(18,18,32,0.97); border: 1px solid rgba(124,111,255,0.25); border-radius: 14px; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; backdrop-filter: blur(12px); box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+.cookie-consent-inner p { flex: 1 1 320px; font-size: 0.85rem; line-height: 1.6; color: rgba(232,232,255,0.8); margin: 0; }
+.cookie-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-actions button { padding: 10px 18px; font-size: 0.85rem; border-radius: 8px; cursor: pointer; }
+.footer-legal { margin-top: 8px; }
+.footer-link-btn { background: none; border: none; color: rgba(232,232,255,0.55); font-size: 0.8rem; cursor: pointer; text-decoration: underline; padding: 0; font-family: inherit; }
+.footer-link-btn:hover { color: rgba(232,232,255,0.85); }
+@media (max-width: 600px) {
+  .cookie-consent-inner { flex-direction: column; align-items: stretch; }
+  .cookie-actions { justify-content: stretch; }
+  .cookie-actions button { flex: 1; }
+}
+</style>
+<script src="js/consent.js" defer></script>
 </head>
 <body>
 
@@ -590,11 +597,29 @@
 
 <footer>
   <p>© <span id="currentYear">2026</span> <span class="fa">Serge Zabolotny</span> <span class="footer-sep">|</span> zabolotny.de <span class="footer-sep">|</span> <span data-i18n="footer_deployed">Deployed auf</span> <span class="fa">Vercel</span> <span class="footer-sep">|</span> <span class="fa3">Dresden</span></p>
+  <p class="footer-legal">
+    <a href="impressum.html" class="footer-link-btn" data-i18n="footer_impressum">Impressum</a>
+    <span class="footer-sep">|</span>
+    <a href="datenschutz.html" class="footer-link-btn" data-i18n="footer_datenschutz">Datenschutz</a>
+    <span class="footer-sep">|</span>
+    <button type="button" class="footer-link-btn" onclick="window.reopenCookieBanner && window.reopenCookieBanner()" data-i18n="footer_cookie_settings">Cookie-Einstellungen</button>
+  </p>
   <div class="footer-visitors footer-infra">
     <span class="visitor-dot"></span>
     <span data-i18n="footer_infra">Portfolio auf Vercel · APIs auf VPS · AI-Proxy auf Cloudflare</span>
   </div>
 </footer>
+
+<!-- COOKIE CONSENT -->
+<div id="cookieConsent" class="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <div class="cookie-consent-inner">
+    <p><span data-i18n="cookie_text">Diese Website nutzt Google Analytics, um zu verstehen, wie Besucher die Seite nutzen. Deine IP-Adresse wird dabei nur mit deiner Zustimmung an Google übermittelt.</span> <a href="datenschutz.html" data-i18n="cookie_privacy_link" style="color:var(--accent3,#4dffb4);">Mehr dazu →</a></p>
+    <div class="cookie-actions">
+      <button id="cookieDecline" class="btn-outline" type="button" data-i18n="cookie_decline">Ablehnen</button>
+      <button id="cookieAccept" class="btn-glow" type="button" data-i18n="cookie_accept">Akzeptieren</button>
+    </div>
+  </div>
+</div>
 
 <!-- AI CHAT -->
 <div id="ai-chat">
