@@ -1,28 +1,6 @@
 // main.js - Main application logic
 
-/* ========== CURSOR ========== */
-const cur = document.getElementById('cur');
-const cring = document.getElementById('cring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-
 const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-if (hasFinePointer && cur && cring) {
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-    cur.style.left = (mx - 4) + 'px';
-    cur.style.top = (my - 4) + 'px';
-  });
-
-  (function loop() {
-    rx += (mx - rx - 20) * 0.1;
-    ry += (my - ry - 20) * 0.1;
-    cring.style.left = rx + 'px';
-    cring.style.top = ry + 'px';
-    requestAnimationFrame(loop);
-  })();
-}
 
 /* ========== NAVIGATION ========== */
 window.addEventListener('scroll', () => {

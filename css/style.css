@@ -34,53 +34,9 @@ body {
   cursor: auto;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: none;
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  .cursor,
-  .cursor-ring {
-    display: none !important;
-  }
-}
-
 a,
 button {
   cursor: pointer;
-}
-
-
-/* ============================================
-   CURSOR
-   ============================================ */
-
-.cursor {
-  width: 8px;
-  height: 8px;
-  background: var(--accent);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: screen;
-  transition: transform 0.15s, background 0.2s;
-}
-
-.cursor-ring {
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(124, 111, 255, 0.35);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9998;
 }
 
 #particles {
@@ -2763,7 +2719,6 @@ footer p {
    ============================================ */
 
 @media (max-width: 900px) {
-  .cursor, .cursor-ring { display: none !important; }
   .pcard-preview { display: none !important; }
   .blog-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonials-grid { grid-template-columns: 1fr; max-width: 100%; }
@@ -2778,21 +2733,13 @@ footer p {
   .parr { padding-top: 0; }
 }
 
-/* Simple fix - hide custom cursor inside chat, show default */
-#ai-chat,
-#ai-chat * {
-  cursor: auto !important;
-}
-
-/* But keep pointer for buttons */
 #ai-chat button,
 #ai-chat .chat-head,
 #ai-chat .chat-send,
 #ai-chat .chat-sug {
-  cursor: pointer !important;
+  cursor: pointer;
 }
 
-/* Text cursor for input */
 #ai-chat input {
-  cursor: text !important;
+  cursor: text;
 }
