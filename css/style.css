@@ -2743,3 +2743,38 @@ footer p {
 #ai-chat input {
   cursor: text;
 }
+
+/* picture wrapper must not break avatar sizing */
+.avatar-circle picture { display: contents; }
+
+/* === ACCESSIBILITY === */
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 10000;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #7c6fff;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top .2s;
+}
+.skip-link:focus { top: 16px; }
+#main:focus { outline: none; }
+
+:focus-visible {
+  outline: 2px solid #4dffb4;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
