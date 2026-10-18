@@ -2781,3 +2781,8 @@ footer p {
 
 /* language switcher is now made of links */
 a.lang-btn { text-decoration: none; }
+
+/* Mobile: decorative hero glow (800px) widened the layout viewport, pushing the
+   language switcher, burger and CTA buttons off-screen. Clip horizontal overflow. */
+html { overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
