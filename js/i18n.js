@@ -427,7 +427,7 @@ function setLang(lang) {
   if (calLabel && t.cal_btn) calLabel.textContent = t.cal_btn;
 
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-  localStorage.setItem('lang', lang);
+  window.currentLang = lang;
   document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
   
   if (lang === 'de') currentPhrases = phrasesDE;
@@ -441,26 +441,20 @@ function setLang(lang) {
 }
 
 (function() {
-  const supported = ['de', 'en', 'ru', 'ua'];
+  // The page language comes from the URL (/, /en/, /ru/, /ua/); the build script
+  // pre-renders all texts into each page, so setLang here only syncs dynamic parts
+  // (typing effect, chat welcome, form/chat language).
+  const pageLang = document.documentElement.dataset.pageLang || 'de';
 
-  function detectBrowserLang() {
-    const langs = navigator.languages || [navigator.language || 'de'];
-    for (const l of langs) {
-      const code = l.toLowerCase().slice(0, 2);
-      if (code === 'uk') return 'ua';
-      if (supported.includes(code)) return code;
-    }
-    return 'de';
-  }
-
-  const savedLang = localStorage.getItem('lang');
-  const lang = savedLang || detectBrowserLang();
+  // Remember an explicit choice so "/" can forward returning visitors.
+  document.querySelectorAll('a.lang-btn').forEach(a => {
+    a.addEventListener('click', () => {
+      try { localStorage.setItem('lang', a.dataset.lang); } catch (e) {}
+    });
+  });
 
   function applyLang() {
-    setLang(lang);
-    if (typeof initChatWelcome === 'function') {
-      initChatWelcome(lang);
-    }
+    setLang(pageLang);
   }
 
   if (document.readyState === 'loading') {
