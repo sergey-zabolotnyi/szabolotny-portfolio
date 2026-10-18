@@ -175,7 +175,7 @@ if (contactForm) {
     const name = document.getElementById('formName').value;
     const email = document.getElementById('formEmail').value;
     const message = document.getElementById('formMessage').value;
-    const currentLang = localStorage.getItem('lang') || 'de';
+    const currentLang = window.currentLang || document.documentElement.dataset.pageLang || 'de';
     
     // Маппинг языков для API
     const langMap = { de: 'de', en: 'en', ru: 'ru', ua: 'ua' };
@@ -374,7 +374,7 @@ async function sendChat() {
   chatHistory.push({ role: 'user', content: text });
   const typing = addMsg('...', 'a');
   try {
-    const currentLang = localStorage.getItem('lang') || 'de';
+    const currentLang = window.currentLang || document.documentElement.dataset.pageLang || 'de';
     const res = await fetch('https://zabolotny.szabolotnyi777.workers.dev', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

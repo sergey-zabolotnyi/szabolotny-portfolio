@@ -2778,3 +2778,6 @@ footer p {
     scroll-behavior: auto !important;
   }
 }
+
+/* language switcher is now made of links */
+a.lang-btn { text-decoration: none; }
