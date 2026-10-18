@@ -381,6 +381,7 @@ async function sendChat() {
       body: JSON.stringify({ lang: currentLang, messages: chatHistory })
     });
     const data = await res.json();
+    if (!res.ok || data.error) console.error('[AI chat] API error:', res.status, data.error || data);
     const reply = data.choices?.[0]?.message?.content || 'Sorry, something went wrong.';
     typing.textContent = reply;
     chatHistory.push({ role: 'assistant', content: reply });
