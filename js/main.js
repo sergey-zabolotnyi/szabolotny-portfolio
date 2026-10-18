@@ -451,3 +451,53 @@ window.addEventListener('resize', () => {
   clearTimeout(mobileChatTimeout);
   initMobileChatBehavior();
 });
+// === Engineering Notes: category filter + "show all" ===
+(function () {
+  const grid = document.querySelector('.notes-grid');
+  if (!grid) return;
+  const notes = Array.from(grid.querySelectorAll('.note'));
+  const filters = Array.from(document.querySelectorAll('.notes-filter'));
+  const moreBtn = document.querySelector('.notes-more');
+  let cat = 'all';
+  let expanded = false;
+
+  function label(key) {
+    const lang = window.currentLang || document.documentElement.dataset.pageLang || 'de';
+    try { return translations[lang][key]; } catch (e) { return null; }
+  }
+
+  function render() {
+    notes.forEach(n => {
+      const match = cat === 'all' || n.dataset.cat === cat;
+      const extraHidden = cat === 'all' && !expanded && n.classList.contains('is-extra');
+      n.hidden = !match || extraHidden;
+      if (!n.hidden) n.classList.add('in');
+    });
+    if (moreBtn) {
+      moreBtn.hidden = cat !== 'all';
+      const key = expanded ? 'notes_less' : 'notes_more';
+      moreBtn.dataset.i18n = key;
+      moreBtn.setAttribute('aria-expanded', String(expanded));
+      const txt = label(key);
+      if (txt) moreBtn.textContent = txt;
+    }
+  }
+
+  filters.forEach(btn => btn.addEventListener('click', () => {
+    cat = btn.dataset.cat;
+    filters.forEach(b => {
+      const on = b === btn;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+    render();
+  }));
+
+  if (moreBtn) moreBtn.addEventListener('click', () => {
+    expanded = !expanded;
+    render();
+    if (!expanded) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  render();
+})();

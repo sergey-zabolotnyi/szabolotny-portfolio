@@ -103,25 +103,8 @@
 .cb-dot-anim { width: 7px; height: 7px; border-radius: 50%; background: #4dffb4; animation: pulse 1.4s ease-in-out infinite; }
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.6)} }
 
-/* === BLOG / TIL === */
+/* === ENGINEERING NOTES (section padding; card styles in css/style.css) === */
 #blog { padding: 80px max(56px, calc((100vw - 1400px) / 2 + 56px)); }
-.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; }
-.blog-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(124,111,255,0.15);
-  border-radius: 16px;
-  padding: 24px;
-  transition: border-color .3s, transform .3s, background .3s;
-  cursor: default;
-}
-.blog-card:hover { border-color: rgba(124,111,255,0.4); background: rgba(124,111,255,0.06); transform: translateY(-4px); }
-.blog-tag { display: inline-block; font-size: 0.72rem; font-family: 'DM Mono', monospace; color: #7c6fff; background: rgba(124,111,255,0.12); border-radius: 20px; padding: 3px 10px; margin-bottom: 12px; letter-spacing: .04em; }
-.blog-title { font-size: 1rem; font-weight: 700; color: #e8e8ff; margin: 0 0 10px; line-height: 1.4; }
-.blog-desc { font-size: 0.83rem; color: rgba(232,232,255,0.6); line-height: 1.6; margin: 0 0 16px; }
-.blog-date { font-size: 0.75rem; font-family: 'DM Mono', monospace; color: rgba(232,232,255,0.35); }
-@media (max-width: 900px) {
-  .blog-grid { grid-template-columns: 1fr; }
-}
 
 /* === TESTIMONIALS === */
 #testimonials { padding: 80px max(56px, calc((100vw - 1400px) / 2 + 56px)); }
@@ -512,63 +495,214 @@
 
 <!-- BLOG / TIL -->
 <section id="blog">
-  <div class="sec-head reveal"><span class="sec-num">06 / <span data-i18n="blog_title">TIL · What I Learned</span></span><div class="sec-line"></div></div>
-  <div class="blog-grid">
-    <div class="blog-card reveal d2">
-      <div class="blog-tag">SvelteKit · Stripe · API</div>
-      <h4 class="blog-title" data-i18n="til_6_title">Google Solar API + B2B Lead Monetization</h4>
-      <p class="blog-desc" data-i18n="til_6_desc">Solar Lead Machine: Google Solar API returns roof area, kWp and kWh/year per address. FastAPI backend connects Open Meteo, SMARD (BNetzA) and a KfW scraper for accurate ROI calculation. Stripe pay-per-lead for installers.</p>
-      <div class="blog-date">05/2025</div>
-    </div>
-    <div class="blog-card reveal d3">
-      <div class="blog-tag">Cloudflare · Edge · AI</div>
-      <h4 class="blog-title" data-i18n="til_7_title">Cloudflare Worker as AI Proxy</h4>
-      <p class="blog-desc" data-i18n="til_7_desc">AI chat widget on zabolotny.de runs via a Cloudflare Worker that keeps the Groq API key server-side. Zero cold start, global CDN, no dedicated server — edge computing in practice.</p>
-      <div class="blog-date">04/2025</div>
-    </div>
-    <div class="blog-card reveal">
-      <div class="blog-tag">VPS · DevOps</div>
-      <h4 class="blog-title" data-i18n="til_1_title">VPS Migration from Scratch</h4>
-      <p class="blog-desc" data-i18n="til_1_desc">Nginx, PostgreSQL, systemd, SSL, automated backups — configured everything myself. Migrated from Render/Netlify/Supabase to own VPS.</p>
-      <div class="blog-date">03/2025</div>
-    </div>
-    <div class="blog-card reveal">
-      <div class="blog-tag">FastAPI · Telegram · DevOps</div>
-      <h4 class="blog-title" data-i18n="til_8_title">FastAPI Microservice Instead of No-Code Tools</h4>
-      <p class="blog-desc" data-i18n="til_8_desc">Contact form microservice replaces n8n and Formspree: FastAPI endpoint validates input and forwards messages via Telegram Bot API. Runs as a systemd service on own VPS, no third-party dependency.</p>
-      <div class="blog-date">03/2025</div>
-    </div>
-    <div class="blog-card reveal d1">
-      <div class="blog-tag">nginx · systemd · VPS</div>
-      <h4 class="blog-title" data-i18n="til_9_title">Multi-Project nginx + systemd on One VPS</h4>
-      <p class="blog-desc" data-i18n="til_9_desc">Multiple projects (Smart-Letter, RenovAI, DreamDeck, Portfolio API) on a single 1blu instance: nginx as reverse proxy with SSL termination via Cloudflare, each service as its own systemd unit with auto-restart.</p>
-      <div class="blog-date">03/2025</div>
-    </div>
-    <div class="blog-card reveal d1">
-      <div class="blog-tag">Python · aiogram</div>
-      <h4 class="blog-title" data-i18n="til_2_title">Telegram Bot Freemium Model</h4>
-      <p class="blog-desc" data-i18n="til_2_desc">Stripe integration for bots, webhook vs polling, callback handler architecture and PostgreSQL subscription tracking for DreamDeck.</p>
-      <div class="blog-date">02/2025</div>
-    </div>
-    <div class="blog-card reveal d2">
-      <div class="blog-tag">OpenAI · RAG</div>
-      <h4 class="blog-title" data-i18n="til_3_title">Vision API for Document Analysis</h4>
-      <p class="blog-desc" data-i18n="til_3_desc">PDF/DOCX/JPEG extraction with OpenAI Vision, prompt engineering for structured outputs and multilingual letter generation in Smart-Letter.</p>
-      <div class="blog-date">01/2025</div>
-    </div>
-    <div class="blog-card reveal d3">
-      <div class="blog-tag">Vanilla JS · i18n</div>
-      <h4 class="blog-title" data-i18n="til_4_title">i18n Without a Framework</h4>
-      <p class="blog-desc" data-i18n="til_4_desc">Lightweight 4-language i18n system (DE/EN/RU/UA) for this portfolio — no external libraries, just vanilla JS and localStorage.</p>
-      <div class="blog-date">12/2024</div>
-    </div>
-    <div class="blog-card reveal d1">
-      <div class="blog-tag">AI · Prompt Eng.</div>
-      <h4 class="blog-title" data-i18n="til_5_title">Groq API vs OpenAI: Speed vs Quality</h4>
-      <p class="blog-desc" data-i18n="til_5_desc">Llama 3.1 via Groq for real-time chat (10× faster), GPT-4o for complex analysis. Hybrid architecture cuts costs while keeping the same UX.</p>
-      <div class="blog-date">11/2024</div>
-    </div>
+  <div class="sec-head reveal"><span class="sec-num">06 / <span data-i18n="blog_title">Engineering Notes</span></span><div class="sec-line"></div></div>
+  <div class="notes-head reveal">
+    <p class="notes-intro" data-i18n="notes_intro">Concrete problems, decisions and results from my projects — briefly noted.</p>
+    <div class="notes-filters" role="group" aria-label="Filter"><button type="button" class="notes-filter active" data-cat="all" aria-pressed="true" data-i18n="notes_all">All</button><button type="button" class="notes-filter" data-cat="devops" aria-pressed="false">DevOps</button><button type="button" class="notes-filter" data-cat="ai" aria-pressed="false">AI</button><button type="button" class="notes-filter" data-cat="backend" aria-pressed="false">Backend</button><button type="button" class="notes-filter" data-cat="frontend" aria-pressed="false">Frontend</button></div>
   </div>
+  <div class="notes-grid">
+    <article class="note reveal" data-cat="devops">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">Cloudflare · Zero Trust</span><span class="note-date">10/2026</span></div>
+          <h3 class="note-title" data-i18n="note_zerotrust_title">Zero Trust instead of open dashboards</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_zerotrust_problem">An internal homelab dashboard was publicly reachable through a subdomain.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_zerotrust_chip">Reachable only with login</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_zerotrust_b1">Cloudflare Tunnel as the only entry point — no port forwarding on the router</li>
+          <li data-i18n="note_zerotrust_b2">Access policy: only my email, login via one-time PIN</li>
+          <li data-i18n="note_zerotrust_b3">Private services exclusively via Tailscale</li>
+          <li data-i18n="note_zerotrust_b4">Lesson: regularly check what DNS and tunnels actually publish</li>
+        </ul>
+        <a class="note-link" href="#proof" data-i18n="notes_project">View project →</a>
+      </details>
+    </article>
+    <article class="note reveal" data-cat="frontend">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">SEO · Build · i18n</span><span class="note-date">10/2026</span></div>
+          <h3 class="note-title" data-i18n="note_i18n_title">Multilingual static pages without a framework</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_i18n_problem">Translations were swapped by JavaScript only — Google indexed German exclusively.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_i18n_chip">4 indexable language versions</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_i18n_b1">Dependency-free Node script pre-renders /en/, /ru/, /ua/ from one source</li>
+          <li data-i18n="note_i18n_b2">hreflang, per-language canonical URLs and a sitemap with alternates</li>
+          <li data-i18n="note_i18n_b3">CI check fails when generated pages are out of date</li>
+          <li data-i18n="note_i18n_b4">Redirect only on an explicit language choice — crawlers always see German</li>
+        </ul>
+        <a class="note-link" href="https://github.com/sergey-zabolotnyi/szabolotny-portfolio" target="_blank" rel="noopener noreferrer" data-i18n="notes_project">View project →</a>
+      </details>
+    </article>
+    <article class="note reveal" data-cat="devops">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">Proxmox · LXC · Storage</span><span class="note-date">09/2026</span></div>
+          <h3 class="note-title" data-i18n="note_nvme_title">Moving Proxmox to NVMe</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_nvme_problem">All containers lived on a SATA SSD, media on a constantly running USB HDD.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_nvme_chip">HDD now used for backups only</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_nvme_b1">Moved root disks of all 4 LXC containers to an NVMe thin pool with pct move-volume</li>
+          <li data-i18n="note_nvme_b2">Media library on its own LVM volume, container bind mounts repointed</li>
+          <li data-i18n="note_nvme_b3">SMART check: the "new" NVMe was used — 33 TB written, but healthy</li>
+          <li data-i18n="note_nvme_b4">The HDD is touched only by the daily vzdump backup (7 / 4 / 3)</li>
+        </ul>
+        <a class="note-link" href="#proof" data-i18n="notes_project">View project →</a>
+      </details>
+    </article>
+    <article class="note reveal" data-cat="devops">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">GitHub Actions · PM2 · Caddy</span><span class="note-date">2026</span></div>
+          <h3 class="note-title" data-i18n="note_cicd_title">CI/CD for PflegeOasis</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_cicd_problem">Manual deployments to the VPS were slow and error-prone.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_cicd_chip">Deploy via git push</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_cicd_b1">GitHub Actions → SSH → git pull, pnpm install, pnpm build</li>
+          <li data-i18n="note_cicd_b2">pm2 reload restarts the Next.js app without downtime</li>
+          <li data-i18n="note_cicd_b3">Caddy handles TLS certificates automatically</li>
+          <li data-i18n="note_cicd_b4">Next.js 15, PostgreSQL 16 and Drizzle ORM on a 1blu VPS</li>
+        </ul>
+        <a class="note-link" href="https://pflegeoasis.de" target="_blank" rel="noopener noreferrer" data-i18n="notes_project">View project →</a>
+      </details>
+    </article>
+    <article class="note reveal" data-cat="ai">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">OpenAI · Content · Review</span><span class="note-date">2026</span></div>
+          <h3 class="note-title" data-i18n="note_aicontent_title">AI content with human review</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_aicontent_problem">200+ guide articles on long-term care law — AI mistakes are not acceptable here.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_aicontent_chip">200+ reviewed articles</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_aicontent_b1">OpenAI generates drafts offline — never live for users</li>
+          <li data-i18n="note_aicontent_b2">Every article is reviewed by a human before publishing</li>
+          <li data-i18n="note_aicontent_b3">Structured prompts with sources and legal basis</li>
+          <li data-i18n="note_aicontent_b4">Lesson: on sensitive topics AI speeds things up, responsibility stays human</li>
+        </ul>
+        <a class="note-link" href="https://pflegeoasis.de" target="_blank" rel="noopener noreferrer" data-i18n="notes_project">View project →</a>
+      </details>
+    </article>
+    <article class="note reveal" data-cat="backend">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">FastAPI · Google Solar API</span><span class="note-date">05/2025</span></div>
+          <h3 class="note-title" data-i18n="note_solar_title">Google Solar API + B2B lead model</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_solar_problem">Solar installers need qualified leads with realistic economics.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_solar_chip">ROI from 4 data sources</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_solar_b1">Google Solar API returns roof area, kWp and kWh/year per address</li>
+          <li data-i18n="note_solar_b2">FastAPI combines Open-Meteo, SMARD (BNetzA) and a KfW scraper</li>
+          <li data-i18n="note_solar_b3">Stripe pay-per-lead for installers</li>
+          <li data-i18n="note_solar_b4">Lesson: cache external APIs and handle outages gracefully</li>
+        </ul>
+        <a class="note-link" href="https://solarnex.zabolotny.de/" target="_blank" rel="noopener noreferrer" data-i18n="notes_project">View project →</a>
+      </details>
+    </article>
+    <article class="note reveal is-extra" data-cat="devops">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">Cloudflare Workers · Edge</span><span class="note-date">04/2025</span></div>
+          <h3 class="note-title" data-i18n="note_worker_title">Cloudflare Worker as AI proxy</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_worker_problem">The AI chat on this site needs an API key that must never reach the browser.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_worker_chip">API key never in the browser</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_worker_b1">The chat widget talks to a Worker; only the Worker knows the Groq key</li>
+          <li data-i18n="note_worker_b2">No own server, no cold start, global edge network</li>
+          <li data-i18n="note_worker_b3">Single place for CORS and rate limiting</li>
+          <li data-i18n="note_worker_b4">Try it live: "Ask AI about Serge" in the bottom right</li>
+        </ul>
+      </details>
+    </article>
+    <article class="note reveal is-extra" data-cat="backend">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">FastAPI · Telegram · systemd</span><span class="note-date">03/2025</span></div>
+          <h3 class="note-title" data-i18n="note_fastapi_title">FastAPI microservice instead of no-code</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_fastapi_problem">The contact form relied on n8n and Formspree — third parties for my own data.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_fastapi_chip">No third-party form services</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_fastapi_b1">Own FastAPI endpoint validates input</li>
+          <li data-i18n="note_fastapi_b2">Forwarding via the Telegram Bot API</li>
+          <li data-i18n="note_fastapi_b3">Runs as a systemd service with auto-restart on my own VPS</li>
+          <li data-i18n="note_fastapi_b4">Lesson: small own services are often simpler than no-code chains</li>
+        </ul>
+      </details>
+    </article>
+    <article class="note reveal is-extra" data-cat="devops">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">nginx · systemd · VPS</span><span class="note-date">03/2025</span></div>
+          <h3 class="note-title" data-i18n="note_vps_title">From PaaS to my own VPS</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_vps_problem">Projects were spread over Render, Netlify and Supabase — with limits and cold starts.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_vps_chip">Several projects on one VPS</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_vps_b1">nginx as reverse proxy, SSL termination via Cloudflare</li>
+          <li data-i18n="note_vps_b2">Each service as its own systemd unit with auto-restart</li>
+          <li data-i18n="note_vps_b3">PostgreSQL and automated backups managed myself</li>
+          <li data-i18n="note_vps_b4">Lesson: more control also means more responsibility for monitoring</li>
+        </ul>
+      </details>
+    </article>
+    <article class="note reveal is-extra" data-cat="backend">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">Python · aiogram · Stripe</span><span class="note-date">02/2025</span></div>
+          <h3 class="note-title" data-i18n="note_freemium_title">Freemium model for a Telegram bot</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_freemium_problem">DreamDeck should start free and unlock premium features via subscription.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_freemium_chip">Subscription logic in PostgreSQL</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_freemium_b1">Stripe payments directly from the bot</li>
+          <li data-i18n="note_freemium_b2">Webhook instead of polling in production</li>
+          <li data-i18n="note_freemium_b3">Callback handler architecture with aiogram 3</li>
+          <li data-i18n="note_freemium_b4">Subscription status and limits modelled cleanly in PostgreSQL</li>
+        </ul>
+        <a class="note-link" href="https://t.me/traumwerk_bot" target="_blank" rel="noopener noreferrer" data-i18n="notes_project">View project →</a>
+      </details>
+    </article>
+    <article class="note reveal is-extra" data-cat="ai">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">OpenAI Vision · Structured Output</span><span class="note-date">01/2025</span></div>
+          <h3 class="note-title" data-i18n="note_vision_title">Vision API for document analysis</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_vision_problem">Users upload letters as PDF, DOCX or photo — the content must be recognised reliably.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_vision_chip">PDF · DOCX · JPEG → structured data</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_vision_b1">Text extraction with OpenAI Vision, including photos</li>
+          <li data-i18n="note_vision_b2">Prompts for structured JSON output instead of free text</li>
+          <li data-i18n="note_vision_b3">Built on top: reply letters in 17 languages (Smart-Letter)</li>
+          <li data-i18n="note_vision_b4">Lesson: always validate outputs against a schema</li>
+        </ul>
+        <a class="note-link" href="https://github.com/sergey-zabolotnyi?tab=repositories" target="_blank" rel="noopener noreferrer" data-i18n="notes_project">View project →</a>
+      </details>
+    </article>
+    <article class="note reveal is-extra" data-cat="ai">
+      <details>
+        <summary>
+          <div class="note-meta"><span class="note-tag">Groq · OpenAI · LLM</span><span class="note-date">11/2024</span></div>
+          <h3 class="note-title" data-i18n="note_groq_title">Groq vs. OpenAI: speed vs. quality</h3>
+          <p class="note-problem"><span class="note-label" data-i18n="notes_problem">Problem</span> <span data-i18n="note_groq_problem">Real-time chat felt too slow with large models.</span></p>
+          <div class="note-foot"><span class="note-chip" data-i18n="note_groq_chip">~10× faster replies</span><span class="note-toggle" aria-hidden="true"></span></div>
+        </summary>
+        <ul class="note-body">
+          <li data-i18n="note_groq_b1">Llama 3.1 via Groq for real-time chat</li>
+          <li data-i18n="note_groq_b2">GPT-4o only for complex analysis</li>
+          <li data-i18n="note_groq_b3">Hybrid routing lowers costs with the same UX</li>
+          <li data-i18n="note_groq_b4">Lesson: pick the model by task, not by hype</li>
+        </ul>
+      </details>
+    </article>
+  </div>
+  <div class="notes-more-wrap"><button type="button" class="notes-more" aria-expanded="false" data-i18n="notes_more">Show all notes</button></div>
 </section>
 
 <!-- TESTIMONIALS -->
