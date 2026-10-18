@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-page-lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 <meta name="author" content="Serge Zabolotny">
 <meta name="keywords" content="AI Developer, Fullstack Developer, Dresden, Next.js, FastAPI, React, SvelteKit, OpenAI, LangChain, Python, Scam Detection">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://zabolotny.de">
+<meta property="og:url" content="https://zabolotny.de/">
 <meta property="og:title" content="Serge Zabolotny — AI Fullstack Developer">
 <meta property="og:description" content="AI Fullstack Developer in Dresden. I build intelligent web apps with FastAPI, React, SvelteKit, OpenAI & LangChain.">
 <meta property="og:image" content="https://zabolotny.de/assets/og-image.png">
@@ -27,10 +27,20 @@
 <meta name="theme-color" content="#7c6fff">
 <meta name="google-site-verification" content="4xWp3i40V2OTIZ1Z2g99UXm8QYJjhQFD1uGuqKpPHIU" />
 
-<link rel="canonical" href="https://zabolotny.de">
-<link rel="preload" href="assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/fonts.css">
+<link rel="canonical" href="https://zabolotny.de/">
+<link rel="alternate" hreflang="de" href="https://zabolotny.de/">
+<link rel="alternate" hreflang="en" href="https://zabolotny.de/en/">
+<link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/">
+<link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/">
+<link rel="alternate" hreflang="x-default" href="https://zabolotny.de/">
+<script>
+/* Returning visitor chose EN/RU/UA before -> send them to that page.
+   Only explicit choices are stored, so crawlers (no storage) always see the German page. */
+(function(){try{var s=localStorage.getItem('lang');if(document.documentElement.dataset.pageLang==='de'&&['en','ru','ua'].indexOf(s)>-1)location.replace('/'+s+'/'+location.hash)}catch(e){}})();
+</script>
+<link rel="preload" href="/assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.css">
 
 <!-- Schema.org structured data for Google rich results -->
 <script type="application/ld+json">
@@ -68,7 +78,7 @@
 <script defer src="/_vercel/insights/script.js"></script>
 
 <!-- CSS -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 <style>
 /* === CURRENTLY BUILDING === */
 .currently-building {
@@ -162,7 +172,7 @@
   .cookie-actions button { flex: 1; }
 }
 </style>
-<script src="js/consent.js" defer></script>
+<script src="/js/consent.js" defer></script>
 </head>
 <body>
 <a href="#main" class="skip-link" data-i18n="skip_link">Zum Inhalt springen</a>
@@ -180,10 +190,10 @@
   </ul>
   <div style="display:flex;align-items:center;gap:10px;">
     <div class="lang-switch">
-      <button class="lang-btn active" data-lang="de" onclick="setLang('de')"><svg class="flag" viewBox="0 0 18 13"><rect width="18" height="4.33" fill="#000"/><rect width="18" height="4.33" y="4.33" fill="#D00"/><rect width="18" height="4.34" y="8.66" fill="#FFCE00"/></svg>DE</button>
-      <button class="lang-btn" data-lang="en" onclick="setLang('en')"><svg class="flag" viewBox="0 0 18 13"><rect width="18" height="13" fill="#012169"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#fff" stroke-width="2.6"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#C8102E" stroke-width="1.6"/><path d="M9,0 V13 M0,6.5 H18" stroke="#fff" stroke-width="4.3"/><path d="M9,0 V13 M0,6.5 H18" stroke="#C8102E" stroke-width="2.6"/></svg>EN</button>
-      <button class="lang-btn" data-lang="ru" onclick="setLang('ru')"><svg class="flag" viewBox="0 0 18 13"><rect width="18" height="4.33" fill="#fff"/><rect width="18" height="4.33" y="4.33" fill="#0039A6"/><rect width="18" height="4.34" y="8.66" fill="#D52B1E"/></svg>RU</button>
-      <button class="lang-btn" data-lang="ua" onclick="setLang('ua')"><svg class="flag" viewBox="0 0 18 13"><rect width="18" height="6.5" fill="#005BBB"/><rect width="18" height="6.5" y="6.5" fill="#FFD500"/></svg>UA</button>
+      <a class="lang-btn active" data-lang="de" href="/" hreflang="de"><svg class="flag" viewBox="0 0 18 13"><rect width="18" height="4.33" fill="#000"/><rect width="18" height="4.33" y="4.33" fill="#D00"/><rect width="18" height="4.34" y="8.66" fill="#FFCE00"/></svg>DE</a>
+      <a class="lang-btn" data-lang="en" href="/en/" hreflang="en"><svg class="flag" viewBox="0 0 18 13"><rect width="18" height="13" fill="#012169"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#fff" stroke-width="2.6"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#C8102E" stroke-width="1.6"/><path d="M9,0 V13 M0,6.5 H18" stroke="#fff" stroke-width="4.3"/><path d="M9,0 V13 M0,6.5 H18" stroke="#C8102E" stroke-width="2.6"/></svg>EN</a>
+      <a class="lang-btn" data-lang="ru" href="/ru/" hreflang="ru"><svg class="flag" viewBox="0 0 18 13"><rect width="18" height="4.33" fill="#fff"/><rect width="18" height="4.33" y="4.33" fill="#0039A6"/><rect width="18" height="4.34" y="8.66" fill="#D52B1E"/></svg>RU</a>
+      <a class="lang-btn" data-lang="ua" href="/ua/" hreflang="uk"><svg class="flag" viewBox="0 0 18 13"><rect width="18" height="6.5" fill="#005BBB"/><rect width="18" height="6.5" y="6.5" fill="#FFD500"/></svg>UA</a>
     </div>
     <button class="burger" id="burger" onclick="toggleMob()"><span></span><span></span><span></span></button>
   </div>
@@ -254,7 +264,7 @@
         <span data-i18n="hero_projects">Projekte ansehen →</span>
         <span class="btn-glow-effect"></span>
       </a>
-      <a href="resume.pdf" class="btn-outline" download>
+      <a href="/resume.pdf" class="btn-outline" download>
         <span data-i18n="hero_cv">CV herunterladen ↓</span>
       </a>
     </div>
@@ -267,7 +277,7 @@
       <div class="avatar-pulse"></div>
       <div style="position:absolute;inset:0;pointer-events:none;" id="orbitWrap"></div>
       <div class="avatar-circle">
-        <picture><source srcset="assets/avatar.webp" type="image/webp"><img src="assets/avatar.png" alt="Serge Zabolotny" class="avatar-image" width="500" height="500" fetchpriority="high" decoding="async"></picture>
+        <picture><source srcset="/assets/avatar.webp" type="image/webp"><img src="/assets/avatar.png" alt="Serge Zabolotny" class="avatar-image" width="500" height="500" fetchpriority="high" decoding="async"></picture>
         <div class="avatar-shine"></div>
       </div>
       <div class="avatar-badge">
@@ -431,15 +441,15 @@
   </div>
   <div class="projects-grid" id="projectsGrid">
     <a href="https://scamguard.zabolotny.de/" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="live" data-url="https://scamguard.zabolotny.de/"><div class="pidx">10</div><div class="pbody"><h3>ScamGuard <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_scamguard_desc">KI-gestützte Plattform, die Stellenanzeigen und Nachrichten automatisch auf Betrugsmuster analysiert — mehrsprachig, mit eigenen SSR-Routen pro Sprache und lokalem Verlauf im Browser.</p><p class="prole" data-i18n="proj_scamguard_role">Alleinige Entwicklung: Next.js App Router, mehrsprachige SSR-Routen, KI-Klassifikation, Deployment auf eigenem VPS</p><div class="pmetrics"><span data-i18n="proj_scamguard_proof_1">Mehrsprachige SSR-Routen ([lang])</span><span data-i18n="proj_scamguard_proof_2">KI-Betrugserkennung in Echtzeit</span><span data-i18n="proj_scamguard_proof_3">Verlaufs-TTL im localStorage</span></div><div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">AI Classification</span><span class="ptag">i18n SSR</span><span class="ptag">VPS · nginx · PM2</span></div></div><div class="parr">Live ↗</div></a>
-    <a href="https://meistermeld.de" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://meistermeld.de" data-preview="assets/previews/meisterdeck.jpg"><div class="pidx">09</div><div class="pbody"><h3>MeisterMeld <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_meisterdesk_desc">Feldservice-Management für Handwerker: Kunden-, Auftrags- & Mitarbeiterverwaltung, PWA, KI-Berichte, Sprach-/Foto-Uploads.</p><p class="prole" data-i18n="proj_meisterdesk_role">Alleinige Entwicklung: Next.js, Drizzle ORM, PostgreSQL, PWA, AI-Integration, 1Blue-Deployment</p><div class="pmetrics"><span data-i18n="proj_meisterdesk_proof_1">PWA für mobile Teams</span><span data-i18n="proj_meisterdesk_proof_2">Drizzle ORM Datenmodell</span><span data-i18n="proj_meisterdesk_proof_3">Deployment auf 1Blue Server</span></div><div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">Drizzle ORM</span><span class="ptag">PostgreSQL</span><span class="ptag">PWA</span><span class="ptag">AI Reports</span><span class="ptag">1Blue</span></div></div><div class="parr">Live ↗</div></a>
+    <a href="https://meistermeld.de" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://meistermeld.de" data-preview="/assets/previews/meisterdeck.jpg"><div class="pidx">09</div><div class="pbody"><h3>MeisterMeld <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_meisterdesk_desc">Feldservice-Management für Handwerker: Kunden-, Auftrags- & Mitarbeiterverwaltung, PWA, KI-Berichte, Sprach-/Foto-Uploads.</p><p class="prole" data-i18n="proj_meisterdesk_role">Alleinige Entwicklung: Next.js, Drizzle ORM, PostgreSQL, PWA, AI-Integration, 1Blue-Deployment</p><div class="pmetrics"><span data-i18n="proj_meisterdesk_proof_1">PWA für mobile Teams</span><span data-i18n="proj_meisterdesk_proof_2">Drizzle ORM Datenmodell</span><span data-i18n="proj_meisterdesk_proof_3">Deployment auf 1Blue Server</span></div><div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">Drizzle ORM</span><span class="ptag">PostgreSQL</span><span class="ptag">PWA</span><span class="ptag">AI Reports</span><span class="ptag">1Blue</span></div></div><div class="parr">Live ↗</div></a>
     <a href="https://remont-online.net" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://remont-online.net"><div class="pidx">08</div><div class="pbody"><h3>RenovAI <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_remont_desc">KI analysiert Raumfotos oder Grundrisse und erstellt automatisch eine detaillierte Kostenkalkulation mit Arbeitsleistungen, Materialien, Preisen und Designvorschlägen.</p><p class="prole" data-i18n="proj_remont_role">Alleinige Entwicklung: React, FastAPI, PostgreSQL, OpenAI Vision, VPS-Deployment</p><div class="pmetrics"><span data-i18n="proj_remont_proof_1">Vision-Analyse von Raumfotos</span><span data-i18n="proj_remont_proof_2">Strukturierte Kostenschätzung</span><span data-i18n="proj_remont_proof_3">FastAPI Backend auf VPS</span></div><div class="pstack"><span class="ptag">React</span><span class="ptag">FastAPI</span><span class="ptag">PostgreSQL</span><span class="ptag">OpenAI Vision</span><span class="ptag">VPS</span></div></div><div class="parr">Live ↗</div></a>
-    <a href="https://geschenkfox.de" target="_blank" rel="noopener noreferrer" class="pcard reveal d3" data-status="live" data-url="https://geschenkfox.de" data-preview="assets/previews/geschenkfox.jpg"><div class="pidx">07</div><div class="pbody"><h3>GeschenkFox.de <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_geschenkfox_desc">KI-Geschenkfinder mit interaktivem Quiz für den deutschen Markt. SEO-optimierte Architektur.</p><p class="prole" data-i18n="proj_geschenkfox_role">Alleinige Umsetzung: Design (Figma), Frontend, SEO, UX-Konzept</p><div class="pmetrics"><span data-i18n="proj_geschenkfox_proof_1">SEO-orientierte SvelteKit Architektur</span><span data-i18n="proj_geschenkfox_proof_2">Quiz UX für Kaufintention</span><span data-i18n="proj_geschenkfox_proof_3">AI-Empfehlungslogik</span></div><div class="pstack"><span class="ptag">SvelteKit + Vite</span><span class="ptag">Tailwind CSS</span><span class="ptag">OpenAI API</span><span class="ptag">Vercel</span></div></div><div class="parr">Live ↗</div></a>
+    <a href="https://geschenkfox.de" target="_blank" rel="noopener noreferrer" class="pcard reveal d3" data-status="live" data-url="https://geschenkfox.de" data-preview="/assets/previews/geschenkfox.jpg"><div class="pidx">07</div><div class="pbody"><h3>GeschenkFox.de <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_geschenkfox_desc">KI-Geschenkfinder mit interaktivem Quiz für den deutschen Markt. SEO-optimierte Architektur.</p><p class="prole" data-i18n="proj_geschenkfox_role">Alleinige Umsetzung: Design (Figma), Frontend, SEO, UX-Konzept</p><div class="pmetrics"><span data-i18n="proj_geschenkfox_proof_1">SEO-orientierte SvelteKit Architektur</span><span data-i18n="proj_geschenkfox_proof_2">Quiz UX für Kaufintention</span><span data-i18n="proj_geschenkfox_proof_3">AI-Empfehlungslogik</span></div><div class="pstack"><span class="ptag">SvelteKit + Vite</span><span class="ptag">Tailwind CSS</span><span class="ptag">OpenAI API</span><span class="ptag">Vercel</span></div></div><div class="parr">Live ↗</div></a>
     <a href="https://solarnex.zabolotny.de/" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://solarnex.zabolotny.de/"><div class="pidx">06</div><div class="pbody"><h3><span data-i18n="proj_solar_title">SolarCheck AI</span> <span class="pbadge b-dev" data-i18n="status_dev">In Entwicklung</span></h3><p class="pdesc" data-i18n="proj_solar_desc">B2B Lead-Plattform für die Solarbranche: KI analysiert Dachpotenzial per Adresse, berechnet ROI mit echten Strompreisen und KfW-Förderungen — und liefert qualifizierte Leads an Installateure.</p><p class="prole" data-i18n="proj_solar_role">Alleinige Entwicklung: SvelteKit, FastAPI, Google Solar API, PostgreSQL, Stripe, VPS</p><div class="pmetrics"><span data-i18n="proj_solar_proof_1">Adressbasierte Solar-Analyse</span><span data-i18n="proj_solar_proof_2">ROI-Logik mit externen APIs</span><span data-i18n="proj_solar_proof_3">B2B Pay-per-Lead Modell</span></div><div class="pstack"><span class="ptag">SvelteKit</span><span class="ptag">FastAPI</span><span class="ptag">Google Solar API</span><span class="ptag">PostgreSQL</span><span class="ptag">Stripe</span><span class="ptag">Claude Vision</span></div></div><div class="parr">Live ↗</div></a>
-    <a href="https://t.me/traumwerk_bot" target="_blank" rel="noopener noreferrer" class="pcard reveal d1" data-status="live" data-url="https://t.me/traumwerk_bot" data-preview="assets/previews/dreamdeck.jpg"><div class="pidx">05</div><div class="pbody"><h3>DreamDeck <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_dreamdeck_desc">KI-Traumtagebuch als Telegram-Bot: Traumanalyse, Emotionserkennung, wöchentliche Insights und Muster-Erkennung.</p><p class="prole" data-i18n="proj_dreamdeck_role">Alleinige Entwicklung: AI-Integration, Backend, Datenbank, UX</p><div class="pmetrics"><span data-i18n="proj_dreamdeck_proof_1">Telegram Bot mit Freemium-Flow</span><span data-i18n="proj_dreamdeck_proof_2">PostgreSQL Subscription Tracking</span><span data-i18n="proj_dreamdeck_proof_3">Groq API für schnelle Antworten</span></div><div class="pstack"><span class="ptag">Python</span><span class="ptag">Telegram Bot</span><span class="ptag">Groq API</span><span class="ptag">PostgreSQL</span><span class="ptag">aiogram</span></div></div><div class="parr">Bot ↗</div></a>
+    <a href="https://t.me/traumwerk_bot" target="_blank" rel="noopener noreferrer" class="pcard reveal d1" data-status="live" data-url="https://t.me/traumwerk_bot" data-preview="/assets/previews/dreamdeck.jpg"><div class="pidx">05</div><div class="pbody"><h3>DreamDeck <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_dreamdeck_desc">KI-Traumtagebuch als Telegram-Bot: Traumanalyse, Emotionserkennung, wöchentliche Insights und Muster-Erkennung.</p><p class="prole" data-i18n="proj_dreamdeck_role">Alleinige Entwicklung: AI-Integration, Backend, Datenbank, UX</p><div class="pmetrics"><span data-i18n="proj_dreamdeck_proof_1">Telegram Bot mit Freemium-Flow</span><span data-i18n="proj_dreamdeck_proof_2">PostgreSQL Subscription Tracking</span><span data-i18n="proj_dreamdeck_proof_3">Groq API für schnelle Antworten</span></div><div class="pstack"><span class="ptag">Python</span><span class="ptag">Telegram Bot</span><span class="ptag">Groq API</span><span class="ptag">PostgreSQL</span><span class="ptag">aiogram</span></div></div><div class="parr">Bot ↗</div></a>
     <a href="https://smart-letter.net" target="_blank" rel="noopener noreferrer" class="pcard reveal d2" data-status="live" data-url="https://smart-letter.net"><div class="pidx">04</div><div class="pbody"><h3>Smart-Letter.net <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_smartletter_desc">KI-Plattform: professionelle Briefe in 17 Sprachen, Spracherkennung, PDF/DOCX/JPEG-Verarbeitung.</p><p class="prole" data-i18n="proj_smartletter_role">Alleinige Entwicklung: Architektur, Frontend, Backend, KI-Integration</p><div class="pmetrics"><span data-i18n="proj_smartletter_proof_1">PDF/DOCX/JPEG Verarbeitung</span><span data-i18n="proj_smartletter_proof_2">17 Sprachen im Produkt</span><span data-i18n="proj_smartletter_proof_3">FastAPI + React MVP live</span></div><div class="pstack"><span class="ptag">FastAPI</span><span class="ptag">React + Vite</span><span class="ptag">Groq API</span><span class="ptag">PostgreSQL</span><span class="ptag">Vercel</span></div></div><div class="parr">Live ↗</div></a>
     <a href="https://kernbohr-expert.de" target="_blank" rel="noopener noreferrer" class="pcard reveal d1" data-status="done" data-url="https://kernbohr-expert.de"><div class="pidx">03</div><div class="pbody"><h3>Kernbohr-Expert.de <span class="pbadge b-done" data-i18n="status_done">Abgeschlossen</span></h3><p class="pdesc" data-i18n="proj_kernbohr_desc">Unternehmenswebsite für Diamantkernbohrung. Lokale SEO, Google Maps, Kundenanfragen.</p><p class="prole" data-i18n="proj_kernbohr_role">Alleinige Entwicklung: Struktur, Layout, lokale SEO-Strategie</p><div class="pstack"><span class="ptag">WordPress</span><span class="ptag">SEO</span><span class="ptag">Google Maps</span></div></div><div class="parr">↗</div></a>
     <a href="https://trockenbauservice-salcutan.de" target="_blank" rel="noopener noreferrer" class="pcard reveal d2" data-status="done" data-url="https://trockenbauservice-salcutan.de"><div class="pidx">02</div><div class="pbody"><h3>Trockenbauservice-Salcutan.de <span class="pbadge b-done" data-i18n="status_done">Abgeschlossen</span></h3><p class="pdesc" data-i18n="proj_trockenbau_desc">Website für Trockenbau-Betrieb. Projektgalerie, Kundenbewertungen, Mobile-first.</p><p class="prole" data-i18n="proj_trockenbau_role">Alleinige Umsetzung: Design, CMS-Integration, mobile Optimierung</p><div class="pstack"><span class="ptag">WordPress</span><span class="ptag">CSS individuell</span><span class="ptag">Portfolio Plugin</span></div></div><div class="parr">↗</div></a>
-    <a href="https://github.com/sergey-zabolotnyi/project-spring-pizza" target="_blank" rel="noopener noreferrer" class="pcard reveal d3" data-status="done" data-url="https://github.com/sergey-zabolotnyi/project-spring-pizza" data-preview="assets/previews/project-spring-pizza.jpg"><div class="pidx">01</div><div class="pbody"><h3><span data-i18n="proj_crm_title">CRM-System</span> <span class="pbadge b-study" data-i18n="status_study">Abschlussarbeit</span></h3><p class="pdesc" data-i18n="proj_crm_desc">Fullstack CRM: Rollenverwaltung, Projektübersicht, Berichte. Studienabschlussprojekt.</p><p class="prole" data-i18n="proj_crm_role">Alleinige Entwicklung: Datenbankdesign, Backend, Frontend, API</p><div class="pstack"><span class="ptag">Java Spring Boot</span><span class="ptag">Angular</span><span class="ptag">MySQL</span><span class="ptag">REST API</span></div></div><div class="parr">↗</div></a>
+    <a href="https://github.com/sergey-zabolotnyi/project-spring-pizza" target="_blank" rel="noopener noreferrer" class="pcard reveal d3" data-status="done" data-url="https://github.com/sergey-zabolotnyi/project-spring-pizza" data-preview="/assets/previews/project-spring-pizza.jpg"><div class="pidx">01</div><div class="pbody"><h3><span data-i18n="proj_crm_title">CRM-System</span> <span class="pbadge b-study" data-i18n="status_study">Abschlussarbeit</span></h3><p class="pdesc" data-i18n="proj_crm_desc">Fullstack CRM: Rollenverwaltung, Projektübersicht, Berichte. Studienabschlussprojekt.</p><p class="prole" data-i18n="proj_crm_role">Alleinige Entwicklung: Datenbankdesign, Backend, Frontend, API</p><div class="pstack"><span class="ptag">Java Spring Boot</span><span class="ptag">Angular</span><span class="ptag">MySQL</span><span class="ptag">REST API</span></div></div><div class="parr">↗</div></a>
   </div>
 </section>
 
@@ -602,9 +612,9 @@
 <footer>
   <p>© <span id="currentYear">2026</span> <span class="fa">Serge Zabolotny</span> <span class="footer-sep">|</span> zabolotny.de <span class="footer-sep">|</span> <span data-i18n="footer_deployed">Deployed auf</span> <span class="fa">Vercel</span> <span class="footer-sep">|</span> <span class="fa3">Dresden</span></p>
   <p class="footer-legal">
-    <a href="impressum.html" class="footer-link-btn" data-i18n="footer_impressum">Impressum</a>
+    <a href="/impressum.html" class="footer-link-btn" data-i18n="footer_impressum">Impressum</a>
     <span class="footer-sep">|</span>
-    <a href="datenschutz.html" class="footer-link-btn" data-i18n="footer_datenschutz">Datenschutz</a>
+    <a href="/datenschutz.html" class="footer-link-btn" data-i18n="footer_datenschutz">Datenschutz</a>
     <span class="footer-sep">|</span>
     <button type="button" class="footer-link-btn" onclick="window.reopenCookieBanner && window.reopenCookieBanner()" data-i18n="footer_cookie_settings">Cookie-Einstellungen</button>
   </p>
@@ -617,7 +627,7 @@
 <!-- COOKIE CONSENT -->
 <div id="cookieConsent" class="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent">
   <div class="cookie-consent-inner">
-    <p><span data-i18n="cookie_text">Diese Website nutzt Google Analytics, um zu verstehen, wie Besucher die Seite nutzen. Deine IP-Adresse wird dabei nur mit deiner Zustimmung an Google übermittelt.</span> <a href="datenschutz.html" data-i18n="cookie_privacy_link" style="color:var(--accent3,#4dffb4);">Mehr dazu →</a></p>
+    <p><span data-i18n="cookie_text">Diese Website nutzt Google Analytics, um zu verstehen, wie Besucher die Seite nutzen. Deine IP-Adresse wird dabei nur mit deiner Zustimmung an Google übermittelt.</span> <a href="/datenschutz.html" data-i18n="cookie_privacy_link" style="color:var(--accent3,#4dffb4);">Mehr dazu →</a></p>
     <div class="cookie-actions">
       <button id="cookieDecline" class="btn-outline" type="button" data-i18n="cookie_decline">Ablehnen</button>
       <button id="cookieAccept" class="btn-glow" type="button" data-i18n="cookie_accept">Akzeptieren</button>
@@ -782,13 +792,13 @@ Cal("serge", "ui", {
         stroke-width="1.4" stroke-linecap="round"/>
     </svg>
   </span>
-  <span class="cal-label" data-i18n="cal_btn">Созвониться</span>
+  <span class="cal-label" data-i18n="cal_btn">Termin buchen →</span>
 </button>
 
 <!-- SCRIPTS -->
-<script src="js/particles.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/hero-effects.js"></script>
-<script src="js/main.js"></script>
+<script src="/js/particles.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/hero-effects.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
