@@ -36,7 +36,7 @@ Experience:
 - 2011–2017: CTO / technical lead at an autogas equipment company in Ukraine; earlier built monetized websites.
 
 Projects:
-- MeisterMeld (meistermeld.de, in development, main project): field-service SaaS for German tradespeople — jobs, customers, staff, PWA, AI reports from voice and photos. Next.js, TypeScript, Drizzle ORM, PostgreSQL, own 1blu server.
+- MeisterMeld (meistermeld.de, live with first testers, main project): field-service SaaS for German tradespeople — jobs, customers, staff, PWA, AI reports from voice and photos. Next.js, TypeScript, Drizzle ORM, PostgreSQL, own 1blu server.
 - PflegeOasis (pflegeoasis.de, live): free long-term-care guidance portal — care-level and allowance calculators, objection letter generator with PDF, 200+ articles from an AI pipeline with human review. Next.js 15, PostgreSQL 16, Drizzle, OpenAI, CI/CD with GitHub Actions → VPS (PM2 + Caddy).
 - ScamGuard (scam-guard.de, live): multilingual AI scam detection for job listings.
 - SolarCheck AI (in development): B2B solar lead platform — Google Solar API, ROI from several data sources, Stripe pay-per-lead. SvelteKit + FastAPI.
