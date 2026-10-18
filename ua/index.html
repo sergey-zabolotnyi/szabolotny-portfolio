@@ -398,6 +398,59 @@
       <p data-i18n="proof_4_desc">Landing pages, UX-flow, локальне SEO, платіжна логіка та MVP-scope з одних рук.</p>
     </div>
   </div>
+  <div class="homelab reveal">
+    <div class="homelab-text">
+      <div class="proof-kicker" data-i18n="homelab_kicker">Бонус · Homelab</div>
+      <h3 data-i18n="homelab_title">Власний сервер вдома</h3>
+      <p data-i18n="homelab_desc">Те, що я роблю на VPS у роботі, я підтримую і вдома на власному залізі: віртуалізація, контейнери, мережа, бекапи та моніторинг — як хобі й полігон для продакшен-практик.</p>
+      <ul class="homelab-facts">
+        <li data-i18n="homelab_f1">Proxmox VE на HP EliteDesk 800 G3 · 16 ГБ RAM · 1 ТБ NVMe, 512 ГБ SSD, 2 ТБ HDD</li>
+        <li data-i18n="homelab_f2">4 LXC-контейнери, розділені за ролями, 15+ self-hosted сервісів у Docker</li>
+        <li data-i18n="homelab_f3">Зовнішній доступ через Tailscale та Cloudflare Tunnel із Zero Trust Access</li>
+        <li data-i18n="homelab_f4">Щоденні бекапи vzdump на окремий диск, ротація 7 днів / 4 тижні / 3 місяці</li>
+        <li data-i18n="homelab_f5">Моніторинг: Uptime Kuma та Glances; захист: Fail2ban та AdGuard DNS</li>
+        <li data-i18n="homelab_f6">Перенесення всіх контейнерів і медіа з SATA SSD на NVMe через pct move-volume</li>
+      </ul>
+    </div>
+    <div class="homelab-diagram-wrap" tabindex="0" aria-label="Homelab diagram"><svg class="homelab-diagram" viewBox="0 0 520 360" role="img" aria-labelledby="hlTitle hlDesc" xmlns="http://www.w3.org/2000/svg">
+      <title id="hlTitle">Homelab architecture</title>
+      <desc id="hlDesc">Proxmox VE host with four LXC containers, reached via Cloudflare Tunnel and Tailscale; storage split into NVMe, SSD and a backup HDD.</desc>
+      <g font-family="DM Mono, monospace" font-size="11">
+        <rect x="40" y="8" width="200" height="30" rx="15" class="hl-edge"/>
+        <text x="140" y="27" text-anchor="middle" class="hl-t">Cloudflare Tunnel + Access</text>
+        <rect x="280" y="8" width="200" height="30" rx="15" class="hl-edge"/>
+        <text x="380" y="27" text-anchor="middle" class="hl-t">Tailscale (WireGuard)</text>
+        <path d="M140 38 V62 M380 38 V62" class="hl-line"/>
+        <rect x="10" y="62" width="500" height="208" rx="12" class="hl-host"/>
+        <text x="26" y="84" class="hl-k">PROXMOX VE · HP ELITEDESK 800 G3 · 16 GB</text>
+        <rect x="26" y="98" width="228" height="76" rx="8" class="hl-ct"/>
+        <text x="40" y="120" class="hl-h">CT100 · dev-server</text>
+        <text x="40" y="142" class="hl-m">Projects · PostgreSQL</text>
+        <rect x="266" y="98" width="228" height="76" rx="8" class="hl-ct"/>
+        <text x="280" y="120" class="hl-h">CT101 · home-media</text>
+        <text x="280" y="142" class="hl-m">Nextcloud · Immich · Jellyfin</text>
+        <text x="280" y="160" class="hl-m">Paperless · AdGuard · Fail2ban</text>
+        <rect x="26" y="182" width="228" height="76" rx="8" class="hl-ct"/>
+        <text x="40" y="204" class="hl-h">CT102 · smarthome</text>
+        <text x="40" y="226" class="hl-m">Home Assistant · Frigate · MQTT</text>
+        <rect x="266" y="182" width="228" height="76" rx="8" class="hl-ct hl-gw"/>
+        <text x="280" y="204" class="hl-h">CT103 · network-gateway</text>
+        <text x="280" y="226" class="hl-m">Tailscale · Uptime Kuma</text>
+        <text x="280" y="244" class="hl-m">Homepage</text>
+        <path d="M100 270 V292 M260 270 V292 M420 270 V292" class="hl-line"/>
+        <rect x="10" y="292" width="160" height="58" rx="8" class="hl-disk"/>
+        <text x="90" y="315" text-anchor="middle" class="hl-h">NVMe 1 TB</text>
+        <text x="90" y="335" text-anchor="middle" class="hl-m">containers + media</text>
+        <rect x="180" y="292" width="160" height="58" rx="8" class="hl-disk"/>
+        <text x="260" y="315" text-anchor="middle" class="hl-h">SSD 512 GB</text>
+        <text x="260" y="335" text-anchor="middle" class="hl-m">host OS</text>
+        <rect x="350" y="292" width="160" height="58" rx="8" class="hl-disk hl-bak"/>
+        <text x="430" y="315" text-anchor="middle" class="hl-h">HDD 2 TB</text>
+        <text x="430" y="335" text-anchor="middle" class="hl-m">daily vzdump backups</text>
+      </g>
+    </svg></div>
+  </div>
+
 </section>
 
 <!-- TIMELINE -->
