@@ -28,6 +28,8 @@
 <meta name="google-site-verification" content="4xWp3i40V2OTIZ1Z2g99UXm8QYJjhQFD1uGuqKpPHIU" />
 
 <link rel="canonical" href="https://zabolotny.de">
+<link rel="preload" href="assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/fonts.css">
 
 <!-- Schema.org structured data for Google rich results -->
@@ -163,6 +165,7 @@
 <script src="js/consent.js" defer></script>
 </head>
 <body>
+<a href="#main" class="skip-link" data-i18n="skip_link">Zum Inhalt springen</a>
 
 <canvas id="particles"></canvas>
 
@@ -187,6 +190,7 @@
 </nav>
 
 <!-- HERO -->
+<main id="main" tabindex="-1">
 <section class="hero" id="home">
   <div class="hero-glow" id="hglow"></div>
   <div class="hero-particles-container" id="heroParticles"></div>
@@ -263,7 +267,7 @@
       <div class="avatar-pulse"></div>
       <div style="position:absolute;inset:0;pointer-events:none;" id="orbitWrap"></div>
       <div class="avatar-circle">
-        <img src="assets/avatar.png" alt="Serge Zabolotny" class="avatar-image">
+        <picture><source srcset="assets/avatar.webp" type="image/webp"><img src="assets/avatar.png" alt="Serge Zabolotny" class="avatar-image" width="500" height="500" fetchpriority="high" decoding="async"></picture>
         <div class="avatar-shine"></div>
       </div>
       <div class="avatar-badge">
@@ -593,6 +597,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <p>© <span id="currentYear">2026</span> <span class="fa">Serge Zabolotny</span> <span class="footer-sep">|</span> zabolotny.de <span class="footer-sep">|</span> <span data-i18n="footer_deployed">Deployed auf</span> <span class="fa">Vercel</span> <span class="footer-sep">|</span> <span class="fa3">Dresden</span></p>
