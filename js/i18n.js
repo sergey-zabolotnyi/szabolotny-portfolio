@@ -2,6 +2,7 @@
 
 const translations = {
   de: {
+    skip_link: 'Zum Inhalt springen',
     nav_about: 'Über mich', nav_skills: 'Skills', nav_projects: 'Projekte', nav_contact: 'Kontakt',
     hero_location: 'zabolotny.de · Dresden, Deutschland', hero_badge: 'AI-Produkte live gebaut', hero_projects: 'Projekte ansehen →', hero_cv: 'CV herunterladen ↓', hero_available: 'Verfügbar für Projekte', hero_scroll: 'Scrollen',
     hero_stat_projects: 'Live-Projekte', hero_stat_ai: 'AI-Produkte', hero_stat_de: 'Deutsch',
@@ -103,6 +104,7 @@ const translations = {
     cal_btn: 'Termin buchen →'
   },
   en: {
+    skip_link: 'Skip to content',
     nav_about: 'About', nav_skills: 'Skills', nav_projects: 'Projects', nav_contact: 'Contact',
     hero_location: 'zabolotny.de · Dresden, Germany', hero_badge: 'AI products shipped live', hero_projects: 'View Projects →', hero_cv: 'Download CV ↓', hero_available: 'Available for Projects', hero_scroll: 'Scroll',
     hero_stat_projects: 'Live projects', hero_stat_ai: 'AI products', hero_stat_de: 'German',
@@ -203,6 +205,7 @@ const translations = {
     cal_btn: 'Book a call →',
   },
   ru: {
+    skip_link: 'Перейти к содержимому',
     nav_about: 'Обо мне', nav_skills: 'Навыки', nav_projects: 'Проекты', nav_contact: 'Контакты',
     hero_location: 'zabolotny.de · Дрезден, Германия', hero_badge: 'AI-продукты запущены live', hero_projects: 'Смотреть проекты →', hero_cv: 'Скачать CV ↓', hero_available: 'Открыт для проектов', hero_scroll: 'Листать',
     hero_stat_projects: 'Live-проекты', hero_stat_ai: 'AI-продукты', hero_stat_de: 'Немецкий',
@@ -303,6 +306,7 @@ const translations = {
     cal_btn: 'Созвонимся →',
   },
   ua: {
+    skip_link: 'Перейти до вмісту',
     nav_about: 'Про мене', nav_skills: 'Навички', nav_projects: 'Проєкти', nav_contact: 'Контакт',
     hero_location: 'zabolotny.de · Дрезден, Німеччина', hero_badge: 'AI-продукти запущені live', hero_projects: 'Дивитись проєкти →', hero_cv: 'Завантажити CV ↓', hero_available: 'Відкритий для проєктів', hero_scroll: 'Гортати',
     hero_stat_projects: 'Live-проєкти', hero_stat_ai: 'AI-продукти', hero_stat_de: 'Німецька',
