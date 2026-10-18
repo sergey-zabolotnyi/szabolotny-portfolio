@@ -2826,3 +2826,54 @@ html { overflow-x: hidden; }
   .homelab-diagram-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -20px; padding: 0 20px 6px; }
   .homelab-diagram { min-width: 500px; }
 }
+
+/* === ENGINEERING NOTES === */
+.notes-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px 32px; margin-bottom: 28px; }
+.notes-intro { max-width: 560px; color: #cfcfdd; font-size: 15px; line-height: 1.7; }
+.notes-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.notes-filter {
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #c5c5f1; background: transparent; border: 1px solid var(--border); padding: 8px 16px; cursor: pointer;
+  transition: border-color .2s, color .2s, background .2s;
+}
+.notes-filter:hover { border-color: rgba(124, 111, 255, 0.5); color: var(--fg); }
+.notes-filter.active { border-color: var(--accent); color: var(--accent); background: rgba(124, 111, 255, 0.1); }
+
+.notes-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.note { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; transition: border-color .25s, transform .25s; }
+.note:hover { border-color: rgba(124, 111, 255, 0.45); }
+.note[hidden] { display: none; }
+.note details > summary { list-style: none; cursor: pointer; padding: 22px 22px 18px; display: block; }
+.note details > summary::-webkit-details-marker { display: none; }
+.note-meta { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 14px; font-family: 'DM Mono', monospace; font-size: 11px; }
+.note-tag { color: var(--accent); background: rgba(124, 111, 255, 0.12); border-radius: 20px; padding: 3px 10px; }
+.note-date { color: rgba(232, 232, 255, 0.45); padding-top: 3px; white-space: nowrap; }
+.note-title { font-size: 17px; font-weight: 700; color: #ececff; line-height: 1.35; margin-bottom: 10px; }
+.note-problem { font-size: 13.5px; color: rgba(232, 232, 255, 0.68); line-height: 1.6; margin-bottom: 16px; }
+.note-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent2); margin-right: 4px; }
+.note-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.note-chip {
+  font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent3);
+  background: rgba(77, 255, 180, 0.08); border: 1px solid rgba(77, 255, 180, 0.3); border-radius: 8px; padding: 6px 11px; line-height: 1.4;
+}
+.note-toggle { flex-shrink: 0; width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 50%; position: relative; transition: transform .25s, border-color .25s; }
+.note-toggle::before, .note-toggle::after { content: ''; position: absolute; left: 50%; top: 50%; width: 10px; height: 1.5px; background: #c5c5f1; transform: translate(-50%, -50%); }
+.note-toggle::after { transform: translate(-50%, -50%) rotate(90deg); transition: opacity .25s; }
+.note details[open] .note-toggle { border-color: var(--accent); transform: rotate(180deg); }
+.note details[open] .note-toggle::after { opacity: 0; }
+.note-body { list-style: none; display: grid; gap: 8px; padding: 2px 22px 18px; border-top: 1px dashed var(--border); margin: 0 22px; padding-left: 0; padding-right: 0; padding-top: 16px; }
+.note-body li { position: relative; padding-left: 16px; font-size: 13.5px; line-height: 1.6; color: #cfcfdd; }
+.note-body li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
+.note-link { display: inline-block; margin: 0 22px 20px; font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent3); text-decoration: none; border-bottom: 1px dashed rgba(77, 255, 180, 0.4); }
+.note-link:hover { border-color: var(--accent3); }
+
+.notes-more-wrap { display: flex; justify-content: center; margin-top: 28px; }
+.notes-more {
+  font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--fg); background: transparent; border: 1px solid var(--border); padding: 13px 26px; cursor: pointer; transition: border-color .2s;
+}
+.notes-more:hover { border-color: var(--accent); }
+.notes-more[hidden] { display: none; }
+
+@media (max-width: 1100px) { .notes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .notes-grid { grid-template-columns: 1fr; } }
