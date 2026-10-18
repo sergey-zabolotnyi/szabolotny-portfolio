@@ -169,6 +169,7 @@
 .footer-link-btn:hover { color: rgba(232,232,255,0.85); }
 @media (max-width: 600px) {
   .cookie-consent-inner { flex-direction: column; align-items: stretch; }
+  .cookie-consent-inner p { flex: none; }
   .cookie-actions { justify-content: stretch; }
   .cookie-actions button { flex: 1; }
 }
@@ -207,7 +208,7 @@
   <div class="hero-particles-container" id="heroParticles"></div>
   <div class="hero-grid-overlay"></div>
   <div class="hero-code-rain">
-    <div class="code-line">&lt;?php echo "Hello AI World"; ?&gt;</div>
+    <div class="code-line">docker compose up -d --build</div>
     <div class="code-line">const agent = new AIAssistant();</div>
     <div class="code-line">def build_solution(): return "success"</div>
     <div class="code-line">import { SvelteKit } from '@sveltejs/kit'</div>
@@ -248,11 +249,11 @@
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
-        <span class="stat-number">9+</span>
-        <span class="stat-label-sm" data-i18n="hero_stat_projects">Live projects</span>
+        <span class="stat-number">10+</span>
+        <span class="stat-label-sm" data-i18n="hero_stat_projects">Projects</span>
       </div>
       <div class="hero-stat">
-        <span class="stat-number">5</span>
+        <span class="stat-number">7</span>
         <span class="stat-label-sm" data-i18n="hero_stat_ai">AI products</span>
       </div>
       <div class="hero-stat">
@@ -315,8 +316,8 @@
       <p data-i18n="about_p3">Based in Dresden. Open for full-time and freelance projects.</p>
     </div>
     <div class="stats-grid reveal-right d2">
-      <div class="stat-card"><div class="stat-num" data-target="9">0</div><div class="stat-label" data-i18n="stat_projects">Projects</div></div>
-      <div class="stat-card"><div class="stat-num" data-target="10">0</div><div class="stat-label" data-i18n="stat_exp">Years Experience</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="10">0</div><div class="stat-label" data-i18n="stat_projects">Projects</div></div>
+      <div class="stat-card"><div class="stat-num" data-target="2">0</div><div class="stat-label" data-i18n="stat_exp">Years full-stack</div></div>
       <div class="stat-card"><div class="stat-num stat-b2">B2+</div><div class="stat-label" data-i18n="stat_german">German 2025</div></div>
       <div class="stat-card"><div class="stat-num" data-target="4">0</div><div class="stat-label" data-i18n="stat_lang">Languages</div></div>
     </div>
@@ -336,12 +337,12 @@
     <a href="https://meistermeld.de" target="_blank" rel="noopener noreferrer" class="featured-case featured-case-main">
       <div class="featured-topline"><span data-i18n="featured_1_type">SaaS · Trades</span><span>2025</span></div>
       <h3>MeisterMeld</h3>
-      <p data-i18n="featured_1_desc">Field-service platform for craftsmen with PWA, job workflows, AI reports from photo/voice input and deployment on my own 1Blue server.</p>
+      <p data-i18n="featured_1_desc">Field-service platform for craftsmen with PWA, job workflows, AI reports from photo/voice input and deployment on my own 1blu server.</p>
       <div class="featured-proof">
-        <span>Next.js</span><span>PostgreSQL</span><span>Drizzle ORM</span><span>1Blue</span>
+        <span>Next.js</span><span>PostgreSQL</span><span>Drizzle ORM</span><span>1blu</span>
       </div>
     </a>
-    <a href="https://scamguard.zabolotny.de/" target="_blank" rel="noopener noreferrer" class="featured-case">
+    <a href="https://scam-guard.de/" target="_blank" rel="noopener noreferrer" class="featured-case">
       <div class="featured-topline"><span data-i18n="featured_2_type">Social Impact · AI</span><span>2026</span></div>
       <h3>ScamGuard</h3>
       <p data-i18n="featured_2_desc">Multilingual platform that checks job listings in real time for scam patterns and protects job seekers from fraud.</p>
@@ -416,7 +417,7 @@
     <div class="tl-item reveal d2">
       <div class="tl-dot"></div>
       <div class="tl-year">2023</div>
-      <div class="tl-content"><div class="tl-title" data-i18n="timeline_3_title">Java Backend Developer — Starta Institut (Tel-Ran), Berlin</div><div class="tl-desc" data-i18n="timeline_3_desc">960h Java Web Development: Spring Boot, REST APIs, PostgreSQL, DevOps Basics. Graduation project: CRM system. DEKRA-certified.</div></div>
+      <div class="tl-content"><div class="tl-title" data-i18n="timeline_3_title">Professional training: Java Web Development — Starta Institut (Tel-Ran), Berlin</div><div class="tl-desc" data-i18n="timeline_3_desc">960h Java Web Development: Spring Boot, REST APIs, PostgreSQL, DevOps Basics. Graduation project: CRM system. DEKRA-certified.</div></div>
     </div>
     <div class="tl-item reveal d3">
       <div class="tl-dot"></div>
@@ -441,13 +442,14 @@
     <button class="pf-btn" data-filter="done" data-i18n="filter_done">Done</button>
   </div>
   <div class="projects-grid" id="projectsGrid">
-    <a href="https://scamguard.zabolotny.de/" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="live" data-url="https://scamguard.zabolotny.de/"><div class="pidx">10</div><div class="pbody"><h3>ScamGuard <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_scamguard_desc">AI-powered platform that automatically analyzes job listings and messages for scam patterns — multilingual, with dedicated SSR routes per language and local browser history.</p><p class="prole" data-i18n="proj_scamguard_role">Solo development: Next.js App Router, multilingual SSR routes, AI classification, deployment on own VPS</p><div class="pmetrics"><span data-i18n="proj_scamguard_proof_1">Multilingual SSR routes ([lang])</span><span data-i18n="proj_scamguard_proof_2">Real-time AI scam detection</span><span data-i18n="proj_scamguard_proof_3">History TTL in localStorage</span></div><div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">AI Classification</span><span class="ptag">i18n SSR</span><span class="ptag">VPS · nginx · PM2</span></div></div><div class="parr">Live ↗</div></a>
-    <a href="https://meistermeld.de" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://meistermeld.de" data-preview="/assets/previews/meisterdeck.jpg"><div class="pidx">09</div><div class="pbody"><h3>MeisterMeld <span class="pbadge b-dev" data-i18n="status_dev">In Development</span></h3><p class="pdesc" data-i18n="proj_meisterdesk_desc">Field service management for craftsmen: customer, job &amp; employee management, PWA, AI reports, voice/photo uploads.</p><p class="prole" data-i18n="proj_meisterdesk_role">Solo development: Next.js, Drizzle ORM, PostgreSQL, PWA, AI integration, 1Blue deployment</p><div class="pmetrics"><span data-i18n="proj_meisterdesk_proof_1">PWA for mobile teams</span><span data-i18n="proj_meisterdesk_proof_2">Drizzle ORM data model</span><span data-i18n="proj_meisterdesk_proof_3">Deployment on 1Blue server</span></div><div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">Drizzle ORM</span><span class="ptag">PostgreSQL</span><span class="ptag">PWA</span><span class="ptag">AI Reports</span><span class="ptag">1Blue</span></div></div><div class="parr">Live ↗</div></a>
-    <a href="https://remont-online.net" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://remont-online.net"><div class="pidx">08</div><div class="pbody"><h3>RenovAI <span class="pbadge b-dev" data-i18n="status_dev">In Development</span></h3><p class="pdesc" data-i18n="proj_remont_desc">AI analyzes room photos or floor plans and automatically generates a detailed cost estimate with works, materials, prices and design suggestions.</p><p class="prole" data-i18n="proj_remont_role">Solo development: React, FastAPI, PostgreSQL, OpenAI Vision, VPS deployment</p><div class="pmetrics"><span data-i18n="proj_remont_proof_1">Vision analysis of room photos</span><span data-i18n="proj_remont_proof_2">Structured cost estimation</span><span data-i18n="proj_remont_proof_3">FastAPI backend on VPS</span></div><div class="pstack"><span class="ptag">React</span><span class="ptag">FastAPI</span><span class="ptag">PostgreSQL</span><span class="ptag">OpenAI Vision</span><span class="ptag">VPS</span></div></div><div class="parr">Live ↗</div></a>
+    <a href="https://pflegeoasis.de" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="live" data-url="https://pflegeoasis.de"><div class="pidx">11</div><div class="pbody"><h3>PflegeOasis.de <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_pflege_desc">Free guidance portal for long-term care in Germany: care-level and care-allowance calculators, objection letter generator, application checklist and 200+ guide articles.</p><p class="prole" data-i18n="proj_pflege_role">Concept, development, calculator logic, content structure and SEO</p><div class="pmetrics"><span data-i18n="proj_pflege_proof_1">Care-level calculator based on the MD point system</span><span data-i18n="proj_pflege_proof_2">200+ guide articles</span><span data-i18n="proj_pflege_proof_3">Free, no login</span></div><div class="pstack"><span class="ptag">Content-SEO</span><span class="ptag">Rechner-Tools</span><span class="ptag">Health / Pflege</span></div></div><div class="parr">Live ↗</div></a>
+    <a href="https://scam-guard.de/" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="live" data-url="https://scam-guard.de/"><div class="pidx">10</div><div class="pbody"><h3>ScamGuard <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_scamguard_desc">AI-powered platform that automatically analyzes job listings and messages for scam patterns — multilingual, with dedicated SSR routes per language and local browser history.</p><p class="prole" data-i18n="proj_scamguard_role">Solo development: Next.js App Router, multilingual SSR routes, AI classification, deployment on own VPS</p><div class="pmetrics"><span data-i18n="proj_scamguard_proof_1">Multilingual SSR routes ([lang])</span><span data-i18n="proj_scamguard_proof_2">Real-time AI scam detection</span><span data-i18n="proj_scamguard_proof_3">History TTL in localStorage</span></div><div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">AI Classification</span><span class="ptag">i18n SSR</span><span class="ptag">VPS · nginx · PM2</span></div></div><div class="parr">Live ↗</div></a>
+    <a href="https://meistermeld.de" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://meistermeld.de" data-preview="/assets/previews/meisterdeck.jpg"><div class="pidx">09</div><div class="pbody"><h3>MeisterMeld <span class="pbadge b-dev" data-i18n="status_dev">In Development</span></h3><p class="pdesc" data-i18n="proj_meisterdesk_desc">Field service management for craftsmen: customer, job &amp; employee management, PWA, AI reports, voice/photo uploads.</p><p class="prole" data-i18n="proj_meisterdesk_role">Solo development: Next.js, Drizzle ORM, PostgreSQL, PWA, AI integration, 1blu deployment</p><div class="pmetrics"><span data-i18n="proj_meisterdesk_proof_1">PWA for mobile teams</span><span data-i18n="proj_meisterdesk_proof_2">Drizzle ORM data model</span><span data-i18n="proj_meisterdesk_proof_3">Deployment on 1blu server</span></div><div class="pstack"><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">Drizzle ORM</span><span class="ptag">PostgreSQL</span><span class="ptag">PWA</span><span class="ptag">AI Reports</span><span class="ptag">1blu</span></div></div><div class="parr">Website ↗</div></a>
+    <a href="https://remont-online.net" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://remont-online.net"><div class="pidx">08</div><div class="pbody"><h3>RenovAI <span class="pbadge b-dev" data-i18n="status_dev">In Development</span></h3><p class="pdesc" data-i18n="proj_remont_desc">AI analyzes room photos or floor plans and automatically generates a detailed cost estimate with works, materials, prices and design suggestions.</p><p class="prole" data-i18n="proj_remont_role">Solo development: React, FastAPI, PostgreSQL, OpenAI Vision, VPS deployment</p><div class="pmetrics"><span data-i18n="proj_remont_proof_1">Vision analysis of room photos</span><span data-i18n="proj_remont_proof_2">Structured cost estimation</span><span data-i18n="proj_remont_proof_3">FastAPI backend on VPS</span></div><div class="pstack"><span class="ptag">React</span><span class="ptag">FastAPI</span><span class="ptag">PostgreSQL</span><span class="ptag">OpenAI Vision</span><span class="ptag">VPS</span></div></div><div class="parr">Website ↗</div></a>
     <a href="https://geschenkfox.de" target="_blank" rel="noopener noreferrer" class="pcard reveal d3" data-status="live" data-url="https://geschenkfox.de" data-preview="/assets/previews/geschenkfox.jpg"><div class="pidx">07</div><div class="pbody"><h3>GeschenkFox.de <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_geschenkfox_desc">AI gift finder with interactive quiz for the German market. SEO-optimized architecture.</p><p class="prole" data-i18n="proj_geschenkfox_role">Solo implementation: Design (Figma), Frontend, SEO, UX concept</p><div class="pmetrics"><span data-i18n="proj_geschenkfox_proof_1">SEO-oriented SvelteKit architecture</span><span data-i18n="proj_geschenkfox_proof_2">Quiz UX for purchase intent</span><span data-i18n="proj_geschenkfox_proof_3">AI recommendation logic</span></div><div class="pstack"><span class="ptag">SvelteKit + Vite</span><span class="ptag">Tailwind CSS</span><span class="ptag">OpenAI API</span><span class="ptag">Vercel</span></div></div><div class="parr">Live ↗</div></a>
-    <a href="https://solarnex.zabolotny.de/" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://solarnex.zabolotny.de/"><div class="pidx">06</div><div class="pbody"><h3><span data-i18n="proj_solar_title">SolarCheck AI</span> <span class="pbadge b-dev" data-i18n="status_dev">In Development</span></h3><p class="pdesc" data-i18n="proj_solar_desc">B2B lead platform for the solar industry: AI analyzes rooftop potential by address, calculates ROI using real electricity prices and KfW subsidies — and delivers qualified leads to solar installers.</p><p class="prole" data-i18n="proj_solar_role">Solo development: SvelteKit, FastAPI, Google Solar API, PostgreSQL, Stripe, VPS</p><div class="pmetrics"><span data-i18n="proj_solar_proof_1">Address-based solar analysis</span><span data-i18n="proj_solar_proof_2">ROI logic with external APIs</span><span data-i18n="proj_solar_proof_3">B2B pay-per-lead model</span></div><div class="pstack"><span class="ptag">SvelteKit</span><span class="ptag">FastAPI</span><span class="ptag">Google Solar API</span><span class="ptag">PostgreSQL</span><span class="ptag">Stripe</span><span class="ptag">Claude Vision</span></div></div><div class="parr">Live ↗</div></a>
+    <a href="https://solarnex.zabolotny.de/" target="_blank" rel="noopener noreferrer" class="pcard reveal" data-status="dev" data-url="https://solarnex.zabolotny.de/"><div class="pidx">06</div><div class="pbody"><h3><span data-i18n="proj_solar_title">SolarCheck AI</span> <span class="pbadge b-dev" data-i18n="status_dev">In Development</span></h3><p class="pdesc" data-i18n="proj_solar_desc">B2B lead platform for the solar industry: AI analyzes rooftop potential by address, calculates ROI using real electricity prices and KfW subsidies — and delivers qualified leads to solar installers.</p><p class="prole" data-i18n="proj_solar_role">Solo development: SvelteKit, FastAPI, Google Solar API, PostgreSQL, Stripe, VPS</p><div class="pmetrics"><span data-i18n="proj_solar_proof_1">Address-based solar analysis</span><span data-i18n="proj_solar_proof_2">ROI logic with external APIs</span><span data-i18n="proj_solar_proof_3">B2B pay-per-lead model</span></div><div class="pstack"><span class="ptag">SvelteKit</span><span class="ptag">FastAPI</span><span class="ptag">Google Solar API</span><span class="ptag">PostgreSQL</span><span class="ptag">Stripe</span><span class="ptag">Claude Vision</span></div></div><div class="parr">Website ↗</div></a>
     <a href="https://t.me/traumwerk_bot" target="_blank" rel="noopener noreferrer" class="pcard reveal d1" data-status="live" data-url="https://t.me/traumwerk_bot" data-preview="/assets/previews/dreamdeck.jpg"><div class="pidx">05</div><div class="pbody"><h3>DreamDeck <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_dreamdeck_desc">AI dream journal as a Telegram bot: dream analysis, emotion recognition, weekly insights and pattern detection.</p><p class="prole" data-i18n="proj_dreamdeck_role">Solo development: AI integration, Backend, Database, UX</p><div class="pmetrics"><span data-i18n="proj_dreamdeck_proof_1">Telegram bot with freemium flow</span><span data-i18n="proj_dreamdeck_proof_2">PostgreSQL subscription tracking</span><span data-i18n="proj_dreamdeck_proof_3">Groq API for fast replies</span></div><div class="pstack"><span class="ptag">Python</span><span class="ptag">Telegram Bot</span><span class="ptag">Groq API</span><span class="ptag">PostgreSQL</span><span class="ptag">aiogram</span></div></div><div class="parr">Bot ↗</div></a>
-    <a href="https://smart-letter.net" target="_blank" rel="noopener noreferrer" class="pcard reveal d2" data-status="live" data-url="https://smart-letter.net"><div class="pidx">04</div><div class="pbody"><h3>Smart-Letter.net <span class="pbadge b-live" data-i18n="status_live">MVP live</span></h3><p class="pdesc" data-i18n="proj_smartletter_desc">AI platform: professional letters in 17 languages, speech recognition, PDF/DOCX/JPEG processing.</p><p class="prole" data-i18n="proj_smartletter_role">Solo development: Architecture, Frontend, Backend, AI Integration</p><div class="pmetrics"><span data-i18n="proj_smartletter_proof_1">PDF/DOCX/JPEG processing</span><span data-i18n="proj_smartletter_proof_2">17 languages in production</span><span data-i18n="proj_smartletter_proof_3">FastAPI + React MVP live</span></div><div class="pstack"><span class="ptag">FastAPI</span><span class="ptag">React + Vite</span><span class="ptag">Groq API</span><span class="ptag">PostgreSQL</span><span class="ptag">Vercel</span></div></div><div class="parr">Live ↗</div></a>
+    <a href="https://github.com/sergey-zabolotnyi?tab=repositories" target="_blank" rel="noopener noreferrer" class="pcard reveal d2" data-status="done" data-url="https://github.com/sergey-zabolotnyi?tab=repositories"><div class="pidx">04</div><div class="pbody"><h3>Smart-Letter <span class="pbadge b-study" data-i18n="status_archived">Archived</span></h3><p class="pdesc" data-i18n="proj_smartletter_desc">AI platform: professional letters in 17 languages, speech recognition, PDF/DOCX/JPEG processing.</p><p class="prole" data-i18n="proj_smartletter_role">Solo development: Architecture, Frontend, Backend, AI Integration</p><div class="pmetrics"><span data-i18n="proj_smartletter_proof_1">PDF/DOCX/JPEG processing</span><span data-i18n="proj_smartletter_proof_2">17 languages in production</span><span data-i18n="proj_smartletter_proof_3">Source code on GitHub</span></div><div class="pstack"><span class="ptag">FastAPI</span><span class="ptag">React + Vite</span><span class="ptag">Groq API</span><span class="ptag">PostgreSQL</span><span class="ptag">Vercel</span></div></div><div class="parr">Code ↗</div></a>
     <a href="https://kernbohr-expert.de" target="_blank" rel="noopener noreferrer" class="pcard reveal d1" data-status="done" data-url="https://kernbohr-expert.de"><div class="pidx">03</div><div class="pbody"><h3>Kernbohr-Expert.de <span class="pbadge b-done" data-i18n="status_done">Completed</span></h3><p class="pdesc" data-i18n="proj_kernbohr_desc">Corporate website for diamond core drilling. Local SEO, Google Maps, customer inquiries.</p><p class="prole" data-i18n="proj_kernbohr_role">Solo development: Structure, Layout, local SEO strategy</p><div class="pstack"><span class="ptag">WordPress</span><span class="ptag">SEO</span><span class="ptag">Google Maps</span></div></div><div class="parr">↗</div></a>
     <a href="https://trockenbauservice-salcutan.de" target="_blank" rel="noopener noreferrer" class="pcard reveal d2" data-status="done" data-url="https://trockenbauservice-salcutan.de"><div class="pidx">02</div><div class="pbody"><h3>Trockenbauservice-Salcutan.de <span class="pbadge b-done" data-i18n="status_done">Completed</span></h3><p class="pdesc" data-i18n="proj_trockenbau_desc">Website for drywall construction company. Project gallery, customer reviews, mobile-first.</p><p class="prole" data-i18n="proj_trockenbau_role">Solo implementation: Design, CMS integration, mobile optimization</p><div class="pstack"><span class="ptag">WordPress</span><span class="ptag">CSS individuell</span><span class="ptag">Portfolio Plugin</span></div></div><div class="parr">↗</div></a>
     <a href="https://github.com/sergey-zabolotnyi/project-spring-pizza" target="_blank" rel="noopener noreferrer" class="pcard reveal d3" data-status="done" data-url="https://github.com/sergey-zabolotnyi/project-spring-pizza" data-preview="/assets/previews/project-spring-pizza.jpg"><div class="pidx">01</div><div class="pbody"><h3><span data-i18n="proj_crm_title">CRM System</span> <span class="pbadge b-study" data-i18n="status_study">Thesis Project</span></h3><p class="pdesc" data-i18n="proj_crm_desc">Fullstack CRM: role management, project overview, reports. Graduation project.</p><p class="prole" data-i18n="proj_crm_role">Solo development: Database design, Backend, Frontend, API</p><div class="pstack"><span class="ptag">Java Spring Boot</span><span class="ptag">Angular</span><span class="ptag">MySQL</span><span class="ptag">REST API</span></div></div><div class="parr">↗</div></a>
@@ -459,59 +461,59 @@
 <section id="blog">
   <div class="sec-head reveal"><span class="sec-num">06 / <span data-i18n="blog_title">TIL · What I Learned</span></span><div class="sec-line"></div></div>
   <div class="blog-grid">
-    <div class="blog-card reveal">
-      <div class="blog-tag">VPS · DevOps</div>
-      <h4 class="blog-title" data-i18n="til_1_title">VPS Migration from Scratch</h4>
-      <p class="blog-desc" data-i18n="til_1_desc">Nginx, PostgreSQL, systemd, SSL, automated backups — configured everything myself. Migrated from Render/Netlify/Supabase to own VPS.</p>
-      <div class="blog-date">März 2025</div>
-    </div>
-    <div class="blog-card reveal d1">
-      <div class="blog-tag">Python · aiogram</div>
-      <h4 class="blog-title" data-i18n="til_2_title">Telegram Bot Freemium Model</h4>
-      <p class="blog-desc" data-i18n="til_2_desc">Stripe integration for bots, webhook vs polling, callback handler architecture and PostgreSQL subscription tracking for DreamDeck.</p>
-      <div class="blog-date">Feb 2025</div>
-    </div>
-    <div class="blog-card reveal d2">
-      <div class="blog-tag">OpenAI · RAG</div>
-      <h4 class="blog-title" data-i18n="til_3_title">Vision API for Document Analysis</h4>
-      <p class="blog-desc" data-i18n="til_3_desc">PDF/DOCX/JPEG extraction with OpenAI Vision, prompt engineering for structured outputs and multilingual letter generation in Smart-Letter.</p>
-      <div class="blog-date">Jan 2025</div>
-    </div>
-    <div class="blog-card reveal d3">
-      <div class="blog-tag">React · SvelteKit</div>
-      <h4 class="blog-title" data-i18n="til_4_title">i18n Without a Framework</h4>
-      <p class="blog-desc" data-i18n="til_4_desc">Lightweight 4-language i18n system (DE/EN/RU/UA) for this portfolio — no external libraries, just vanilla JS and localStorage.</p>
-      <div class="blog-date">Dez 2024</div>
-    </div>
-    <div class="blog-card reveal d1">
-      <div class="blog-tag">AI · Prompt Eng.</div>
-      <h4 class="blog-title" data-i18n="til_5_title">Groq API vs OpenAI: Speed vs Quality</h4>
-      <p class="blog-desc" data-i18n="til_5_desc">Llama 3.1 via Groq for real-time chat (10× faster), GPT-4o for complex analysis. Hybrid architecture cuts costs while keeping the same UX.</p>
-      <div class="blog-date">Nov 2024</div>
-    </div>
     <div class="blog-card reveal d2">
       <div class="blog-tag">SvelteKit · Stripe · API</div>
       <h4 class="blog-title" data-i18n="til_6_title">Google Solar API + B2B Lead Monetization</h4>
       <p class="blog-desc" data-i18n="til_6_desc">Solar Lead Machine: Google Solar API returns roof area, kWp and kWh/year per address. FastAPI backend connects Open Meteo, SMARD (BNetzA) and a KfW scraper for accurate ROI calculation. Stripe pay-per-lead for installers.</p>
-      <div class="blog-date">Mai 2025</div>
+      <div class="blog-date">05/2025</div>
     </div>
     <div class="blog-card reveal d3">
       <div class="blog-tag">Cloudflare · Edge · AI</div>
       <h4 class="blog-title" data-i18n="til_7_title">Cloudflare Worker as AI Proxy</h4>
       <p class="blog-desc" data-i18n="til_7_desc">AI chat widget on zabolotny.de runs via a Cloudflare Worker that keeps the Groq API key server-side. Zero cold start, global CDN, no dedicated server — edge computing in practice.</p>
-      <div class="blog-date">Apr 2025</div>
+      <div class="blog-date">04/2025</div>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-tag">VPS · DevOps</div>
+      <h4 class="blog-title" data-i18n="til_1_title">VPS Migration from Scratch</h4>
+      <p class="blog-desc" data-i18n="til_1_desc">Nginx, PostgreSQL, systemd, SSL, automated backups — configured everything myself. Migrated from Render/Netlify/Supabase to own VPS.</p>
+      <div class="blog-date">03/2025</div>
     </div>
     <div class="blog-card reveal">
       <div class="blog-tag">FastAPI · Telegram · DevOps</div>
       <h4 class="blog-title" data-i18n="til_8_title">FastAPI Microservice Instead of No-Code Tools</h4>
       <p class="blog-desc" data-i18n="til_8_desc">Contact form microservice replaces n8n and Formspree: FastAPI endpoint validates input and forwards messages via Telegram Bot API. Runs as a systemd service on own VPS, no third-party dependency.</p>
-      <div class="blog-date">Mär 2025</div>
+      <div class="blog-date">03/2025</div>
     </div>
     <div class="blog-card reveal d1">
       <div class="blog-tag">nginx · systemd · VPS</div>
       <h4 class="blog-title" data-i18n="til_9_title">Multi-Project nginx + systemd on One VPS</h4>
       <p class="blog-desc" data-i18n="til_9_desc">Multiple projects (Smart-Letter, RenovAI, DreamDeck, Portfolio API) on a single 1blu instance: nginx as reverse proxy with SSL termination via Cloudflare, each service as its own systemd unit with auto-restart.</p>
-      <div class="blog-date">Mär 2025</div>
+      <div class="blog-date">03/2025</div>
+    </div>
+    <div class="blog-card reveal d1">
+      <div class="blog-tag">Python · aiogram</div>
+      <h4 class="blog-title" data-i18n="til_2_title">Telegram Bot Freemium Model</h4>
+      <p class="blog-desc" data-i18n="til_2_desc">Stripe integration for bots, webhook vs polling, callback handler architecture and PostgreSQL subscription tracking for DreamDeck.</p>
+      <div class="blog-date">02/2025</div>
+    </div>
+    <div class="blog-card reveal d2">
+      <div class="blog-tag">OpenAI · RAG</div>
+      <h4 class="blog-title" data-i18n="til_3_title">Vision API for Document Analysis</h4>
+      <p class="blog-desc" data-i18n="til_3_desc">PDF/DOCX/JPEG extraction with OpenAI Vision, prompt engineering for structured outputs and multilingual letter generation in Smart-Letter.</p>
+      <div class="blog-date">01/2025</div>
+    </div>
+    <div class="blog-card reveal d3">
+      <div class="blog-tag">Vanilla JS · i18n</div>
+      <h4 class="blog-title" data-i18n="til_4_title">i18n Without a Framework</h4>
+      <p class="blog-desc" data-i18n="til_4_desc">Lightweight 4-language i18n system (DE/EN/RU/UA) for this portfolio — no external libraries, just vanilla JS and localStorage.</p>
+      <div class="blog-date">12/2024</div>
+    </div>
+    <div class="blog-card reveal d1">
+      <div class="blog-tag">AI · Prompt Eng.</div>
+      <h4 class="blog-title" data-i18n="til_5_title">Groq API vs OpenAI: Speed vs Quality</h4>
+      <p class="blog-desc" data-i18n="til_5_desc">Llama 3.1 via Groq for real-time chat (10× faster), GPT-4o for complex analysis. Hybrid architecture cuts costs while keeping the same UX.</p>
+      <div class="blog-date">11/2024</div>
     </div>
   </div>
 </section>
@@ -553,7 +555,7 @@
   <div class="sec-head reveal"><span class="sec-num">09 / <span data-i18n="nav_contact">Contact</span></span><div class="sec-line"></div></div>
   <div class="contact-layout">
     <div class="contact-left reveal-left">
-      <h2><span data-i18n="contact_title1">Let's</span> <span class="grad" data-i18n="contact_title2">together</span> <span data-i18n="contact_title3">build something.</span></h2>
+      <h2><span data-i18n="contact_title1">Let's build</span> <span class="grad" data-i18n="contact_title2">something</span> <span data-i18n="contact_title3">together.</span></h2>
       <p data-i18n="contact_p">Open to full-time positions, freelance projects and AI development collaborations — in Dresden and remote.</p>
       <div class="work-modes">
         <div class="work-mode">
@@ -598,7 +600,7 @@
           </div>
           <div class="field"><label data-i18n="form_msg">Message</label><textarea name="message" id="formMessage" data-i18n-ph="form_ph_msg" placeholder="I have an interesting project..."></textarea></div>
           <button type="submit" class="form-btn" id="formBtn" data-i18n="form_btn">Send Message →</button>
-          <p class="form-note">Nachricht wird sicher per Telegram übermittelt</p>
+          <p class="form-note" data-i18n="form_note">Your message goes straight to me — no third-party form services.</p>
         </form>
         <div class="form-success" id="formSuccess">
           <div class="fs-icon">✓</div>
