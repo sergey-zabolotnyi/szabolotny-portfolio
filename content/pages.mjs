@@ -66,6 +66,7 @@ export const CASES = [
     related: [
       { href: '/projekte/pflegeoasis/', label: 'Case Study: PflegeOasis' },
       { href: '/notizen/ci-cd-nextjs-vps/', label: 'Notiz: CI/CD für Next.js auf dem VPS' },
+      { href: '/notizen/', label: 'Alle Notizen' },
     ],
   },
   {
@@ -130,6 +131,7 @@ export const CASES = [
     related: [
       { href: '/projekte/meistermeld/', label: 'Case Study: MeisterMeld' },
       { href: '/notizen/ki-content-human-in-the-loop/', label: 'Notiz: KI-Content mit Human-in-the-Loop' },
+      { href: '/notizen/ci-cd-nextjs-vps/', label: 'Notiz: CI/CD für Next.js auf dem VPS' },
     ],
   },
 ];
@@ -147,6 +149,7 @@ export const NOTES = [
     lead:
       'Ein internes Dashboard war über eine Subdomain öffentlich erreichbar. So habe ich es mit Cloudflare Tunnel, Cloudflare Access und Tailscale abgesichert.',
     tags: ['Cloudflare Tunnel', 'Zero Trust', 'Cloudflare Access', 'Tailscale', 'Proxmox', 'Homelab'],
+    related: ['homeserver-zugriff-backup', 'proxmox-lxc-aufteilung', 'homeserver-statt-cloud'],
     body: `
 <h2>Ausgangslage</h2>
 <p>In meinem Homelab (Proxmox VE mit LXC-Containern) läuft ein Dashboard, das alle Dienste auflistet. Es war über eine Subdomain öffentlich erreichbar – ohne Login. Genau so etwas ist die typische Lücke bei Self-Hosting: Der Dienst ist praktisch, aber jeder, der die Adresse errät oder findet, sieht die Übersicht.</p>
@@ -189,6 +192,7 @@ cloudflared tunnel info &lt;tunnel-name&gt;</code></pre>
     lead:
       'Manuelle Deployments waren langsam und fehleranfällig. Heute reicht ein git push – ohne Ausfallzeit und ohne PaaS.',
     tags: ['GitHub Actions', 'CI/CD', 'Next.js 15', 'PM2', 'Caddy', 'pnpm', 'VPS'],
+    related: ['ki-content-human-in-the-loop', 'zero-trust-homelab'],
     body: `
 <h2>Ausgangslage</h2>
 <p>PflegeOasis läuft auf einem eigenen VPS (Next.js 15, PostgreSQL 16, Drizzle ORM). Anfangs habe ich per SSH eingeloggt und die Schritte von Hand ausgeführt. Das kostet Zeit, und jeder vergessene Schritt ist eine mögliche Fehlerquelle.</p>
@@ -235,6 +239,7 @@ pm2 reload &lt;app-name&gt;</code></pre>
     lead:
       'Bei Pflegerecht sind KI-Fehler nicht akzeptabel. So nutze ich ein Sprachmodell als Schreibhilfe, ohne ihm die Verantwortung zu geben.',
     tags: ['OpenAI API', 'LLM', 'Human-in-the-Loop', 'Prompt Engineering', 'Content-Pipeline', 'Next.js'],
+    related: ['ci-cd-nextjs-vps', 'zero-trust-homelab'],
     body: `
 <h2>Die Herausforderung</h2>
 <p>PflegeOasis soll 200+ Ratgeber-Artikel zu Pflegerecht anbieten. Von Hand ist das kaum zu schaffen, vollautomatisch generierter Content aber wäre bei diesem Thema verantwortungslos: Ein falsch genannter Anspruch oder eine falsche Frist kann für Betroffene echte Folgen haben.</p>
