@@ -25,7 +25,7 @@ const MAX_MESSAGE_CHARS = 1000; // per message
 const LANGS = ['de', 'en', 'ru', 'ua'];
 
 const FACTS = `
-Name: Serge Zabolotny (Sergey Zabolotnyi). Based in Dresden, Germany. German level B2+.
+Name: Serge Zabolotny (DE/EN); Сергей Заболотный (RU); Сергій Заболотний (UA). Official name in documents: Sergii Zabolotnyi. Based in Dresden, Germany. German level B2+.
 Role: AI Fullstack Developer with a strong DevOps / self-hosting side. Open to full-time positions
 (Fullstack, DevOps / Platform Engineering) and freelance projects, in Dresden or remote.
 
