@@ -41,6 +41,7 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/"/>
   </url>
+<!-- generated-pages:start -->
   <url>
     <loc>https://zabolotny.de/projekte/meistermeld/</loc>
     <lastmod>2026-10-25</lastmod>
@@ -55,20 +56,176 @@
     <loc>https://zabolotny.de/notizen/</loc>
     <lastmod>2026-10-25</lastmod>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/en/notes/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/ru/notes/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/ua/notes/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/notizen/homeserver-statt-cloud/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/homeserver-statt-cloud/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/en/notes/homeserver-statt-cloud/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/homeserver-statt-cloud/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/ru/notes/homeserver-statt-cloud/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/homeserver-statt-cloud/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/ua/notes/homeserver-statt-cloud/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/homeserver-statt-cloud/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/homeserver-statt-cloud/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/notizen/proxmox-lxc-aufteilung/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/proxmox-lxc-aufteilung/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/en/notes/proxmox-lxc-aufteilung/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/proxmox-lxc-aufteilung/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/ru/notes/proxmox-lxc-aufteilung/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/proxmox-lxc-aufteilung/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/ua/notes/proxmox-lxc-aufteilung/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/proxmox-lxc-aufteilung/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/proxmox-lxc-aufteilung/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/notizen/homeserver-zugriff-backup/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/homeserver-zugriff-backup/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/en/notes/homeserver-zugriff-backup/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/homeserver-zugriff-backup/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/ru/notes/homeserver-zugriff-backup/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/homeserver-zugriff-backup/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/ua/notes/homeserver-zugriff-backup/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/notizen/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/notes/homeserver-zugriff-backup/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/notizen/homeserver-zugriff-backup/"/>
   </url>
   <url>
     <loc>https://zabolotny.de/notizen/zero-trust-homelab/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zabolotny.de/notizen/ci-cd-nextjs-vps/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zabolotny.de/notizen/ki-content-human-in-the-loop/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.6</priority>
   </url>
+<!-- generated-pages:end -->
 </urlset>

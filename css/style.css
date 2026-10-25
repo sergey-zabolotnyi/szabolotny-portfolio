@@ -2881,3 +2881,5 @@ html { overflow-x: hidden; }
 /* links from the featured cases to the detailed case studies / notes */
 .case-links { margin-top: 22px; font-family: 'DM Mono', monospace; font-size: 0.85rem; color: var(--muted, rgba(232,228,216,0.7)); }
 .case-links a { color: var(--accent3, #4dffb4); }
+.homelab-series { margin-top: 18px; font-family: 'DM Mono', monospace; font-size: 0.82rem; color: var(--muted, rgba(232,228,216,0.7)); }
+.homelab-series a { color: var(--accent3, #4dffb4); }

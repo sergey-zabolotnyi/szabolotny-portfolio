@@ -13,6 +13,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
+import { SERIES } from '../content/series.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://zabolotny.de';
@@ -131,6 +132,12 @@ function buildPage(source, lang, t, missing) {
     `<link rel="canonical" href="${url}">`,
     'canonical link'
   );
+
+  // 3b. internal links to the translated note series / index point to the language-specific pages
+  html = html.replace(/href="\/notizen\/([a-z0-9-]+)\/"/g, (m, slug) =>
+    SERIES.some((s) => s.slug === slug) ? `href="/${lang}/notes/${slug}/"` : m
+  );
+  html = html.replace('href="/notizen/" data-i18n="cases_notes"', `href="/${lang}/notes/" data-i18n="cases_notes"`);
 
   // 4. language switcher: mark the current language as active
   html = html.replace(/<a class="lang-btn active"/, '<a class="lang-btn"');
