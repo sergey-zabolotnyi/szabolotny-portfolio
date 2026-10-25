@@ -3,6 +3,7 @@
 const translations = {
   de: {
     hero_first: 'Serge', hero_last: 'Zabolotny', footer_name: 'Serge Zabolotny',
+    notes_read: 'Ausführlich lesen →', cases_read: 'Ausführliche Case Studies:', cases_notes: 'Engineering Notes',
     blog_title: 'Engineering Notes',
     notes_intro: 'Konkrete Probleme, Entscheidungen und Ergebnisse aus meinen Projekten — kurz notiert.',
     notes_all: 'Alle',
@@ -203,6 +204,7 @@ const translations = {
   },
   en: {
     hero_first: 'Serge', hero_last: 'Zabolotny', footer_name: 'Serge Zabolotny',
+    notes_read: 'Read the full note →', cases_read: 'In-depth case studies:', cases_notes: 'Engineering Notes',
     blog_title: 'Engineering Notes',
     notes_intro: 'Concrete problems, decisions and results from my projects — briefly noted.',
     notes_all: 'All',
@@ -402,6 +404,7 @@ const translations = {
   },
   ru: {
     hero_first: 'Сергей', hero_last: 'Заболотный', footer_name: 'Сергей Заболотный',
+    notes_read: 'Читать полностью →', cases_read: 'Подробные кейсы:', cases_notes: 'Engineering Notes',
     blog_title: 'Инженерные заметки',
     notes_intro: 'Конкретные проблемы, решения и результаты из моих проектов — коротко.',
     notes_all: 'Все',
@@ -601,6 +604,7 @@ const translations = {
   },
   ua: {
     hero_first: 'Сергій', hero_last: 'Заболотний', footer_name: 'Сергій Заболотний',
+    notes_read: 'Читати повністю →', cases_read: 'Детальні кейси:', cases_notes: 'Engineering Notes',
     blog_title: 'Інженерні нотатки',
     notes_intro: 'Конкретні проблеми, рішення та результати з моїх проєктів — коротко.',
     notes_all: 'Усі',
