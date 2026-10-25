@@ -139,6 +139,9 @@ function buildPage(source, lang, t, missing) {
   );
   html = html.replace('href="/notizen/" data-i18n="cases_notes"', `href="/${lang}/notes/" data-i18n="cases_notes"`);
 
+  // 3c. English CV for all non-German pages
+  html = html.replace('href="/resume-de.pdf"', 'href="/resume-en.pdf"');
+
   // 4. language switcher: mark the current language as active
   html = html.replace(/<a class="lang-btn active"/, '<a class="lang-btn"');
   html = replaceOnce(html, `<a class="lang-btn" data-lang="${lang}"`, `<a class="lang-btn active" data-lang="${lang}"`, `lang link ${lang}`);
