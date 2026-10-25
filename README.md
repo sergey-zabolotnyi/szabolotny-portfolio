@@ -21,3 +21,14 @@ A GitHub Action (`.github/workflows/i18n-check.yml`) fails if the generated page
 `worker/ai-chat.js` is the source of the "Ask AI about Serge" proxy. It is deployed manually:
 Cloudflare → Workers & Pages → `zabolotny` → Edit code → paste → Deploy.
 Secrets: `GROQ_API_KEY` (required), `GROQ_MODEL` (optional, overrides the default model).
+
+## CV (PDF)
+
+`resume-de.pdf` / `resume-en.pdf` (and `resume.pdf` = German, kept for old links) are generated:
+
+```bash
+pip install reportlab --break-system-packages
+python3 scripts/build-cv.py
+```
+
+Content lives in the `CONTENT` dict of `scripts/build-cv.py`. The German page links `resume-de.pdf`, EN/RU/UA link `resume-en.pdf`.
