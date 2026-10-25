@@ -9,6 +9,11 @@
 <meta name="author" content="Serge Zabolotny">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://zabolotny.de/projekte/meistermeld/">
+<link rel="alternate" hreflang="de" href="https://zabolotny.de/projekte/meistermeld/">
+<link rel="alternate" hreflang="en" href="https://zabolotny.de/en/projects/meistermeld/">
+<link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/projects/meistermeld/">
+<link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/projects/meistermeld/">
+<link rel="alternate" hreflang="x-default" href="https://zabolotny.de/projekte/meistermeld/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -80,6 +85,7 @@
     <a href="/notizen/">Notizen</a>
     <a href="/#contact">Kontakt</a>
   </nav>
+  <div class="lang-switch" role="group" aria-label="Sprache"><a class="lang-btn active" href="/projekte/meistermeld/" hreflang="de" aria-current="true"><svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="4.33" fill="#000"/><rect width="18" height="4.33" y="4.33" fill="#D00"/><rect width="18" height="4.34" y="8.66" fill="#FFCE00"/></svg>DE</a><a class="lang-btn" href="/en/projects/meistermeld/" hreflang="en"><svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="13" fill="#012169"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#fff" stroke-width="2.6"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#C8102E" stroke-width="1.6"/><path d="M9,0 V13 M0,6.5 H18" stroke="#fff" stroke-width="4.3"/><path d="M9,0 V13 M0,6.5 H18" stroke="#C8102E" stroke-width="2.6"/></svg>EN</a><a class="lang-btn" href="/ru/projects/meistermeld/" hreflang="ru"><svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="4.33" fill="#fff"/><rect width="18" height="4.33" y="4.33" fill="#0039A6"/><rect width="18" height="4.34" y="8.66" fill="#D52B1E"/></svg>RU</a><a class="lang-btn" href="/ua/projects/meistermeld/" hreflang="uk"><svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="6.5" fill="#005BBB"/><rect width="18" height="6.5" y="6.5" fill="#FFD500"/></svg>UA</a></div>
 </header>
 <main class="wrap">
 <p class="crumbs"><a href="/">Start</a> / <a href="/#featured-cases">Projekte</a> / MeisterMeld</p>
@@ -89,14 +95,12 @@
 <dl class="facts">
   <div><dt>Rolle</dt><dd>Konzept, Design, Entwicklung, Deployment, Betrieb (alleinige Entwicklung)</dd></div>
   <div><dt>Status</dt><dd>MVP live – erste Nutzer aus dem Handwerk testen die App</dd></div>
-  <div><dt>Stack</dt><dd>Next.js, TypeScript, PostgreSQL, Drizzle ORM, PWA, KI-Integration</dd></div>
+  <div><dt>Stack</dt><dd>Next.js, TypeScript, PostgreSQL, Drizzle ORM, PWA, LLM</dd></div>
   <div><dt>Betrieb</dt><dd>Eigener VPS (1blu), Deployment per GitHub Actions</dd></div>
 </dl>
 <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Drizzle ORM</li><li>PWA</li><li>LLM</li><li>Voice-first</li><li>Field Service</li></ul>
-
 <h2>Das Problem: Dokumentation kostet Zeit, die auf der Baustelle fehlt</h2>
 <p>Im Handwerk entsteht die Arbeit vor Ort, die Dokumentation aber oft erst danach: Notizen auf Zetteln, Fotos im Handy, Berichte am Abend am Schreibtisch. Das ist Zeit, die niemand abrechnen kann – und Informationen gehen unterwegs verloren.</p>
-
 <h2>Die Lösung: erst sprechen, dann strukturieren lassen</h2>
 <p>MeisterMeld dreht den Ablauf um. Mitarbeiter sprechen den Bericht ein oder laden Fotos hoch, eine <strong>KI (LLM)</strong> macht daraus einen strukturierten Arbeitsbericht, den der Betrieb prüfen, als PDF herunterladen und dem Auftrag zuordnen kann.</p>
 <ul>
@@ -105,7 +109,6 @@
   <li><strong>Kunden-, Auftrags- und Mitarbeiterverwaltung</strong> in einer App</li>
   <li><strong>PWA</strong>: installierbar auf dem Smartphone, ohne App-Store</li>
 </ul>
-
 <h2>Technik und Entscheidungen</h2>
 <ul>
   <li><strong>Next.js + TypeScript</strong> für Oberfläche und API, <strong>PostgreSQL mit Drizzle ORM</strong> als typisiertes Datenmodell</li>
@@ -114,22 +117,29 @@
   <li><strong>Deployment per GitHub Actions</strong> bei jedem Push auf den Hauptzweig</li>
   <li><strong>Bewusster Scope:</strong> Buchhaltung und Rechnungsstellung baue ich nicht nach – dafür gibt es spezialisierte Programme. MeisterMeld konzentriert sich auf das, was vor Ort fehlt: schnelle, saubere Dokumentation.</li>
 </ul>
-
 <div class="callout">
   <p><strong>Lehre aus dem Betrieb:</strong> Sobald Menschen tagsüber mit der App arbeiten, sind Deployments keine interne Sache mehr. Ausfallarme Releases gehören zum Produkt – nicht nur zur Infrastruktur.</p>
 </div>
-
 <h2>Was ich daran zeige</h2>
 <p>MeisterMeld ist das Projekt mit dem größten Aufwand in meinem Portfolio, weil es alle Ebenen berührt: Produktidee und UX, KI-Integration (Sprache, Foto, strukturierte Ausgaben), Datenmodell, Authentifizierung und Rollen, Deployment und Betrieb mit echten Nutzern.</p>
-
+<h2>Weiterlesen</h2>
+<div class="cards">
+  <a class="card" href="/projekte/pflegeoasis/">
+    <p class="kicker">Case Study · Gesundheit · Ratgeber</p>
+    <h2>PflegeOasis: Pflegegrad-Rechner, Widerspruch-Generator und KI-Content mit menschlichem Review</h2>
+    <p>Ein kostenloses Portal, das Angehörigen hilft, sich im deutschen Pflegesystem zurechtzufinden – mit Rechnern, Checklisten und über 200 Ratgeber-Artikeln.</p>
+  </a>
+  <a class="card" href="/notizen/ci-cd-nextjs-vps/">
+    <p class="kicker">DevOps · CI/CD · Next.js</p>
+    <h2>CI/CD für Next.js 15 auf dem VPS: GitHub Actions, PM2-Reload und Caddy</h2>
+    <p>Manuelle Deployments waren langsam und fehleranfällig. Heute reicht ein git push – ohne Ausfallzeit und ohne PaaS.</p>
+  </a>
+</div>
 <section class="cta">
   <h2>Mehr sehen oder sprechen</h2>
   <p>Ich suche eine Festanstellung als Fullstack-/KI-Entwickler mit DevOps-Schwerpunkt und bin offen für passende Projekte.</p>
   <a class="btn primary" href="https://meistermeld.de" target="_blank" rel="noopener noreferrer">MeisterMeld live ansehen ↗</a>
   <a class="btn" href="/#contact">Kontakt aufnehmen</a>
-  <a class="btn" href="/projekte/pflegeoasis/">Case Study: PflegeOasis</a>
-  <a class="btn" href="/notizen/ci-cd-nextjs-vps/">Notiz: CI/CD für Next.js auf dem VPS</a>
-  <a class="btn" href="/notizen/">Alle Notizen</a>
 </section>
 </main>
 <footer>

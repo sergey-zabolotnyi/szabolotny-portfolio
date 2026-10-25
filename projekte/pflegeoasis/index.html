@@ -9,6 +9,11 @@
 <meta name="author" content="Serge Zabolotny">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://zabolotny.de/projekte/pflegeoasis/">
+<link rel="alternate" hreflang="de" href="https://zabolotny.de/projekte/pflegeoasis/">
+<link rel="alternate" hreflang="en" href="https://zabolotny.de/en/projects/pflegeoasis/">
+<link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/projects/pflegeoasis/">
+<link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/projects/pflegeoasis/">
+<link rel="alternate" hreflang="x-default" href="https://zabolotny.de/projekte/pflegeoasis/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -80,6 +85,7 @@
     <a href="/notizen/">Notizen</a>
     <a href="/#contact">Kontakt</a>
   </nav>
+  <div class="lang-switch" role="group" aria-label="Sprache"><a class="lang-btn active" href="/projekte/pflegeoasis/" hreflang="de" aria-current="true"><svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="4.33" fill="#000"/><rect width="18" height="4.33" y="4.33" fill="#D00"/><rect width="18" height="4.34" y="8.66" fill="#FFCE00"/></svg>DE</a><a class="lang-btn" href="/en/projects/pflegeoasis/" hreflang="en"><svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="13" fill="#012169"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#fff" stroke-width="2.6"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#C8102E" stroke-width="1.6"/><path d="M9,0 V13 M0,6.5 H18" stroke="#fff" stroke-width="4.3"/><path d="M9,0 V13 M0,6.5 H18" stroke="#C8102E" stroke-width="2.6"/></svg>EN</a><a class="lang-btn" href="/ru/projects/pflegeoasis/" hreflang="ru"><svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="4.33" fill="#fff"/><rect width="18" height="4.33" y="4.33" fill="#0039A6"/><rect width="18" height="4.34" y="8.66" fill="#D52B1E"/></svg>RU</a><a class="lang-btn" href="/ua/projects/pflegeoasis/" hreflang="uk"><svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="6.5" fill="#005BBB"/><rect width="18" height="6.5" y="6.5" fill="#FFD500"/></svg>UA</a></div>
 </header>
 <main class="wrap">
 <p class="crumbs"><a href="/">Start</a> / <a href="/#featured-cases">Projekte</a> / PflegeOasis</p>
@@ -92,11 +98,9 @@
   <div><dt>Stack</dt><dd>Next.js 15, TypeScript, Tailwind CSS, PostgreSQL 16, Drizzle ORM</dd></div>
   <div><dt>KI &amp; Betrieb</dt><dd>OpenAI API (offline), GitHub Actions, PM2, Caddy, 1blu-VPS</dd></div>
 </dl>
-<ul class="tags"><li>Next.js 15</li><li>PostgreSQL 16</li><li>Drizzle ORM</li><li>OpenAI</li><li>Human-in-the-Loop</li><li>CI/CD</li><li>PDF-Generierung</li></ul>
-
+<ul class="tags"><li>Next.js 15</li><li>PostgreSQL 16</li><li>Drizzle ORM</li><li>OpenAI</li><li>Human-in-the-Loop</li><li>CI/CD</li><li>PDF</li></ul>
 <h2>Das Problem: Pflege ist ein Behördenlabyrinth</h2>
 <p>Wer plötzlich einen Angehörigen pflegt, steht vor Begriffen wie Pflegegrad, Pflegegeld, Begutachtung und Widerspruch. Gute Informationen gibt es, aber sie sind verstreut, juristisch formuliert und oft nicht auf die konkrete Frage zugeschnitten.</p>
-
 <h2>Die Lösung: Werkzeuge statt nur Texte</h2>
 <ul>
   <li><strong>Pflegegrad-Rechner</strong> nach dem Punktesystem der Begutachtung</li>
@@ -104,11 +108,9 @@
   <li><strong>Widerspruch-Generator</strong>, der ein fertiges Schreiben als PDF erzeugt</li>
   <li><strong>Antrags-Checkliste</strong> und <strong>200+ Ratgeber-Artikel</strong> zu den häufigsten Fragen</li>
 </ul>
-
 <h2>KI-Content mit Human-in-the-Loop</h2>
 <p>Bei Pflegerecht sind Fehler nicht akzeptabel. Deshalb erzeugt die <strong>OpenAI API</strong> die Artikelentwürfe ausschließlich <strong>offline</strong> – nie live für Besucher. Jeder Entwurf wird mit strukturierten Prompts, Quellen und Rechtsgrundlagen erzeugt und vor der Veröffentlichung von einem Menschen geprüft. Die KI beschleunigt die Arbeit, die Verantwortung bleibt beim Menschen.</p>
 <p>Mehr dazu: <a href="/notizen/ki-content-human-in-the-loop/">KI-Content mit Human-in-the-Loop – die Notiz</a>.</p>
-
 <h2>Technik und Betrieb</h2>
 <ul>
   <li><strong>Next.js 15 (App Router)</strong> mit TypeScript und Tailwind CSS, <strong>PostgreSQL 16</strong> mit Drizzle ORM</li>
@@ -118,19 +120,32 @@
   <li>Betrieb auf einem eigenen 1blu-VPS</li>
 </ul>
 <p>Details: <a href="/notizen/ci-cd-nextjs-vps/">CI/CD für Next.js 15 auf dem VPS</a>.</p>
-
 <div class="callout">
   <p><strong>Hinweis:</strong> PflegeOasis liefert Orientierung, keine Rechtsberatung. Diese Seite beschreibt das Projekt aus Entwicklersicht.</p>
 </div>
-
+<h2>Weiterlesen</h2>
+<div class="cards">
+  <a class="card" href="/projekte/meistermeld/">
+    <p class="kicker">Case Study · SaaS · Handwerk</p>
+    <h2>MeisterMeld: Voice-first Berichte und Auftragsverwaltung für Handwerker</h2>
+    <p>Eine KI-gestützte Field-Service-App, mit der Handwerksbetriebe Arbeitsberichte per Sprache und Foto direkt auf der Baustelle erstellen – statt abends Zettel abzutippen.</p>
+  </a>
+  <a class="card" href="/notizen/ki-content-human-in-the-loop/">
+    <p class="kicker">KI · LLM · Content-Pipeline</p>
+    <h2>KI-Content mit Human-in-the-Loop: 200+ Ratgeber-Artikel mit LLM-Entwürfen</h2>
+    <p>Bei Pflegerecht sind KI-Fehler nicht akzeptabel. So nutze ich ein Sprachmodell als Schreibhilfe, ohne ihm die Verantwortung zu geben.</p>
+  </a>
+  <a class="card" href="/notizen/ci-cd-nextjs-vps/">
+    <p class="kicker">DevOps · CI/CD · Next.js</p>
+    <h2>CI/CD für Next.js 15 auf dem VPS: GitHub Actions, PM2-Reload und Caddy</h2>
+    <p>Manuelle Deployments waren langsam und fehleranfällig. Heute reicht ein git push – ohne Ausfallzeit und ohne PaaS.</p>
+  </a>
+</div>
 <section class="cta">
   <h2>Mehr sehen oder sprechen</h2>
   <p>Ich suche eine Festanstellung als Fullstack-/KI-Entwickler mit DevOps-Schwerpunkt und bin offen für passende Projekte.</p>
   <a class="btn primary" href="https://pflegeoasis.de" target="_blank" rel="noopener noreferrer">PflegeOasis live ansehen ↗</a>
   <a class="btn" href="/#contact">Kontakt aufnehmen</a>
-  <a class="btn" href="/projekte/meistermeld/">Case Study: MeisterMeld</a>
-  <a class="btn" href="/notizen/ki-content-human-in-the-loop/">Notiz: KI-Content mit Human-in-the-Loop</a>
-  <a class="btn" href="/notizen/ci-cd-nextjs-vps/">Notiz: CI/CD für Next.js auf dem VPS</a>
 </section>
 </main>
 <footer>

@@ -14,6 +14,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 import { SERIES } from '../content/series.mjs';
+import { NOTES, CASES } from '../content/pages.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://zabolotny.de';
@@ -135,7 +136,10 @@ function buildPage(source, lang, t, missing) {
 
   // 3b. internal links to the translated note series / index point to the language-specific pages
   html = html.replace(/href="\/notizen\/([a-z0-9-]+)\/"/g, (m, slug) =>
-    SERIES.some((s) => s.slug === slug) ? `href="/${lang}/notes/${slug}/"` : m
+    [...SERIES, ...NOTES].some((s) => s.slug === slug) ? `href="/${lang}/notes/${slug}/"` : m
+  );
+  html = html.replace(/href="\/projekte\/([a-z0-9-]+)\/"/g, (m, slug) =>
+    CASES.some((c) => c.slug === slug) ? `href="/${lang}/projects/${slug}/"` : m
   );
   html = html.replace('href="/notizen/" data-i18n="cases_notes"', `href="/${lang}/notes/" data-i18n="cases_notes"`);
 

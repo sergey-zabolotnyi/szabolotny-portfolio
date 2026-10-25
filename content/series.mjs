@@ -449,9 +449,9 @@ export const SERIES = [
       {
         p: t(
           'Der Cloudflare Tunnel baut eine <strong>ausgehende</strong> Verbindung auf, deshalb muss am Router kein Port geöffnet werden. Wie ich ein offenes Dashboard damit abgesichert habe, steht in der Notiz <a href="{{path:zero-trust-homelab}}">Zero Trust fürs Homelab</a>.',
-          'The Cloudflare Tunnel makes an <strong>outbound</strong> connection, so no port has to be opened on the router. How I locked down an exposed dashboard with it is in the German note <a href="{{path:zero-trust-homelab}}">Zero Trust for the homelab</a>.',
-          'Cloudflare Tunnel устанавливает <strong>исходящее</strong> соединение, поэтому на роутере не нужно открывать ни одного порта. Как я закрыл с его помощью открытый дашборд — в заметке на немецком <a href="{{path:zero-trust-homelab}}">Zero Trust для homelab</a>.',
-          'Cloudflare Tunnel встановлює <strong>вихідне</strong> з’єднання, тому на роутері не потрібно відкривати жодного порту. Як я закрив із його допомогою відкритий дашборд — у нотатці німецькою <a href="{{path:zero-trust-homelab}}">Zero Trust для homelab</a>.'
+          'The Cloudflare Tunnel makes an <strong>outbound</strong> connection, so no port has to be opened on the router. How I locked down an exposed dashboard with it is in the note <a href="{{path:zero-trust-homelab}}">Zero Trust for the homelab</a>.',
+          'Cloudflare Tunnel устанавливает <strong>исходящее</strong> соединение, поэтому на роутере не нужно открывать ни одного порта. Как я закрыл с его помощью открытый дашборд — в заметке <a href="{{path:zero-trust-homelab}}">Zero Trust для homelab</a>.',
+          'Cloudflare Tunnel встановлює <strong>вихідне</strong> з’єднання, тому на роутері не потрібно відкривати жодного порту. Як я закрив із його допомогою відкритий дашборд — у нотатці <a href="{{path:zero-trust-homelab}}">Zero Trust для homelab</a>.'
         ),
       },
       { h2: t('Schutz im Alltag', 'Everyday protection', 'Защита в повседневной работе', 'Захист у повсякденній роботі') },
