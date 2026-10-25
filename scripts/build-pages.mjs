@@ -122,7 +122,7 @@ ${alt}<link rel="icon" href="/favicon.ico" sizes="48x48">
 <meta name="twitter:title" content="${escAttr(title)}">
 <meta name="twitter:description" content="${escAttr(description)}">
 <meta name="twitter:image" content="${OG_IMAGE}">
-<meta name="theme-color" content="#7c6fff">
+<meta name="theme-color" content="#0047AB">
 <link rel="preload" href="/assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/fonts.css">

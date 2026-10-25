@@ -35,7 +35,7 @@ const ow = document.getElementById('orbitWrap');
 const orbits = [
   { r: 222, size: 8, color: '#4dffb4', dur: 6, delay: 0 },
   { r: 240, size: 6, color: '#ff6b6b', dur: 9, delay: -3 },
-  { r: 232, size: 5, color: '#7c6fff', dur: 12, delay: -6 }
+  { r: 232, size: 5, color: '#4B8DEB', dur: 12, delay: -6 }
 ];
 
 orbits.forEach(o => {
