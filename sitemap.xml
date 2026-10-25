@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://zabolotny.de/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/"/>
@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://zabolotny.de/en/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/"/>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://zabolotny.de/ru/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/"/>
@@ -33,7 +33,7 @@
   </url>
   <url>
     <loc>https://zabolotny.de/ua/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/"/>

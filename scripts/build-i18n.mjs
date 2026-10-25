@@ -22,20 +22,29 @@ const PAGES = {
   en: {
     htmlLang: 'en',
     locale: 'en_US',
+    title: 'Serge Zabolotny — Fullstack & AI Developer in Dresden',
+    name: 'Serge Zabolotny',
+    altNames: ['Sergii Zabolotnyi', 'Сергей Заболотный', 'Сергій Заболотний'],
     description:
-      'AI Fullstack Developer in Dresden, Germany. Next.js, SvelteKit, FastAPI, OpenAI. Building AI products such as ScamGuard — scam detection for job seekers.',
+      'Fullstack & AI developer in Dresden, Germany. Next.js, FastAPI, OpenAI — shipped products: MeisterMeld, PflegeOasis, ScamGuard. Deployed with Docker, CI/CD, Linux.',
   },
   ru: {
     htmlLang: 'ru',
     locale: 'ru_RU',
+    title: 'Сергей Заболотный — Fullstack- и AI-разработчик, Дрезден',
+    name: 'Сергей Заболотный',
+    altNames: ['Serge Zabolotny', 'Sergii Zabolotnyi', 'Сергій Заболотний'],
     description:
-      'AI Fullstack-разработчик в Дрездене, Германия. Next.js, SvelteKit, FastAPI, OpenAI. Создаю AI-продукты, например ScamGuard — распознавание мошенничества для соискателей.',
+      'Fullstack- и AI-разработчик в Дрездене, Германия. Next.js, FastAPI, OpenAI — свои продукты в продакшене: MeisterMeld, PflegeOasis, ScamGuard. Docker, CI/CD, Linux.',
   },
   ua: {
     htmlLang: 'uk',
     locale: 'uk_UA',
+    title: 'Сергій Заболотний — Fullstack- та AI-розробник, Дрезден',
+    name: 'Сергій Заболотний',
+    altNames: ['Serge Zabolotny', 'Sergii Zabolotnyi', 'Сергей Заболотный'],
     description:
-      'AI Fullstack-розробник у Дрездені, Німеччина. Next.js, SvelteKit, FastAPI, OpenAI. Створюю AI-продукти, зокрема ScamGuard — розпізнавання шахрайства для шукачів роботи.',
+      'Fullstack- та AI-розробник у Дрездені, Німеччина. Next.js, FastAPI, OpenAI — власні продукти в продакшені: MeisterMeld, PflegeOasis, ScamGuard. Docker, CI/CD, Linux.',
   },
 };
 
@@ -99,6 +108,17 @@ function buildPage(source, lang, t, missing) {
     '<html lang="de" data-page-lang="de">',
     `<html lang="${cfg.htmlLang}" data-page-lang="${lang}">`,
     '<html lang="de" data-page-lang="de">'
+  );
+  // title + social titles (German title comes from index.html; other languages are set here)
+  html = html.replace(/<title>[^<]*<\/title>/, `<title>${escText(cfg.title)}</title>`);
+  html = replaceMetaContent(html, 'property', 'og:title', cfg.title);
+  html = replaceMetaContent(html, 'name', 'twitter:title', cfg.title);
+  // JSON-LD Person: localized name, other spellings as alternateName
+  html = replaceOnce(
+    html,
+    /  "name": "Serge Zabolotny",\n  "alternateName": \[[^\]]*\],/.exec(html)?.[0] ?? '',
+    `  "name": ${JSON.stringify(cfg.name)},\n  "alternateName": ${JSON.stringify(cfg.altNames)},`,
+    'JSON-LD name'
   );
   html = replaceMetaContent(html, 'name', 'description', cfg.description);
   html = replaceMetaContent(html, 'property', 'og:description', cfg.description);
