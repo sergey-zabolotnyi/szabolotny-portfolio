@@ -3,7 +3,8 @@
 :root {
   --bg: #03031f;
   --fg: #e8e4d8;
-  --accent: #7c6fff;
+  --accent: #0047AB;
+  --accent-hi: #4B8DEB;
   --accent3: #4dffb4;
   --muted: rgba(232, 228, 216, 0.74);
   --border: #383853;
@@ -76,10 +77,10 @@ pre {
   font-family: 'DM Mono', monospace; font-size: 0.82rem; line-height: 1.6; color: var(--fg);
 }
 code { font-family: 'DM Mono', monospace; font-size: 0.88em; color: var(--fg); }
-p code, li code { background: rgba(124, 111, 255, 0.14); padding: 1px 6px; border-radius: 5px; }
+p code, li code { background: rgba(75, 141, 235, 0.16); padding: 1px 6px; border-radius: 5px; }
 
 .callout {
-  border-left: 3px solid var(--accent); background: var(--card);
+  border-left: 3px solid var(--accent-hi); background: var(--card);
   padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 22px 0;
 }
 .callout p:last-child { margin-bottom: 0; }
@@ -90,7 +91,7 @@ p code, li code { background: rgba(124, 111, 255, 0.14); padding: 1px 6px; borde
 .cta h2 { margin-top: 0; }
 .btn {
   display: inline-block; padding: 10px 20px; border-radius: 30px; text-decoration: none; margin: 4px 8px 4px 0;
-  font-family: 'DM Mono', monospace; font-size: 0.82rem; border: 1px solid var(--accent); color: var(--fg);
+  font-family: 'DM Mono', monospace; font-size: 0.82rem; border: 1px solid var(--accent-hi); color: var(--fg);
 }
 .btn.primary { background: var(--accent); }
 .btn:hover { border-color: var(--accent3); color: #fff; }
@@ -100,7 +101,7 @@ p code, li code { background: rgba(124, 111, 255, 0.14); padding: 1px 6px; borde
   display: block; text-decoration: none; padding: 22px; border: 1px solid var(--border);
   border-radius: 14px; background: var(--card); transition: border-color 0.2s;
 }
-.card:hover { border-color: var(--accent); }
+.card:hover { border-color: var(--accent-hi); }
 .card .kicker { margin-bottom: 6px; }
 .card h2, .card h3 { margin: 0 0 8px; color: var(--fg); font-size: 1.2rem; }
 .card p { margin-bottom: 0; }

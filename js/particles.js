@@ -48,10 +48,10 @@ const stars2 = mkStars(Math.round(150 * starScale), 0.5, 1.2, 0.75);
 const stars3 = mkStars(Math.round(55 * starScale), 1, 2.2, 1);
 
 const nebulae = [
-  { x: 0.15, y: 0.22, rx: 280, ry: 190, color: 'rgba(124,111,255,', a: 0.042 },
+  { x: 0.15, y: 0.22, rx: 280, ry: 190, color: 'rgba(75,141,235,', a: 0.042 },
   { x: 0.78, y: 0.14, rx: 210, ry: 250, color: 'rgba(77,255,180,', a: 0.028 },
   { x: 0.52, y: 0.75, rx: 310, ry: 175, color: 'rgba(255,107,107,', a: 0.026 },
-  { x: 0.9, y: 0.58, rx: 175, ry: 210, color: 'rgba(124,111,255,', a: 0.03 }
+  { x: 0.9, y: 0.58, rx: 175, ry: 210, color: 'rgba(75,141,235,', a: 0.03 }
 ];
 
 function drawNebula(n) {

@@ -24,7 +24,7 @@ function createHeroParticles() {
       animation-duration: ${duration}s;
       animation-delay: -${delay}s;
       --tx: ${tx}px;
-      background: ${Math.random() > 0.7 ? 'rgba(77, 255, 180, 0.6)' : 'rgba(124, 111, 255, 0.5)'};
+      background: ${Math.random() > 0.7 ? 'rgba(77, 255, 180, 0.6)' : 'rgba(75, 141, 235, 0.5)'};
     `;
     
     container.appendChild(particle);
