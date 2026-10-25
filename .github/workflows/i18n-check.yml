@@ -1,4 +1,4 @@
-name: i18n pages up to date
+name: generated pages up to date
 
 on:
   push:
@@ -14,3 +14,4 @@ jobs:
         with:
           node-version: 20
       - run: node scripts/build-i18n.mjs --check
+      - run: node scripts/build-pages.mjs --check

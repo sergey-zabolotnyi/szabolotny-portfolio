@@ -41,4 +41,34 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/"/>
   </url>
+  <url>
+    <loc>https://zabolotny.de/projekte/meistermeld/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/projekte/pflegeoasis/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/notizen/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/notizen/zero-trust-homelab/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/notizen/ci-cd-nextjs-vps/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/notizen/ki-content-human-in-the-loop/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>
