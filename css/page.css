@@ -122,3 +122,14 @@ th { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.07
 tbody tr:last-child td { border-bottom: 0; }
 td:first-child { color: var(--fg); }
 .more { margin-top: 22px; }
+
+/* language switcher (same look as the main site) */
+.lang-switch { display: flex; gap: 5px; align-items: center; }
+.topbar a.lang-btn {
+  display: flex; align-items: center; gap: 5px; padding: 5px 9px 5px 5px; border-radius: 3px;
+  border: 1px solid transparent; color: #c5c5f1; font-size: 10px; letter-spacing: 0.08em; text-decoration: none;
+}
+.topbar a.lang-btn:hover { border-color: rgba(75, 141, 235, 0.3); color: var(--fg); background: rgba(75, 141, 235, 0.05); }
+.topbar a.lang-btn.active { border-color: var(--accent-hi); color: var(--accent-hi); background: rgba(75, 141, 235, 0.1); }
+.flag { width: 18px; height: 13px; border-radius: 2px; flex-shrink: 0; display: block; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.07); }
+@media (max-width: 560px) { .topbar { justify-content: flex-start; } .lang-switch { order: -1; width: 100%; } }

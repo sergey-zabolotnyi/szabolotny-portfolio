@@ -111,7 +111,7 @@
 
 /* === TESTIMONIALS === */
 #testimonials { padding: 80px max(56px, calc((100vw - 1400px) / 2 + 56px)); }
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; margin-top: 40px; max-width: 860px; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; margin-top: 40px; max-width: 1200px; }
 .tcard {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(77,255,180,0.15);
@@ -126,6 +126,10 @@
 .tcard-author { display: flex; align-items: center; gap: 14px; }
 .tcard-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg,#0047AB,#4dffb4); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; color: #0d0d1a; flex-shrink: 0; }
 .tcard-name { font-size: 0.88rem; font-weight: 700; color: #e8e8ff; }
+.tcard-note { font-size: 0.72rem; color: rgba(232,232,255,0.4); font-family: 'DM Mono', monospace; margin: -12px 0 20px; line-height: 1.5; }
+.tcard-link { display: inline-block; margin-top: 18px; font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--accent3, #4dffb4); text-decoration: underline; text-underline-offset: 3px; }
+.tcard-link:hover { color: #fff; }
+.tcard-redacted { font-size: 0.68rem; color: rgba(232,232,255,0.35); font-family: 'DM Mono', monospace; margin-top: 4px; }
 .tcard-role { font-size: 0.75rem; color: rgba(232,232,255,0.45); margin-top: 2px; font-family: 'DM Mono', monospace; }
 
 /* === GITHUB ACTIVITY === */
@@ -345,7 +349,7 @@
       </div>
     </a>
   </div>
-  <p class="case-links reveal"><span data-i18n="cases_read">In-depth case studies:</span> <a href="/projekte/meistermeld/">MeisterMeld</a> · <a href="/projekte/pflegeoasis/">PflegeOasis</a> · <a href="/en/notes/homeserver-statt-cloud/" data-i18n="cases_series">Home-server series</a> · <a href="/en/notes/" data-i18n="cases_notes">Engineering Notes</a></p>
+  <p class="case-links reveal"><span data-i18n="cases_read">In-depth case studies:</span> <a href="/en/projects/meistermeld/">MeisterMeld</a> · <a href="/en/projects/pflegeoasis/">PflegeOasis</a> · <a href="/en/notes/homeserver-statt-cloud/" data-i18n="cases_series">Home-server series</a> · <a href="/en/notes/" data-i18n="cases_notes">Engineering Notes</a></p>
 </section>
 
 <!-- SKILLS -->
@@ -523,7 +527,7 @@
           <li data-i18n="note_zerotrust_b3">Private services exclusively via Tailscale</li>
           <li data-i18n="note_zerotrust_b4">Lesson: regularly check what DNS and tunnels actually publish</li>
         </ul>
-        <a class="note-link" href="/notizen/zero-trust-homelab/" data-i18n="notes_read">Read the full note →</a>
+        <a class="note-link" href="/en/notes/zero-trust-homelab/" data-i18n="notes_read">Read the full note →</a>
       </details>
     </article>
     <article class="note reveal" data-cat="frontend">
@@ -574,7 +578,7 @@
           <li data-i18n="note_cicd_b3">Caddy handles TLS certificates automatically</li>
           <li data-i18n="note_cicd_b4">Next.js 15, PostgreSQL 16 and Drizzle ORM on a 1blu VPS</li>
         </ul>
-        <a class="note-link" href="/notizen/ci-cd-nextjs-vps/" data-i18n="notes_read">Read the full note →</a>
+        <a class="note-link" href="/en/notes/ci-cd-nextjs-vps/" data-i18n="notes_read">Read the full note →</a>
       </details>
     </article>
     <article class="note reveal" data-cat="ai">
@@ -591,7 +595,7 @@
           <li data-i18n="note_aicontent_b3">Structured prompts with sources and legal basis</li>
           <li data-i18n="note_aicontent_b4">Lesson: on sensitive topics AI speeds things up, responsibility stays human</li>
         </ul>
-        <a class="note-link" href="/notizen/ki-content-human-in-the-loop/" data-i18n="notes_read">Read the full note →</a>
+        <a class="note-link" href="/en/notes/ki-content-human-in-the-loop/" data-i18n="notes_read">Read the full note →</a>
       </details>
     </article>
     <article class="note reveal" data-cat="backend">
@@ -727,6 +731,34 @@
           <div class="tcard-role" data-i18n="testimonial_role_client">CEO · Kernbohr-Expert.de &amp; Trockenbauservice-Salcutan.de</div>
         </div>
       </div>
+    </div>
+    <div class="tcard reveal">
+      <div class="tcard-quote">"</div>
+      <p class="tcard-text" data-i18n="testimonial_cx_text">“[He was] a very competent employee who could be deployed anywhere. His behavior towards customers was above average and confident.”</p>
+      <p class="tcard-note" data-i18n="testimonial_cx_note">Excerpt from the original job reference (English)</p>
+      <div class="tcard-author">
+        <div class="tcard-avatar">CX</div>
+        <div>
+          <div class="tcard-name">Concentrix Global Services GmbH</div>
+          <div class="tcard-role" data-i18n="testimonial_cx_role">Job Reference · Berlin · 2022</div>
+        </div>
+      </div>
+      <a class="tcard-link" href="/references/concentrix-job-reference-2022.pdf" target="_blank" rel="noopener" data-i18n="testimonial_pdf">View reference (PDF)</a>
+      <p class="tcard-redacted" data-i18n="testimonial_redacted">Date of birth redacted for privacy</p>
+    </div>
+    <div class="tcard reveal">
+      <div class="tcard-quote">"</div>
+      <p class="tcard-text" data-i18n="testimonial_tp_text">“Mr. Zabolotnyi has extensive professional knowledge. He contemplates difficult correlations, recognises what is essential and is able to quickly point out solutions. […] He always worked reliably and conscientiously.”</p>
+      <p class="tcard-note" data-i18n="testimonial_tp_note">Excerpt from the English version of the reference (German original attached)</p>
+      <div class="tcard-author">
+        <div class="tcard-avatar">TP</div>
+        <div>
+          <div class="tcard-name">Teleperformance Germany S. à r. l. &amp; Co. KG</div>
+          <div class="tcard-role" data-i18n="testimonial_tp_role">Employment Reference · Görlitz · 2019</div>
+        </div>
+      </div>
+      <a class="tcard-link" href="/references/teleperformance-arbeitszeugnis-2019.pdf" target="_blank" rel="noopener" data-i18n="testimonial_pdf">View reference (PDF)</a>
+      <p class="tcard-redacted" data-i18n="testimonial_redacted">Date of birth redacted for privacy</p>
     </div>
   </div>
 </section>

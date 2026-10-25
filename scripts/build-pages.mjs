@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 // Generates content pages from content/*.mjs:
-//   - case studies   /projekte/<slug>/                       (German)      content/pages.mjs
-//   - notes          /notizen/<slug>/                        (German)      content/pages.mjs
-//   - series         /notizen/<slug>/, /en|ru|ua/notes/<slug>/ (4 languages) content/series.mjs
+//   - case studies   /projekte/<slug>/, /en|ru|ua/projects/<slug>/  (4 languages) content/pages.mjs
+//   - notes          /notizen/<slug>/,  /en|ru|ua/notes/<slug>/     (4 languages) content/pages.mjs
+//   - series         /notizen/<slug>/,  /en|ru|ua/notes/<slug>/     (4 languages) content/series.mjs
 //   - note indexes   /notizen/, /en|ru|ua/notes/
+// Every generated page has a language switcher (flags) and hreflang alternates.
 // and the generated block in sitemap.xml (with hreflang alternates for translated pages).
 //
 //   node scripts/build-pages.mjs          -> (re)write pages + sitemap block
@@ -36,19 +37,34 @@ const LANG = {
 const UI = {
   de: { start: 'Start', projects: 'Projekte', notes: 'Notizen', contact: 'Kontakt', all: 'Alle Notizen', homeBtn: 'Zur Startseite',
         ctaH: 'Mehr aus meinem Homelab', ctaP: 'Die ganze Serie, weitere Notizen und Case Studies findest du hier.',
-        seriesH: 'Serie: Raus aus der Cloud', moreH: 'Weitere Notizen', related: 'Weiterlesen', deOnly: '' },
+        seriesH: 'Serie: Raus aus der Cloud', moreH: 'Weitere Notizen', related: 'Weiterlesen', langLabel: 'Sprache',
+        practiceH: 'Mehr aus der Praxis', practiceP: 'Weitere Notizen, Case Studies und Projekte findest du auf der Startseite.',
+        caseH: 'Mehr sehen oder sprechen', caseP: 'Ich suche eine Festanstellung als Fullstack-/KI-Entwickler mit DevOps-Schwerpunkt und bin offen für passende Projekte.',
+        caseBtn: 'Case Study', contactBtn: 'Kontakt aufnehmen' },
   en: { start: 'Home', projects: 'Projects', notes: 'Notes', contact: 'Contact', all: 'All notes', homeBtn: 'Back to the homepage',
         ctaH: 'More from my homelab', ctaP: 'Find the whole series, more notes and case studies here.',
-        seriesH: 'Series: leaving the cloud', moreH: 'More notes', related: 'Keep reading',
-        deOnly: 'More notes (German only)' },
+        seriesH: 'Series: leaving the cloud', moreH: 'More notes', related: 'Keep reading', langLabel: 'Language',
+        practiceH: 'More from practice', practiceP: 'Find more notes, case studies and projects on the homepage.',
+        caseH: 'See more or talk', caseP: 'I am looking for a permanent position as a fullstack / AI developer with a DevOps focus and am open to suitable projects.',
+        caseBtn: 'Case study', contactBtn: 'Get in touch' },
   ru: { start: 'Главная', projects: 'Проекты', notes: 'Заметки', contact: 'Контакты', all: 'Все заметки', homeBtn: 'На главную',
         ctaH: 'Ещё из моего homelab', ctaP: 'Вся серия, другие заметки и кейсы — здесь.',
-        seriesH: 'Серия: уход из облака', moreH: 'Другие заметки', related: 'Читать дальше',
-        deOnly: 'Другие заметки (только на немецком)' },
+        seriesH: 'Серия: уход из облака', moreH: 'Другие заметки', related: 'Читать дальше', langLabel: 'Язык',
+        practiceH: 'Ещё из практики', practiceP: 'Другие заметки, кейсы и проекты — на главной странице.',
+        caseH: 'Посмотреть больше или поговорить', caseP: 'Ищу постоянную работу fullstack- и AI-разработчиком с упором на DevOps, открыт и для подходящих проектов.',
+        caseBtn: 'Кейс', contactBtn: 'Связаться' },
   ua: { start: 'Головна', projects: 'Проєкти', notes: 'Нотатки', contact: 'Контакти', all: 'Усі нотатки', homeBtn: 'На головну',
         ctaH: 'Ще з мого homelab', ctaP: 'Уся серія, інші нотатки та кейси — тут.',
-        seriesH: 'Серія: вихід із хмари', moreH: 'Інші нотатки', related: 'Читати далі',
-        deOnly: 'Інші нотатки (лише німецькою)' },
+        seriesH: 'Серія: вихід із хмари', moreH: 'Інші нотатки', related: 'Читати далі', langLabel: 'Мова',
+        practiceH: 'Ще з практики', practiceP: 'Інші нотатки, кейси та проєкти — на головній сторінці.',
+        caseH: 'Побачити більше або поговорити', caseP: 'Шукаю постійну роботу fullstack- і AI-розробником з акцентом на DevOps, відкритий і до відповідних проєктів.',
+        caseBtn: 'Кейс', contactBtn: 'Зв’язатися' },
+};
+const FLAGS = {
+  de: '<svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="4.33" fill="#000"/><rect width="18" height="4.33" y="4.33" fill="#D00"/><rect width="18" height="4.34" y="8.66" fill="#FFCE00"/></svg>',
+  en: '<svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="13" fill="#012169"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#fff" stroke-width="2.6"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#C8102E" stroke-width="1.6"/><path d="M9,0 V13 M0,6.5 H18" stroke="#fff" stroke-width="4.3"/><path d="M9,0 V13 M0,6.5 H18" stroke="#C8102E" stroke-width="2.6"/></svg>',
+  ru: '<svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="4.33" fill="#fff"/><rect width="18" height="4.33" y="4.33" fill="#0039A6"/><rect width="18" height="4.34" y="8.66" fill="#D52B1E"/></svg>',
+  ua: '<svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="6.5" fill="#005BBB"/><rect width="18" height="6.5" y="6.5" fill="#FFD500"/></svg>',
 };
 const INDEX_TEXT = {
   de: {
@@ -78,10 +94,16 @@ const INDEX_TEXT = {
 };
 
 // ---------- paths ----------
-const seriesPath = (slug, lang) => (lang === 'de' ? `/notizen/${slug}/` : `/${lang}/notes/${slug}/`);
+const seriesPath = (slug, lang) => (lang === 'de' ? `/notizen/${slug}/` : `/${lang}/notes/${slug}/`); // series + notes
+const casePath = (slug, lang) => (lang === 'de' ? `/projekte/${slug}/` : `/${lang}/projects/${slug}/`);
 const indexPath = (lang) => (lang === 'de' ? '/notizen/' : `/${lang}/notes/`);
-const bySlug = (slug) => SERIES.find((s) => s.slug === slug) ?? NOTES.find((n) => n.slug === slug);
-const pathFor = (slug, lang) => (SERIES.some((s) => s.slug === slug) ? seriesPath(slug, lang) : NOTES.find((n) => n.slug === slug)?.path);
+const bySlug = (slug) => SERIES.find((s) => s.slug === slug) ?? NOTES.find((n) => n.slug === slug) ?? CASES.find((c) => c.slug === slug);
+const pathFor = (slug, lang) => {
+  if (CASES.some((c) => c.slug === slug)) return casePath(slug, lang);
+  if (SERIES.some((s) => s.slug === slug) || NOTES.some((n) => n.slug === slug)) return seriesPath(slug, lang);
+  return undefined;
+};
+const pathsByLang = (fn) => Object.fromEntries(LANGS.map((l) => [l, fn(l)]));
 
 // ---------- helpers ----------
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -91,13 +113,21 @@ const tr = (v, lang) => (typeof v === 'string' ? v : v[lang]);
 const fmtDate = (d, lang) => (lang === 'en' ? d : d.split('-').reverse().join('.'));
 const authorLd = (lang) => ({ '@type': 'Person', name: LANG[lang].name, url: SITE + LANG[lang].home });
 
-function head({ lang = 'de', title, description, path, type = 'article', extra = '', alternates = [] }) {
+// alternates for a { de, en, ru, ua } path map (+ x-default = de)
+const altList = (paths) => [...LANGS.map((l) => ({ hreflang: LANG[l].hreflang, path: paths[l] })), { hreflang: 'x-default', path: paths.de }];
+
+const langSwitch = (lang, paths) =>
+  `<div class="lang-switch" role="group" aria-label="${UI[lang].langLabel}">${LANGS.map(
+    (l) => `<a class="lang-btn${l === lang ? ' active' : ''}" href="${paths[l]}" hreflang="${LANG[l].hreflang}"${l === lang ? ' aria-current="true"' : ''}>${FLAGS[l]}${l.toUpperCase()}</a>`
+  ).join('')}</div>`;
+
+function head({ lang = 'de', title, description, path, type = 'article', extra = '', langPaths }) {
   const L = LANG[lang];
   const U = UI[lang];
   const url = SITE + path;
-  const alt = alternates.length
-    ? alternates.map((a) => `<link rel="alternate" hreflang="${a.hreflang}" href="${SITE + a.path}">`).join('\n') + '\n'
-    : '';
+  const alt = altList(langPaths)
+    .map((a) => `<link rel="alternate" hreflang="${a.hreflang}" href="${SITE + a.path}">`)
+    .join('\n') + '\n';
   return `<!DOCTYPE html>
 ${BANNER}
 <html lang="${L.html}">
@@ -138,6 +168,7 @@ ${extra}
     <a href="${indexPath(lang)}">${U.notes}</a>
     <a href="${L.home}#contact">${U.contact}</a>
   </nav>
+  ${langSwitch(lang, langPaths)}
 </header>
 <main class="wrap">`;
 }
@@ -188,91 +219,73 @@ function renderBody(blocks, lang) {
     .join('\n');
 }
 
-// ---------- case studies (German) ----------
-function casePage(c) {
-  const app = { '@context': 'https://schema.org', ...c.jsonld, author: authorLd('de') };
-  const crumbs = [['Start', '/'], ['Projekte', '/#featured-cases'], [c.slug === 'meistermeld' ? 'MeisterMeld' : 'PflegeOasis', c.path]];
-  return (
-    head({ title: c.title, description: c.description, path: c.path, extra: ld(app) + '\n' + ld(breadcrumbLd(crumbs)) }) +
-    `
-<p class="crumbs"><a href="/">Start</a> / <a href="/#featured-cases">Projekte</a> / ${esc(crumbs[2][0])}</p>
-<p class="kicker">${esc(c.kicker)}</p>
-<h1>${esc(c.h1)}</h1>
-<p class="lead">${esc(c.lead)}</p>
-<dl class="facts">
-${c.facts.map(([k, v]) => `  <div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('\n')}
-</dl>
-${tagsHtml(c.tags)}
-${c.body}
-<section class="cta">
-  <h2>Mehr sehen oder sprechen</h2>
-  <p>Ich suche eine Festanstellung als Fullstack-/KI-Entwickler mit DevOps-Schwerpunkt und bin offen für passende Projekte.</p>
-  <a class="btn primary" href="${c.liveUrl}" target="_blank" rel="noopener noreferrer">${esc(c.liveLabel)} ↗</a>
-  <a class="btn" href="/#contact">Kontakt aufnehmen</a>
-  ${c.related.map((r) => `<a class="btn" href="${r.href}">${esc(r.label)}</a>`).join('\n  ')}
-</section>
-` +
-    foot()
-  );
-}
+// ---------- shared pieces ----------
+const relatedCards = (slugs, lang) => {
+  const items = slugs.map((s) => bySlug(s)).filter(Boolean);
+  if (!items.length) return '';
+  const U = UI[lang];
+  return `<h2>${U.related}</h2>\n<div class="cards">\n${items
+    .map((r) => card(pathFor(r.slug, lang), tr(r.kicker, lang), tr(r.h1, lang), tr(r.lead, lang)))
+    .join('\n')}\n</div>`;
+};
+const articleLd = (n, lang, path, extra = {}) => ({
+  '@context': 'https://schema.org', '@type': 'TechArticle', headline: tr(n.h1, lang), description: tr(n.description, lang),
+  datePublished: n.date, dateModified: n.date, inLanguage: LANG[lang].ld, image: OG_IMAGE, keywords: n.tags.join(', '),
+  author: authorLd(lang), mainEntityOfPage: SITE + path,
+  isPartOf: { '@type': 'CollectionPage', name: INDEX_TEXT[lang].h1, url: SITE + indexPath(lang) },
+  ...extra,
+});
 
-// ---------- German-only notes ----------
-function notePage(n) {
-  const article = {
-    '@context': 'https://schema.org', '@type': 'TechArticle', headline: n.h1, description: n.description,
-    datePublished: n.date, dateModified: n.date, inLanguage: 'de', image: OG_IMAGE, keywords: n.tags.join(', '),
-    author: authorLd('de'), mainEntityOfPage: SITE + n.path,
+// ---------- case studies (4 languages) ----------
+function casePage(c, lang) {
+  const L = LANG[lang], U = UI[lang];
+  const path = casePath(c.slug, lang);
+  const j = c.jsonld;
+  const app = {
+    '@context': 'https://schema.org', '@type': j['@type'], name: j.name, applicationCategory: j.applicationCategory,
+    operatingSystem: tr(j.operatingSystem, lang), url: j.url, inLanguage: L.ld, description: tr(j.description, lang),
+    author: authorLd(lang),
   };
-  const crumbs = [['Start', '/'], ['Notizen', '/notizen/'], [n.h1, n.path]];
-  const related = (n.related ?? []).map((slug) => bySlug(slug)).filter(Boolean);
+  const name = j.name;
+  const crumbs = [[U.start, L.home], [U.projects, L.home + '#featured-cases'], [name, path]];
   return (
     head({
-      title: `${n.title} | Serge Zabolotny`, description: n.description, path: n.path,
-      extra: ld(article) + '\n' + ld(breadcrumbLd(crumbs)),
+      lang, title: tr(c.title, lang), description: tr(c.description, lang), path,
+      langPaths: pathsByLang((l) => casePath(c.slug, l)), extra: ld(app) + '\n' + ld(breadcrumbLd(crumbs)),
     }) +
     `
-<p class="crumbs"><a href="/">Start</a> / <a href="/notizen/">Notizen</a></p>
-<p class="kicker">${esc(n.kicker)}</p>
-<h1>${esc(n.h1)}</h1>
-<p class="lead">${esc(n.lead)}</p>
-<p class="byline">${AUTHOR.name} · <time datetime="${n.date}">${fmtDate(n.date, 'de')}</time></p>
-${tagsHtml(n.tags)}
-${n.body}
-${related.length ? `<h2>Weiterlesen</h2>\n<div class="cards">\n${related.map((r) => card(r.path ?? seriesPath(r.slug, 'de'), tr(r.kicker, 'de'), tr(r.h1, 'de'), tr(r.lead, 'de'))).join('\n')}\n</div>` : ''}
+<p class="crumbs"><a href="${L.home}">${U.start}</a> / <a href="${L.home}#featured-cases">${U.projects}</a> / ${esc(name)}</p>
+<p class="kicker">${esc(tr(c.kicker, lang))}</p>
+<h1>${esc(tr(c.h1, lang))}</h1>
+<p class="lead">${esc(tr(c.lead, lang))}</p>
+<dl class="facts">
+${c.facts.map(([k, v]) => `  <div><dt>${esc(tr(k, lang))}</dt><dd>${esc(tr(v, lang))}</dd></div>`).join('\n')}
+</dl>
+${tagsHtml(c.tags)}
+${renderBody(c.body, lang)}
+${relatedCards(c.related, lang)}
 <section class="cta">
-  <h2>Mehr aus der Praxis</h2>
-  <p>Weitere Notizen, Case Studies und Projekte findest du auf der Startseite.</p>
-  <a class="btn primary" href="/notizen/">Alle Notizen</a>
-  <a class="btn" href="/projekte/meistermeld/">Case Study MeisterMeld</a>
-  <a class="btn" href="/projekte/pflegeoasis/">Case Study PflegeOasis</a>
+  <h2>${U.caseH}</h2>
+  <p>${U.caseP}</p>
+  <a class="btn primary" href="${c.liveUrl}" target="_blank" rel="noopener noreferrer">${esc(tr(c.liveLabel, lang))} ↗</a>
+  <a class="btn" href="${L.home}#contact">${U.contactBtn}</a>
 </section>
 ` +
-    foot()
+    foot(lang)
   );
 }
 
-// ---------- series (4 languages) ----------
-const alternatesFor = (slug) => [
-  ...LANGS.map((l) => ({ hreflang: LANG[l].hreflang, path: seriesPath(slug, l) })),
-  { hreflang: 'x-default', path: seriesPath(slug, 'de') },
-];
-
-function seriesPage(s, lang) {
+// ---------- articles: series + notes (4 languages) ----------
+function articlePage(s, lang, { series }) {
   const L = LANG[lang], U = UI[lang];
   const path = seriesPath(s.slug, lang);
   const h1 = tr(s.h1, lang);
-  const article = {
-    '@context': 'https://schema.org', '@type': 'TechArticle', headline: h1, description: tr(s.description, lang),
-    datePublished: s.date, dateModified: s.date, inLanguage: L.ld, image: OG_IMAGE, keywords: s.tags.join(', '),
-    author: authorLd(lang), mainEntityOfPage: SITE + path,
-    isPartOf: { '@type': 'CollectionPage', name: INDEX_TEXT[lang].h1, url: SITE + indexPath(lang) },
-  };
   const crumbs = [[U.start, L.home], [U.notes, indexPath(lang)], [h1, path]];
-  const others = SERIES.filter((o) => o.slug !== s.slug);
+  const relSlugs = series ? SERIES.filter((o) => o.slug !== s.slug).map((o) => o.slug) : s.related ?? [];
   return (
     head({
       lang, title: `${tr(s.title, lang)} | ${L.name}`, description: tr(s.description, lang), path,
-      alternates: alternatesFor(s.slug), extra: ld(article) + '\n' + ld(breadcrumbLd(crumbs)),
+      langPaths: pathsByLang((l) => seriesPath(s.slug, l)), extra: ld(articleLd(s, lang, path)) + '\n' + ld(breadcrumbLd(crumbs)),
     }) +
     `
 <p class="crumbs"><a href="${L.home}">${U.start}</a> / <a href="${indexPath(lang)}">${U.notes}</a></p>
@@ -282,14 +295,12 @@ function seriesPage(s, lang) {
 <p class="byline">${L.name} · <time datetime="${s.date}">${fmtDate(s.date, lang)}</time></p>
 ${tagsHtml(s.tags)}
 ${renderBody(s.body, lang)}
-<h2>${U.related}</h2>
-<div class="cards">
-${others.map((o) => card(seriesPath(o.slug, lang), tr(o.kicker, lang), tr(o.h1, lang), tr(o.lead, lang))).join('\n')}
-</div>
+${relatedCards(relSlugs, lang)}
 <section class="cta">
-  <h2>${U.ctaH}</h2>
-  <p>${U.ctaP}</p>
+  <h2>${series ? U.ctaH : U.practiceH}</h2>
+  <p>${series ? U.ctaP : U.practiceP}</p>
   <a class="btn primary" href="${indexPath(lang)}">${U.all}</a>
+  ${CASES.map((c) => `<a class="btn" href="${casePath(c.slug, lang)}">${U.caseBtn} ${esc(c.jsonld.name)}</a>`).join('\n  ')}
   <a class="btn" href="${L.home}">${U.homeBtn}</a>
 </section>
 ` +
@@ -301,32 +312,37 @@ ${others.map((o) => card(seriesPath(o.slug, lang), tr(o.kicker, lang), tr(o.h1, 
 function indexPageFor(lang) {
   const L = LANG[lang], U = UI[lang], T = INDEX_TEXT[lang];
   const path = indexPath(lang);
-  const items = lang === 'de' ? [...SERIES.map((s) => ({ ...s, _series: true })), ...NOTES] : SERIES;
+  const items = [...SERIES, ...NOTES];
   const list = {
     '@context': 'https://schema.org', '@type': 'CollectionPage', name: T.h1, description: T.description,
     url: SITE + path, inLanguage: L.ld, author: authorLd(lang),
-    hasPart: items.map((n) => ({
-      '@type': 'TechArticle', headline: tr(n.h1, lang), url: SITE + (n._series || !n.path ? seriesPath(n.slug, lang) : n.path), datePublished: n.date,
-    })),
+    hasPart: items.map((n) => ({ '@type': 'TechArticle', headline: tr(n.h1, lang), url: SITE + seriesPath(n.slug, lang), datePublished: n.date })),
   };
   const crumbs = [[U.start, L.home], [U.notes, path]];
-  const cards = (arr) => arr.map((n) => card(n._series || !n.path ? seriesPath(n.slug, lang) : n.path, tr(n.kicker, lang), tr(n.h1, lang), tr(n.lead, lang))).join('\n');
-  const body =
-    lang === 'de'
-      ? `<h2>${U.seriesH}</h2>\n<div class="cards">\n${cards(SERIES)}\n</div>\n<h2>${U.moreH}</h2>\n<div class="cards">\n${cards(NOTES)}\n</div>`
-      : `<h2>${U.seriesH}</h2>\n<div class="cards">\n${cards(SERIES)}\n</div>\n<p class="more"><a href="/notizen/">${U.deOnly} →</a></p>`;
+  const cards = (arr) => arr.map((n) => card(seriesPath(n.slug, lang), tr(n.kicker, lang), tr(n.h1, lang), tr(n.lead, lang))).join('\n');
+  const cases = CASES.map((c) => card(casePath(c.slug, lang), tr(c.kicker, lang), tr(c.h1, lang), tr(c.lead, lang))).join('\n');
   return (
     head({
       lang, title: T.title, description: T.description, path, type: 'website',
-      alternates: [...LANGS.map((l) => ({ hreflang: LANG[l].hreflang, path: indexPath(l) })), { hreflang: 'x-default', path: indexPath('de') }],
-      extra: ld(list) + '\n' + ld(breadcrumbLd(crumbs)),
+      langPaths: pathsByLang(indexPath), extra: ld(list) + '\n' + ld(breadcrumbLd(crumbs)),
     }) +
     `
 <p class="crumbs"><a href="${L.home}">${U.start}</a> / ${U.notes}</p>
 <p class="kicker">Engineering Notes</p>
 <h1>${esc(T.h1)}</h1>
 <p class="lead">${esc(T.lead)}</p>
-${body}
+<h2>${U.seriesH}</h2>
+<div class="cards">
+${cards(SERIES)}
+</div>
+<h2>${U.moreH}</h2>
+<div class="cards">
+${cards(NOTES)}
+</div>
+<h2>${U.projects}</h2>
+<div class="cards">
+${cases}
+</div>
 <section class="cta">
   <h2>${U.ctaH}</h2>
   <p>${U.ctaP}</p>
@@ -340,9 +356,9 @@ ${body}
 // ---------- outputs ----------
 const outputs = [
   ...LANGS.map((l) => [`${indexPath(l).slice(1)}index.html`, indexPageFor(l)]),
-  ...CASES.map((c) => [`projekte/${c.slug}/index.html`, casePage(c)]),
-  ...NOTES.map((n) => [`notizen/${n.slug}/index.html`, notePage(n)]),
-  ...SERIES.flatMap((s) => LANGS.map((l) => [`${seriesPath(s.slug, l).slice(1)}index.html`, seriesPage(s, l)])),
+  ...CASES.flatMap((c) => LANGS.map((l) => [`${casePath(c.slug, l).slice(1)}index.html`, casePage(c, l)])),
+  ...NOTES.flatMap((n) => LANGS.map((l) => [`${seriesPath(n.slug, l).slice(1)}index.html`, articlePage(n, l, { series: false })])),
+  ...SERIES.flatMap((s) => LANGS.map((l) => [`${seriesPath(s.slug, l).slice(1)}index.html`, articlePage(s, l, { series: true })])),
 ];
 
 // ---------- sitemap block ----------
@@ -351,12 +367,10 @@ function sitemapBlock() {
     `  <url>\n    <loc>${SITE + path}</loc>\n    <lastmod>${date}</lastmod>\n    <priority>${prio}</priority>\n` +
     alts.map((a) => `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${SITE + a.path}"/>\n`).join('') +
     `  </url>\n`;
-  const idxAlts = [...LANGS.map((l) => ({ hreflang: LANG[l].hreflang, path: indexPath(l) })), { hreflang: 'x-default', path: indexPath('de') }];
   let out = '';
-  for (const c of CASES) out += entry(c.path, '0.8', '2026-10-25');
-  for (const l of LANGS) out += entry(indexPath(l), l === 'de' ? '0.7' : '0.6', '2026-10-25', idxAlts);
-  for (const s of SERIES) for (const l of LANGS) out += entry(seriesPath(s.slug, l), l === 'de' ? '0.7' : '0.6', s.date, alternatesFor(s.slug));
-  for (const n of NOTES) out += entry(n.path, '0.6', n.date);
+  for (const c of CASES) for (const l of LANGS) out += entry(casePath(c.slug, l), l === 'de' ? '0.8' : '0.7', '2026-10-25', altList(pathsByLang((x) => casePath(c.slug, x))));
+  for (const l of LANGS) out += entry(indexPath(l), l === 'de' ? '0.7' : '0.6', '2026-10-25', altList(pathsByLang(indexPath)));
+  for (const s of [...SERIES, ...NOTES]) for (const l of LANGS) out += entry(seriesPath(s.slug, l), l === 'de' ? '0.7' : '0.6', s.date, altList(pathsByLang((x) => seriesPath(s.slug, x))));
   return `${SM_START}\n${out}${SM_END}\n`;
 }
 function sitemapFile() {
