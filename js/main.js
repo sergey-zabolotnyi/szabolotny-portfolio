@@ -385,6 +385,7 @@ async function sendChat() {
     const reply = data.choices?.[0]?.message?.content || 'Sorry, something went wrong.';
     typing.textContent = reply;
     chatHistory.push({ role: 'assistant', content: reply });
+    resetChatTimers(); // give the visitor a fresh window to read the answer
   } catch (err) {
     typing.textContent = 'Connection error.';
   }
@@ -395,10 +396,14 @@ async function sendChat() {
    ============================================ */
 
 let mobileChatTimeout;
+let mobileChatInit = false;
 
 function initMobileChatBehavior() {
   const isMobile = window.innerWidth <= 768;
   if (!isMobile) return;
+  // mobile browsers fire "resize" whenever the URL bar shows/hides: never bind listeners twice
+  if (mobileChatInit) return;
+  mobileChatInit = true;
   
   const chat = document.getElementById('ai-chat');
   const input = document.getElementById('chatinput');
@@ -411,7 +416,9 @@ function initMobileChatBehavior() {
     mobileChatTimeout = setTimeout(() => {
       // Only collapse if chat is open and input is not active
       const isInputFocused = document.activeElement === input;
-      if (chatOpen && !isInputFocused) {
+      // never collapse a chat the visitor has started: they are reading the answer
+      const conversationStarted = chatHistory.length > 0;
+      if (chatOpen && !isInputFocused && !conversationStarted) {
         toggleChat(); // Collapse the chat
         // Reset main timers after mobile collapse
         resetChatTimers();
@@ -427,8 +434,11 @@ function initMobileChatBehavior() {
   
   // Add event listeners
   chat.addEventListener('click', handleUserActivity);
-  chat.addEventListener('touchstart', handleUserActivity);
-  
+  chat.addEventListener('touchstart', handleUserActivity, { passive: true });
+  chat.addEventListener('touchmove', handleUserActivity, { passive: true });
+  const body = document.getElementById('chatBody');
+  if (body) body.addEventListener('scroll', handleUserActivity, { passive: true });
+
   if (input) {
     input.addEventListener('focus', handleUserActivity);
     input.addEventListener('blur', () => {
@@ -448,8 +458,7 @@ function initMobileChatBehavior() {
 // Run on load and on window resize (in case orientation changes)
 document.addEventListener('DOMContentLoaded', initMobileChatBehavior);
 window.addEventListener('resize', () => {
-  // Re-initialize on resize to handle orientation change
-  clearTimeout(mobileChatTimeout);
+  // first resize into a mobile width (e.g. rotation from desktop size) initialises it once
   initMobileChatBehavior();
 });
 // === Engineering Notes: category filter + "show all" ===
