@@ -60,6 +60,24 @@ const UI = {
         caseH: 'Побачити більше або поговорити', caseP: 'Шукаю постійну роботу fullstack- і AI-розробником з акцентом на DevOps, відкритий і до відповідних проєктів.',
         caseBtn: 'Кейс', contactBtn: 'Зв’язатися' },
 };
+// Comments: giscus (GitHub Discussions). Section is skipped while categoryId is empty.
+const GISCUS = { repo: 'sergey-zabolotnyi/szabolotny-portfolio', repoId: 'R_kgDORtInTg', category: 'Announcements', categoryId: '' };
+const COMMENT_UI = {
+  de: { h: 'Kommentare', p: 'Diskutiere mit: Die Kommentare laufen über GitHub Discussions (Anmeldung mit GitHub-Konto). Erst mit Klick werden Inhalte von GitHub/giscus geladen.', btn: 'Kommentare laden', priv: 'Datenschutz' },
+  en: { h: 'Comments', p: 'Join the discussion: comments run on GitHub Discussions (sign in with a GitHub account). Content from GitHub/giscus is only loaded after you click.', btn: 'Load comments', priv: 'Privacy' },
+  ru: { h: 'Комментарии', p: 'Присоединяйтесь к обсуждению: комментарии работают через GitHub Discussions (вход через аккаунт GitHub). Контент GitHub/giscus загружается только после клика.', btn: 'Загрузить комментарии', priv: 'Конфиденциальность' },
+  ua: { h: 'Коментарі', p: 'Долучайтеся до обговорення: коментарі працюють через GitHub Discussions (вхід через акаунт GitHub). Вміст GitHub/giscus завантажується лише після кліку.', btn: 'Завантажити коментарі', priv: 'Конфіденційність' },
+};
+const commentsSection = (slug, lang) => {
+  if (!GISCUS.categoryId) return '';
+  const C = COMMENT_UI[lang];
+  return `<section class="comments" id="comments" data-repo="${GISCUS.repo}" data-repo-id="${GISCUS.repoId}" data-category="${GISCUS.category}" data-category-id="${GISCUS.categoryId}" data-term="${slug}" data-lang="${LANG[lang].html}">
+  <h2>${C.h}</h2>
+  <p>${C.p} <a href="/datenschutz.html">${C.priv}</a></p>
+  <button class="btn" type="button" id="load-comments">${C.btn}</button>
+</section>
+<script defer src="/js/comments.js"></script>`;
+};
 const FLAGS = {
   de: '<svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="4.33" fill="#000"/><rect width="18" height="4.33" y="4.33" fill="#D00"/><rect width="18" height="4.34" y="8.66" fill="#FFCE00"/></svg>',
   en: '<svg class="flag" viewBox="0 0 18 13" aria-hidden="true"><rect width="18" height="13" fill="#012169"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#fff" stroke-width="2.6"/><path d="M0,0 L18,13 M18,0 L0,13" stroke="#C8102E" stroke-width="1.6"/><path d="M9,0 V13 M0,6.5 H18" stroke="#fff" stroke-width="4.3"/><path d="M9,0 V13 M0,6.5 H18" stroke="#C8102E" stroke-width="2.6"/></svg>',
@@ -296,6 +314,7 @@ function articlePage(s, lang, { series }) {
 ${tagsHtml(s.tags)}
 ${renderBody(s.body, lang)}
 ${relatedCards(relSlugs, lang)}
+${commentsSection(s.slug, lang)}
 <section class="cta">
   <h2>${series ? U.ctaH : U.practiceH}</h2>
   <p>${series ? U.ctaP : U.practiceP}</p>
