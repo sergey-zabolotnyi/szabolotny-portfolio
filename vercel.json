@@ -9,5 +9,27 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/notizen/weg-von-macos/",
+      "destination": "/notizen/macos-verlassen-imac-2013/",
+      "permanent": true
+    },
+    {
+      "source": "/en/notes/weg-von-macos/",
+      "destination": "/en/notes/macos-verlassen-imac-2013/",
+      "permanent": true
+    },
+    {
+      "source": "/ru/notes/weg-von-macos/",
+      "destination": "/ru/notes/macos-verlassen-imac-2013/",
+      "permanent": true
+    },
+    {
+      "source": "/ua/notes/weg-von-macos/",
+      "destination": "/ua/notes/macos-verlassen-imac-2013/",
+      "permanent": true
+    }
   ]
 }
