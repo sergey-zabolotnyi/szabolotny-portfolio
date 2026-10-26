@@ -61,7 +61,7 @@ const UI = {
         caseBtn: 'Кейс', contactBtn: 'Зв’язатися' },
 };
 // Comments: giscus (GitHub Discussions). Section is skipped while categoryId is empty.
-const GISCUS = { repo: 'sergey-zabolotnyi/szabolotny-portfolio', repoId: 'R_kgDORtInTg', category: 'Announcements', categoryId: '' };
+const GISCUS = { repo: 'sergey-zabolotnyi/szabolotny-portfolio', repoId: 'R_kgDORtInTg', category: 'Announcements', categoryId: 'DIC_kwDORtInTs4DJoqD' };
 const COMMENT_UI = {
   de: { h: 'Kommentare', p: 'Diskutiere mit: Die Kommentare laufen über GitHub Discussions (Anmeldung mit GitHub-Konto). Erst mit Klick werden Inhalte von GitHub/giscus geladen.', btn: 'Kommentare laden', priv: 'Datenschutz' },
   en: { h: 'Comments', p: 'Join the discussion: comments run on GitHub Discussions (sign in with a GitHub account). Content from GitHub/giscus is only loaded after you click.', btn: 'Load comments', priv: 'Privacy' },
