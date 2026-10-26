@@ -917,6 +917,14 @@ export const NOTES = [
           'Я працюю на iMac 27" (Late 2013) із 32 ГБ RAM і відеокартою на 2 ГБ. Дисплей досі приємний, продуктивності вистачає для моєї роботи розробника. Технічних причин списувати цю машину немає.'
         ),
       },
+      {
+        p: t(
+          'Aufgerüstet habe ich ihn schon früher: Der Tausch der Festplatte (HDD) gegen eine SSD hat den iMac damals um ein Vielfaches schneller gemacht. Genau solche Upgrades zeigen, wie viel Leben in dieser Hardware steckt.',
+          'I had already upgraded it earlier: swapping the hard drive (HDD) for an SSD made the iMac several times faster back then. Upgrades like that show how much life is left in this hardware.',
+          'Апгрейд я делал ещё раньше: замена жёсткого диска (HDD) на SSD в своё время ускорила iMac в разы. Именно такие апгрейды показывают, сколько жизни ещё в этом железе.',
+          'Апгрейд я робив ще раніше: заміна жорсткого диска (HDD) на SSD свого часу пришвидшила iMac у рази. Саме такі апгрейди показують, скільки життя ще в цьому залізі.'
+        ),
+      },
       { h2: t('Wo Apple aufhört', 'Where Apple stops', 'Где Apple останавливается', 'Де Apple зупиняється') },
       {
         p: t(
