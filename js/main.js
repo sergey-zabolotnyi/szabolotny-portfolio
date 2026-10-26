@@ -22,7 +22,7 @@ if (hasFinePointer) {
   document.addEventListener('mousemove', e => {
     const xp = (e.clientX / innerWidth - 0.5) * 24;
     const yp = (e.clientY / innerHeight - 0.5) * 24;
-    document.getElementById('hglow').style.transform = `translate(calc(-50% + ${xp}px), calc(-50% + ${yp}px))`;
+    document.getElementById('hglow').style.transform = `translate(${xp}px, ${yp}px)`;
     const hn = document.querySelector('.hero-name');
     if (hn) hn.style.transform = `translate(${xp * 0.1}px, ${yp * 0.1}px)`;
     const av = document.querySelector('.avatar-outer');
@@ -56,10 +56,10 @@ orbits.forEach(o => {
 });
 
 /* ========== TYPEWRITER ========== */
-const phrasesDE = ['KI-Prototyp in 3–6 Wochen — von der Idee bis zum Launch!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'KI-Produkte aus Dresden', 'FastAPI · OpenAI · LangChain'];
-const phrasesEN = ['AI prototype development in 3–6 weeks — from idea to launch!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'AI Products from Dresden', 'FastAPI · OpenAI · LangChain'];
-const phrasesRU = ['Создание AI-прототипа за 3–6 недель — от идеи до запуска!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'AI-продукты из Дрездена', 'FastAPI · OpenAI · LangChain'];
-const phrasesUA = ['Створення AI-прототипу за 3–6 тижнів — від ідеї до запуску!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'AI-продукти з Дрездена', 'FastAPI · OpenAI · LangChain'];
+const phrasesDE = ['KI-Prototyp in 3–6 Wochen — von der Idee bis zum Launch!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'KI-Produkte aus Dresden', 'Docker · CI/CD · Proxmox'];
+const phrasesEN = ['AI prototype development in 3–6 weeks — from idea to launch!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'AI Products from Dresden', 'Docker · CI/CD · Proxmox'];
+const phrasesRU = ['Создание AI-прототипа за 3–6 недель — от идеи до запуска!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'AI-продукты из Дрездена', 'Docker · CI/CD · Proxmox'];
+const phrasesUA = ['Створення AI-прототипу за 3–6 тижнів — від ідеї до запуску!', 'AI Fullstack Developer', 'Python · React · SvelteKit', 'AI-продукти з Дрездена', 'Docker · CI/CD · Proxmox'];
 
 let currentPhrases = phrasesDE;
 let pi = 0, ci = 0, del = false, wait = 0;

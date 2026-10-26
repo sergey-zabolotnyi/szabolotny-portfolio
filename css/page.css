@@ -137,3 +137,15 @@ td:first-child { color: var(--fg); }
 .comments { margin-top: 48px; padding-top: 8px; }
 .comments .btn { cursor: pointer; background: transparent; }
 .giscus, .giscus-frame { width: 100%; }
+
+/* architecture diagrams */
+.diagram { margin: 8px 0 28px; }
+.diagram-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; background: #0a0a2a; padding: 8px; }
+.diagram svg { display: block; width: 100%; min-width: 620px; height: auto; }
+.diagram figcaption { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); margin-top: 8px; }
+.dg-edges line { stroke: var(--accent-hi); stroke-width: 1.6; }
+.dg-edges + defs, .diagram marker path { fill: var(--accent-hi); }
+.dg-node rect { fill: rgba(255, 255, 255, 0.035); stroke: var(--border); stroke-width: 1.2; }
+.dg-node.hi rect { fill: rgba(0, 71, 171, 0.35); stroke: var(--accent-hi); }
+.dg-node text { fill: var(--muted); font-family: 'DM Mono', monospace; font-size: 11.5px; }
+.dg-node text.t1 { fill: var(--fg); font-weight: 500; }

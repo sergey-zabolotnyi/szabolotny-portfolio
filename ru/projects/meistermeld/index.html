@@ -109,6 +109,22 @@
   <li><strong>Управление клиентами, заказами и сотрудниками</strong> в одном приложении</li>
   <li><strong>PWA</strong>: устанавливается на смартфон без магазина приложений</li>
 </ul>
+<figure class="diagram">
+<div class="diagram-scroll"><svg viewBox="0 0 760 330" role="img" aria-label="Архитектура MeisterMeld" xmlns="http://www.w3.org/2000/svg">
+<title>Архитектура MeisterMeld</title>
+<defs><marker id="dg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<g class="dg-edges"><line x1="180" y1="62" x2="300" y2="62" marker-end="url(#dg-arrow)"/><line x1="460" y1="62" x2="580" y2="62" marker-end="url(#dg-arrow)"/><line x1="380" y1="94" x2="380" y2="140" marker-end="url(#dg-arrow)"/><line x1="460" y1="172" x2="580" y2="172" marker-end="url(#dg-arrow)"/><line x1="180" y1="282" x2="300" y2="282" marker-end="url(#dg-arrow)"/><line x1="460" y1="282" x2="580" y2="282" marker-end="url(#dg-arrow)"/></g>
+<g class="dg-node"><rect x="20" y="30" width="160" height="64" rx="10"/><text x="100" y="58" text-anchor="middle" class="t1">Смартфон</text><text x="100" y="74" text-anchor="middle">PWA</text></g>
+<g class="dg-node hi"><rect x="300" y="30" width="160" height="64" rx="10"/><text x="380" y="58" text-anchor="middle" class="t1">Next.js</text><text x="380" y="74" text-anchor="middle">UI + API</text></g>
+<g class="dg-node"><rect x="580" y="30" width="160" height="64" rx="10"/><text x="660" y="58" text-anchor="middle" class="t1">PostgreSQL</text><text x="660" y="74" text-anchor="middle">Drizzle ORM</text></g>
+<g class="dg-node"><rect x="300" y="140" width="160" height="64" rx="10"/><text x="380" y="168" text-anchor="middle" class="t1">ИИ (LLM)</text><text x="380" y="184" text-anchor="middle">голос/фото → отчёт</text></g>
+<g class="dg-node"><rect x="580" y="140" width="160" height="64" rx="10"/><text x="660" y="168" text-anchor="middle" class="t1">Рабочий отчёт</text><text x="660" y="184" text-anchor="middle">в PDF</text></g>
+<g class="dg-node"><rect x="20" y="250" width="160" height="64" rx="10"/><text x="100" y="286" text-anchor="middle" class="t1">git push</text></g>
+<g class="dg-node"><rect x="300" y="250" width="160" height="64" rx="10"/><text x="380" y="286" text-anchor="middle" class="t1">GitHub Actions</text></g>
+<g class="dg-node hi"><rect x="580" y="250" width="160" height="64" rx="10"/><text x="660" y="278" text-anchor="middle" class="t1">Свой VPS</text><text x="660" y="294" text-anchor="middle">(1blu)</text></g>
+</svg></div>
+<figcaption>Архитектура MeisterMeld</figcaption>
+</figure>
 <h2>Технологии и решения</h2>
 <ul>
   <li><strong>Next.js + TypeScript</strong> для интерфейса и API, <strong>PostgreSQL с Drizzle ORM</strong> как типизированная модель данных</li>

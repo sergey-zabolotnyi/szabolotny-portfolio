@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- Template for assets/og-image.png (1200x630). Render: node scripts/build-og.mjs (needs playwright; not part of CI). -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../css/fonts.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1200px;height:630px;background:#03031f;color:#e8e4d8;font-family:'DM Sans',sans-serif;position:relative;overflow:hidden}
+.glow{position:absolute;right:-180px;top:-160px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(0,71,171,.75),rgba(0,71,171,0) 68%)}
+.glow2{position:absolute;left:-200px;bottom:-300px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(75,141,235,.22),rgba(75,141,235,0) 70%)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(75,141,235,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(75,141,235,.07) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(120deg,transparent 30%,#000 100%)}
+.wrap{position:absolute;left:76px;top:64px;right:76px;bottom:64px}
+.brand{display:flex;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:26px;letter-spacing:.08em;color:#4B8DEB}
+.brand span{color:#9aa}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:96px;line-height:1.02;margin-top:34px;letter-spacing:-.01em}
+h1 em{font-style:normal;color:#4B8DEB}
+.role{font-family:'Syne',sans-serif;font-weight:700;font-size:40px;margin-top:24px}
+.stack{font-family:'DM Mono',monospace;font-size:26px;color:rgba(232,228,216,.74);margin-top:16px}
+.chips{position:absolute;left:0;bottom:0;display:flex;gap:16px}
+.chip{font-family:'DM Mono',monospace;font-size:23px;padding:12px 22px;border:1.5px solid #383853;border-radius:40px;background:rgba(255,255,255,.04)}
+.chip b{color:#4dffb4;font-weight:500}
+.mark{position:absolute;right:0;top:0}
+</style></head><body>
+<div class="glow"></div><div class="glow2"></div><div class="grid"></div>
+<div class="wrap">
+  <div class="brand"><svg width="54" height="54" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f78dc"/><stop offset="1" stop-color="#0047AB"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#g)"/><polygon fill="#fff" points="14,20 44,20 44,27 24,43 44,43 44,50 14,50 14,43 34,27 14,27"/><circle cx="50.5" cy="14" r="5.5" fill="#4dffb4" stroke="#021a40" stroke-width="2.5"/></svg>ZABOLOTNY.DE <span>· Dresden</span></div>
+  <h1>Serge<br><em>Zabolotny</em></h1>
+  <div class="role">Fullstack- &amp; KI-Entwickler · DevOps</div>
+  <div class="stack">Next.js · FastAPI · Docker · CI/CD · Cloudflare</div>
+  <div class="chips"><div class="chip"><b>●</b> MeisterMeld live</div><div class="chip"><b>●</b> PflegeOasis live</div><div class="chip">Homelab · Proxmox</div></div>
+</div>
+</body></html>

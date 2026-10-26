@@ -47,7 +47,7 @@ Projects:
 - Websites for local businesses (WordPress, local SEO).
 
 Skills: TypeScript, Next.js, React, SvelteKit, Tailwind; Python, FastAPI, Java/Spring Boot; PostgreSQL, Drizzle, Redis;
-OpenAI / Groq APIs, RAG, structured outputs; Linux, nginx, Caddy, systemd, PM2, Docker, GitHub Actions, Cloudflare (Workers, Tunnel, Zero Trust), Vercel.
+OpenAI / Groq APIs, structured outputs; Linux, nginx, Caddy, systemd, PM2, Docker, GitHub Actions, Cloudflare (Workers, Tunnel, Zero Trust), Vercel.
 Homelab: Proxmox VE with 4 LXC containers, 15+ self-hosted services in Docker, Tailscale, daily backups, monitoring.
 
 Contact: the contact form on the website, booking a call via the "Book a call" button, or LinkedIn.

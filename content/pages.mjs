@@ -150,6 +150,7 @@ export const CASES = [
           ),
         ],
       },
+      { diagram: 'meistermeld' },
       { h2: t('Technik und Entscheidungen', 'Technology and decisions', 'Технологии и решения', 'Технології та рішення') },
       {
         ul: [
@@ -337,6 +338,7 @@ export const CASES = [
           'Докладніше: <a href="{{path:ki-content-human-in-the-loop}}">ШІ-контент із людиною в циклі — нотатка</a>.'
         ),
       },
+      { diagram: 'pflegeoasis' },
       { h2: t('Technik und Betrieb', 'Technology and operations', 'Технологии и эксплуатация', 'Технології та експлуатація') },
       {
         ul: [
