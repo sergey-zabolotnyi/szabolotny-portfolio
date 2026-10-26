@@ -17,6 +17,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { AUTHOR, CASES, NOTES } from '../content/pages.mjs';
 import { SERIES } from '../content/series.mjs';
+import { DIAGRAMS, DIAGRAM_SIZE } from '../content/diagrams.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://zabolotny.de';
@@ -212,6 +213,37 @@ const card = (href, kicker, h, p) => `  <a class="card" href="${href}">
     <p>${esc(p)}</p>
   </a>`;
 
+// ---------- architecture diagram (inline SVG) ----------
+function diagramHtml(key, lang) {
+  const d = DIAGRAMS[key];
+  if (!d) throw new Error(`build-pages: unknown diagram ${key}`);
+  const { w, h, vw, vh } = DIAGRAM_SIZE;
+  const title = tr(d.title, lang);
+  const node = (n) => {
+    const lines = tr(n.label, lang).split('\n');
+    const y0 = n.y + h / 2 - ((lines.length - 1) * 8) + 4;
+    return `<g class="dg-node${n.hi ? ' hi' : ''}"><rect x="${n.x}" y="${n.y}" width="${w}" height="${h}" rx="10"/>${lines
+      .map((l, i) => `<text x="${n.x + w / 2}" y="${y0 + i * 16}" text-anchor="middle"${i === 0 ? ' class="t1"' : ''}>${esc(l)}</text>`)
+      .join('')}</g>`;
+  };
+  const edge = ([a, b]) => {
+    const A = d.nodes[a], B = d.nodes[b];
+    let x1, y1, x2, y2;
+    if (A.y === B.y) { const r = B.x > A.x; x1 = r ? A.x + w : A.x; x2 = r ? B.x : B.x + w; y1 = y2 = A.y + h / 2; }
+    else { const dn = B.y > A.y; x1 = x2 = A.x + w / 2; y1 = dn ? A.y + h : A.y; y2 = dn ? B.y : B.y + h; }
+    return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" marker-end="url(#dg-arrow)"/>`;
+  };
+  return `<figure class="diagram">
+<div class="diagram-scroll"><svg viewBox="0 0 ${vw} ${vh}" role="img" aria-label="${escAttr(title)}" xmlns="http://www.w3.org/2000/svg">
+<title>${esc(title)}</title>
+<defs><marker id="dg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<g class="dg-edges">${d.edges.map(edge).join('')}</g>
+${d.nodes.map(node).join('\n')}
+</svg></div>
+<figcaption>${esc(title)}</figcaption>
+</figure>`;
+}
+
 // ---------- body block renderer ----------
 function renderBody(blocks, lang) {
   const x = (v) => tr(v, lang).replace(/\{\{path:([a-z0-9-]+)\}\}/g, (_, slug) => {
@@ -221,6 +253,7 @@ function renderBody(blocks, lang) {
   });
   return blocks
     .map((b) => {
+      if (b.diagram) return diagramHtml(b.diagram, lang);
       if (b.h2) return `<h2>${x(b.h2)}</h2>`;
       if (b.p) return `<p>${x(b.p)}</p>`;
       if (b.ul) return `<ul>\n${b.ul.map((i) => `  <li>${x(i)}</li>`).join('\n')}\n</ul>`;

@@ -19,7 +19,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zabolotny.de/">
 <meta property="og:title" content="Serge Zabolotny – Fullstack- &amp; KI-Entwickler in Dresden">
-<meta property="og:description" content="AI Fullstack Developer in Dresden. I build intelligent web apps with FastAPI, React, SvelteKit, OpenAI & LangChain.">
+<meta property="og:description" content="AI Fullstack Developer in Dresden. I build intelligent web apps with FastAPI, React, SvelteKit, OpenAI & Groq.">
 <meta property="og:image" content="https://zabolotny.de/assets/og-image.png">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
@@ -67,7 +67,7 @@
   ],
   "knowsAbout": [
     "Next.js", "React", "SvelteKit", "TypeScript", "Python", "FastAPI",
-    "OpenAI API", "LangChain", "PostgreSQL", "Cloud Deployment",
+    "OpenAI API", "Groq API", "PostgreSQL", "Cloud Deployment",
     "Docker", "CI/CD", "GitHub Actions", "Proxmox VE", "Linux Server Administration", "Self-hosted Infrastructure"
   ],
   "worksFor": {
@@ -186,7 +186,7 @@
       <a class="lang-btn" data-lang="ru" href="/ru/" hreflang="ru"><svg class="flag" viewBox="0 0 18 13"><rect width="18" height="4.33" fill="#fff"/><rect width="18" height="4.33" y="4.33" fill="#0039A6"/><rect width="18" height="4.34" y="8.66" fill="#D52B1E"/></svg>RU</a>
       <a class="lang-btn" data-lang="ua" href="/ua/" hreflang="uk"><svg class="flag" viewBox="0 0 18 13"><rect width="18" height="6.5" fill="#005BBB"/><rect width="18" height="6.5" y="6.5" fill="#FFD500"/></svg>UA</a>
     </div>
-    <button class="burger" id="burger" onclick="toggleMob()"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -289,8 +289,8 @@
 
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span>AI Integration</span><span class="sep">✦</span><span>Next.js</span><span class="sep">✦</span><span>FastAPI</span><span class="sep">✦</span><span>SvelteKit</span><span class="sep">✦</span><span>React</span><span class="sep">✦</span><span>OpenAI API</span><span class="sep">✦</span><span>LangChain</span><span class="sep">✦</span><span>Python</span><span class="sep">✦</span><span>PostgreSQL</span><span class="sep">✦</span><span>Telegram Bot</span><span class="sep">✦</span><span>WordPress</span><span class="sep">✦</span><span>Java Spring</span><span class="sep">✦</span>
-    <span>AI Integration</span><span class="sep">✦</span><span>Next.js</span><span class="sep">✦</span><span>FastAPI</span><span class="sep">✦</span><span>SvelteKit</span><span class="sep">✦</span><span>React</span><span class="sep">✦</span><span>OpenAI API</span><span class="sep">✦</span><span>LangChain</span><span class="sep">✦</span><span>Python</span><span class="sep">✦</span><span>PostgreSQL</span><span class="sep">✦</span><span>Telegram Bot</span><span class="sep">✦</span><span>WordPress</span><span class="sep">✦</span><span>Java Spring</span><span class="sep">✦</span>
+    <span>AI Integration</span><span class="sep">✦</span><span>Next.js</span><span class="sep">✦</span><span>FastAPI</span><span class="sep">✦</span><span>SvelteKit</span><span class="sep">✦</span><span>React</span><span class="sep">✦</span><span>OpenAI API</span><span class="sep">✦</span><span>Groq API</span><span class="sep">✦</span><span>Python</span><span class="sep">✦</span><span>PostgreSQL</span><span class="sep">✦</span><span>Telegram Bot</span><span class="sep">✦</span><span>WordPress</span><span class="sep">✦</span><span>Java Spring</span><span class="sep">✦</span>
+    <span>AI Integration</span><span class="sep">✦</span><span>Next.js</span><span class="sep">✦</span><span>FastAPI</span><span class="sep">✦</span><span>SvelteKit</span><span class="sep">✦</span><span>React</span><span class="sep">✦</span><span>OpenAI API</span><span class="sep">✦</span><span>Groq API</span><span class="sep">✦</span><span>Python</span><span class="sep">✦</span><span>PostgreSQL</span><span class="sep">✦</span><span>Telegram Bot</span><span class="sep">✦</span><span>WordPress</span><span class="sep">✦</span><span>Java Spring</span><span class="sep">✦</span>
   </div>
 </div>
 
@@ -301,7 +301,7 @@
     <div class="about-text reveal-left">
       <h2><span data-i18n="about_h2_start">Ich baue</span> <span class="grad" data-i18n="about_h2_grad">KI-Produkte</span> <span data-i18n="about_h2_end">die echte Probleme lösen.</span></h2>
       <p data-i18n="about_p1">Als AI Fullstack Developer spezialisiere ich mich auf intelligente Webanwendungen — von der Idee bis zum Deployment.</p>
-      <p data-i18n="about_p2">Mit Erfahrung als CTO und fundierten Kenntnissen in modernen AI-Technologien bringe ich Lösungen, die wirklich funktionieren.</p>
+      <p data-i18n="about_p2">Mit Erfahrung als CTO und Praxis im eigenen Betrieb (CI/CD, VPS, Proxmox-Homelab) bringe ich Lösungen, die nicht nur laufen, sondern auch zuverlässig betrieben werden.</p>
       <p data-i18n="about_p3">Basiert in Dresden. Offen für Festanstellung und Freelance-Projekte.</p>
     </div>
     <div class="stats-grid reveal-right d2">
@@ -358,7 +358,7 @@
     <div class="skill-group"><div class="sgt" data-i18n="skill_frontend">Frontend</div><div class="skill-pills"><span class="pill">Next.js</span><span class="pill">React</span><span class="pill">SvelteKit</span><span class="pill">TypeScript</span><span class="pill">Tailwind CSS</span><span class="pill">JavaScript ES6+</span><span class="pill">HTML5/CSS3</span><span class="pill">Vite</span></div></div>
     <div class="skill-group"><div class="sgt" data-i18n="skill_backend">Backend</div><div class="skill-pills"><span class="pill">Python</span><span class="pill">FastAPI</span><span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">REST API</span><span class="pill">Telegram Bot API</span><span class="pill">aiogram 3</span></div></div>
     <div class="skill-group"><div class="sgt" data-i18n="skill_db">Datenbanken</div><div class="skill-pills"><span class="pill">PostgreSQL</span><span class="pill">MySQL</span><span class="pill">Supabase</span><span class="pill">Redis</span><span class="pill">GIN Index</span></div></div>
-    <div class="skill-group"><div class="sgt" data-i18n="skill_ai">AI & Integrationen</div><div class="skill-pills"><span class="pill">OpenAI API</span><span class="pill">Groq API</span><span class="pill">LangChain</span><span class="pill">RAG</span><span class="pill">Prompt Engineering</span><span class="pill">Tesseract OCR</span><span class="pill">Google Solar API</span><span class="pill">Stripe</span></div></div>
+    <div class="skill-group"><div class="sgt" data-i18n="skill_ai">AI & Integrationen</div><div class="skill-pills"><span class="pill">OpenAI API</span><span class="pill">Groq API</span><span class="pill">Prompt Engineering</span><span class="pill">Tesseract OCR</span><span class="pill">Google Solar API</span><span class="pill">Stripe</span></div></div>
     <div class="skill-group"><div class="sgt" data-i18n="skill_cloud">Cloud & DevOps</div><div class="skill-pills"><span class="pill">Linux VPS</span><span class="pill">nginx</span><span class="pill">systemd</span><span class="pill">Docker</span><span class="pill">Cloudflare</span><span class="pill">GitHub Actions</span><span class="pill">Vercel</span><span class="pill">WordPress</span><span class="pill">SEO</span><span class="pill">Proxmox VE</span><span class="pill">LXC</span><span class="pill">Homelab / Bare-Metal</span></div></div>
   </div>
 </section>
@@ -451,6 +451,11 @@
 <section id="timeline">
   <div class="sec-head reveal"><span class="sec-num">04 / <span data-i18n="timeline_title">Career</span></span><div class="sec-line"></div></div>
   <div class="timeline-wrap">
+    <div class="tl-item reveal">
+      <div class="tl-dot"></div>
+      <div class="tl-year">2026</div>
+      <div class="tl-content"><div class="tl-title" data-i18n="timeline_0_title">DevOps-Praxis &amp; KI-Produkte</div><div class="tl-desc" data-i18n="timeline_0_desc">MeisterMeld und PflegeOasis live auf eigenem VPS mit CI/CD per GitHub Actions, dazu ScamGuard. Privat ein Proxmox-Homelab mit Tailscale und Cloudflare Zero Trust – Betrieb statt nur Entwicklung.</div></div>
+    </div>
     <div class="tl-item reveal">
       <div class="tl-dot"></div>
       <div class="tl-year">2025</div>
@@ -767,7 +772,7 @@
   <div class="sec-head reveal"><span class="sec-num">08 / <span data-i18n="github_title">GitHub</span></span><div class="sec-line"></div></div>
   <p class="github-intro reveal" data-i18n="github_intro">Öffentlicher Code und Commit-Aktivität — für alle, die vor der Zusammenarbeit gerne selbst reinschauen.</p>
   <a href="https://github.com/sergey-zabolotnyi" target="_blank" rel="noopener noreferrer" class="github-graph-link reveal">
-    <img src="https://ghchart.rshah.org/4B8DEB/sergey-zabolotnyi.svg" alt="GitHub contribution graph — sergey-zabolotnyi" class="github-graph" loading="lazy">
+    <img src="https://ghchart.rshah.org/4B8DEB/sergey-zabolotnyi.svg" alt="GitHub contribution graph — sergey-zabolotnyi" class="github-graph" width="720" height="112" loading="lazy">
   </a>
   <div class="reveal">
     <a href="https://github.com/sergey-zabolotnyi" target="_blank" rel="noopener noreferrer" class="btn-outline github-btn">

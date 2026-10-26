@@ -60,7 +60,7 @@ CONTENT = {
             ('Frontend', 'Next.js · React · SvelteKit · TypeScript · Tailwind CSS · PWA'),
             ('Backend', 'Python · FastAPI · Java (Spring Boot) · REST-APIs'),
             ('Datenbanken', 'PostgreSQL · Drizzle ORM · MySQL · Supabase · Redis'),
-            ('KI &amp; Integrationen', 'OpenAI API · Groq · LangChain · Vision/OCR · strukturierte LLM-Ausgaben · Prompt Engineering · Stripe · Telegram Bot API'),
+            ('KI &amp; Integrationen', 'OpenAI API · Groq · Vision/OCR · strukturierte LLM-Ausgaben · Prompt Engineering · Stripe · Telegram Bot API'),
             ('DevOps &amp; Betrieb', 'Linux · Docker · GitHub Actions (CI/CD) · nginx · Caddy · systemd · PM2 · Cloudflare (Tunnel, Access) · Tailscale · Proxmox VE/LXC · vzdump-Backups · Uptime Kuma'),
         ],
         'projects': [
@@ -123,7 +123,7 @@ CONTENT = {
             ('Frontend', 'Next.js · React · SvelteKit · TypeScript · Tailwind CSS · PWA'),
             ('Backend', 'Python · FastAPI · Java (Spring Boot) · REST APIs'),
             ('Databases', 'PostgreSQL · Drizzle ORM · MySQL · Supabase · Redis'),
-            ('AI &amp; Integrations', 'OpenAI API · Groq · LangChain · Vision/OCR · structured LLM outputs · prompt engineering · Stripe · Telegram Bot API'),
+            ('AI &amp; Integrations', 'OpenAI API · Groq · Vision/OCR · structured LLM outputs · prompt engineering · Stripe · Telegram Bot API'),
             ('DevOps &amp; Operations', 'Linux · Docker · GitHub Actions (CI/CD) · nginx · Caddy · systemd · PM2 · Cloudflare (Tunnel, Access) · Tailscale · Proxmox VE/LXC · vzdump backups · Uptime Kuma'),
         ],
         'projects': [
