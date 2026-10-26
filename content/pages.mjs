@@ -755,4 +755,258 @@ export const NOTES = [
       },
     ],
   },
+
+  // ───────────────────────────────────────────────────────── macOS
+  {
+    slug: 'macos-verlassen-imac-2013',
+    date: '2026-10-26',
+    tags: ['macOS', 'Windows', 'Linux', 'Boot Camp', 'OpenCore Legacy Patcher', 'Nachhaltigkeit', 'iMac'],
+    related: ['homeserver-statt-cloud', 'zero-trust-homelab'],
+    title: t(
+      'Warum ich macOS verlassen habe: iMac 27" (2013) mit 32 GB RAM, jetzt Windows und Linux',
+      'Why I left macOS: a 2013 27" iMac with 32 GB RAM, now running Windows and Linux',
+      'Почему я ушёл с macOS: iMac 27" (2013) с 32 ГБ ОЗУ, теперь Windows и Linux',
+      'Чому я пішов із macOS: iMac 27" (2013) із 32 ГБ ОЗП, тепер Windows і Linux'
+    ),
+    description: t(
+      'Mein iMac 27" Late 2013 ist hardwareseitig voll einsatzfähig, bekommt aber kein offizielles macOS mehr. Warum ein Tahoe-Update nach OpenCore Legacy Patcher das System zerstörte und ich zu Windows (Boot Camp) und Linux gewechselt bin.',
+      'My iMac 27" Late 2013 is fully capable hardware-wise but no longer gets official macOS updates. How a Tahoe update after OpenCore Legacy Patcher broke the system and why I moved to Windows (Boot Camp) and Linux.',
+      'Мой iMac 27" Late 2013 по железу полностью рабочий, но больше не получает официальных обновлений macOS. Как обновление до Tahoe после OpenCore Legacy Patcher сломало систему и почему я перешёл на Windows (Boot Camp) и Linux.',
+      'Мій iMac 27" Late 2013 за залізом повністю робочий, але більше не отримує офіційних оновлень macOS. Як оновлення до Tahoe після OpenCore Legacy Patcher зламало систему і чому я перейшов на Windows (Boot Camp) та Linux.'
+    ),
+    kicker: t('Erfahrungsbericht · Hardware · Linux', 'Field report · Hardware · Linux', 'Личный опыт · Железо · Linux', 'Особистий досвід · Залізо · Linux'),
+    h1: t(
+      'Warum ich macOS verlassen habe – und was mein iMac von 2013 noch kann',
+      'Why I left macOS – and what my 2013 iMac can still do',
+      'Почему я ушёл с macOS — и что ещё умеет мой iMac 2013 года',
+      'Чому я пішов із macOS — і що ще вміє мій iMac 2013 року'
+    ),
+    lead: t(
+      'Ein iMac mit 32 GB RAM und gutem Display ist nach zwölf Jahren kein Schrott. Warum ich trotzdem auf Windows und Linux umgestiegen bin – ein persönlicher Erfahrungsbericht, kein Benchmark.',
+      'An iMac with 32 GB of RAM and a good display is not junk after twelve years. Why I switched to Windows and Linux anyway – a personal field report, not a benchmark.',
+      'iMac с 32 ГБ ОЗУ и хорошим дисплеем через двенадцать лет — не хлам. Почему я всё равно перешёл на Windows и Linux — личный опыт, а не бенчмарк.',
+      'iMac із 32 ГБ ОЗП і гарним дисплеєм через дванадцять років — не мотлох. Чому я все одно перейшов на Windows і Linux — особистий досвід, а не бенчмарк.'
+    ),
+    body: [
+      { h2: t('Die Hardware: alles andere als alt', 'The hardware: anything but old', 'Железо: совсем не старое', 'Залізо: зовсім не старе') },
+      {
+        p: t(
+          'Mein Arbeitsgerät ist ein iMac 27" (Late 2013) mit <strong>32 GB RAM</strong>, einer Grafikkarte mit 2 GB und einem Display, das ich bis heute sehr angenehm finde. Für Webentwicklung – Editor, Browser, Terminal, Docker – reicht das völlig aus. An der Hardware lag es nie.',
+          'My workhorse is an iMac 27" (Late 2013) with <strong>32 GB of RAM</strong>, a graphics card with 2 GB and a display I still find very comfortable. For web development – editor, browser, terminal, Docker – that is plenty. The hardware was never the problem.',
+          'Мой рабочий инструмент — iMac 27" (Late 2013) с <strong>32 ГБ ОЗУ</strong>, видеокартой на 2 ГБ и дисплеем, который мне до сих пор очень комфортен. Для веб-разработки — редактор, браузер, терминал, Docker — этого более чем достаточно. Проблема никогда не была в железе.',
+          'Мій робочий інструмент — iMac 27" (Late 2013) із <strong>32 ГБ ОЗП</strong>, відеокартою на 2 ГБ і дисплеєм, який мені досі дуже зручний. Для веб-розробки — редактор, браузер, термінал, Docker — цього більш ніж досить. Проблема ніколи не була в залізі.'
+        ),
+      },
+      { h2: t('Wo die offizielle Unterstützung endet', 'Where official support ends', 'Где заканчивается официальная поддержка', 'Де закінчується офіційна підтримка') },
+      {
+        p: t(
+          'Das letzte macOS, das Apple für dieses Modell freigibt, ist Catalina (10.15.7). Danach gibt es offiziell nichts mehr. Das sind knapp neun Jahre Updates – nicht wenig, aber das Gerät ist technisch noch voll leistungsfähig. Für Entwickler hat das Folgen: Software-Hersteller stellen den Support für alte macOS-Versionen irgendwann ein, und Sicherheitsupdates fehlen.',
+          'The last macOS Apple releases for this model is Catalina (10.15.7). After that there is officially nothing. That is almost nine years of updates – not little, yet the machine is still technically very capable. For developers this has consequences: software vendors eventually drop support for old macOS versions, and security updates are missing.',
+          'Последняя macOS, которую Apple выпускает для этой модели, — Catalina (10.15.7). Дальше официально ничего нет. Это почти девять лет обновлений — немало, но машина технически по-прежнему мощная. Для разработчика у этого есть последствия: производители ПО рано или поздно прекращают поддержку старых версий macOS, а обновлений безопасности нет.',
+          'Остання macOS, яку Apple випускає для цієї моделі, — Catalina (10.15.7). Далі офіційно нічого немає. Це майже дев’ять років оновлень — немало, але машина технічно досі потужна. Для розробника це має наслідки: виробники ПЗ рано чи пізно припиняють підтримку старих версій macOS, а оновлень безпеки немає.'
+        ),
+      },
+      {
+        h2: t('Der Versuch mit OpenCore Legacy Patcher', 'The attempt with OpenCore Legacy Patcher', 'Попытка с OpenCore Legacy Patcher', 'Спроба з OpenCore Legacy Patcher'),
+      },
+      {
+        p: t(
+          'Ich wollte das Gerät mit dem inoffiziellen Community-Tool <strong>OpenCore Legacy Patcher</strong> (OCLP) weiternutzen und habe <strong>macOS Sonoma</strong> installiert. Damit nichts mehr von selbst passiert, habe ich automatische Updates ausgeschaltet und die Update-Server per Terminal gesperrt.',
+          'I wanted to keep using the machine with the unofficial community tool <strong>OpenCore Legacy Patcher</strong> (OCLP) and installed <strong>macOS Sonoma</strong>. So that nothing would happen by itself, I switched off automatic updates and blocked the update servers via Terminal.',
+          'Я хотел продолжать пользоваться машиной с помощью неофициального community-инструмента <strong>OpenCore Legacy Patcher</strong> (OCLP) и поставил <strong>macOS Sonoma</strong>. Чтобы ничего не происходило само, я отключил автообновления и заблокировал серверы обновлений через Терминал.',
+          'Я хотів і далі користуватися машиною за допомогою неофіційного community-інструмента <strong>OpenCore Legacy Patcher</strong> (OCLP) і поставив <strong>macOS Sonoma</strong>. Щоб нічого не відбувалося саме, я вимкнув автооновлення і заблокував сервери оновлень через Термінал.',
+        ),
+      },
+      {
+        p: t(
+          'Trotzdem wurde <strong>macOS Tahoe</strong> halb installiert – und danach war das System kaputt. Welcher Mechanismus das ausgelöst hat, weiß ich nicht genau; ich beschreibe nur, was ich erlebt habe. Für mich war das der Punkt, an dem ich beschlossen habe, dieses Ökosystem zu verlassen.',
+          'Still, <strong>macOS Tahoe</strong> got half-installed – and afterwards the system was broken. I do not know exactly which mechanism triggered it; I only describe what I experienced. For me that was the moment I decided to leave this ecosystem.',
+          'Тем не менее <strong>macOS Tahoe</strong> установилась наполовину — и после этого система была сломана. Какой именно механизм это запустил, я точно не знаю; я описываю только то, что пережил. Для меня это стало моментом, когда я решил уйти из этой экосистемы.',
+          'Попри це <strong>macOS Tahoe</strong> встановилася наполовину — і після цього система була зламана. Який саме механізм це запустив, я точно не знаю; я описую лише те, що пережив. Для мене це став момент, коли я вирішив піти з цієї екосистеми.'
+        ),
+      },
+      {
+        callout: t(
+          '<strong>Lehre:</strong> Wer ein nicht unterstütztes Gerät mit inoffiziellen Mitteln aktuell hält, trägt das Risiko selbst. Ein vollständiges Backup (Time Machine oder Clone) vor jedem Experiment ist Pflicht, nicht Kür.',
+          '<strong>Lesson:</strong> anyone keeping an unsupported machine current with unofficial means carries the risk themselves. A full backup (Time Machine or a clone) before any experiment is a must, not an option.',
+          '<strong>Вывод:</strong> кто поддерживает неподдерживаемую машину неофициальными средствами, сам несёт риск. Полный бэкап (Time Machine или клон) перед любым экспериментом — обязанность, а не пожелание.',
+          '<strong>Висновок:</strong> хто підтримує непідтримувану машину неофіційними засобами, сам несе ризик. Повний бекап (Time Machine або клон) перед будь-яким експериментом — обов’язок, а не побажання.'
+        ),
+      },
+      { h2: t('Meine Lösung: Windows und Linux', 'My solution: Windows and Linux', 'Моё решение: Windows и Linux', 'Моє рішення: Windows і Linux') },
+      {
+        ul: [
+          t(
+            '<strong>Windows per Boot Camp</strong> läuft auf dem iMac.',
+            '<strong>Windows via Boot Camp</strong> runs on the iMac.',
+            '<strong>Windows через Boot Camp</strong> работает на iMac.',
+            '<strong>Windows через Boot Camp</strong> працює на iMac.'
+          ),
+          t(
+            '<strong>Linux</strong> läuft parallel auf meinem MacBook Air; auf dem iMac ist es der nächste Schritt.',
+            '<strong>Linux</strong> runs side by side on my MacBook Air; on the iMac it is the next step.',
+            '<strong>Linux</strong> параллельно стоит на моём MacBook Air; на iMac это следующий шаг.',
+            '<strong>Linux</strong> паралельно стоїть на моєму MacBook Air; на iMac це наступний крок.'
+          ),
+          t(
+            'Mein subjektiver Eindruck: Alles läuft schneller. Leichte Linux-Distributionen kommen mit rund 1 GB RAM aus, von den 32 GB bleibt viel für Docker und virtuelle Maschinen. Das ist <strong>kein Benchmark</strong>, sondern mein Alltagseindruck.',
+            'My subjective impression: everything runs faster. Lightweight Linux distributions get by with about 1 GB of RAM, so plenty of the 32 GB is left for Docker and virtual machines. This is <strong>not a benchmark</strong>, just my everyday impression.',
+            'Моё субъективное впечатление: всё работает быстрее. Лёгким дистрибутивам Linux хватает около 1 ГБ ОЗУ, поэтому от 32 ГБ много остаётся для Docker и виртуальных машин. Это <strong>не бенчмарк</strong>, а моё повседневное впечатление.',
+            'Моє суб’єктивне враження: усе працює швидше. Легким дистрибутивам Linux вистачає близько 1 ГБ ОЗП, тому з 32 ГБ багато лишається для Docker і віртуальних машин. Це <strong>не бенчмарк</strong>, а моє щоденне враження.'
+          ),
+        ],
+      },
+      { h2: t('Mein Standpunkt zur Nachhaltigkeit', 'My view on sustainability', 'Моя позиция о устойчивости', 'Моя позиція щодо сталості') },
+      {
+        p: t(
+          'Apple spricht viel über Umwelt und Ressourcenschonung. Für mich passt das nicht zusammen mit einem voll funktionsfähigen Rechner, der keine offiziellen Updates mehr bekommt. Ich unterstelle keine Absicht – das kann ich nicht belegen –, aber die Wirkung ist dieselbe: Die Hardware hält länger als der Software-Support. Mit Windows und Linux kann ich dasselbe Gerät weiter nutzen, statt es zu ersetzen. Das ist meine persönliche Meinung.',
+          'Apple talks a lot about the environment and conserving resources. For me that does not fit with a fully working computer that no longer receives official updates. I am not assuming intent – I cannot prove that – but the effect is the same: the hardware outlasts the software support. With Windows and Linux I can keep using the same machine instead of replacing it. This is my personal opinion.',
+          'Apple много говорит об экологии и бережном отношении к ресурсам. Для меня это не сходится с полностью рабочим компьютером, который больше не получает официальных обновлений. Я не утверждаю умысла — доказать этого не могу, — но результат тот же: железо живёт дольше, чем программная поддержка. С Windows и Linux я могу пользоваться той же машиной, а не заменять её. Это моё личное мнение.',
+          'Apple багато говорить про екологію та бережливе ставлення до ресурсів. Для мене це не сходиться з повністю робочим комп’ютером, який більше не отримує офіційних оновлень. Я не стверджую наміру — довести цього не можу, — але результат той самий: залізо живе довше за програмну підтримку. З Windows і Linux я можу користуватися тією самою машиною, а не замінювати її. Це моя особиста думка.'
+        ),
+      },
+      { h2: t('Fazit', 'Conclusion', 'Итог', 'Підсумок') },
+      {
+        p: t(
+          'Danke, Apple, für zwölf Jahre Hardware, die immer noch tadellos funktioniert – genau deshalb ärgert es mich, sie nicht mehr offiziell nutzen zu können. Meinen Weg gehe ich jetzt ohne macOS weiter.',
+          'Thank you, Apple, for twelve years of hardware that still works flawlessly – which is exactly why it annoys me that I can no longer use it officially. I am continuing my path without macOS.',
+          'Спасибо, Apple, за двенадцать лет железа, которое всё ещё работает безупречно, — именно поэтому обидно, что нельзя пользоваться им официально. Свой путь я теперь продолжаю без macOS.',
+          'Дякую, Apple, за дванадцять років заліза, яке досі працює бездоганно, — саме тому прикро, що ним не можна користуватися офіційно. Свій шлях я тепер продовжую без macOS.'
+        ),
+      },
+    ],
+  },
+  // ───────────────────────────────────────────────────────── macOS -> Windows/Linux
+  {
+    slug: 'weg-von-macos',
+    date: '2026-10-26',
+    tags: ['macOS', 'Linux', 'Windows', 'Boot Camp', 'OpenCore Legacy Patcher', 'Nachhaltigkeit', 'Hardware'],
+    related: ['homeserver-statt-cloud', 'ci-cd-nextjs-vps'],
+    title: t(
+      'Weg von macOS: Gute Hardware, Windows und Linux statt Elektroschrott',
+      'Leaving macOS: good hardware, Windows and Linux instead of e-waste',
+      'Прощай, macOS: хорошее железо, Windows и Linux вместо электронного мусора',
+      'Прощавай, macOS: добре залізо, Windows і Linux замість електронного сміття'
+    ),
+    description: t(
+      'Erfahrungsbericht: iMac 27" Late 2013 mit 32 GB RAM, macOS-Support endet bei Catalina, OpenCore Legacy Patcher, ein halb installiertes Tahoe-Update – und warum jetzt Windows (Boot Camp) und Linux laufen.',
+      'Field report: a 27" Late 2013 iMac with 32 GB RAM, official macOS support ending at Catalina, OpenCore Legacy Patcher, a half-installed Tahoe update – and why Windows (Boot Camp) and Linux run on it now.',
+      'Личный опыт: iMac 27" Late 2013 с 32 ГБ RAM, официальная поддержка macOS заканчивается на Catalina, OpenCore Legacy Patcher, наполовину установленное обновление до Tahoe — и почему теперь работают Windows (Boot Camp) и Linux.',
+      'Особистий досвід: iMac 27" Late 2013 із 32 ГБ RAM, офіційна підтримка macOS закінчується на Catalina, OpenCore Legacy Patcher, наполовину встановлене оновлення до Tahoe — і чому тепер працюють Windows (Boot Camp) і Linux.'
+    ),
+    kicker: t('Linux · Hardware · Nachhaltigkeit', 'Linux · Hardware · Sustainability', 'Linux · Железо · Устойчивость', 'Linux · Залізо · Сталість'),
+    h1: t(
+      'Weg von macOS: Gute Hardware, Windows und Linux statt Elektroschrott',
+      'Leaving macOS: good hardware, Windows and Linux instead of e-waste',
+      'Прощай, macOS: хорошее железо, Windows и Linux вместо электронного мусора',
+      'Прощавай, macOS: добре залізо, Windows і Linux замість електронного сміття'
+    ),
+    lead: t(
+      'Mein iMac 27" von 2013 hat 32 GB RAM und ein gutes Display – er läuft einwandfrei. Nur Apple hat ihn aufgegeben. Warum ich macOS verlassen habe und was seitdem besser läuft.',
+      'My 2013 27" iMac has 32 GB of RAM and a great display – it works perfectly. Only Apple gave up on it. Why I left macOS and what runs better since.',
+      'Мой iMac 27" 2013 года с 32 ГБ RAM и отличным дисплеем работает безупречно. Только Apple от него отказалась. Почему я ушёл с macOS и что с тех пор работает лучше.',
+      'Мій iMac 27" 2013 року з 32 ГБ RAM і чудовим дисплеєм працює бездоганно. Лише Apple від нього відмовилась. Чому я пішов із macOS і що відтоді працює краще.'
+    ),
+    body: [
+      { h2: t('Die Hardware', 'The hardware', 'Железо', 'Залізо') },
+      {
+        p: t(
+          'Ich arbeite auf einem iMac 27" (Late 2013) mit 32 GB RAM und einer Grafikkarte mit 2 GB. Das Display ist bis heute angenehm, die Leistung reicht für meine Arbeit als Entwickler. Es gibt keinen technischen Grund, dieses Gerät auszusortieren.',
+          'I work on a 27" iMac (Late 2013) with 32 GB of RAM and a 2 GB graphics card. The display is still a pleasure, and the performance is enough for my work as a developer. There is no technical reason to retire this machine.',
+          'Я работаю на iMac 27" (Late 2013) с 32 ГБ RAM и видеокартой на 2 ГБ. Дисплей до сих пор приятный, производительности хватает для моей работы разработчика. Технических причин списывать эту машину нет.',
+          'Я працюю на iMac 27" (Late 2013) із 32 ГБ RAM і відеокартою на 2 ГБ. Дисплей досі приємний, продуктивності вистачає для моєї роботи розробника. Технічних причин списувати цю машину немає.'
+        ),
+      },
+      { h2: t('Wo Apple aufhört', 'Where Apple stops', 'Где Apple останавливается', 'Де Apple зупиняється') },
+      {
+        p: t(
+          'Offiziell ist für diesen iMac bei macOS Catalina (10.15.7) Schluss, <a href="https://discussions.apple.com/thread/255999246" rel="noopener noreferrer">siehe die Diskussion in der Apple Community</a>. Fairerweise: Das sind rund neun Jahre Updates, das ist nicht nichts. Aber danach gibt es keine Sicherheitsupdates mehr, und Softwarehersteller streichen nach und nach die Unterstützung für alte macOS-Versionen. Das Gerät selbst funktioniert weiter – es wird nur von der Software abgehängt.',
+          'Officially, macOS Catalina (10.15.7) is the end of the line for this iMac, <a href="https://discussions.apple.com/thread/255999246" rel="noopener noreferrer">see the discussion in the Apple Community</a>. To be fair: that is roughly nine years of updates, which is not nothing. But after that there are no more security updates, and software vendors gradually drop support for old macOS versions. The machine itself keeps working – it is just cut off from the software.',
+          'Официально для этого iMac всё заканчивается на macOS Catalina (10.15.7), <a href="https://discussions.apple.com/thread/255999246" rel="noopener noreferrer">см. обсуждение в Apple Community</a>. Справедливости ради, это около девяти лет обновлений — немало. Но дальше нет обновлений безопасности, а разработчики ПО постепенно прекращают поддержку старых версий macOS. Сама машина продолжает работать — её просто отрезают от софта.',
+          'Офіційно для цього iMac усе закінчується на macOS Catalina (10.15.7), <a href="https://discussions.apple.com/thread/255999246" rel="noopener noreferrer">див. обговорення в Apple Community</a>. Чесно кажучи, це близько дев’яти років оновлень — чимало. Але далі немає оновлень безпеки, а розробники ПЗ поступово припиняють підтримку старих версій macOS. Сама машина продовжує працювати — її просто відрізають від софту.'
+        ),
+      },
+      { h2: t('Mein Versuch: OpenCore Legacy Patcher', 'My attempt: OpenCore Legacy Patcher', 'Моя попытка: OpenCore Legacy Patcher', 'Моя спроба: OpenCore Legacy Patcher') },
+      {
+        p: t(
+          'Mit dem inoffiziellen Werkzeug OpenCore Legacy Patcher (OCLP) habe ich macOS Sonoma auf den iMac gebracht. Das lief. Weil ich keine ungewollten Updates wollte, habe ich automatische Updates abgeschaltet und die Update-Server zusätzlich per Terminal blockiert.',
+          'With the unofficial tool OpenCore Legacy Patcher (OCLP) I got macOS Sonoma running on the iMac. That worked. Because I did not want unwanted updates, I switched off automatic updates and additionally blocked the update servers via the terminal.',
+          'С помощью неофициального инструмента OpenCore Legacy Patcher (OCLP) я установил на iMac macOS Sonoma. Это работало. Чтобы не получать нежелательных обновлений, я отключил автообновления и дополнительно заблокировал серверы обновлений через терминал.',
+          'За допомогою неофіційного інструмента OpenCore Legacy Patcher (OCLP) я встановив на iMac macOS Sonoma. Це працювало. Щоб не отримувати небажаних оновлень, я вимкнув автооновлення й додатково заблокував сервери оновлень через термінал.'
+        ),
+      },
+      {
+        p: t(
+          'Trotzdem wurde ein Update auf macOS Tahoe angestoßen, nur zur Hälfte installiert und hat das ganze System zerstört. Warum es trotz aller Sperren dazu kam, kann ich nicht abschließend sagen – mein Eindruck ist eine sehr aggressive Update-Politik. Das war der Moment, in dem ich entschieden habe: Ich verlasse dieses System dauerhaft.',
+          'Even so, an update to macOS Tahoe was triggered, only half installed and wrecked the whole system. Why that happened despite all the blocks I cannot say for certain – my impression is a very aggressive update policy. That was the moment I decided: I am leaving this system for good.',
+          'Тем не менее обновление до macOS Tahoe всё равно запустилось, установилось наполовину и разрушило всю систему. Почему так случилось несмотря на все блокировки, я точно сказать не могу — у меня сложилось впечатление очень агрессивной политики обновлений. В этот момент я решил: ухожу из этой системы навсегда.',
+          'Попри це оновлення до macOS Tahoe все одно запустилося, встановилося наполовину й зруйнувало всю систему. Чому так сталося попри всі блокування, точно сказати не можу — у мене склалося враження дуже агресивної політики оновлень. У цей момент я вирішив: залишаю цю систему назавжди.'
+        ),
+      },
+      { h2: t('Was ich jetzt nutze', 'What I use now', 'Что я использую сейчас', 'Що я використовую зараз') },
+      {
+        ul: [
+          t(
+            '<strong>Windows über Boot Camp</strong> auf dem iMac',
+            '<strong>Windows via Boot Camp</strong> on the iMac',
+            '<strong>Windows через Boot Camp</strong> на iMac',
+            '<strong>Windows через Boot Camp</strong> на iMac'
+          ),
+          t(
+            '<strong>Linux parallel installiert:</strong> auf meinem MacBook Air läuft es bereits neben macOS, auf dem iMac kommt es als Nächstes dazu',
+            '<strong>Linux installed alongside:</strong> it already runs next to macOS on my MacBook Air, and the iMac is next',
+            '<strong>Linux параллельно:</strong> на MacBook Air он уже работает рядом с macOS, следующим на очереди iMac',
+            '<strong>Linux паралельно:</strong> на MacBook Air він уже працює поруч із macOS, наступним буде iMac'
+          ),
+        ],
+      },
+      {
+        p: t(
+          'Mein Eindruck, ganz ohne Benchmarks: Alles läuft schneller und flüssiger. Ein schlankes Linux-Desktop-System kommt mit rund einem Gigabyte RAM aus, der Rest des Arbeitsspeichers steht für Docker, Editor und Browser zur Verfügung. Für meine Entwicklungsarbeit (Python, Node, Docker, SSH, Git) fehlt mir nichts.',
+          'My impression, without any benchmarks: everything runs faster and smoother. A lean Linux desktop gets by with about a gigabyte of RAM, so the rest of the memory is available for Docker, editor and browser. For my development work (Python, Node, Docker, SSH, Git) I miss nothing.',
+          'Моё впечатление, без всяких бенчмарков: всё работает быстрее и плавнее. Лёгкому Linux-десктопу достаточно около гигабайта RAM, остальная память доступна для Docker, редактора и браузера. Для моей разработки (Python, Node, Docker, SSH, Git) мне ничего не хватает.',
+          'Моє враження, без жодних бенчмарків: усе працює швидше й плавніше. Легкому Linux-десктопу вистачає близько гігабайта RAM, решта пам’яті доступна для Docker, редактора й браузера. Для моєї розробки (Python, Node, Docker, SSH, Git) мені нічого не бракує.'
+        ),
+      },
+      {
+        callout: t(
+          '<strong>Meine Meinung:</strong> Apple wirbt mit Umweltschutz. Ob aus Absicht oder nicht – ein voll funktionsfähiges Gerät mit 32 GB RAM nur wegen fehlender Software-Updates auszusortieren, erzeugt Elektroschrott. Mit Windows und Linux lebt dieselbe Hardware weiter.',
+          '<strong>My opinion:</strong> Apple advertises environmental protection. Whether by intent or not, retiring a fully working machine with 32 GB of RAM only because software updates stop creates e-waste. With Windows and Linux the same hardware lives on.',
+          '<strong>Моё мнение:</strong> Apple рекламирует заботу об окружающей среде. Намеренно или нет, списывать полностью рабочую машину с 32 ГБ RAM только из-за прекращения обновлений ПО — значит создавать электронный мусор. С Windows и Linux то же железо продолжает жить.',
+          '<strong>Моя думка:</strong> Apple рекламує турботу про довкілля. Навмисно чи ні, списувати повністю робочу машину з 32 ГБ RAM лише через припинення оновлень ПЗ — це створювати електронне сміття. З Windows і Linux те саме залізо продовжує жити.'
+        ),
+      },
+      { h2: t('Tipps für alle mit ähnlichem Gerät', 'Tips for anyone with a similar machine', 'Советы тем, у кого похожая машина', 'Поради тим, у кого схожа машина') },
+      {
+        ul: [
+          t(
+            '<strong>Vollständiges Backup vor jedem Experiment</strong> (Time Machine oder ein Klon der Platte). Ein inoffizieller Patcher kommt ohne Garantie.',
+            '<strong>A full backup before any experiment</strong> (Time Machine or a clone of the disk). An unofficial patcher comes with no guarantee.',
+            '<strong>Полный бэкап перед любым экспериментом</strong> (Time Machine или клон диска). У неофициального патчера нет гарантий.',
+            '<strong>Повний бекап перед будь-яким експериментом</strong> (Time Machine або клон диска). У неофіційного патчера немає гарантій.'
+          ),
+          t(
+            '<strong>Windows per Boot Camp und Linux zuerst auf einem Testgerät oder einer eigenen Partition</strong> ausprobieren, bevor man macOS ersetzt.',
+            '<strong>Try Windows via Boot Camp and Linux first on a test machine or a separate partition</strong> before replacing macOS.',
+            '<strong>Сначала попробуйте Windows через Boot Camp и Linux на тестовой машине или отдельном разделе</strong>, прежде чем заменять macOS.',
+            '<strong>Спершу спробуйте Windows через Boot Camp і Linux на тестовій машині або окремому розділі</strong>, перш ніж замінювати macOS.'
+          ),
+          t(
+            '<strong>Eigene Daten nicht in der Cloud eines einzelnen Anbieters lassen</strong> – siehe <a href="{{path:homeserver-statt-cloud}}">Raus aus der Cloud</a>.',
+            '<strong>Do not leave your data in a single vendor’s cloud</strong> – see <a href="{{path:homeserver-statt-cloud}}">Leaving the cloud</a>.',
+            '<strong>Не оставляйте данные в облаке одного поставщика</strong> — см. <a href="{{path:homeserver-statt-cloud}}">Уход из облака</a>.',
+            '<strong>Не залишайте дані в хмарі одного постачальника</strong> — див. <a href="{{path:homeserver-statt-cloud}}">Вихід із хмари</a>.'
+          ),
+        ],
+      },
+      {
+        p: t(
+          'Danke, Apple, für viele gute Jahre mit diesem Gerät. Aber ab hier gehen wir getrennte Wege.',
+          'Thank you, Apple, for many good years with this machine. But from here on our paths part.',
+          'Спасибо, Apple, за много хороших лет с этой машиной. Но дальше нам не по пути.',
+          'Дякую, Apple, за багато добрих років із цією машиною. Але далі нам не по дорозі.'
+        ),
+      },
+    ],
+  },
 ];
