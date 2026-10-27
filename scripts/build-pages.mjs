@@ -193,8 +193,19 @@ ${extra}
 <main class="wrap">`;
 }
 
+const TOPIC_LINKS = [
+  ['cra-meldepflicht-11-september-2026', {de:'CRA-Meldepflicht',en:'CRA reporting duty',ru:'CRA: уведомления',ua:'CRA: повідомлення'}],
+  ['nis2-kleine-it-unternehmen', {de:'NIS2 für Freelancer',en:'NIS2 for freelancers',ru:'NIS2 для фрилансеров',ua:'NIS2 для фрилансерів'}],
+  ['ki-verordnung-artikel-50-checkliste', {de:'KI-VO Artikel 50',en:'AI Act Article 50',ru:'Регламент ИИ, ст. 50',ua:'Регламент ШІ, ст. 50'}],
+  ['backup-3-2-1-restore-test-homelab', {de:'Backup 3-2-1',en:'Backup 3-2-1',ru:'Бэкап 3-2-1',ua:'Бекап 3-2-1'}],
+  ['quereinstieg-devops-deutschland', {de:'Quereinstieg DevOps',en:'Career change to DevOps',ru:'Переход в DevOps',ua:'Перехід у DevOps'}],
+  ['welt-nach-der-4-industriellen-revolution', {de:'Welt in 10–20 Jahren',en:'The world in 10–20 years',ru:'Мир через 10–20 лет',ua:'Світ через 10–20 років'}],
+  ['ki-rechner-routinearbeit', {de:'KI-Rechner Routinearbeit',en:'AI routine-work calculator',ru:'Калькулятор ИИ и рутины',ua:'Калькулятор ШІ і рутини'}],
+];
+const TOPICS_H = {de:'Themen',en:'Topics',ru:'Темы',ua:'Теми'};
 const foot = (lang = 'de') => `</main>
 <footer>
+  <div class="footer-topics" role="navigation" aria-label="${TOPICS_H[lang]}"><strong>${TOPICS_H[lang]}:</strong> ${TOPIC_LINKS.map(([sl, lb]) => `<a href="${seriesPath(sl, lang)}">${lb[lang]}</a>`).join(' · ')} · <a href="${casePath('meistermeld', lang)}">MeisterMeld</a> · <a href="${casePath('pflegeoasis', lang)}">PflegeOasis</a></div>
   <span>© 2026 ${LANG[lang].name} · Dresden</span>
   <span><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></span>
 </footer>

@@ -4,6 +4,8 @@
 // Body blocks: h2, p, ul, ol, code, table, callout. `{{path:<slug>}}` in a string -> localized URL of that page.
 // Only facts about the real projects are stated; nothing is invented.
 
+import { NOTES_2026 } from './notes-2026.mjs';
+
 const t = (de, en, ru, ua) => ({ de, en, ru, ua });
 
 export const AUTHOR = { name: 'Serge Zabolotny', url: 'https://zabolotny.de/' };
@@ -1241,3 +1243,5 @@ export const NOTES = [
     ],
   },
 ];
+
+NOTES.push(...NOTES_2026);
