@@ -2880,3 +2880,8 @@ html { overflow-x: hidden; }
 .case-links a { color: var(--accent3, #4dffb4); }
 .homelab-series { margin-top: 18px; font-family: 'DM Mono', monospace; font-size: 0.82rem; color: var(--muted, rgba(232,228,216,0.7)); }
 .homelab-series a { color: var(--accent3, #4dffb4); }
+
+.footer-topics { flex: 1 0 100%; line-height: 2; font-size: 13px; color: var(--muted); }
+.footer-topics a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.footer-topics a:hover { color: var(--text, #fff); }
+.footer-topics strong { font-weight: 600; }

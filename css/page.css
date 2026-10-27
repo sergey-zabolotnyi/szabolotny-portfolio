@@ -161,3 +161,6 @@ td:first-child { color: var(--fg); }
 .calc td small { color: var(--muted); }
 .calc-note { font-size: 0.85rem; }
 @media (max-width: 560px) { .calc-form { grid-template-columns: 1fr; padding: 16px; } }
+
+.footer-topics { flex: 1 0 100%; line-height: 2; font-size: 0.85rem; }
+.footer-topics strong { color: rgba(232, 228, 216, 0.8); font-weight: 600; }
