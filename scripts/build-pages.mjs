@@ -18,6 +18,7 @@ import { fileURLToPath } from 'node:url';
 import { AUTHOR, CASES, NOTES } from '../content/pages.mjs';
 import { SERIES } from '../content/series.mjs';
 import { DIAGRAMS, DIAGRAM_SIZE } from '../content/diagrams.mjs';
+import { SECTORS, SCENARIOS, CALC_UI } from '../content/calculator.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://zabolotny.de';
@@ -244,6 +245,34 @@ ${d.nodes.map(node).join('\n')}
 </figure>`;
 }
 
+// ---------- AI routine-work calculator (client-side, js/calc.js) ----------
+function calculatorHtml(lang) {
+  const C = CALC_UI[lang];
+  const pct = (v) => `${(v * 100).toLocaleString(lang === 'ua' ? 'uk' : lang, { maximumFractionDigits: 1 })} %`;
+  const field = (id, label, value, hint, extra = '') =>
+    `  <div class="cf"><label for="${id}">${esc(label)}</label><input id="${id}" type="number" inputmode="decimal" min="0" step="any" value="${value}"${extra}>${hint ? `<small>${esc(hint)}</small>` : ''}</div>`;
+  return `<div class="calc" id="calc" data-months="${escAttr(C.months)}" data-never="${escAttr(C.never)}">
+<div class="calc-form">
+${field('c-n', C.employees, 10, '')}
+${field('c-h', C.hours, 8, C.hoursHint)}
+  <div class="cf"><label for="c-sector">${esc(C.sector)}</label><select id="c-sector">${SECTORS.map((o) => `<option value="${o.rate}">${esc(tr(o.label, lang))} · ${o.rate.toFixed(2)} €</option>`).join('')}</select></div>
+${field('c-rate', C.rate, 45, '')}
+${field('c-tool', C.tool, 25, C.toolHint)}
+${field('c-once', C.once, 1000, C.onceHint)}
+</div>
+<h3>${esc(C.result)}</h3>
+<div class="table-wrap" aria-live="polite"><table>
+  <thead><tr><th scope="col">${esc(C.scenario)}</th><th scope="col">${esc(C.saved)}</th><th scope="col">${esc(C.value)}</th><th scope="col">${esc(C.net)}</th><th scope="col">${esc(C.year1)}</th><th scope="col">${esc(C.payback)}</th></tr></thead>
+  <tbody>
+${SCENARIOS.map((sc) => `    <tr data-scenario="${sc.pct}"><td>${esc(tr(sc.name, lang))} <small>(${pct(sc.pct)} · ${esc(sc.src)})</small></td><td data-o="saved">–</td><td data-o="value">–</td><td data-o="net">–</td><td data-o="year1">–</td><td data-o="payback">–</td></tr>`).join('\n')}
+  </tbody>
+</table></div>
+<p class="calc-note">${esc(C.note)}</p>
+<noscript><p>${esc(C.noscript)}</p></noscript>
+</div>
+<script defer src="/js/calc.js"></script>`;
+}
+
 // ---------- body block renderer ----------
 function renderBody(blocks, lang) {
   const x = (v) => tr(v, lang).replace(/\{\{path:([a-z0-9-]+)\}\}/g, (_, slug) => {
@@ -254,6 +283,7 @@ function renderBody(blocks, lang) {
   return blocks
     .map((b) => {
       if (b.diagram) return diagramHtml(b.diagram, lang);
+      if (b.calculator) return calculatorHtml(lang);
       if (b.h2) return `<h2>${x(b.h2)}</h2>`;
       if (b.p) return `<p>${x(b.p)}</p>`;
       if (b.ul) return `<ul>\n${b.ul.map((i) => `  <li>${x(i)}</li>`).join('\n')}\n</ul>`;
