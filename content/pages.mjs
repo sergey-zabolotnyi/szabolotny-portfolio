@@ -884,4 +884,156 @@ export const NOTES = [
       },
     ],
   },
+  // ───────────────────────────────────────────────────────── AI routine-work calculator
+  {
+    slug: 'ki-rechner-routinearbeit',
+    date: '2026-10-27',
+    tags: ['KI', 'Produktivität', 'Rechner', 'Automatisierung', 'Studien', 'Destatis'],
+    related: ['ki-content-human-in-the-loop', 'pflegeoasis'],
+    title: t(
+      'Wie viel Routinearbeit spart KI? Rechner mit Studien und Destatis-Zahlen',
+      'How much routine work does AI save? A calculator built on studies and Destatis figures',
+      'Сколько рутины экономит ИИ? Калькулятор на данных исследований и Destatis',
+      'Скільки рутини економить ШІ? Калькулятор на даних досліджень і Destatis'
+    ),
+    description: t(
+      'Interaktiver Rechner: Wie viele Stunden und Euro spart KI bei Routinearbeit im Team? Mit drei Szenarien aus veröffentlichten Studien (Brynjolfsson, Dell’Acqua, Humlum & Vestergaard) und Stundenkosten laut Destatis.',
+      'Interactive calculator: how many hours and euros does AI save on routine work in a team? Three scenarios from published studies (Brynjolfsson, Dell’Acqua, Humlum & Vestergaard) and hourly costs per Destatis.',
+      'Интерактивный калькулятор: сколько часов и евро экономит ИИ на рутине в команде? Три сценария из опубликованных исследований (Brynjolfsson, Dell’Acqua, Humlum & Vestergaard) и стоимость часа по Destatis.',
+      'Інтерактивний калькулятор: скільки годин і євро економить ШІ на рутині в команді? Три сценарії з опублікованих досліджень (Brynjolfsson, Dell’Acqua, Humlum & Vestergaard) і вартість години за Destatis.'
+    ),
+    kicker: t('KI · Produktivität · Rechner', 'AI · Productivity · Calculator', 'ИИ · Продуктивность · Калькулятор', 'ШІ · Продуктивність · Калькулятор'),
+    h1: t(
+      'Wie viel Routinearbeit spart KI? Ein Rechner auf Basis von Studien',
+      'How much routine work does AI save? A calculator based on studies',
+      'Сколько рутины экономит ИИ? Калькулятор на основе исследований',
+      'Скільки рутини економить ШІ? Калькулятор на основі досліджень'
+    ),
+    lead: t(
+      'Die Studien zeigen sehr unterschiedliche Zahlen – von knapp 3 % bis über 40 %. Statt einer einzigen Zahl gibt der Rechner drei Szenarien aus, jeweils mit Quelle, in Stunden und Euro für Ihr Team.',
+      'The studies show very different numbers – from just under 3% to over 40%. Instead of a single number, the calculator gives three scenarios, each with its source, in hours and euros for your team.',
+      'Исследования показывают очень разные цифры — от неполных 3% до более 40%. Вместо одной цифры калькулятор выдаёт три сценария, каждый с источником, в часах и евро для вашей команды.',
+      'Дослідження показують дуже різні цифри — від неповних 3% до понад 40%. Замість однієї цифри калькулятор видає три сценарії, кожен із джерелом, у годинах і євро для вашої команди.'
+    ),
+    body: [
+      { h2: t('Der Rechner', 'The calculator', 'Калькулятор', 'Калькулятор') },
+      {
+        p: t(
+          'Tragen Sie Teamgröße und Routinestunden ein, wählen Sie Ihre Branche – die Stundenkosten kommen aus der Destatis-Statistik und lassen sich überschreiben. Werkzeug- und Einführungskosten sind meine Annahmen: Bitte ersetzen Sie sie durch Ihre eigenen Werte. Die Berechnung läuft komplett im Browser, es werden keine Daten übertragen.',
+          'Enter team size and routine hours and choose your sector – the hourly costs come from the Destatis statistics and can be overwritten. Tool and rollout costs are my own assumptions: please replace them with your own values. Everything is calculated in your browser, no data is sent anywhere.',
+          'Укажите размер команды и часы рутины, выберите отрасль — стоимость часа берётся из статистики Destatis, её можно изменить. Затраты на инструмент и внедрение — мои допущения: замените их своими значениями. Весь расчёт идёт в браузере, данные никуда не отправляются.',
+          'Вкажіть розмір команди та години рутини, оберіть галузь — вартість години береться зі статистики Destatis, її можна змінити. Витрати на інструмент і впровадження — мої припущення: замініть їх своїми значеннями. Увесь розрахунок іде в браузері, дані нікуди не надсилаються.'
+        ),
+      },
+      { calculator: true },
+      { h2: t('So lesen Sie das Ergebnis', 'How to read the result', 'Как читать результат', 'Як читати результат') },
+      {
+        ul: [
+          t(
+            '<strong>Vorsichtig (2,8 %):</strong> der gemessene Durchschnitt über alle Arbeitsstunden in Dänemark. Hier wird er auf Ihre Routinestunden angewendet – die Schätzung ist also bewusst sehr konservativ.',
+            '<strong>Cautious (2.8%):</strong> the measured average over all working hours in Denmark. Here it is applied to your routine hours – so the estimate is deliberately very conservative.',
+            '<strong>Осторожный (2,8%):</strong> измеренное среднее по всему рабочему времени в Дании. Здесь оно применено к вашим часам рутины, то есть оценка намеренно очень консервативная.',
+            '<strong>Обережний (2,8%):</strong> виміряне середнє за всім робочим часом у Данії. Тут його застосовано до ваших годин рутини, тож оцінка свідомо дуже консервативна.'
+          ),
+          t(
+            '<strong>Typisch (14 %):</strong> Produktivitätsgewinn im Kundenservice einer echten Firma, gemessen an über 5 000 Beschäftigten.',
+            '<strong>Typical (14%):</strong> productivity gain in the customer service of a real company, measured across more than 5,000 employees.',
+            '<strong>Типичный (14%):</strong> прирост продуктивности в службе поддержки реальной компании, измеренный на более чем 5 000 сотрудников.',
+            '<strong>Типовий (14%):</strong> приріст продуктивності у службі підтримки реальної компанії, виміряний на понад 5 000 співробітників.'
+          ),
+          t(
+            '<strong>Optimistisch (25 %):</strong> Geschwindigkeitsgewinn bei Aufgaben, die gut zu KI passen (Harvard/BCG-Experiment).',
+            '<strong>Optimistic (25%):</strong> speed gain on tasks that suit AI well (Harvard/BCG experiment).',
+            '<strong>Оптимистичный (25%):</strong> прирост скорости на задачах, которые хорошо подходят ИИ (эксперимент Harvard/BCG).',
+            '<strong>Оптимістичний (25%):</strong> приріст швидкості на завданнях, які добре підходять ШІ (експеримент Harvard/BCG).'
+          ),
+        ],
+      },
+      { h2: t('Die Studien im Überblick', 'The studies at a glance', 'Исследования вкратце', 'Дослідження стисло') },
+      {
+        table: {
+          head: [
+            t('Quelle', 'Source', 'Источник', 'Джерело'),
+            t('Gemessen', 'What was measured', 'Что измеряли', 'Що вимірювали'),
+            t('Ergebnis', 'Result', 'Результат', 'Результат'),
+          ],
+          rows: [
+            [
+              '<a href="https://nber.org/papers/w31161" rel="noopener noreferrer">Brynjolfsson, Li, Raymond (NBER)</a>',
+              t('Kundenservice, 5 179 Beschäftigte', 'Customer support, 5,179 agents', 'Поддержка клиентов, 5 179 сотрудников', 'Підтримка клієнтів, 5 179 співробітників'),
+              t('+14 % gelöste Fälle pro Stunde; +34 % bei Neulingen, kaum Effekt bei Erfahrenen', '+14% issues resolved per hour; +34% for novices, minimal effect for experienced agents', '+14% решённых обращений в час; +34% у новичков, минимальный эффект у опытных', '+14% розв’язаних звернень на годину; +34% у новачків, мінімальний ефект у досвідчених'),
+            ],
+            [
+              '<a href="https://scale.stanford.edu/publications/experimental-evidence-productivity-effects-generative-artificial-intelligence" rel="noopener noreferrer">Noy &amp; Zhang (Science 2023)</a>',
+              t('Schreibaufgaben, 453 Fachkräfte', 'Writing tasks, 453 professionals', 'Письменные задачи, 453 специалиста', 'Письмові завдання, 453 фахівці'),
+              t('Zeit −40 %, Qualität +18 %', 'Time −40%, quality +18%', 'Время −40%, качество +18%', 'Час −40%, якість +18%'),
+            ],
+            [
+              '<a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=64700" rel="noopener noreferrer">Dell’Acqua et al. (Harvard/BCG)</a>',
+              t('758 Wissensarbeiter, 18 Aufgaben', '758 knowledge workers, 18 tasks', '758 специалистов, 18 задач', '758 фахівців, 18 завдань'),
+              t('+12,2 % Aufgaben, 25,1 % schneller; bei einer Aufgabe außerhalb der KI-Grenze 19 % weniger richtige Lösungen', '+12.2% tasks, 25.1% faster; on a task outside the AI frontier 19% fewer correct solutions', '+12,2% задач, на 25,1% быстрее; на задаче вне границы ИИ на 19% меньше верных решений', '+12,2% завдань, на 25,1% швидше; на завданні поза межею ШІ на 19% менше правильних розв’язків'),
+            ],
+            [
+              '<a href="https://arxiv.org/abs/2302.06590" rel="noopener noreferrer">Peng et al. (GitHub Copilot)</a>',
+              t('Eine Programmieraufgabe im Experiment', 'One programming task in an experiment', 'Одна задача по программированию в эксперименте', 'Одне завдання з програмування в експерименті'),
+              t('55,8 % schneller (Laborwert)', '55.8% faster (lab result)', 'на 55,8% быстрее (лабораторный результат)', 'на 55,8% швидше (лабораторний результат)'),
+            ],
+            [
+              '<a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" rel="noopener noreferrer">METR (2025)</a>',
+              t('16 erfahrene Entwickler in ihren eigenen großen Projekten', '16 experienced developers in their own large projects', '16 опытных разработчиков в собственных больших проектах', '16 досвідчених розробників у власних великих проєктах'),
+              t('19 % langsamer mit KI – bei gefühlter Ersparnis von 20 %', '19% slower with AI – while they felt 20% faster', 'на 19% медленнее с ИИ — при ощущении экономии в 20%', 'на 19% повільніше з ШІ — за відчуття економії в 20%'),
+            ],
+            [
+              '<a href="https://marginalrevolution.com/marginalrevolution/2025/04/large-language-models-small-labor-market-effects.html" rel="noopener noreferrer">Humlum &amp; Vestergaard (Dänemark, 2025)</a>',
+              t('25 000 Beschäftigte, 11 Berufe', '25,000 workers, 11 occupations', '25 000 работников, 11 профессий', '25 000 працівників, 11 професій'),
+              t('Im Schnitt 2,8 % der Arbeitszeit gespart, keine signifikanten Effekte auf Einkommen und Stunden', 'On average 2.8% of working time saved, no significant effects on earnings or hours', 'В среднем 2,8% рабочего времени, без значимого влияния на заработок и часы', 'У середньому 2,8% робочого часу, без значущого впливу на заробіток і години'),
+            ],
+            [
+              '<a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/04/PD26_148_624.html" rel="noopener noreferrer">Destatis (29.04.2026)</a>',
+              t('Arbeitskosten je Stunde 2025', 'Labour cost per hour in 2025', 'Стоимость часа труда в 2025 году', 'Вартість години праці у 2025 році'),
+              t('45,00 € im Durchschnitt (Schätzung), je nach Branche 27,40 € bis 69,70 €', '€45.00 on average (estimate), €27.40 to €69.70 depending on sector', '45,00 € в среднем (оценка), от 27,40 € до 69,70 € по отраслям', '45,00 € у середньому (оцінка), від 27,40 € до 69,70 € за галузями'),
+            ],
+          ],
+        },
+      },
+      { h2: t('Grenzen der Rechnung', 'Limits of the calculation', 'Ограничения расчёта', 'Обмеження розрахунку') },
+      {
+        ul: [
+          t(
+            '<strong>Labor ist nicht Alltag:</strong> Die hohen Werte stammen aus Experimenten mit ausgewählten Aufgaben. Im echten Betrieb liegen die Zahlen deutlich niedriger.',
+            '<strong>The lab is not everyday work:</strong> the high figures come from experiments with selected tasks. In real operations the numbers are much lower.',
+            '<strong>Лаборатория — не повседневность:</strong> высокие значения получены в экспериментах с подобранными задачами. В реальной работе цифры заметно ниже.',
+            '<strong>Лабораторія — не повсякдення:</strong> високі значення отримано в експериментах із підібраними завданнями. У реальній роботі цифри помітно нижчі.'
+          ),
+          t(
+            '<strong>Nicht jeder profitiert gleich:</strong> Neulinge gewinnen mehr als Erfahrene, und bei Aufgaben außerhalb der Stärken der KI sinkt die Qualität. Wer nur das Tempo misst, übersieht Prüf- und Korrekturzeit.',
+            '<strong>Not everyone benefits equally:</strong> novices gain more than experienced people, and on tasks outside AI’s strengths quality drops. Whoever only measures speed overlooks review and correction time.',
+            '<strong>Выгода неодинакова:</strong> новички выигрывают больше опытных, а на задачах вне сильных сторон ИИ качество падает. Кто измеряет только скорость, упускает время на проверку и правки.',
+            '<strong>Вигода неоднакова:</strong> новачки виграють більше за досвідчених, а на завданнях поза сильними сторонами ШІ якість падає. Хто вимірює лише швидкість, не бачить часу на перевірку та правки.'
+          ),
+          t(
+            '<strong>Gefühl ist kein Messwert:</strong> In der METR-Studie glaubten die Entwickler, schneller zu sein, waren es aber nicht. Messen Sie Ihre eigenen Aufgaben, bevor Sie hochrechnen.',
+            '<strong>Feeling is not a measurement:</strong> in the METR study the developers believed they were faster, but were not. Measure your own tasks before extrapolating.',
+            '<strong>Ощущение — не измерение:</strong> в исследовании METR разработчики считали, что стали быстрее, но это было не так. Измерьте собственные задачи, прежде чем экстраполировать.',
+            '<strong>Відчуття — не вимірювання:</strong> у дослідженні METR розробники вважали, що стали швидшими, але це було не так. Виміряйте власні завдання, перш ніж екстраполювати.'
+          ),
+          t(
+            '<strong>Die Stundenkosten sind ein Durchschnitt:</strong> Destatis schätzt die Werte für 2025 aus der Arbeitskostenerhebung 2020 hoch. Sie enthalten auch Lohnnebenkosten.',
+            '<strong>The hourly costs are an average:</strong> Destatis extrapolates the 2025 values from the 2020 labour cost survey. They include non-wage labour costs.',
+            '<strong>Стоимость часа — среднее значение:</strong> Destatis экстраполирует значения 2025 года по обследованию 2020 года. Они включают и незарплатные расходы работодателя.',
+            '<strong>Вартість години — середнє значення:</strong> Destatis екстраполює значення 2025 року з обстеження 2020 року. Вони включають і незарплатні витрати роботодавця.'
+          ),
+        ],
+      },
+      { h2: t('Was ich selbst damit mache', 'What I do with it myself', 'Что я делаю с этим сам', 'Що я роблю з цим сам') },
+      {
+        p: t(
+          'Bei PflegeOasis erzeugt eine KI die Entwürfe der Ratgeber-Artikel offline, ein Mensch prüft jeden Text vor der Veröffentlichung. Die KI beschleunigt die Arbeit, die Verantwortung bleibt beim Menschen – Prüf- und Korrekturzeit gehört deshalb zur Rechnung. Mehr dazu in der Notiz <a href="{{path:ki-content-human-in-the-loop}}">KI-Content mit Human-in-the-Loop</a>.',
+          'At PflegeOasis an AI creates the drafts of the guide articles offline, and a human reviews every text before publication. The AI speeds up the work; responsibility stays with the human – which is why review and correction time belong in the calculation. More in the note <a href="{{path:ki-content-human-in-the-loop}}">AI content with human-in-the-loop</a>.',
+          'В PflegeOasis ИИ создаёт черновики статей офлайн, а человек проверяет каждый текст перед публикацией. ИИ ускоряет работу, ответственность остаётся за человеком — поэтому время на проверку и правки входит в расчёт. Подробнее в заметке <a href="{{path:ki-content-human-in-the-loop}}">ИИ-контент с человеком в цикле</a>.',
+          'У PflegeOasis ШІ створює чернетки статей офлайн, а людина перевіряє кожен текст перед публікацією. ШІ пришвидшує роботу, відповідальність лишається за людиною — тому час на перевірку та правки входить у розрахунок. Докладніше в нотатці <a href="{{path:ki-content-human-in-the-loop}}">ШІ-контент із людиною в циклі</a>.'
+        ),
+      },
+    ],
+  },
 ];
