@@ -1,7 +1,7 @@
 // particles.js - Star field, nebulae and galaxies
 
 const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
+let ctx = canvas.getContext('2d');
 const DPR = Math.min(devicePixelRatio || 1, 2); // cap DPR: retina 3x wastes fill-rate for no visible gain
 
 const isSmallScreen = innerWidth <= 768;
@@ -16,8 +16,21 @@ function resize() {
   ctx.scale(DPR, DPR);
 }
 
+let nebulaLayer = null;
+function renderNebulaLayer() {
+  // Nebulae are static: paint once into an offscreen canvas, then blit each frame
+  nebulaLayer = document.createElement('canvas');
+  nebulaLayer.width = canvas.width;
+  nebulaLayer.height = canvas.height;
+  const main = ctx;
+  ctx = nebulaLayer.getContext('2d');
+  ctx.scale(DPR, DPR);
+  nebulae.forEach(drawNebula);
+  ctx = main;
+}
+
 resize();
-window.addEventListener('resize', resize);
+window.addEventListener('resize', () => { resize(); nebulaLayer = null; });
 
 const W = () => innerWidth;
 const H = () => innerHeight;
@@ -163,7 +176,8 @@ let tick = 0;
 function drawFrame(timestamp) {
   tick++;
   ctx.clearRect(0, 0, W(), H());
-  nebulae.forEach(drawNebula);
+  if (!nebulaLayer) renderNebulaLayer();
+  ctx.drawImage(nebulaLayer, 0, 0, W(), H());
   galaxies.forEach(drawGalaxy);
   [[stars1, 6], [stars2, 14], [stars3, 26]].forEach(([layer, ps], li) => {
     layer.forEach(s => {
@@ -211,16 +225,26 @@ function drawFrame(timestamp) {
   }
 }
 
-if (prefersReducedMotion) {
-  // Respect OS-level motion preference: render once, no animation loop, no CPU/battery drain.
-  drawFrame(0);
-} else {
+function startLoop() {
+  if (prefersReducedMotion) {
+    // Respect OS-level motion preference: render once, no animation loop, no CPU/battery drain.
+    drawFrame(0);
+    return;
+  }
+  let last = 0;
   (function draw(timestamp) {
-    if (document.hidden) {
-      requestAnimationFrame(draw);
-      return;
-    }
-    drawFrame(timestamp);
     requestAnimationFrame(draw);
-  })();
+    if (document.hidden) return;
+    if (timestamp - last < 32) return; // ~30 fps is plenty for a slow star field
+    last = timestamp;
+    drawFrame(timestamp);
+  })(0);
 }
+
+// Don't compete with first paint and input: begin once the page has loaded and the main thread is idle
+function whenIdle() {
+  if ('requestIdleCallback' in window) requestIdleCallback(startLoop, { timeout: 2500 });
+  else setTimeout(startLoop, 1200);
+}
+if (document.readyState === 'complete') whenIdle();
+else window.addEventListener('load', whenIdle, { once: true });
