@@ -829,10 +829,10 @@
       <div class="form-wrap">
         <form class="contact-form" id="contactForm">
           <div class="form-row">
-            <div class="field"><label data-i18n="form_name">Имя</label><input type="text" name="name" id="formName" data-i18n-ph="form_ph_name" placeholder="Иван Иванов" required></div>
-            <div class="field"><label>Email</label><input type="email" name="email" id="formEmail" placeholder="max@firma.de" required></div>
+            <div class="field"><label for="formName" data-i18n="form_name">Имя</label><input type="text" name="name" id="formName" autocomplete="name" data-i18n-ph="form_ph_name" placeholder="Иван Иванов" required></div>
+            <div class="field"><label for="formEmail">Email</label><input type="email" name="email" id="formEmail" autocomplete="email" placeholder="max@firma.de" required></div>
           </div>
-          <div class="field"><label data-i18n="form_msg">Сообщение</label><textarea name="message" id="formMessage" data-i18n-ph="form_ph_msg" placeholder="У меня есть интересный проект..."></textarea></div>
+          <div class="field"><label for="formMessage" data-i18n="form_msg">Сообщение</label><textarea name="message" id="formMessage" data-i18n-ph="form_ph_msg" placeholder="У меня есть интересный проект..."></textarea></div>
           <button type="submit" class="form-btn" id="formBtn" data-i18n="form_btn">Отправить →</button>
           <p class="form-note" data-i18n="form_note">Сообщение приходит напрямую мне — без сторонних сервисов форм.</p>
         </form>
@@ -891,7 +891,7 @@
   <div class="chat-body" id="chatBody"></div>
   <div class="chat-suggestions" id="chatSuggestions"></div>
   <div class="chat-input-row">
-    <input id="chatinput" placeholder="Ask about projects, skills..." onkeydown="if(event.key==='Enter')sendChat()">
+    <input id="chatinput" aria-label="AI chat" placeholder="Ask about projects, skills..." onkeydown="if(event.key==='Enter')sendChat()">
     <button class="chat-send" onclick="sendChat()">→</button>
   </div>
 </div>
