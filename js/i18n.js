@@ -4,6 +4,7 @@ const translations = {
   de: {
     hero_first: 'Serge', hero_last: 'Zabolotny', footer_name: 'Serge Zabolotny',
     notes_read: 'Ausführlich lesen →', cases_read: 'Ausführliche Case Studies:', cases_notes: 'Engineering Notes',
+    cases_new: 'Neu in den Notizen:', nl_calc: 'KI-Rechner Routinearbeit', nl_world: 'Die Welt in 10–20 Jahren', nl_mac: 'Abschied von macOS',
     homelab_series: 'Die Serie zum Nachbauen:', hl_s1: 'Raus aus der Cloud', hl_s2: 'Proxmox & LXC', hl_s3: 'Zugriff & Backups', cases_series: 'Home-Server-Serie',
     blog_title: 'Engineering Notes',
     notes_intro: 'Konkrete Probleme, Entscheidungen und Ergebnisse aus meinen Projekten — kurz notiert.',
@@ -214,6 +215,7 @@ const translations = {
   en: {
     hero_first: 'Serge', hero_last: 'Zabolotny', footer_name: 'Serge Zabolotny',
     notes_read: 'Read the full note →', cases_read: 'In-depth case studies:', cases_notes: 'Engineering Notes',
+    cases_new: 'New in the notes:', nl_calc: 'AI routine-work calculator', nl_world: 'The world in 10–20 years', nl_mac: 'Leaving macOS',
     homelab_series: 'The series to rebuild it:', hl_s1: 'Leaving the cloud', hl_s2: 'Proxmox & LXC', hl_s3: 'Access & backups', cases_series: 'Home-server series',
     blog_title: 'Engineering Notes',
     notes_intro: 'Concrete problems, decisions and results from my projects — briefly noted.',
@@ -423,6 +425,7 @@ const translations = {
   ru: {
     hero_first: 'Сергей', hero_last: 'Заболотный', footer_name: 'Сергей Заболотный',
     notes_read: 'Читать полностью →', cases_read: 'Подробные кейсы:', cases_notes: 'Engineering Notes',
+    cases_new: 'Новое в заметках:', nl_calc: 'Калькулятор ИИ и рутины', nl_world: 'Мир через 10–20 лет', nl_mac: 'Прощай, macOS',
     homelab_series: 'Серия, чтобы повторить:', hl_s1: 'Уход из облака', hl_s2: 'Proxmox и LXC', hl_s3: 'Доступ и бэкапы', cases_series: 'Серия о домашнем сервере',
     blog_title: 'Инженерные заметки',
     notes_intro: 'Конкретные проблемы, решения и результаты из моих проектов — коротко.',
@@ -632,6 +635,7 @@ const translations = {
   ua: {
     hero_first: 'Сергій', hero_last: 'Заболотний', footer_name: 'Сергій Заболотний',
     notes_read: 'Читати повністю →', cases_read: 'Детальні кейси:', cases_notes: 'Engineering Notes',
+    cases_new: 'Нове в нотатках:', nl_calc: 'Калькулятор ШІ і рутини', nl_world: 'Світ через 10–20 років', nl_mac: 'Прощавай, macOS',
     homelab_series: 'Серія, щоб повторити:', hl_s1: 'Вихід із хмари', hl_s2: 'Proxmox і LXC', hl_s3: 'Доступ і бекапи', cases_series: 'Серія про домашній сервер',
     blog_title: 'Інженерні нотатки',
     notes_intro: 'Конкретні проблеми, рішення та результати з моїх проєктів — коротко.',
