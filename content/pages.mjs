@@ -996,6 +996,12 @@ export const NOTES = [
           ],
         },
       },
+      { p: t(
+        'Der Blick nach vorn: Was diese Zahlen für IT-Berufe in 10–20 Jahren bedeuten könnten, steht in <a href="{{path:welt-nach-der-4-industriellen-revolution}}">Die Welt in 10–20 Jahren: drei Szenarien</a>. Ein Beispiel für KI mit menschlicher Kontrolle ist <a href="{{path:ki-content-human-in-the-loop}}">KI-Content mit Human-in-the-Loop</a>.',
+        'Looking ahead: what these figures could mean for IT careers in 10–20 years is in <a href="{{path:welt-nach-der-4-industriellen-revolution}}">The world in 10–20 years: three scenarios</a>. An example of AI under human control is <a href="{{path:ki-content-human-in-the-loop}}">AI content with human-in-the-loop</a>.',
+        'Взгляд вперёд: что эти цифры могут значить для IT-профессий через 10–20 лет — в заметке <a href="{{path:welt-nach-der-4-industriellen-revolution}}">Мир через 10–20 лет: три сценария</a>. Пример ИИ под контролем человека — <a href="{{path:ki-content-human-in-the-loop}}">ИИ-контент с человеком в цикле</a>.',
+        'Погляд уперед: що ці цифри можуть означати для IT-професій через 10–20 років — у нотатці <a href="{{path:welt-nach-der-4-industriellen-revolution}}">Світ через 10–20 років: три сценарії</a>. Приклад ШІ під контролем людини — <a href="{{path:ki-content-human-in-the-loop}}">ШІ-контент із людиною в циклі</a>.'
+      ) },
       { h2: t('Grenzen der Rechnung', 'Limits of the calculation', 'Ограничения расчёта', 'Обмеження розрахунку') },
       {
         ul: [
@@ -1203,6 +1209,12 @@ export const NOTES = [
           'За роботами Німеччина, за даними IFR, посідає п’яте місце у світі: менш як 25 000 нових установок і близько 41% установок у ЄС. Цифра Bitkom показує й інше: німецькі компанії вже широко застосовують ШІ в ІТ (42%), але поки майже не скорочують позиції.'
         ),
       },
+      { p: t(
+        'Wie viel Routinearbeit KI heute tatsächlich spart, können Sie im <a href="{{path:ki-rechner-routinearbeit}}">KI-Rechner für Routinearbeit</a> mit den Zahlen aus Studien nachrechnen. Wie ich selbst einen Teil meiner Arbeitsumgebung unabhängig halte, steht im <a href="{{path:homeserver-statt-cloud}}">Home-Server-Beitrag</a>, und im <a href="{{path:meistermeld}}">MeisterMeld-Case</a> sieht man, wie ich KI in einem echten Produkt einsetze.',
+        'How much routine work AI really saves today can be checked in the <a href="{{path:ki-rechner-routinearbeit}}">AI routine-work calculator</a>, using figures from studies. How I keep part of my own working environment independent is in the <a href="{{path:homeserver-statt-cloud}}">home-server article</a>, and the <a href="{{path:meistermeld}}">MeisterMeld case</a> shows how I use AI in a real product.',
+        'Сколько рутины ИИ реально экономит сегодня, можно посчитать в <a href="{{path:ki-rechner-routinearbeit}}">калькуляторе ИИ и рутинной работы</a> на цифрах из исследований. Как я сохраняю независимость части рабочей среды — в <a href="{{path:homeserver-statt-cloud}}">статье про домашний сервер</a>, а в <a href="{{path:meistermeld}}">кейсе MeisterMeld</a> видно, как я применяю ИИ в реальном продукте.',
+        'Скільки рутини ШІ реально заощаджує сьогодні, можна порахувати в <a href="{{path:ki-rechner-routinearbeit}}">калькуляторі ШІ та рутинної роботи</a> на цифрах із досліджень. Як я зберігаю незалежність частини робочого середовища — у <a href="{{path:homeserver-statt-cloud}}">статті про домашній сервер</a>, а в <a href="{{path:meistermeld}}">кейсі MeisterMeld</a> видно, як я застосовую ШІ в реальному продукті.'
+      ) },
       { h2: t('Grenzen dieses Textes', 'Limits of this text', 'Ограничения этого текста', 'Обмеження цього тексту') },
       {
         ul: [

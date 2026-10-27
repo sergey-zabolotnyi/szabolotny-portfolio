@@ -300,6 +300,19 @@ function renderBody(blocks, lang) {
     .join('\n');
 }
 
+// Internal linking: declared related + pages that link back to this one + shared tags (deterministic, max n)
+function autoRelated(page, n) {
+  const all = [...SERIES, ...NOTES, ...CASES].filter((p) => p.slug !== page.slug);
+  const score = new Map(all.map((p) => [p.slug, 0]));
+  for (const r of page.related ?? []) if (score.has(r)) score.set(r, score.get(r) + 100);
+  for (const p of all) if ((p.related ?? []).includes(page.slug)) score.set(p.slug, score.get(p.slug) + 50);
+  for (const p of all) {
+    const shared = (p.tags ?? []).filter((x) => (page.tags ?? []).includes(x)).length;
+    score.set(p.slug, score.get(p.slug) + shared * 5);
+  }
+  const hit = all.filter((p) => score.get(p.slug) > 0).sort((a, b) => score.get(b.slug) - score.get(a.slug) || a.slug.localeCompare(b.slug));
+  return hit.slice(0, n).map((p) => p.slug);
+}
 // ---------- shared pieces ----------
 const relatedCards = (slugs, lang) => {
   const items = slugs.map((s) => bySlug(s)).filter(Boolean);
@@ -344,7 +357,7 @@ ${c.facts.map(([k, v]) => `  <div><dt>${esc(tr(k, lang))}</dt><dd>${esc(tr(v, la
 </dl>
 ${tagsHtml(c.tags)}
 ${renderBody(c.body, lang)}
-${relatedCards(c.related, lang)}
+${relatedCards(autoRelated(c, 4), lang)}
 <section class="cta">
   <h2>${U.caseH}</h2>
   <p>${U.caseP}</p>
@@ -362,7 +375,7 @@ function articlePage(s, lang, { series }) {
   const path = seriesPath(s.slug, lang);
   const h1 = tr(s.h1, lang);
   const crumbs = [[U.start, L.home], [U.notes, indexPath(lang)], [h1, path]];
-  const relSlugs = series ? SERIES.filter((o) => o.slug !== s.slug).map((o) => o.slug) : s.related ?? [];
+  const relSlugs = series ? [...SERIES.filter((o) => o.slug !== s.slug).map((o) => o.slug), ...autoRelated(s, 2)] : autoRelated(s, 4);
   return (
     head({
       lang, title: `${tr(s.title, lang)} | ${L.name}`, description: tr(s.description, lang), path,
