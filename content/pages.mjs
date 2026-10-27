@@ -1036,4 +1036,196 @@ export const NOTES = [
       },
     ],
   },
+  // ───────────────────────────────────────────────────────── World after the 4th industrial revolution
+  {
+    slug: 'welt-nach-der-4-industriellen-revolution',
+    date: '2026-10-27',
+    tags: ['KI', 'Robotik', 'Drohnen', 'DevOps', 'Arbeitsmarkt', 'EU AI Act'],
+    related: ['ki-rechner-routinearbeit', 'ki-content-human-in-the-loop'],
+    title: t(
+      'Die Welt in 10–20 Jahren: drei Szenarien für IT-Berufe in der KI-Ära',
+      'The world in 10–20 years: three scenarios for IT careers in the AI era',
+      'Мир через 10–20 лет: три сценария для ИТ-профессий в эпоху ИИ',
+      'Світ через 10–20 років: три сценарії для ІТ-професій в епоху ШІ'
+    ),
+    description: t(
+      'KI, Roboter und Drohnen – wie könnte die Welt in 10–20 Jahren aussehen? Keine Prognose, sondern drei Szenarien mit Zahlen von Bitkom 2026, IFR 2026, WEF, DORA und der EU-KI-Verordnung, mit Fokus auf IT und DevOps.',
+      'AI, robots and drones – what could the world look like in 10–20 years? Not a forecast but three scenarios with figures from Bitkom 2026, IFR 2026, WEF, DORA and the EU AI Act, focused on IT and DevOps.',
+      'ИИ, роботы и дроны — каким может быть мир через 10–20 лет? Не прогноз, а три сценария с цифрами Bitkom 2026, IFR 2026, WEF, DORA и регламента ЕС об ИИ, с акцентом на ИТ и DevOps.',
+      'ШІ, роботи й дрони — яким може бути світ через 10–20 років? Не прогноз, а три сценарії з цифрами Bitkom 2026, IFR 2026, WEF, DORA та регламенту ЄС про ШІ, з акцентом на ІТ і DevOps.'
+    ),
+    kicker: t('KI · Arbeitsmarkt · DevOps', 'AI · Labour market · DevOps', 'ИИ · Рынок труда · DevOps', 'ШІ · Ринок праці · DevOps'),
+    h1: t(
+      'Die Welt in 10–20 Jahren: drei Szenarien statt einer Prognose',
+      'The world in 10–20 years: three scenarios instead of a forecast',
+      'Мир через 10–20 лет: три сценария вместо прогноза',
+      'Світ через 10–20 років: три сценарії замість прогнозу'
+    ),
+    lead: t(
+      'Niemand weiß, wie die Welt nach KI, Robotern und Drohnen aussieht. Was man tun kann: gemessene Zahlen sammeln, Szenarien daraus ableiten und fragen, was in allen Szenarien gleich bleibt – aus Sicht eines Menschen, der in IT und DevOps arbeitet.',
+      'Nobody knows what the world looks like after AI, robots and drones. What one can do: collect measured numbers, derive scenarios from them and ask what stays the same in all of them – from the view of someone working in IT and DevOps.',
+      'Никто не знает, как выглядит мир после ИИ, роботов и дронов. Что можно сделать: собрать измеренные цифры, вывести из них сценарии и спросить, что остаётся неизменным во всех — с точки зрения человека, который работает в ИТ и DevOps.',
+      'Ніхто не знає, як виглядає світ після ШІ, роботів і дронів. Що можна зробити: зібрати виміряні цифри, вивести з них сценарії й запитати, що лишається незмінним в усіх — з погляду людини, яка працює в ІТ і DevOps.'
+    ),
+    body: [
+      { h2: t('Vorab: Szenarien, keine Prognose', 'First: scenarios, not a forecast', 'Сначала: сценарии, а не прогноз', 'Спершу: сценарії, а не прогноз') },
+      {
+        p: t(
+          'Der Text unterscheidet zwei Dinge: Zahlen, die gemessen und veröffentlicht wurden (mit Quelle), und meine Einordnung daraus. Die Szenarien unten sind meine Lesart der Zahlen, keine Vorhersage. Wer behauptet, die Welt von 2040 genau zu kennen, verkauft etwas.',
+          'The text separates two things: numbers that were measured and published (with a source) and my interpretation of them. The scenarios below are my reading of the numbers, not a prediction. Whoever claims to know the world of 2040 exactly is selling something.',
+          'Текст разделяет две вещи: цифры, которые измерены и опубликованы (с источником), и моя интерпретация. Сценарии ниже — моё прочтение цифр, а не предсказание. Кто утверждает, что точно знает мир 2040 года, тот что-то продаёт.',
+          'Текст розділяє дві речі: цифри, які виміряно й опубліковано (з джерелом), і мою інтерпретацію. Сценарії нижче — моє прочитання цифр, а не передбачення. Хто стверджує, що достеменно знає світ 2040 року, той щось продає.'
+        ),
+      },
+      { h2: t('Das große Bild: drei Technologien, drei Tempi', 'The big picture: three technologies, three speeds', 'Общая картина: три технологии, три темпа', 'Загальна картина: три технології, три темпи') },
+      {
+        p: t(
+          '<strong>KI ist Software und breitet sich am schnellsten aus:</strong> Laut dem <a href="https://blog.google/technology/developers/dora-report-2025/" rel="noopener noreferrer">DORA-Bericht 2025</a> nutzen 90 % der befragten Softwareentwickler KI (knapp 5 000 Befragte). <strong>Roboter sind Hardware und wachsen langsamer, aber stetig:</strong> Die <a href="https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally" rel="noopener noreferrer">IFR meldete am 24.09.2026</a> einen Rekordbestand von 5 Millionen Industrierobotern weltweit, über 600 000 davon wurden 2025 neu installiert (+11 %). <strong>Drohnen</strong> lasse ich ohne Zahlen: Ich habe keine belastbare Statistik gefunden, die ich hier verantworten würde. Qualitativ zeichnen sich Einsatzfelder wie Inspektion, Landwirtschaft und Logistik ab, wo vor allem Regulierung das Tempo bestimmt.',
+          '<strong>AI is software and spreads fastest:</strong> according to the <a href="https://blog.google/technology/developers/dora-report-2025/" rel="noopener noreferrer">2025 DORA report</a>, 90% of surveyed software developers use AI (nearly 5,000 respondents). <strong>Robots are hardware and grow more slowly but steadily:</strong> the <a href="https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally" rel="noopener noreferrer">IFR reported on 24 September 2026</a> a record stock of 5 million industrial robots worldwide, with more than 600,000 newly installed in 2025 (+11%). <strong>Drones</strong> I leave without numbers: I found no reliable statistic I would stand behind here. Qualitatively, use cases such as inspection, agriculture and logistics are emerging, where regulation mostly sets the pace.',
+          '<strong>ИИ — это софт, и он распространяется быстрее всего:</strong> по <a href="https://blog.google/technology/developers/dora-report-2025/" rel="noopener noreferrer">отчёту DORA 2025</a> ИИ используют 90% опрошенных разработчиков (почти 5 000 респондентов). <strong>Роботы — это железо, они растут медленнее, но стабильно:</strong> <a href="https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally" rel="noopener noreferrer">IFR сообщила 24.09.2026</a> о рекордном парке в 5 миллионов промышленных роботов в мире, более 600 000 из них установлены в 2025 году (+11%). <strong>Дроны</strong> оставляю без цифр: надёжной статистики, за которую я мог бы отвечать, не нашёл. Качественно просматриваются инспекции, сельское хозяйство и логистика, где темп задаёт прежде всего регулирование.',
+          '<strong>ШІ — це софт, і він поширюється найшвидше:</strong> за <a href="https://blog.google/technology/developers/dora-report-2025/" rel="noopener noreferrer">звітом DORA 2025</a> ШІ використовують 90% опитаних розробників (майже 5 000 респондентів). <strong>Роботи — це залізо, вони ростуть повільніше, але стабільно:</strong> <a href="https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally" rel="noopener noreferrer">IFR повідомила 24.09.2026</a> про рекордний парк у 5 мільйонів промислових роботів у світі, понад 600 000 з них встановлено 2025 року (+11%). <strong>Дрони</strong> лишаю без цифр: надійної статистики, за яку я міг би відповідати, не знайшов. Якісно проглядаються інспекції, сільське господарство й логістика, де темп задає насамперед регулювання.'
+        ),
+      },
+      {
+        p: t(
+          'Für den Arbeitsmarkt insgesamt rechnet das <a href="https://weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/" rel="noopener noreferrer">Weltwirtschaftsforum (Future of Jobs 2025)</a> bis 2030 mit 170 Millionen neuen und 92 Millionen wegfallenden Stellen, netto +78 Millionen. Rund 40 % der Fähigkeiten im Job ändern sich, und 41 % der Arbeitgeber planen, Personal zu reduzieren, weil KI Aufgaben übernimmt. Das ist eine Umfrage unter Unternehmen, keine Messung.',
+          'For the labour market overall, the <a href="https://weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/" rel="noopener noreferrer">World Economic Forum (Future of Jobs 2025)</a> expects 170 million new and 92 million displaced jobs by 2030, a net +78 million. Nearly 40% of on-the-job skills will change, and 41% of employers plan to reduce staff because AI takes over tasks. This is a survey of companies, not a measurement.',
+          'По рынку труда в целом <a href="https://weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/" rel="noopener noreferrer">Всемирный экономический форум (Future of Jobs 2025)</a> ожидает к 2030 году 170 миллионов новых и 92 миллиона исчезающих рабочих мест, в сумме +78 миллионов. Около 40% рабочих навыков изменятся, а 41% работодателей планируют сокращать персонал, потому что ИИ берёт на себя задачи. Это опрос компаний, а не измерение.',
+          'Щодо ринку праці загалом <a href="https://weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/" rel="noopener noreferrer">Всесвітній економічний форум (Future of Jobs 2025)</a> очікує до 2030 року 170 мільйонів нових і 92 мільйони зникаючих робочих місць, у сумі +78 мільйонів. Близько 40% робочих навичок зміняться, а 41% роботодавців планують скорочувати персонал, бо ШІ бере на себе завдання. Це опитування компаній, а не вимірювання.'
+        ),
+      },
+      { h2: t('Mein Schwerpunkt: IT und DevOps – was die Zahlen sagen', 'My focus: IT and DevOps – what the numbers say', 'Мой фокус: ИТ и DevOps — что говорят цифры', 'Мій фокус: ІТ і DevOps — що кажуть цифри') },
+      {
+        table: {
+          head: [
+            t('Quelle', 'Source', 'Источник', 'Джерело'),
+            t('Zahl', 'Figure', 'Цифра', 'Цифра'),
+            t('Einordnung', 'Meaning', 'Что это значит', 'Що це означає'),
+          ],
+          rows: [
+            [
+              '<a href="https://www.bitkom.org/Presse/Presseinformation/IT-Fachkraeftemangel-in-den-letzten-drei-Jahren-halbiert" rel="noopener noreferrer">Bitkom (03.09.2026)</a>',
+              t('79 000 fehlende IT-Fachkräfte (2023: 149 000, 2025: 109 000)', '79,000 missing IT specialists (2023: 149,000, 2025: 109,000)', 'Не хватает 79 000 ИТ-специалистов (2023: 149 000, 2025: 109 000)', 'Бракує 79 000 ІТ-фахівців (2023: 149 000, 2025: 109 000)'),
+              t('Der Mangel hat sich in drei Jahren fast halbiert, ist aber nicht verschwunden.', 'The shortage has nearly halved in three years but has not disappeared.', 'Дефицит за три года почти вдвое сократился, но не исчез.', 'Дефіцит за три роки майже вдвічі скоротився, але не зник.'),
+            ],
+            [
+              '<a href="https://www.bitkom.org/Presse/Presseinformation/IT-Fachkraeftemangel-in-den-letzten-drei-Jahren-halbiert" rel="noopener noreferrer">Bitkom (03.09.2026)</a>',
+              t('42 % der Unternehmen nutzen KI in der IT; nur 10 % davon haben deshalb Stellen gestrichen, 85 % keine', '42% of companies use AI in IT; only 10% of those have cut positions because of it, 85% none', '42% компаний используют ИИ в ИТ; лишь 10% из них сократили из-за этого позиции, 85% — ни одной', '42% компаній використовують ШІ в ІТ; лише 10% з них скоротили через це позиції, 85% — жодної'),
+              t('Bisher wenig Stellenabbau; 32 % erwarten künftig Kürzungen, 65 % nicht. In 35 % der Fälle ersetzt KI unbesetzte Stellen.', 'So far few cuts; 32% expect cuts in future, 65% do not. In 35% of cases AI replaces vacancies that cannot be filled.', 'Пока сокращений мало; 32% ждут их в будущем, 65% — нет. В 35% случаев ИИ заменяет вакансии, которые не удаётся закрыть.', 'Поки скорочень мало; 32% очікують їх надалі, 65% — ні. У 35% випадків ШІ замінює вакансії, які не вдається закрити.'),
+            ],
+            [
+              '<a href="https://siepr.stanford.edu/publications/working-paper/canaries-coal-mine-six-facts-about-recent-employment-effects-artificial" rel="noopener noreferrer">Brynjolfsson et al. (Stanford, „Canaries“)</a>',
+              t('−13 % relative Beschäftigung bei 22–25-Jährigen in den KI-exponiertesten Berufen', '−13% relative employment for 22–25-year-olds in the most AI-exposed occupations', '−13% относительной занятости у 22–25-летних в наиболее подверженных ИИ профессиях', '−13% відносної зайнятості у 22–25-річних у найбільш схильних до ШІ професіях'),
+              t('Erfahrene Beschäftigte derselben Berufe blieben stabil. Der Einstieg wird schwerer, nicht die ganze Branche.', 'Experienced workers in the same occupations stayed stable. Getting started gets harder, not the whole industry.', 'У опытных работников тех же профессий занятость стабильна. Сложнее становится вход в профессию, а не отрасли целиком.', 'У досвідчених працівників тих самих професій зайнятість стабільна. Складнішим стає вхід у професію, а не галузі загалом.'),
+            ],
+            [
+              '<a href="https://www.nber.org/papers/w32487" rel="noopener noreferrer">Acemoglu (NBER w32487)</a>',
+              t('höchstens 0,66 % (angepasst unter 0,53 %) mehr Gesamtproduktivität in 10 Jahren', 'at most 0.66% (adjusted: under 0.53%) more total factor productivity over 10 years', 'не более 0,66% (скорректированно менее 0,53%) прироста совокупной производительности за 10 лет', 'щонайбільше 0,66% (скориговано менш як 0,53%) приросту сукупної продуктивності за 10 років'),
+              t('Die vorsichtige Gegenstimme: Der gesamtwirtschaftliche Effekt könnte klein ausfallen.', 'The cautious counter-voice: the economy-wide effect could be small.', 'Осторожный контраргумент: общий эффект для экономики может оказаться небольшим.', 'Обережний контраргумент: загальний ефект для економіки може виявитися невеликим.'),
+            ],
+            [
+              '<a href="https://blog.google/technology/developers/dora-report-2025/" rel="noopener noreferrer">DORA 2025</a>',
+              t('KI-Nutzung 90 %, verknüpft mit höherem Durchsatz bei der Auslieferung', 'AI use 90%, linked to higher delivery throughput', 'Использование ИИ 90%, связано с более высокой пропускной способностью поставки', 'Використання ШІ 90%, пов’язане з вищою пропускною здатністю постачання'),
+              t('KI wirkt laut Bericht als „Spiegel und Verstärker“: Gut organisierte Teams profitieren, zersplitterte Teams sehen ihre Schwächen deutlicher.', 'According to the report AI acts as a “mirror and a multiplier”: cohesive teams gain, fragmented teams see their weaknesses exposed.', 'По отчёту ИИ работает как «зеркало и мультипликатор»: слаженные команды выигрывают, разрозненные яснее видят свои слабости.', 'За звітом ШІ працює як «дзеркало й мультиплікатор»: злагоджені команди виграють, розрізнені виразніше бачать свої слабкості.'),
+            ],
+          ],
+        },
+      },
+      { h2: t('Drei Szenarien für IT-Berufe', 'Three scenarios for IT careers', 'Три сценария для ИТ-профессий', 'Три сценарії для ІТ-професій') },
+      {
+        ul: [
+          t(
+            '<strong>Langsam:</strong> Der Effekt bleibt klein, wie Acemoglu es für möglich hält. KI ist ein weiteres Werkzeug neben Editor und Terminal. Der Fachkräftemangel bleibt, klassische Fähigkeiten (Linux, Netzwerke, Automatisierung) behalten ihren Wert.',
+            '<strong>Slow:</strong> the effect stays small, as Acemoglu considers possible. AI is one more tool next to editor and terminal. The shortage of specialists remains, classic skills (Linux, networking, automation) keep their value.',
+            '<strong>Медленный:</strong> эффект остаётся небольшим, как допускает Acemoglu. ИИ — ещё один инструмент рядом с редактором и терминалом. Дефицит специалистов сохраняется, классические навыки (Linux, сети, автоматизация) не теряют ценности.',
+            '<strong>Повільний:</strong> ефект лишається невеликим, як допускає Acemoglu. ШІ — ще один інструмент поряд із редактором і терміналом. Дефіцит фахівців зберігається, класичні навички (Linux, мережі, автоматизація) не втрачають цінності.'
+          ),
+          t(
+            '<strong>Mittel (der Stand heute, fortgeschrieben):</strong> KI ist Standard in fast jedem Team. Teams brauchen weniger Hände für dieselbe Arbeit, der Einstieg wird härter (die „Canaries“-Zahl), der Mangel schrumpft weiter. Arbeit verlagert sich vom Schreiben zum Prüfen, Betreiben und Absichern.',
+            '<strong>Medium (today’s situation, extended):</strong> AI is standard in almost every team. Teams need fewer hands for the same work, entry gets harder (the “Canaries” number), the shortage keeps shrinking. Work shifts from writing to reviewing, operating and securing.',
+            '<strong>Средний (сегодняшняя ситуация, продолженная):</strong> ИИ — стандарт почти в каждой команде. Для той же работы нужно меньше рук, вход в профессию усложняется (цифра «Canaries»), дефицит продолжает сокращаться. Работа смещается от написания к проверке, эксплуатации и защите.',
+            '<strong>Середній (сьогоднішня ситуація, продовжена):</strong> ШІ — стандарт майже в кожній команді. Для тієї самої роботи потрібно менше рук, вхід у професію ускладнюється (цифра «Canaries»), дефіцит і далі скорочується. Робота зміщується від написання до перевірки, експлуатації та захисту.'
+          ),
+          t(
+            '<strong>Schnell:</strong> KI übernimmt den größten Teil der Routine in Entwicklung und Betrieb, und die Arbeitgeber setzen um, was sie in der WEF-Umfrage planen. Dann sind kleine Teams mit viel Verantwortung die Regel, und Fachwissen über Plattformen, Sicherheit und Regulierung zählt mehr als Tipptempo.',
+            '<strong>Fast:</strong> AI takes over most routine in development and operations, and employers do what they say they plan in the WEF survey. Small teams with a lot of responsibility become the rule, and expertise in platforms, security and regulation counts for more than typing speed.',
+            '<strong>Быстрый:</strong> ИИ берёт на себя большую часть рутины в разработке и эксплуатации, а работодатели делают то, что планируют в опросе WEF. Тогда нормой становятся небольшие команды с большой ответственностью, а знания о платформах, безопасности и регулировании ценятся выше скорости набора.',
+            '<strong>Швидкий:</strong> ШІ бере на себе більшу частину рутини в розробці й експлуатації, а роботодавці роблять те, що планують в опитуванні WEF. Тоді нормою стають невеликі команди з великою відповідальністю, а знання про платформи, безпеку й регулювання цінуються вище за швидкість набору.'
+          ),
+        ],
+      },
+      { h2: t('Was in allen Szenarien gleich bleibt', 'What stays the same in all scenarios', 'Что остаётся неизменным во всех сценариях', 'Що лишається незмінним в усіх сценаріях') },
+      {
+        ul: [
+          t(
+            '<strong>Jemand betreibt das System.</strong> Auslieferung, Monitoring, Backups, Wiederherstellung: Wenn etwas ausfällt, braucht es einen Menschen, der den Zusammenhang versteht.',
+            '<strong>Someone runs the system.</strong> Delivery, monitoring, backups, recovery: when something fails, a human who understands the context is needed.',
+            '<strong>Кто-то эксплуатирует систему.</strong> Поставка, мониторинг, бэкапы, восстановление: когда что-то падает, нужен человек, который понимает контекст.',
+            '<strong>Хтось експлуатує систему.</strong> Постачання, моніторинг, бекапи, відновлення: коли щось падає, потрібна людина, яка розуміє контекст.'
+          ),
+          t(
+            '<strong>Jemand haftet.</strong> Die EU-KI-Verordnung verlangt Dokumentation, Aufsicht und Transparenz; das lässt sich nicht an ein Modell delegieren.',
+            '<strong>Someone is accountable.</strong> The EU AI Act demands documentation, oversight and transparency; that cannot be delegated to a model.',
+            '<strong>Кто-то отвечает.</strong> Регламент ЕС об ИИ требует документации, надзора и прозрачности; это нельзя делегировать модели.',
+            '<strong>Хтось відповідає.</strong> Регламент ЄС про ШІ вимагає документації, нагляду й прозорості; це не можна делегувати моделі.'
+          ),
+          t(
+            '<strong>Gute Grundlagen zahlen sich aus.</strong> Wenn KI ein Verstärker ist (DORA), dann verstärkt sie saubere Pipelines, Tests und Prozesse ebenso wie das Chaos.',
+            '<strong>Good foundations pay off.</strong> If AI is an amplifier (DORA), it amplifies clean pipelines, tests and processes just as it amplifies chaos.',
+            '<strong>Хорошие основы окупаются.</strong> Если ИИ — усилитель (DORA), он усиливает чистые пайплайны, тесты и процессы так же, как и хаос.',
+            '<strong>Добрі основи окупаються.</strong> Якщо ШІ — підсилювач (DORA), він підсилює чисті пайплайни, тести й процеси так само, як і хаос.'
+          ),
+        ],
+      },
+      { h2: t('Was ich selbst daraus mache', 'What I do with it myself', 'Что я делаю с этим сам', 'Що я роблю з цим сам') },
+      {
+        p: t(
+          'Ich nutze KI täglich als Werkzeug und prüfe jedes Ergebnis selbst, wie bei <a href="{{path:ki-content-human-in-the-loop}}">PflegeOasis</a>. Meine Praxis setze ich bewusst auf die Teile, die in allen Szenarien bleiben: einen eigenen Server mit <a href="{{path:zero-trust-homelab}}">Zero-Trust-Zugriff</a>, <a href="{{path:ci-cd-nextjs-vps}}">CI/CD-Pipelines</a>, Docker und Linux. Ob das Szenario langsam, mittel oder schnell eintritt, weiß ich nicht – ich kann nur sicherstellen, dass meine Fähigkeiten in jedem davon gebraucht werden.',
+          'I use AI daily as a tool and check every result myself, as with <a href="{{path:ki-content-human-in-the-loop}}">PflegeOasis</a>. I deliberately build my practice on the parts that remain in all scenarios: my own server with <a href="{{path:zero-trust-homelab}}">zero-trust access</a>, <a href="{{path:ci-cd-nextjs-vps}}">CI/CD pipelines</a>, Docker and Linux. Whether the scenario turns out slow, medium or fast I do not know – I can only make sure my skills are needed in each of them.',
+          'Я ежедневно использую ИИ как инструмент и сам проверяю каждый результат, как в <a href="{{path:ki-content-human-in-the-loop}}">PflegeOasis</a>. Свою практику я намеренно строю на том, что остаётся во всех сценариях: собственный сервер с <a href="{{path:zero-trust-homelab}}">доступом по принципу Zero Trust</a>, <a href="{{path:ci-cd-nextjs-vps}}">CI/CD-пайплайны</a>, Docker и Linux. Каким окажется сценарий — медленным, средним или быстрым, — я не знаю; могу лишь добиться, чтобы мои навыки были нужны в каждом из них.',
+          'Я щодня використовую ШІ як інструмент і сам перевіряю кожен результат, як у <a href="{{path:ki-content-human-in-the-loop}}">PflegeOasis</a>. Свою практику я свідомо будую на тому, що лишається в усіх сценаріях: власний сервер із <a href="{{path:zero-trust-homelab}}">доступом за принципом Zero Trust</a>, <a href="{{path:ci-cd-nextjs-vps}}">CI/CD-пайплайни</a>, Docker і Linux. Яким виявиться сценарій — повільним, середнім чи швидким, — я не знаю; можу лише подбати, щоб мої навички були потрібні в кожному з них.'
+        ),
+      },
+      { h2: t('Deutschland und EU', 'Germany and the EU', 'Германия и ЕС', 'Німеччина та ЄС') },
+      {
+        p: t(
+          'Regulierung gibt hier das Tempo vor. Die „Digital Omnibus“-Änderung der <a href="https://usercentrics.com/knowledge-hub/eu-ai-act-high-risk-delay-article-50-transparency-consent/" rel="noopener noreferrer">EU-KI-Verordnung</a> wurde am 29.06.2026 vom Rat angenommen und ist seit Juli 2026 in Kraft. Die Pflichten für Hochrisiko-Systeme nach Anhang III gelten nun ab dem 02.12.2027, nach Anhang I ab dem 02.08.2028. Transparenzpflichten für generative KI (Artikel 50) bleiben bestehen; für bereits am Markt befindliche Systeme gilt die Kennzeichnungsfrist ab dem 02.12.2026. Für Betreiber von KI-Anwendungen heißt das: Dokumentation und Aufsicht werden Teil des Alltags.',
+          'Regulation sets the pace here. The “Digital Omnibus” amendment of the <a href="https://usercentrics.com/knowledge-hub/eu-ai-act-high-risk-delay-article-50-transparency-consent/" rel="noopener noreferrer">EU AI Act</a> was adopted by the Council on 29 June 2026 and has been in force since July 2026. Obligations for high-risk systems under Annex III now apply from 2 December 2027, under Annex I from 2 August 2028. Transparency duties for generative AI (Article 50) remain; for systems already on the market the marking deadline is 2 December 2026. For operators of AI applications this means documentation and oversight become part of everyday work.',
+          'Здесь темп задаёт регулирование. Поправка «Digital Omnibus» к <a href="https://usercentrics.com/knowledge-hub/eu-ai-act-high-risk-delay-article-50-transparency-consent/" rel="noopener noreferrer">регламенту ЕС об ИИ</a> принята Советом 29.06.2026 и действует с июля 2026 года. Требования к системам высокого риска по приложению III теперь применяются с 02.12.2027, по приложению I — с 02.08.2028. Обязанности по прозрачности для генеративного ИИ (статья 50) сохраняются; для систем, уже находящихся на рынке, срок маркировки — с 02.12.2026. Для тех, кто эксплуатирует ИИ-приложения, это значит, что документация и надзор становятся частью повседневной работы.',
+          'Тут темп задає регулювання. Поправка «Digital Omnibus» до <a href="https://usercentrics.com/knowledge-hub/eu-ai-act-high-risk-delay-article-50-transparency-consent/" rel="noopener noreferrer">регламенту ЄС про ШІ</a> ухвалена Радою 29.06.2026 і діє з липня 2026 року. Вимоги до систем високого ризику за додатком III тепер застосовуються з 02.12.2027, за додатком I — з 02.08.2028. Обов’язки щодо прозорості для генеративного ШІ (стаття 50) зберігаються; для систем, що вже на ринку, строк маркування — з 02.12.2026. Для тих, хто експлуатує ШІ-застосунки, це означає, що документація й нагляд стають частиною щоденної роботи.'
+        ),
+      },
+      {
+        p: t(
+          'Bei den Robotern liegt Deutschland laut IFR mit unter 25 000 neu installierten Einheiten auf Platz fünf weltweit und stellt etwa 41 % der Installationen in der EU. Der Bitkom-Wert zeigt zugleich: Deutsche Unternehmen setzen KI in der IT bereits breit ein (42 %), bauen dabei aber bisher kaum Stellen ab.',
+          'On robots, Germany ranks fifth worldwide according to the IFR, with under 25,000 newly installed units, and accounts for about 41% of installations in the EU. The Bitkom figure shows at the same time: German companies already use AI widely in IT (42%) but have so far hardly cut positions.',
+          'По роботам Германия, по данным IFR, занимает пятое место в мире: менее 25 000 новых установок и около 41% установок в ЕС. Цифра Bitkom показывает и другое: немецкие компании уже широко применяют ИИ в ИТ (42%), но пока почти не сокращают позиции.',
+          'За роботами Німеччина, за даними IFR, посідає п’яте місце у світі: менш як 25 000 нових установок і близько 41% установок у ЄС. Цифра Bitkom показує й інше: німецькі компанії вже широко застосовують ШІ в ІТ (42%), але поки майже не скорочують позиції.'
+        ),
+      },
+      { h2: t('Grenzen dieses Textes', 'Limits of this text', 'Ограничения этого текста', 'Обмеження цього тексту') },
+      {
+        ul: [
+          t(
+            '<strong>Szenarien sind keine Prognosen.</strong> Sie zeigen, wofür man sich rüsten kann, nicht was eintritt.',
+            '<strong>Scenarios are not forecasts.</strong> They show what one can prepare for, not what will happen.',
+            '<strong>Сценарии — не прогнозы.</strong> Они показывают, к чему можно готовиться, а не что произойдёт.',
+            '<strong>Сценарії — не прогнози.</strong> Вони показують, до чого можна готуватися, а не що станеться.'
+          ),
+          t(
+            '<strong>Umfragen sind keine Messung.</strong> Bitkom, WEF und DORA beruhen auf Befragungen; die „Canaries“-Zahl stammt aus US-Daten und beweist keine Ursache.',
+            '<strong>Surveys are not measurements.</strong> Bitkom, WEF and DORA rest on questionnaires; the “Canaries” figure comes from US data and does not prove causation.',
+            '<strong>Опросы — не измерения.</strong> Bitkom, WEF и DORA опираются на анкеты; цифра «Canaries» взята из данных США и не доказывает причинность.',
+            '<strong>Опитування — не вимірювання.</strong> Bitkom, WEF і DORA спираються на анкети; цифра «Canaries» взята з даних США й не доводить причинності.'
+          ),
+          t(
+            '<strong>Stand: Oktober 2026.</strong> Gesetze und Zahlen ändern sich; die Angaben zur KI-Verordnung stammen aus einer Sekundärquelle, vor Entscheidungen bitte das Amtsblatt prüfen. WEF und DORA stammen aus 2025, die übrigen Zahlen aus 2026. Dies ist keine Rechts- oder Karriereberatung.',
+            '<strong>As of October 2026.</strong> Laws and figures change; the AI Act details come from a secondary source, so please check the Official Journal before decisions. WEF and DORA are from 2025, the other figures from 2026. This is not legal or career advice.',
+            '<strong>По состоянию на октябрь 2026.</strong> Законы и цифры меняются; данные о регламенте ИИ взяты из вторичного источника, перед решениями проверьте Official Journal. WEF и DORA — 2025 года, остальные цифры — 2026 года. Это не юридическая и не карьерная консультация.',
+            '<strong>Станом на жовтень 2026.</strong> Закони й цифри змінюються; дані про регламент ШІ взято з вторинного джерела, перед рішеннями перевірте Official Journal. WEF і DORA — 2025 року, решта цифр — 2026 року. Це не юридична й не кар’єрна консультація.'
+          ),
+        ],
+      },
+    ],
+  },
 ];
