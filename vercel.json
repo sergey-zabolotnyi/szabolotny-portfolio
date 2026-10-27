@@ -28,7 +28,7 @@
           "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
         },
         {
-          "key": "Content-Security-Policy-Report-Only",
+          "key": "Content-Security-Policy",
           "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://app.cal.com https://giscus.app; style-src 'self' 'unsafe-inline' https://app.cal.com; img-src 'self' data: https://ghchart.rshah.org https://v1.screenshot.11ty.dev https://*.google-analytics.com https://www.googletagmanager.com https://app.cal.com; font-src 'self' data:; connect-src 'self' https://api.zabolotny.de https://zabolotny.szabolotnyi777.workers.dev https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://app.cal.com https://cal.com; frame-src https://cal.com https://app.cal.com https://giscus.app; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
         }
       ]
