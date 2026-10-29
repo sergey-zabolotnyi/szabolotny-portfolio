@@ -92,6 +92,7 @@ export const CASES = [
       ),
     },
     body: [
+      { video: 'meistermeld' },
       {
         h2: t(
           'Das Problem: Dokumentation kostet Zeit, die auf der Baustelle fehlt',

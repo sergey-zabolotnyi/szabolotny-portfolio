@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Self-hosting, homelab і DevOps — нотатки з практики</title>
+  <link>https://zabolotny.de/ua/notes/</link>
+  <atom:link href="https://zabolotny.de/ua/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Практичні нотатки Сергія Заболотного, fullstack- і AI-розробника з Дрездена: вихід із хмари з домашнім сервером — Proxmox, LXC, Nextcloud, Immich — а також доступ, Tailscale, Cloudflare Tunnel і бекапи.</description>
+  <language>uk</language>
+  <lastBuildDate>Tue, 27 Oct 2026 08:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Бекап за 3-2-1 і тест відновлення: бекап — це бекап, лише якщо його вдалося відновити</title>
+    <link>https://zabolotny.de/ua/notes/backup-3-2-1-restore-test-homelab/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/backup-3-2-1-restore-test-homelab/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Більшість історій про бекапи закінчуються однаково: копія робилася, але ніхто не перевіряв, чи можна її відновити. Ось як я бекаплю свій хост Proxmox і як перевіряю відновлення, не ризикуючи нічим робочим.</description>
+  </item>
+  <item>
+    <title>Обов’язок повідомляти за CRA з 11 вересня 2026: 24 години, 72 години, 14 днів</title>
+    <link>https://zabolotny.de/ua/notes/cra-meldepflicht-11-september-2026/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/cra-meldepflicht-11-september-2026/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>З 11 вересня 2026 виробники продуктів із цифровими елементами мають повідомляти про активно експлуатовані вразливості — у три етапи й за жорстким таймером. Що це означає для команд розробки та DevOps.</description>
+  </item>
+  <item>
+    <title>Скільки рутини економить ШІ? Калькулятор на основі досліджень</title>
+    <link>https://zabolotny.de/ua/notes/ki-rechner-routinearbeit/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/ki-rechner-routinearbeit/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Дослідження показують дуже різні цифри — від неповних 3% до понад 40%. Замість однієї цифри калькулятор видає три сценарії, кожен із джерелом, у годинах і євро для вашої команди.</description>
+  </item>
+  <item>
+    <title>Регламент про ШІ, стаття 50: що потрібно зробити до 2 грудня 2026</title>
+    <link>https://zabolotny.de/ua/notes/ki-verordnung-artikel-50-checkliste/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/ki-verordnung-artikel-50-checkliste/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Більшість вимог статті 50 щодо прозорості діють з 2 серпня 2026. Для машинозчитного маркування генеративного ШІ, що вже є на ринку, діє перехідний період до 2 грудня 2026. Чек-лист для розробників і операторів.</description>
+  </item>
+  <item>
+    <title>NIS2 для невеликих ІТ-компаній і фрилансерів: пороги, строки, обов’язки</title>
+    <link>https://zabolotny.de/ua/notes/nis2-kleine-it-unternehmen/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/nis2-kleine-it-unternehmen/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Німецький закон про імплементацію NIS2 діє з 6 грудня 2025. Чи зачеплено компанію напряму, залежить від галузі та розміру, але й невеликі фірми відчувають його як постачальники.</description>
+  </item>
+  <item>
+    <title>Перехід у DevOps у Німеччині: мій план, мої підтвердження, мої прогалини</title>
+    <link>https://zabolotny.de/ua/notes/quereinstieg-devops-deutschland/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/quereinstieg-devops-deutschland/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Я шукаю постійну роботу в ІТ, найкраще підходять DevOps і Platform Engineering. Тут чесно про те, що ринок дає за цифрами, звідки я йду і чим роблю свої навички такими, що можна перевірити.</description>
+  </item>
+  <item>
+    <title>Світ через 10–20 років: три сценарії замість прогнозу</title>
+    <link>https://zabolotny.de/ua/notes/welt-nach-der-4-industriellen-revolution/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/welt-nach-der-4-industriellen-revolution/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Ніхто не знає, як виглядає світ після ШІ, роботів і дронів. Що можна зробити: зібрати виміряні цифри, вивести з них сценарії й запитати, що лишається незмінним в усіх — з погляду людини, яка працює в ІТ і DevOps.</description>
+  </item>
+  <item>
+    <title>Чому я пішов із macOS — і що ще вміє мій iMac 2013 року</title>
+    <link>https://zabolotny.de/ua/notes/macos-verlassen-imac-2013/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/macos-verlassen-imac-2013/</guid>
+    <pubDate>Mon, 26 Oct 2026 08:00:00 GMT</pubDate>
+    <description>iMac із 32 ГБ ОЗП і гарним дисплеєм через дванадцять років — не мотлох. Чому я все одно перейшов на Windows і Linux — особистий досвід, а не бенчмарк.</description>
+  </item>
+  <item>
+    <title>Вихід із хмари: домашній сервер замість Google, iCloud та інших</title>
+    <link>https://zabolotny.de/ua/notes/homeserver-statt-cloud/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/homeserver-statt-cloud/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Вдома в мене працює сервер на Proxmox із 15+ сервісами. Тут — які хмарні сервіси він замінює, чого це коштує (часу) і де краще залишитися в хмарі.</description>
+  </item>
+  <item>
+    <title>Безпечний доступ і бекапи домашнього сервера: Tailscale, Cloudflare Tunnel, vzdump</title>
+    <link>https://zabolotny.de/ua/notes/homeserver-zugriff-backup/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/homeserver-zugriff-backup/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Домашній сервер хороший рівно настільки, наскільки хороші його доступ і бекапи. Мій принцип: жодного прокидання портів, кожен доступ — свідоме рішення, бекап щодня.</description>
+  </item>
+  <item>
+    <title>Proxmox і LXC у homelab: які контейнери я запускаю і навіщо</title>
+    <link>https://zabolotny.de/ua/notes/proxmox-lxc-aufteilung/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/proxmox-lxc-aufteilung/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Чотири контейнери, чотири ролі: як влаштований мій домашній сервер, які програми де працюють і як я розподілив сховище.</description>
+  </item>
+  <item>
+    <title>CI/CD для Next.js 15 на VPS: GitHub Actions, PM2 reload і Caddy</title>
+    <link>https://zabolotny.de/ua/notes/ci-cd-nextjs-vps/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/ci-cd-nextjs-vps/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Ручний деплой був повільним і схильним до помилок. Сьогодні досить git push — без простою і без PaaS.</description>
+  </item>
+  <item>
+    <title>ШІ-контент із людиною в циклі: 200+ статей із чернеток LLM</title>
+    <link>https://zabolotny.de/ua/notes/ki-content-human-in-the-loop/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/ki-content-human-in-the-loop/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>У праві про догляд помилки ШІ неприпустимі. Ось як я використовую мовну модель як помічника в письмі, не передаючи їй відповідальність.</description>
+  </item>
+  <item>
+    <title>Zero Trust для homelab: Cloudflare Tunnel і Access замість відкритих дашбордів</title>
+    <link>https://zabolotny.de/ua/notes/zero-trust-homelab/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ua/notes/zero-trust-homelab/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Внутрішній дашборд був публічно доступний через піддомен. Ось як я закрив його за допомогою Cloudflare Tunnel, Cloudflare Access і Tailscale.</description>
+  </item>
+</channel>
+</rss>

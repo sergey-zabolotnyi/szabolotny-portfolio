@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Self-hosting, homelab и DevOps — заметки из практики</title>
+  <link>https://zabolotny.de/ru/notes/</link>
+  <atom:link href="https://zabolotny.de/ru/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Практические заметки Сергея Заболотного, fullstack- и AI-разработчика из Дрездена: уход из облака с домашним сервером — Proxmox, LXC, Nextcloud, Immich — а также доступ, Tailscale, Cloudflare Tunnel и бэкапы.</description>
+  <language>ru</language>
+  <lastBuildDate>Tue, 27 Oct 2026 08:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Бэкап по 3-2-1 и тест восстановления: бэкап считается бэкапом, только если его удалось восстановить</title>
+    <link>https://zabolotny.de/ru/notes/backup-3-2-1-restore-test-homelab/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/backup-3-2-1-restore-test-homelab/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Большинство историй про бэкапы заканчиваются одинаково: копия делалась, но никто не проверял, можно ли её восстановить. Вот как я бэкаплю свой хост Proxmox и как проверяю восстановление, не рискуя ничем рабочим.</description>
+  </item>
+  <item>
+    <title>Обязанность уведомлять по CRA с 11 сентября 2026: 24 часа, 72 часа, 14 дней</title>
+    <link>https://zabolotny.de/ru/notes/cra-meldepflicht-11-september-2026/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/cra-meldepflicht-11-september-2026/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>С 11 сентября 2026 производители продуктов с цифровыми элементами обязаны сообщать об активно эксплуатируемых уязвимостях — в три этапа и по жёсткому таймеру. Что это значит для команд разработки и DevOps.</description>
+  </item>
+  <item>
+    <title>Сколько рутины экономит ИИ? Калькулятор на основе исследований</title>
+    <link>https://zabolotny.de/ru/notes/ki-rechner-routinearbeit/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/ki-rechner-routinearbeit/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Исследования показывают очень разные цифры — от неполных 3% до более 40%. Вместо одной цифры калькулятор выдаёт три сценария, каждый с источником, в часах и евро для вашей команды.</description>
+  </item>
+  <item>
+    <title>Регламент об ИИ, статья 50: что нужно сделать до 2 декабря 2026</title>
+    <link>https://zabolotny.de/ru/notes/ki-verordnung-artikel-50-checkliste/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/ki-verordnung-artikel-50-checkliste/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Большинство требований статьи 50 о прозрачности действуют с 2 августа 2026. Для машиночитаемой маркировки уже находящегося на рынке генеративного ИИ действует переходный период до 2 декабря 2026. Чек-лист для разработчиков и операторов.</description>
+  </item>
+  <item>
+    <title>NIS2 для небольших ИТ-компаний и фрилансеров: пороги, сроки, обязанности</title>
+    <link>https://zabolotny.de/ru/notes/nis2-kleine-it-unternehmen/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/nis2-kleine-it-unternehmen/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Немецкий закон о реализации NIS2 действует с 6 декабря 2025. Затронута ли компания напрямую, зависит от отрасли и размера, но и небольшие фирмы ощущают его как поставщики.</description>
+  </item>
+  <item>
+    <title>Переход в DevOps в Германии: мой план, мои подтверждения, мои пробелы</title>
+    <link>https://zabolotny.de/ru/notes/quereinstieg-devops-deutschland/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/quereinstieg-devops-deutschland/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Я ищу постоянную работу в ИТ, лучше всего подходят DevOps и Platform Engineering. Здесь честно о том, что рынок даёт по цифрам, откуда я иду и чем делаю свои навыки проверяемыми.</description>
+  </item>
+  <item>
+    <title>Мир через 10–20 лет: три сценария вместо прогноза</title>
+    <link>https://zabolotny.de/ru/notes/welt-nach-der-4-industriellen-revolution/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/welt-nach-der-4-industriellen-revolution/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Никто не знает, как выглядит мир после ИИ, роботов и дронов. Что можно сделать: собрать измеренные цифры, вывести из них сценарии и спросить, что остаётся неизменным во всех — с точки зрения человека, который работает в ИТ и DevOps.</description>
+  </item>
+  <item>
+    <title>Почему я ушёл с macOS — и что ещё умеет мой iMac 2013 года</title>
+    <link>https://zabolotny.de/ru/notes/macos-verlassen-imac-2013/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/macos-verlassen-imac-2013/</guid>
+    <pubDate>Mon, 26 Oct 2026 08:00:00 GMT</pubDate>
+    <description>iMac с 32 ГБ ОЗУ и хорошим дисплеем через двенадцать лет — не хлам. Почему я всё равно перешёл на Windows и Linux — личный опыт, а не бенчмарк.</description>
+  </item>
+  <item>
+    <title>Уход из облака: домашний сервер вместо Google, iCloud и других</title>
+    <link>https://zabolotny.de/ru/notes/homeserver-statt-cloud/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/homeserver-statt-cloud/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Дома у меня работает сервер на Proxmox с 15+ сервисами. Здесь — какие облачные сервисы он заменяет, чего это стоит (времени) и где лучше остаться в облаке.</description>
+  </item>
+  <item>
+    <title>Безопасный доступ и бэкапы домашнего сервера: Tailscale, Cloudflare Tunnel, vzdump</title>
+    <link>https://zabolotny.de/ru/notes/homeserver-zugriff-backup/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/homeserver-zugriff-backup/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Домашний сервер хорош ровно настолько, насколько хороши его доступ и бэкапы. Мой принцип: никакого проброса портов, каждый доступ — осознанное решение, бэкап каждый день.</description>
+  </item>
+  <item>
+    <title>Proxmox и LXC в homelab: какие контейнеры я запускаю и зачем</title>
+    <link>https://zabolotny.de/ru/notes/proxmox-lxc-aufteilung/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/proxmox-lxc-aufteilung/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Четыре контейнера, четыре роли: как устроен мой домашний сервер, какие программы где работают и как я распределил хранилище.</description>
+  </item>
+  <item>
+    <title>CI/CD для Next.js 15 на VPS: GitHub Actions, PM2 reload и Caddy</title>
+    <link>https://zabolotny.de/ru/notes/ci-cd-nextjs-vps/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/ci-cd-nextjs-vps/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Ручной деплой был медленным и подверженным ошибкам. Сегодня достаточно git push — без простоя и без PaaS.</description>
+  </item>
+  <item>
+    <title>ИИ-контент с человеком в цикле: 200+ статей из черновиков LLM</title>
+    <link>https://zabolotny.de/ru/notes/ki-content-human-in-the-loop/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/ki-content-human-in-the-loop/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>В праве об уходе ошибки ИИ недопустимы. Вот как я использую языковую модель как помощника в письме, не передавая ей ответственность.</description>
+  </item>
+  <item>
+    <title>Zero Trust для homelab: Cloudflare Tunnel и Access вместо открытых дашбордов</title>
+    <link>https://zabolotny.de/ru/notes/zero-trust-homelab/</link>
+    <guid isPermaLink="true">https://zabolotny.de/ru/notes/zero-trust-homelab/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Внутренний дашборд был доступен публично через поддомен. Вот как я закрыл его с помощью Cloudflare Tunnel, Cloudflare Access и Tailscale.</description>
+  </item>
+</channel>
+</rss>

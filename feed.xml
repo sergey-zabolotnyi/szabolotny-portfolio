@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Self-Hosting, Homelab, DevOps und KI – Notizen aus der Praxis</title>
+  <link>https://zabolotny.de/notizen/</link>
+  <atom:link href="https://zabolotny.de/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Praxisnotizen von Serge Zabolotny, Fullstack- &amp; KI-Entwickler in Dresden: Home-Server statt Cloud (Proxmox, LXC, Nextcloud), Zero Trust mit Cloudflare, CI/CD für Next.js, KI-Content mit Human-in-the-Loop.</description>
+  <language>de</language>
+  <lastBuildDate>Tue, 27 Oct 2026 08:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Backup nach 3-2-1 und der Restore-Test: Ein Backup zählt erst, wenn es zurückgespielt wurde</title>
+    <link>https://zabolotny.de/notizen/backup-3-2-1-restore-test-homelab/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/backup-3-2-1-restore-test-homelab/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Die meisten Backup-Geschichten enden an derselben Stelle: Die Sicherung lief – aber niemand hat je getestet, ob sie sich zurückspielen lässt. So sichere ich meinen Proxmox-Host und so teste ich die Wiederherstellung, ohne etwas Laufendes zu gefährden.</description>
+  </item>
+  <item>
+    <title>CRA-Meldepflicht ab 11. September 2026: 24 Stunden, 72 Stunden, 14 Tage</title>
+    <link>https://zabolotny.de/notizen/cra-meldepflicht-11-september-2026/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/cra-meldepflicht-11-september-2026/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Seit dem 11. September 2026 müssen Hersteller von Produkten mit digitalen Elementen aktiv ausgenutzte Schwachstellen melden – in drei Stufen und nach einer festen Uhr. Was das für Entwicklungs- und DevOps-Teams bedeutet.</description>
+  </item>
+  <item>
+    <title>Wie viel Routinearbeit spart KI? Ein Rechner auf Basis von Studien</title>
+    <link>https://zabolotny.de/notizen/ki-rechner-routinearbeit/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/ki-rechner-routinearbeit/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Die Studien zeigen sehr unterschiedliche Zahlen – von knapp 3 % bis über 40 %. Statt einer einzigen Zahl gibt der Rechner drei Szenarien aus, jeweils mit Quelle, in Stunden und Euro für Ihr Team.</description>
+  </item>
+  <item>
+    <title>KI-Verordnung Artikel 50: Was bis zum 2. Dezember 2026 zu tun ist</title>
+    <link>https://zabolotny.de/notizen/ki-verordnung-artikel-50-checkliste/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/ki-verordnung-artikel-50-checkliste/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Die meisten Transparenzpflichten aus Artikel 50 gelten seit dem 2. August 2026. Für die maschinenlesbare Kennzeichnung bereits am Markt befindlicher generativer KI gilt eine Übergangsfrist bis zum 2. Dezember 2026. Eine Checkliste für Entwickler und Betreiber.</description>
+  </item>
+  <item>
+    <title>NIS2 für kleine IT-Unternehmen und Freelancer: Schwellen, Fristen, Pflichten</title>
+    <link>https://zabolotny.de/notizen/nis2-kleine-it-unternehmen/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/nis2-kleine-it-unternehmen/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Das deutsche NIS2-Umsetzungsgesetz ist seit dem 6. Dezember 2025 in Kraft. Ob ein Unternehmen direkt betroffen ist, hängt von Branche und Größe ab – aber auch kleine Firmen spüren es als Lieferanten.</description>
+  </item>
+  <item>
+    <title>Quereinstieg DevOps in Deutschland: mein Plan, meine Belege, meine Lücken</title>
+    <link>https://zabolotny.de/notizen/quereinstieg-devops-deutschland/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/quereinstieg-devops-deutschland/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Ich suche eine Festanstellung in der IT, mit DevOps und Platform Engineering als bestem Fit. Hier steht offen, was der Markt laut Zahlen hergibt, woher ich komme und womit ich meine Fähigkeiten überprüfbar mache.</description>
+  </item>
+  <item>
+    <title>Die Welt in 10–20 Jahren: drei Szenarien statt einer Prognose</title>
+    <link>https://zabolotny.de/notizen/welt-nach-der-4-industriellen-revolution/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/welt-nach-der-4-industriellen-revolution/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Niemand weiß, wie die Welt nach KI, Robotern und Drohnen aussieht. Was man tun kann: gemessene Zahlen sammeln, Szenarien daraus ableiten und fragen, was in allen Szenarien gleich bleibt – aus Sicht eines Menschen, der in IT und DevOps arbeitet.</description>
+  </item>
+  <item>
+    <title>Warum ich macOS verlassen habe – und was mein iMac von 2013 noch kann</title>
+    <link>https://zabolotny.de/notizen/macos-verlassen-imac-2013/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/macos-verlassen-imac-2013/</guid>
+    <pubDate>Mon, 26 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Ein iMac mit 32 GB RAM und gutem Display ist nach zwölf Jahren kein Schrott. Warum ich trotzdem auf Windows und Linux umgestiegen bin – ein persönlicher Erfahrungsbericht, kein Benchmark.</description>
+  </item>
+  <item>
+    <title>Raus aus der Cloud: Eigener Home-Server statt Google, iCloud &amp; Co.</title>
+    <link>https://zabolotny.de/notizen/homeserver-statt-cloud/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/homeserver-statt-cloud/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Ich betreibe zu Hause einen Proxmox-Server mit 15+ Diensten. Hier steht, welche Cloud-Dienste er bei mir ersetzt, was das kostet – an Zeit – und wo man besser bei der Cloud bleibt.</description>
+  </item>
+  <item>
+    <title>Home-Server sicher erreichen und sichern: Tailscale, Cloudflare Tunnel, vzdump</title>
+    <link>https://zabolotny.de/notizen/homeserver-zugriff-backup/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/homeserver-zugriff-backup/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Ein Home-Server ist nur so gut wie sein Zugang und seine Backups. Mein Prinzip: kein Port-Forwarding, jeder Zugang eine bewusste Entscheidung, jeden Tag ein Backup.</description>
+  </item>
+  <item>
+    <title>Proxmox &amp; LXC im Homelab: Welche Container ich betreibe und warum</title>
+    <link>https://zabolotny.de/notizen/proxmox-lxc-aufteilung/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/proxmox-lxc-aufteilung/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Vier Container, vier Rollen: So ist mein Home-Server aufgebaut, welche Programme wo laufen und wie ich den Speicher verteilt habe.</description>
+  </item>
+  <item>
+    <title>CI/CD für Next.js 15 auf dem VPS: GitHub Actions, PM2-Reload und Caddy</title>
+    <link>https://zabolotny.de/notizen/ci-cd-nextjs-vps/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/ci-cd-nextjs-vps/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Manuelle Deployments waren langsam und fehleranfällig. Heute reicht ein git push – ohne Ausfallzeit und ohne PaaS.</description>
+  </item>
+  <item>
+    <title>KI-Content mit Human-in-the-Loop: 200+ Ratgeber-Artikel mit LLM-Entwürfen</title>
+    <link>https://zabolotny.de/notizen/ki-content-human-in-the-loop/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/ki-content-human-in-the-loop/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Bei Pflegerecht sind KI-Fehler nicht akzeptabel. So nutze ich ein Sprachmodell als Schreibhilfe, ohne ihm die Verantwortung zu geben.</description>
+  </item>
+  <item>
+    <title>Zero Trust fürs Homelab: Cloudflare Tunnel und Access statt offener Dashboards</title>
+    <link>https://zabolotny.de/notizen/zero-trust-homelab/</link>
+    <guid isPermaLink="true">https://zabolotny.de/notizen/zero-trust-homelab/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Ein internes Dashboard war über eine Subdomain öffentlich erreichbar. So habe ich es mit Cloudflare Tunnel, Cloudflare Access und Tailscale abgesichert.</description>
+  </item>
+</channel>
+</rss>

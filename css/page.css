@@ -164,3 +164,9 @@ td:first-child { color: var(--fg); }
 
 .footer-topics { flex: 1 0 100%; line-height: 2; font-size: 0.85rem; }
 .footer-topics strong { color: rgba(232, 228, 216, 0.8); font-weight: 600; }
+
+figure.vid { margin: 0 0 28px; }
+figure.vid video { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); background: #000; }
+figure.vid .vid-tall { display: none; max-width: 360px; margin: 0 auto; }
+figure.vid figcaption { margin-top: 10px; font-size: 0.85rem; color: rgba(232, 228, 216, 0.65); }
+@media (max-width: 640px) { figure.vid .vid-wide { display: none; } figure.vid .vid-tall { display: block; } }

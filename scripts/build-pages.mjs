@@ -143,8 +143,12 @@ const langSwitch = (lang, paths) =>
     (l) => `<a class="lang-btn${l === lang ? ' active' : ''}" href="${paths[l]}" hreflang="${LANG[l].hreflang}"${l === lang ? ' aria-current="true"' : ''}>${FLAGS[l]}${l.toUpperCase()}</a>`
   ).join('')}</div>`;
 
-function head({ lang = 'de', title, description, path, type = 'article', extra = '', langPaths }) {
+const ogFor = (slug, lang) => (slug && existsSync(join(ROOT, 'assets/og', `${slug}.${lang}.jpg`)) ? `${SITE}/assets/og/${slug}.${lang}.jpg` : OG_IMAGE);
+const feedPath = (lang) => (lang === 'de' ? '/feed.xml' : `/${lang}/feed.xml`);
+
+function head({ lang = 'de', title, description, path, type = 'article', extra = '', langPaths, ogSlug }) {
   const L = LANG[lang];
+  const OG = ogFor(ogSlug, lang);
   const U = UI[lang];
   const url = SITE + path;
   const alt = altList(langPaths)
@@ -168,12 +172,13 @@ ${alt}<link rel="icon" href="/favicon.ico" sizes="48x48">
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${escAttr(title)}">
 <meta property="og:description" content="${escAttr(description)}">
-<meta property="og:image" content="${OG_IMAGE}">
+<meta property="og:image" content="${OG}">
 <meta property="og:locale" content="${L.locale}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${escAttr(title)}">
 <meta name="twitter:description" content="${escAttr(description)}">
-<meta name="twitter:image" content="${OG_IMAGE}">
+<meta name="twitter:image" content="${OG}">
+<link rel="alternate" type="application/rss+xml" title="${escAttr(INDEX_TEXT[lang].h1)}" href="${feedPath(lang)}">
 <meta name="theme-color" content="#0047AB">
 <link rel="preload" href="/assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -287,6 +292,32 @@ ${SCENARIOS.map((sc) => `    <tr data-scenario="${sc.pct}"><td>${esc(tr(sc.name,
 <script defer src="/js/calc.js"></script>`;
 }
 
+// ---------- video ----------
+const VIDEOS = {
+  meistermeld: {
+    wide: '/assets/video/meistermeld-demo-16x9.mp4', tall: '/assets/video/meistermeld-demo-9x16.mp4',
+    posterWide: '/assets/video/meistermeld-demo-16x9.jpg', posterTall: '/assets/video/meistermeld-demo-9x16.jpg',
+    uploadDate: '2026-10-28', duration: 'PT31S',
+    h2: { de: 'MeisterMeld in 30 Sekunden', en: 'MeisterMeld in 30 seconds', ru: 'MeisterMeld за 30 секунд', ua: 'MeisterMeld за 30 секунд' },
+    label: { de: 'Kurzvideo: So funktioniert MeisterMeld im Alltag', en: 'Short video: how MeisterMeld works day to day', ru: 'Короткое видео: как MeisterMeld работает в повседневной работе', ua: 'Коротке відео: як MeisterMeld працює у повсякденній роботі' },
+    // Transparency note (see the AI Act Article 50 note); remove this line if the footage is not AI-generated.
+    note: { de: 'Hinweis: Bilder und Oberflächen in diesem Video sind illustrativ und teils KI-generiert. Die echte App finden Sie unter meistermeld.de.', en: 'Note: the images and interfaces in this video are illustrative and partly AI-generated. The real app is at meistermeld.de.', ru: 'Примечание: изображения и интерфейсы в этом видео иллюстративные и частично сгенерированы ИИ. Настоящее приложение — на meistermeld.de.', ua: 'Примітка: зображення й інтерфейси у цьому відео ілюстративні та частково згенеровані ШІ. Справжній застосунок — на meistermeld.de.' },
+  },
+};
+function videoHtml(key, lang) {
+  const v = VIDEOS[key];
+  return `<h2>${v.h2[lang]}</h2>
+<figure class="vid">
+  <video class="vid-wide" controls playsinline preload="none" poster="${v.posterWide}" aria-label="${escAttr(v.label[lang])}"><source src="${v.wide}" type="video/mp4"></video>
+  <video class="vid-tall" controls playsinline preload="none" poster="${v.posterTall}" aria-label="${escAttr(v.label[lang])}"><source src="${v.tall}" type="video/mp4"></video>
+  <figcaption>${esc(v.label[lang])}. ${esc(v.note[lang])}</figcaption>
+</figure>`;
+}
+const videoLd = (key, lang, name) => {
+  const v = VIDEOS[key];
+  return { '@context': 'https://schema.org', '@type': 'VideoObject', name: v.label[lang], description: v.h2[lang] + ' – ' + name, thumbnailUrl: SITE + v.posterWide, contentUrl: SITE + v.wide, uploadDate: v.uploadDate, duration: v.duration, inLanguage: LANG[lang].ld };
+};
+
 // ---------- body block renderer ----------
 function renderBody(blocks, lang) {
   const x = (v) => tr(v, lang).replace(/\{\{path:([a-z0-9-]+)\}\}/g, (_, slug) => {
@@ -296,6 +327,7 @@ function renderBody(blocks, lang) {
   });
   return blocks
     .map((b) => {
+      if (b.video) return videoHtml(b.video, lang);
       if (b.diagram) return diagramHtml(b.diagram, lang);
       if (b.calculator) return calculatorHtml(lang);
       if (b.h2) return `<h2>${x(b.h2)}</h2>`;
@@ -338,7 +370,7 @@ const relatedCards = (slugs, lang) => {
 };
 const articleLd = (n, lang, path, extra = {}) => ({
   '@context': 'https://schema.org', '@type': 'TechArticle', headline: tr(n.h1, lang), description: tr(n.description, lang),
-  datePublished: n.date, dateModified: n.date, inLanguage: LANG[lang].ld, image: OG_IMAGE, keywords: n.tags.join(', '),
+  datePublished: n.date, dateModified: n.date, inLanguage: LANG[lang].ld, image: ogFor(n.slug, lang), keywords: n.tags.join(', '),
   author: authorLd(lang), mainEntityOfPage: SITE + path,
   isPartOf: { '@type': 'CollectionPage', name: INDEX_TEXT[lang].h1, url: SITE + indexPath(lang) },
   ...extra,
@@ -359,7 +391,8 @@ function casePage(c, lang) {
   return (
     head({
       lang, title: tr(c.title, lang), description: tr(c.description, lang), path,
-      langPaths: pathsByLang((l) => casePath(c.slug, l)), extra: ld(app) + '\n' + ld(breadcrumbLd(crumbs)),
+      ogSlug: c.slug, langPaths: pathsByLang((l) => casePath(c.slug, l)),
+      extra: ld(app) + '\n' + ld(breadcrumbLd(crumbs)) + c.body.filter((b) => b.video).map((b) => '\n' + ld(videoLd(b.video, lang, name))).join(''),
     }) +
     `
 <p class="crumbs"><a href="${L.home}">${U.start}</a> / <a href="${L.home}#featured-cases">${U.projects}</a> / ${esc(name)}</p>
@@ -392,7 +425,7 @@ function articlePage(s, lang, { series }) {
   const relSlugs = series ? [...SERIES.filter((o) => o.slug !== s.slug).map((o) => o.slug), ...autoRelated(s, 2)] : autoRelated(s, 4);
   return (
     head({
-      lang, title: `${tr(s.title, lang)} | ${L.name}`, description: tr(s.description, lang), path,
+      lang, title: `${tr(s.title, lang)} | ${L.name}`, description: tr(s.description, lang), path, ogSlug: s.slug,
       langPaths: pathsByLang((l) => seriesPath(s.slug, l)), extra: ld(articleLd(s, lang, path)) + '\n' + ld(breadcrumbLd(crumbs)),
     }) +
     `
@@ -432,7 +465,7 @@ function indexPageFor(lang) {
   const cases = CASES.map((c) => card(casePath(c.slug, lang), tr(c.kicker, lang), tr(c.h1, lang), tr(c.lead, lang))).join('\n');
   return (
     head({
-      lang, title: T.title, description: T.description, path, type: 'website',
+      lang, title: T.title, description: T.description, path, type: 'website', ogSlug: undefined,
       langPaths: pathsByLang(indexPath), extra: ld(list) + '\n' + ld(breadcrumbLd(crumbs)),
     }) +
     `
@@ -481,7 +514,7 @@ function servicesPage(lang) {
   };
   return (
     head({
-      lang, title: tr(S.title, lang), description: tr(S.description, lang), path, type: 'website',
+      lang, title: tr(S.title, lang), description: tr(S.description, lang), path, type: 'website', ogSlug: 'leistungen',
       langPaths: pathsByLang(servicesPath), extra: ld(svcLd) + '\n' + ld(breadcrumbLd(crumbs)),
     }) +
     `
@@ -514,8 +547,36 @@ ${S.fit.map((p) => `  <li>${x(p)}</li>`).join('\n')}
   );
 }
 
+// ---------- RSS feeds (one per language) ----------
+const xmlEsc = (x) => String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+function feedFor(lang) {
+  const L = LANG[lang], T = INDEX_TEXT[lang];
+  const items = [...SERIES, ...NOTES].sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>${xmlEsc(T.h1)}</title>
+  <link>${SITE + indexPath(lang)}</link>
+  <atom:link href="${SITE + feedPath(lang)}" rel="self" type="application/rss+xml"/>
+  <description>${xmlEsc(T.description)}</description>
+  <language>${L.ld}</language>
+  <lastBuildDate>${new Date(items[0].date + 'T08:00:00Z').toUTCString()}</lastBuildDate>
+${items.map((n) => `  <item>
+    <title>${xmlEsc(tr(n.h1, lang))}</title>
+    <link>${SITE + seriesPath(n.slug, lang)}</link>
+    <guid isPermaLink="true">${SITE + seriesPath(n.slug, lang)}</guid>
+    <pubDate>${new Date(n.date + 'T08:00:00Z').toUTCString()}</pubDate>
+    <description>${xmlEsc(tr(n.lead, lang))}</description>
+  </item>`).join('\n')}
+</channel>
+</rss>
+`;
+  return xml;
+}
+
 // ---------- outputs ----------
 const outputs = [
+  ...LANGS.map((l) => [feedPath(l).slice(1), feedFor(l)]),
   ...LANGS.map((l) => [`${servicesPath(l).slice(1)}index.html`, servicesPage(l)]),
   ...LANGS.map((l) => [`${indexPath(l).slice(1)}index.html`, indexPageFor(l)]),
   ...CASES.flatMap((c) => LANGS.map((l) => [`${casePath(c.slug, l).slice(1)}index.html`, casePage(c, l)])),

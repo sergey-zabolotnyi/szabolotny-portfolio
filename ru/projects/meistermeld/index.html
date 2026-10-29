@@ -21,12 +21,13 @@
 <meta property="og:url" content="https://zabolotny.de/ru/projects/meistermeld/">
 <meta property="og:title" content="MeisterMeld — voice-first ПО для мастеров и ремесленников | Кейс">
 <meta property="og:description" content="Кейс: MeisterMeld — field-service ПО с ИИ для ремесленных бригад: голосовые и фото-отчёты, управление заказами, PWA. Next.js, PostgreSQL, Drizzle. Автор — Сергей Заболотный.">
-<meta property="og:image" content="https://zabolotny.de/assets/og-image.png">
+<meta property="og:image" content="https://zabolotny.de/assets/og/meistermeld.ru.jpg">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MeisterMeld — voice-first ПО для мастеров и ремесленников | Кейс">
 <meta name="twitter:description" content="Кейс: MeisterMeld — field-service ПО с ИИ для ремесленных бригад: голосовые и фото-отчёты, управление заказами, PWA. Next.js, PostgreSQL, Drizzle. Автор — Сергей Заболотный.">
-<meta name="twitter:image" content="https://zabolotny.de/assets/og-image.png">
+<meta name="twitter:image" content="https://zabolotny.de/assets/og/meistermeld.ru.jpg">
+<link rel="alternate" type="application/rss+xml" title="Self-hosting, homelab и DevOps — заметки из практики" href="/ru/feed.xml">
 <meta name="theme-color" content="#0047AB">
 <link rel="preload" href="/assets/fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -75,6 +76,19 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Короткое видео: как MeisterMeld работает в повседневной работе",
+  "description": "MeisterMeld за 30 секунд – MeisterMeld",
+  "thumbnailUrl": "https://zabolotny.de/assets/video/meistermeld-demo-16x9.jpg",
+  "contentUrl": "https://zabolotny.de/assets/video/meistermeld-demo-16x9.mp4",
+  "uploadDate": "2026-10-28",
+  "duration": "PT31S",
+  "inLanguage": "ru"
+}
+</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -100,6 +114,12 @@
   <div><dt>Эксплуатация</dt><dd>Собственный VPS (1blu), деплой через GitHub Actions</dd></div>
 </dl>
 <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Drizzle ORM</li><li>PWA</li><li>LLM</li><li>Voice-first</li><li>Field Service</li></ul>
+<h2>MeisterMeld за 30 секунд</h2>
+<figure class="vid">
+  <video class="vid-wide" controls playsinline preload="none" poster="/assets/video/meistermeld-demo-16x9.jpg" aria-label="Короткое видео: как MeisterMeld работает в повседневной работе"><source src="/assets/video/meistermeld-demo-16x9.mp4" type="video/mp4"></video>
+  <video class="vid-tall" controls playsinline preload="none" poster="/assets/video/meistermeld-demo-9x16.jpg" aria-label="Короткое видео: как MeisterMeld работает в повседневной работе"><source src="/assets/video/meistermeld-demo-9x16.mp4" type="video/mp4"></video>
+  <figcaption>Короткое видео: как MeisterMeld работает в повседневной работе. Примечание: изображения и интерфейсы в этом видео иллюстративные и частично сгенерированы ИИ. Настоящее приложение — на meistermeld.de.</figcaption>
+</figure>
 <h2>Проблема: документация отнимает время, которого нет на объекте</h2>
 <p>В ремесле работа происходит на месте, а документация — часто уже потом: записки на бумажках, фото в телефоне, отчёты вечером за столом. Это время, которое никто не оплатит, а информация по дороге теряется.</p>
 <h2>Решение: сначала говорим, потом ИИ структурирует</h2>
