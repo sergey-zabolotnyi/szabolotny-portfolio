@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Self-hosting, homelab and DevOps – notes from practice</title>
+  <link>https://zabolotny.de/en/notes/</link>
+  <atom:link href="https://zabolotny.de/en/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Practical notes by Serge Zabolotny, fullstack &amp; AI developer in Dresden: leaving the cloud with a home server – Proxmox, LXC containers, Nextcloud, Immich – plus access, Tailscale, Cloudflare Tunnel and backups.</description>
+  <language>en</language>
+  <lastBuildDate>Tue, 27 Oct 2026 08:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Backup the 3-2-1 way and the restore test: a backup only counts once it has been restored</title>
+    <link>https://zabolotny.de/en/notes/backup-3-2-1-restore-test-homelab/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/backup-3-2-1-restore-test-homelab/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Most backup stories end at the same point: the backup ran – but nobody ever tested whether it can be restored. Here is how I back up my Proxmox host and how I test the restore without endangering anything running.</description>
+  </item>
+  <item>
+    <title>CRA reporting duty from 11 September 2026: 24 hours, 72 hours, 14 days</title>
+    <link>https://zabolotny.de/en/notes/cra-meldepflicht-11-september-2026/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/cra-meldepflicht-11-september-2026/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Since 11 September 2026, manufacturers of products with digital elements must report actively exploited vulnerabilities – in three stages and on a fixed clock. What this means for development and DevOps teams.</description>
+  </item>
+  <item>
+    <title>How much routine work does AI save? A calculator based on studies</title>
+    <link>https://zabolotny.de/en/notes/ki-rechner-routinearbeit/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/ki-rechner-routinearbeit/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>The studies show very different numbers – from just under 3% to over 40%. Instead of a single number, the calculator gives three scenarios, each with its source, in hours and euros for your team.</description>
+  </item>
+  <item>
+    <title>AI Act Article 50: what needs doing by 2 December 2026</title>
+    <link>https://zabolotny.de/en/notes/ki-verordnung-artikel-50-checkliste/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/ki-verordnung-artikel-50-checkliste/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Most of Article 50’s transparency duties have applied since 2 August 2026. For the machine-readable marking of generative AI already on the market, a transition period runs until 2 December 2026. A checklist for developers and operators.</description>
+  </item>
+  <item>
+    <title>NIS2 for small IT companies and freelancers: thresholds, deadlines, duties</title>
+    <link>https://zabolotny.de/en/notes/nis2-kleine-it-unternehmen/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/nis2-kleine-it-unternehmen/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>The German NIS2 implementation act has been in force since 6 December 2025. Whether a company is directly affected depends on sector and size – but small firms feel it as suppliers too.</description>
+  </item>
+  <item>
+    <title>Career change into DevOps in Germany: my plan, my evidence, my gaps</title>
+    <link>https://zabolotny.de/en/notes/quereinstieg-devops-deutschland/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/quereinstieg-devops-deutschland/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>I am looking for a permanent IT job, with DevOps and platform engineering as the best fit. This is an open account of what the market offers according to the numbers, where I come from and how I make my skills verifiable.</description>
+  </item>
+  <item>
+    <title>The world in 10–20 years: three scenarios instead of a forecast</title>
+    <link>https://zabolotny.de/en/notes/welt-nach-der-4-industriellen-revolution/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/welt-nach-der-4-industriellen-revolution/</guid>
+    <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Nobody knows what the world looks like after AI, robots and drones. What one can do: collect measured numbers, derive scenarios from them and ask what stays the same in all of them – from the view of someone working in IT and DevOps.</description>
+  </item>
+  <item>
+    <title>Why I left macOS – and what my 2013 iMac can still do</title>
+    <link>https://zabolotny.de/en/notes/macos-verlassen-imac-2013/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/macos-verlassen-imac-2013/</guid>
+    <pubDate>Mon, 26 Oct 2026 08:00:00 GMT</pubDate>
+    <description>An iMac with 32 GB of RAM and a good display is not junk after twelve years. Why I switched to Windows and Linux anyway – a personal field report, not a benchmark.</description>
+  </item>
+  <item>
+    <title>Leaving the cloud: a home server instead of Google, iCloud &amp; co.</title>
+    <link>https://zabolotny.de/en/notes/homeserver-statt-cloud/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/homeserver-statt-cloud/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>At home I run a Proxmox server with 15+ services. Here is which cloud services it replaces for me, what it costs – in time – and where you are better off staying in the cloud.</description>
+  </item>
+  <item>
+    <title>Reaching and protecting a home server: Tailscale, Cloudflare Tunnel, vzdump</title>
+    <link>https://zabolotny.de/en/notes/homeserver-zugriff-backup/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/homeserver-zugriff-backup/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>A home server is only as good as its access and its backups. My principle: no port forwarding, every access path a conscious decision, a backup every day.</description>
+  </item>
+  <item>
+    <title>Proxmox &amp; LXC in a homelab: which containers I run and why</title>
+    <link>https://zabolotny.de/en/notes/proxmox-lxc-aufteilung/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/proxmox-lxc-aufteilung/</guid>
+    <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Four containers, four roles: how my home server is built, which programs run where and how I laid out the storage.</description>
+  </item>
+  <item>
+    <title>CI/CD for Next.js 15 on a VPS: GitHub Actions, PM2 reload and Caddy</title>
+    <link>https://zabolotny.de/en/notes/ci-cd-nextjs-vps/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/ci-cd-nextjs-vps/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>Manual deployments were slow and error-prone. Today a git push is enough – no downtime and no PaaS.</description>
+  </item>
+  <item>
+    <title>AI content with human-in-the-loop: 200+ guide articles from LLM drafts</title>
+    <link>https://zabolotny.de/en/notes/ki-content-human-in-the-loop/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/ki-content-human-in-the-loop/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>With care law, AI mistakes are not acceptable. This is how I use a language model as a writing aid without handing it the responsibility.</description>
+  </item>
+  <item>
+    <title>Zero Trust for the homelab: Cloudflare Tunnel and Access instead of open dashboards</title>
+    <link>https://zabolotny.de/en/notes/zero-trust-homelab/</link>
+    <guid isPermaLink="true">https://zabolotny.de/en/notes/zero-trust-homelab/</guid>
+    <pubDate>Sun, 18 Oct 2026 08:00:00 GMT</pubDate>
+    <description>An internal dashboard was publicly reachable via a subdomain. Here is how I locked it down with Cloudflare Tunnel, Cloudflare Access and Tailscale.</description>
+  </item>
+</channel>
+</rss>

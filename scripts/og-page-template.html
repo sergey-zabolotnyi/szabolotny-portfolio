@@ -1,0 +1,24 @@
+<!doctype html>
+<!-- Template for per-page OG images (1200x630). Filled by scripts/build-og-pages.mjs (needs playwright; local use only). -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../css/fonts.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1200px;height:630px;background:#03031f;color:#e8e4d8;font-family:'DM Sans','DejaVu Sans',sans-serif;position:relative;overflow:hidden}
+.glow{position:absolute;right:-180px;top:-200px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(0,71,171,.7),rgba(0,71,171,0) 68%)}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(75,141,235,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(75,141,235,.07) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(120deg,transparent 30%,#000 100%)}
+.wrap{position:absolute;left:76px;top:60px;right:76px;bottom:56px}
+.brand{font-family:'DM Mono','DejaVu Sans Mono',monospace;font-size:24px;letter-spacing:.08em;color:#4B8DEB}
+.kicker{font-family:'DM Mono','DejaVu Sans Mono',monospace;font-size:26px;letter-spacing:.1em;text-transform:uppercase;color:#4dffb4;margin-top:56px}
+h1{font-family:'Syne','DejaVu Sans',sans-serif;font-weight:800;line-height:1.1;margin-top:22px;height:300px;overflow:hidden;letter-spacing:-.01em}
+.foot{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;font-family:'DM Mono','DejaVu Sans Mono',monospace;font-size:24px;color:rgba(232,228,216,.72)}
+.foot b{color:#e8e4d8;font-weight:500}
+</style></head><body>
+<div class="glow"></div><div class="grid"></div>
+<div class="wrap">
+  <div class="brand">ZABOLOTNY.DE · DRESDEN</div>
+  <div class="kicker" id="k"></div>
+  <h1 id="h"></h1>
+  <div class="foot"><span><b id="a"></b></span><span id="u"></span></div>
+</div>
+</body></html>
