@@ -62,6 +62,15 @@ export const CASES = [
           'MVP запущено — перші користувачі з ремісничої сфери тестують застосунок'
         ),
       ],
+      [
+        t('Umfang', 'Scope', 'Масштаб', 'Масштаб'),
+        t(
+          '29 Datenbanktabellen (mandantenfähig), rund 100 API-Routen, 4 Tarifstufen mit Stripe-Abos, 2FA, Offline-Betrieb und Push-Benachrichtigungen',
+          '29 database tables (multi-tenant), about 100 API routes, 4 pricing tiers with Stripe subscriptions, 2FA, offline mode and push notifications',
+          '29 таблиц БД (мультитенантность), около 100 API-маршрутов, 4 тарифа со Stripe-подписками, 2FA, офлайн-режим и push-уведомления',
+          '29 таблиць БД (мультитенантність), близько 100 API-маршрутів, 4 тарифи зі Stripe-підписками, 2FA, офлайн-режим і push-сповіщення'
+        ),
+      ],
       ['Stack', 'Next.js, TypeScript, PostgreSQL, Drizzle ORM, PWA, LLM'],
       [
         t('Betrieb', 'Operations', 'Эксплуатация', 'Експлуатація'),
@@ -252,6 +261,15 @@ export const CASES = [
         ),
       ],
       [t('Status', 'Status', 'Статус', 'Статус'), t('MVP live', 'MVP live', 'MVP запущен', 'MVP запущено')],
+      [
+        t('Umfang', 'Scope', 'Масштаб', 'Масштаб'),
+        t(
+          '221 Inhaltsseiten (davon 65 Ratgeber-Artikel), 3 Rechner (Pflegegrad, Pflegegeld, Entlastungsbetrag), Widerspruch-Generator, Pflegetagebuch',
+          '221 content pages (65 of them guide articles), 3 calculators (care level, care allowance, relief amount), objection-letter generator, care diary',
+          '221 страница контента (из них 65 статей-руководств), 3 калькулятора (Pflegegrad, Pflegegeld, Entlastungsbetrag), генератор возражений, дневник ухода',
+          '221 сторінка контенту (з них 65 статей-посібників), 3 калькулятори (Pflegegrad, Pflegegeld, Entlastungsbetrag), генератор заперечень, щоденник догляду'
+        ),
+      ],
       ['Stack', 'Next.js 15, TypeScript, Tailwind CSS, PostgreSQL 16, Drizzle ORM'],
       [
         t('KI & Betrieb', 'AI & operations', 'ИИ и эксплуатация', 'ШІ та експлуатація'),
