@@ -993,6 +993,48 @@ section {
   gap: 16px;
 }
 
+/* Kurzprofil: short factual summary (read by people and by AI crawlers) */
+.kurzprofil {
+  margin-top: 64px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 28px 32px;
+}
+.kurzprofil h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.kurzprofil dl {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 14px 28px;
+  margin: 0;
+}
+.kurzprofil dl > div { display: contents; }
+.kurzprofil dt {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-hi);
+  padding-top: 3px;
+}
+.kurzprofil dd {
+  margin: 0;
+  color: #d2d2d8;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.kurzprofil dd a { color: var(--accent-hi); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 700px) {
+  .kurzprofil { padding: 22px 20px; margin-top: 44px; }
+  .kurzprofil dl { grid-template-columns: 1fr; gap: 2px; }
+  .kurzprofil dd { margin-bottom: 14px; }
+}
+
 .stat-card {
   background: var(--bg2);
   border: 1px solid var(--border);
