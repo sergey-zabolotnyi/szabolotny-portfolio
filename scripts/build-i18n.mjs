@@ -26,7 +26,7 @@ const PAGES = {
     locale: 'en_US',
     title: 'Serge Zabolotny — Fullstack & AI Developer in Dresden',
     name: 'Serge Zabolotny',
-    altNames: ['Sergii Zabolotnyi', 'Сергей Заболотный', 'Сергій Заболотний'],
+    altNames: ['Sergii Zabolotnyi', 'Sergey Zabolotnyi', 'Сергей Заболотный', 'Сергій Заболотний'],
     description:
       'Fullstack & AI developer in Dresden, Germany. Next.js, FastAPI, OpenAI — shipped products: MeisterMeld, PflegeOasis, ScamGuard. Deployed with Docker, CI/CD, Linux.',
   },
@@ -35,7 +35,7 @@ const PAGES = {
     locale: 'ru_RU',
     title: 'Сергей Заболотный — Fullstack- и AI-разработчик, Дрезден',
     name: 'Сергей Заболотный',
-    altNames: ['Serge Zabolotny', 'Sergii Zabolotnyi', 'Сергій Заболотний'],
+    altNames: ['Serge Zabolotny', 'Sergii Zabolotnyi', 'Sergey Zabolotnyi', 'Сергій Заболотний'],
     description:
       'Fullstack- и AI-разработчик в Дрездене, Германия. Next.js, FastAPI, OpenAI — свои продукты в продакшене: MeisterMeld, PflegeOasis, ScamGuard. Docker, CI/CD, Linux.',
   },
@@ -44,7 +44,7 @@ const PAGES = {
     locale: 'uk_UA',
     title: 'Сергій Заболотний — Fullstack- та AI-розробник, Дрезден',
     name: 'Сергій Заболотний',
-    altNames: ['Serge Zabolotny', 'Sergii Zabolotnyi', 'Сергей Заболотный'],
+    altNames: ['Serge Zabolotny', 'Sergii Zabolotnyi', 'Sergey Zabolotnyi', 'Сергей Заболотный'],
     description:
       'Fullstack- та AI-розробник у Дрездені, Німеччина. Next.js, FastAPI, OpenAI — власні продукти в продакшені: MeisterMeld, PflegeOasis, ScamGuard. Docker, CI/CD, Linux.',
   },
@@ -121,6 +121,13 @@ function buildPage(source, lang, t, missing) {
     /  "name": "Serge Zabolotny",\n  "alternateName": \[[^\]]*\],/.exec(html)?.[0] ?? '',
     `  "name": ${JSON.stringify(cfg.name)},\n  "alternateName": ${JSON.stringify(cfg.altNames)},`,
     'JSON-LD name'
+  );
+  // JSON-LD ProfilePage: own @id/url/language per language version
+  html = replaceOnce(
+    html,
+    '"@id": "https://zabolotny.de/#profilepage",\n      "url": "https://zabolotny.de/",\n      "inLanguage": "de",',
+    `"@id": "${url}#profilepage",\n      "url": "${url}",\n      "inLanguage": "${cfg.htmlLang}",`,
+    'JSON-LD ProfilePage'
   );
   html = replaceMetaContent(html, 'name', 'description', cfg.description);
   html = replaceMetaContent(html, 'property', 'og:description', cfg.description);

@@ -50,8 +50,9 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://zabolotny.de/#person",
   "name": "Сергей Заболотный",
-  "alternateName": ["Serge Zabolotny","Sergii Zabolotnyi","Сергій Заболотний"],
+  "alternateName": ["Serge Zabolotny","Sergii Zabolotnyi","Sergey Zabolotnyi","Сергій Заболотний"],
   "url": "https://zabolotny.de",
   "image": "https://zabolotny.de/assets/avatar.png",
   "jobTitle": "Fullstack Developer & AI Developer",
@@ -71,10 +72,34 @@
     "OpenAI API", "Groq API", "PostgreSQL", "Cloud Deployment",
     "Docker", "CI/CD", "GitHub Actions", "Proxmox VE", "Linux Server Administration", "Self-hosted Infrastructure"
   ],
+  "knowsLanguage": ["de", "en", "ru", "uk"],
   "worksFor": {
     "@type": "Organization",
     "name": "Self-employed / Freelance"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://zabolotny.de/#website",
+      "url": "https://zabolotny.de/",
+      "name": "Serge Zabolotny",
+      "inLanguage": ["de", "en", "ru", "uk"],
+      "publisher": { "@id": "https://zabolotny.de/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://zabolotny.de/ru/#profilepage",
+      "url": "https://zabolotny.de/ru/",
+      "inLanguage": "ru",
+      "isPartOf": { "@id": "https://zabolotny.de/#website" },
+      "mainEntity": { "@id": "https://zabolotny.de/#person" }
+    }
+  ]
 }
 </script>
 

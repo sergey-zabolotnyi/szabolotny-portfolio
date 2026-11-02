@@ -1,0 +1,31 @@
+# Serge Zabolotny
+
+> Fullstack- & KI-Entwickler in Dresden, Deutschland (Next.js, TypeScript, FastAPI, Python, PostgreSQL, Docker, CI/CD, Linux). Baut und betreibt eigene Produkte allein von der Idee bis zum Deployment. Offen für Festanstellung (Fullstack / DevOps / Platform Engineering) in Dresden und remote sowie für Freelance-Projekte.
+
+Weitere Schreibweisen des Namens: Sergii Zabolotnyi, Sergey Zabolotnyi, Сергей Заболотный, Сергій Заболотний. Die Website gibt es auf Deutsch (/), Englisch (/en/), Russisch (/ru/) und Ukrainisch (/ua/).
+
+## Projekte (Case Studies)
+
+- [MeisterMeld](https://zabolotny.de/projekte/meistermeld/): Voice-first Field-Service-PWA für Handwerksbetriebe. Sprach- und Foto-Berichte, KI-gestützte Arbeitsberichte, Auftragsverwaltung. Next.js, TypeScript, PostgreSQL, Drizzle ORM; eigener VPS, Deployment per GitHub Actions.
+- [PflegeOasis](https://zabolotny.de/projekte/pflegeoasis/): Kostenloses Pflege-Portal mit Pflegegrad- und Pflegegeld-Rechner, Widerspruch-Generator und 200+ Ratgeber-Artikeln (KI-Entwürfe mit menschlichem Review). Next.js 15, PostgreSQL 16, OpenAI API.
+
+## Leistungen und Werdegang
+
+- [Leistungen](https://zabolotny.de/leistungen/): KI-Prototyp und MVP, KI-Integration mit menschlicher Kontrolle, Web-Produkte mit Backend, Server und Betrieb
+- [Quereinstieg DevOps in Deutschland](https://zabolotny.de/notizen/quereinstieg-devops-deutschland/): Werdegang, offene Lücken und Belege
+- [Lebenslauf (PDF, Deutsch)](https://zabolotny.de/resume-de.pdf)
+- [Resume (PDF, English)](https://zabolotny.de/resume-en.pdf)
+
+## Engineering Notes
+
+- [Alle Notizen](https://zabolotny.de/notizen/)
+- [CI/CD für Next.js 15 auf dem VPS](https://zabolotny.de/notizen/ci-cd-nextjs-vps/): GitHub Actions, PM2-Reload, Caddy
+- [KI-Content mit Human-in-the-Loop](https://zabolotny.de/notizen/ki-content-human-in-the-loop/)
+- [Raus aus der Cloud: Homeserver mit Proxmox](https://zabolotny.de/notizen/homeserver-statt-cloud/)
+- [Zero Trust fürs Homelab](https://zabolotny.de/notizen/zero-trust-homelab/): Cloudflare Tunnel und Access, Tailscale
+
+## Profile
+
+- [GitHub](https://github.com/sergey-zabolotnyi)
+- [LinkedIn](https://linkedin.com/in/szabolotnyi)
+- [Kontakt und Termin](https://zabolotny.de/#contact)
