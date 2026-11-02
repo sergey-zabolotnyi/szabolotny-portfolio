@@ -33,7 +33,7 @@ MUTED = HexColor('#4a5060')
 LINE = HexColor('#c9d3e6')
 
 PHONE = '+49 178 8727417'
-MAIL = 'szabolotnyi@icloud.com'
+MAIL = 'serge@zabolotny.de'
 
 CONTENT = {
     'de': {
