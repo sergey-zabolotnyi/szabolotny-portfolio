@@ -50,8 +50,9 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://zabolotny.de/#person",
   "name": "Serge Zabolotny",
-  "alternateName": ["Sergii Zabolotnyi","Сергей Заболотный","Сергій Заболотний"],
+  "alternateName": ["Sergii Zabolotnyi","Sergey Zabolotnyi","Сергей Заболотный","Сергій Заболотний"],
   "url": "https://zabolotny.de",
   "image": "https://zabolotny.de/assets/avatar.png",
   "jobTitle": "Fullstack Developer & AI Developer",
@@ -61,7 +62,7 @@
     "addressLocality": "Dresden",
     "addressCountry": "DE"
   },
-  "email": "mailto:szabolotnyi@icloud.com",
+  "email": "mailto:kontakt@zabolotny.de",
   "sameAs": [
     "https://linkedin.com/in/szabolotnyi",
     "https://github.com/sergey-zabolotnyi"
@@ -71,10 +72,34 @@
     "OpenAI API", "Groq API", "PostgreSQL", "Cloud Deployment",
     "Docker", "CI/CD", "GitHub Actions", "Proxmox VE", "Linux Server Administration", "Self-hosted Infrastructure"
   ],
+  "knowsLanguage": ["de", "en", "ru", "uk"],
   "worksFor": {
     "@type": "Organization",
     "name": "Self-employed / Freelance"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://zabolotny.de/#website",
+      "url": "https://zabolotny.de/",
+      "name": "Serge Zabolotny",
+      "inLanguage": ["de", "en", "ru", "uk"],
+      "publisher": { "@id": "https://zabolotny.de/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://zabolotny.de/en/#profilepage",
+      "url": "https://zabolotny.de/en/",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://zabolotny.de/#website" },
+      "mainEntity": { "@id": "https://zabolotny.de/#person" }
+    }
+  ]
 }
 </script>
 
@@ -313,6 +338,17 @@
       <div class="stat-card"><div class="stat-num stat-b2">B2+</div><div class="stat-label" data-i18n="stat_german">German 2025</div></div>
       <div class="stat-card"><div class="stat-num" data-target="4">4</div><div class="stat-label" data-i18n="stat_lang">Languages</div></div>
     </div>
+  </div>
+  <div class="kurzprofil reveal">
+    <h3 data-i18n="kp_title">Quick facts</h3>
+    <dl>
+      <div><dt data-i18n="kp_role_l">Role</dt><dd data-i18n="kp_role_v">Fullstack &amp; AI developer with a DevOps focus</dd></div>
+      <div><dt data-i18n="kp_loc_l">Location</dt><dd data-i18n="kp_loc_v">Dresden, Germany (remote possible)</dd></div>
+      <div><dt data-i18n="kp_stack_l">Tech stack</dt><dd>TypeScript, Next.js, React, Python, FastAPI, PostgreSQL, Docker, GitHub Actions, Linux</dd></div>
+      <div><dt data-i18n="kp_prod_l">Own products</dt><dd><a href="/en/projects/meistermeld/">MeisterMeld</a>, <a href="/en/projects/pflegeoasis/">PflegeOasis</a>, <a href="https://scam-guard.de/" target="_blank" rel="noopener noreferrer">ScamGuard</a></dd></div>
+      <div><dt data-i18n="kp_exp_l">Experience</dt><dd data-i18n="kp_exp_v">Since 2024 building own AI and web products from idea to operation; previously CTO (2011–2017); 960-hour Java web development training (DEKRA-certified)</dd></div>
+      <div><dt data-i18n="kp_avail_l">Available for</dt><dd data-i18n="kp_avail_v">Full-time roles (fullstack / DevOps / platform engineering) and freelance projects</dd></div>
+    </dl>
   </div>
 </section>
 
@@ -900,8 +936,8 @@
 <!-- CONTACT PROTECT -->
   <script>
 
-  const eUser = "szabolotnyi";
-  const eDomain = "icloud.com";
+  const eUser = "kontakt";
+  const eDomain = "zabolotny.de";
   const email = eUser + "@" + eDomain;
 
   const emailLink = document.getElementById("emailLink");

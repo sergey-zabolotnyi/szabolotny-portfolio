@@ -133,7 +133,7 @@ const escAttr = (s) => esc(s).replace(/"/g, '&quot;');
 const ld = (obj) => `<script type="application/ld+json">\n${JSON.stringify(obj, null, 2)}\n</script>`;
 const tr = (v, lang) => (typeof v === 'string' ? v : v[lang]);
 const fmtDate = (d, lang) => (lang === 'en' ? d : d.split('-').reverse().join('.'));
-const authorLd = (lang) => ({ '@type': 'Person', name: LANG[lang].name, url: SITE + LANG[lang].home });
+const authorLd = (lang) => ({ '@type': 'Person', '@id': SITE + '/#person', name: LANG[lang].name, url: SITE + LANG[lang].home });
 
 // alternates for a { de, en, ru, ua } path map (+ x-default = de)
 const altList = (paths) => [...LANGS.map((l) => ({ hreflang: LANG[l].hreflang, path: paths[l] })), { hreflang: 'x-default', path: paths.de }];
