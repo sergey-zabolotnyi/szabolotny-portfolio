@@ -147,6 +147,8 @@ const statsObserver = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.3 });
+// The HTML carries the real numbers (for crawlers and no-JS); start the count-up from 0 here.
+document.querySelectorAll('.stats-grid [data-target]').forEach(el => { el.textContent = '0'; });
 statsObserver.observe(document.querySelector('.stats-grid'));
 
 /* ========== PROJECT FILTERS ========== */
