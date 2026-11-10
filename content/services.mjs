@@ -29,7 +29,7 @@ export const SERVICES = {
     'Я делаю ИИ- и веб-продукты от идеи до эксплуатации: UX, фронтенд, бэкенд, база данных, деплой. Всё здесь подтверждено моими продуктами и заметками на этом сайте, а не обещаниями.',
     'Я роблю ШІ- та веб-продукти від ідеї до експлуатації: UX, фронтенд, бекенд, база даних, деплой. Усе тут підтверджено моїми продуктами та нотатками на цьому сайті, а не обіцянками.'
   ),
-  packagesH: t('Vier Leistungen', 'Four services', 'Четыре направления', 'Чотири напрямки'),
+  packagesH: t('Fünf Leistungen', 'Five services', 'Пять направлений', 'П’ять напрямків'),
   packages: [
     {
       title: t('KI-Prototyp und MVP', 'AI prototype and MVP', 'ИИ-прототип и MVP', 'ШІ-прототип і MVP'),
@@ -89,6 +89,21 @@ export const SERVICES = {
         'Proof: <a href="{{path:homeserver-statt-cloud}}">leaving the cloud</a>, <a href="{{path:zero-trust-homelab}}">zero trust for the homelab</a> and <a href="{{path:backup-3-2-1-restore-test-homelab}}">backup the 3-2-1 way</a>.',
         'Подтверждение: <a href="{{path:homeserver-statt-cloud}}">уход из облака</a>, <a href="{{path:zero-trust-homelab}}">Zero Trust для homelab</a> и <a href="{{path:backup-3-2-1-restore-test-homelab}}">бэкап по 3-2-1</a>.',
         'Підтвердження: <a href="{{path:homeserver-statt-cloud}}">вихід із хмари</a>, <a href="{{path:zero-trust-homelab}}">Zero Trust для homelab</a> і <a href="{{path:backup-3-2-1-restore-test-homelab}}">бекап за 3-2-1</a>.'
+      ),
+    },
+    {
+      title: t('Website-Modernisierung', 'Website modernisation', 'Модернизация сайта', 'Модернізація сайту'),
+      text: t(
+        'Bestehende Websites kleiner Betriebe aufwerten: Preisrechner oder Anfrage-Weg, schnelle Ladezeit und eine saubere Struktur für Suchmaschinen und KI-Assistenten (FAQ- und HowTo-Markup, llms.txt). Ich messe vorher und nachher und zeige beides.',
+        'Upgrading the existing websites of small businesses: a price calculator or enquiry route, fast loading and a clean structure for search engines and AI assistants (FAQ and HowTo markup, llms.txt). I measure before and after and show both.',
+        'Улучшение существующих сайтов малых компаний: калькулятор цены или путь для заявки, быстрая загрузка и чистая структура для поисковиков и ИИ-ассистентов (разметка FAQ и HowTo, llms.txt). Я измеряю до и после и показываю оба результата.',
+        'Покращення наявних сайтів малих компаній: калькулятор ціни або шлях для заявки, швидке завантаження й чиста структура для пошуковиків і ШІ-асистентів (розмітка FAQ і HowTo, llms.txt). Я вимірюю до і після та показую обидва результати.'
+      ),
+      proof: t(
+        'Beleg: <a href="{{path:kernbohr-expert}}">Kernbohr-Expert</a>, ein Pilotprojekt für einen Dresdner Betrieb.',
+        'Proof: <a href="{{path:kernbohr-expert}}">Kernbohr-Expert</a>, a pilot project for a Dresden company.',
+        'Подтверждение: <a href="{{path:kernbohr-expert}}">Kernbohr-Expert</a>, пилотный проект для дрезденской компании.',
+        'Підтвердження: <a href="{{path:kernbohr-expert}}">Kernbohr-Expert</a>, пілотний проєкт для дрезденської компанії.'
       ),
     },
   ],
