@@ -413,6 +413,194 @@ export const CASES = [
       },
     ],
   },
+
+  // ───────────────────────────────────────────────────────── Kernbohr-Expert
+  {
+    slug: 'kernbohr-expert',
+    tags: ['Website-Modernisierung', 'Preisrechner', 'Assistent Kerni', 'FAQ- & HowTo-Markup', 'llms.txt', 'Lighthouse', 'Lokale SEO'],
+    liveUrl: 'https://kernbohr-expert.de/',
+    liveLabel: t('Kernbohr-Expert live ansehen', 'View Kernbohr-Expert live', 'Открыть Kernbohr-Expert', 'Відкрити Kernbohr-Expert'),
+    related: ['pflegeoasis', 'meistermeld'],
+    title: t(
+      'Kernbohr-Expert – Website-Modernisierung mit Richtpreis-Rechner | Case Study',
+      'Kernbohr-Expert – website modernisation with a price calculator | Case study',
+      'Kernbohr-Expert — модернизация сайта с калькулятором цены | Кейс',
+      'Kernbohr-Expert — модернізація сайту з калькулятором ціни | Кейс'
+    ),
+    description: t(
+      'Case Study: Modernisierung der Website von Kernbohr-Expert (Dresden) mit Richtpreis-Rechner, Assistent Kerni, FAQ- und HowTo-Markup und llms.txt. Pilotprojekt.',
+      'Case study: modernisation of the Kernbohr-Expert website (Dresden) with a price calculator, the Kerni assistant, FAQ and HowTo markup and llms.txt. Pilot project.',
+      'Кейс: модернизация сайта Kernbohr-Expert (Дрезден) — калькулятор ориентировочной цены, помощник Kerni, разметка FAQ и HowTo, llms.txt. Пилотный проект.',
+      'Кейс: модернізація сайту Kernbohr-Expert (Дрезден) — калькулятор орієнтовної ціни, помічник Kerni, розмітка FAQ і HowTo, llms.txt. Пілотний проєкт.'
+    ),
+    kicker: t('Case Study · Website-Modernisierung · Handwerk', 'Case study · Website modernisation · Trades', 'Кейс · Модернизация сайта · Ремесло', 'Кейс · Модернізація сайту · Ремесло'),
+    h1: t(
+      'Kernbohr-Expert: Website-Modernisierung mit Richtpreis-Rechner und KI-Readiness',
+      'Kernbohr-Expert: website modernisation with a price calculator and AI readiness',
+      'Kernbohr-Expert: модернизация сайта с калькулятором цены и готовностью к ИИ-поиску',
+      'Kernbohr-Expert: модернізація сайту з калькулятором ціни та готовністю до ШІ-пошуку'
+    ),
+    lead: t(
+      'Die Website eines Dresdner Kernbohr-Betriebs bekam einen Richtpreis-Rechner, den Assistenten Kerni und eine Struktur, die Suchmaschinen und KI-Assistenten gut lesen können.',
+      'The website of a core-drilling company in Dresden gained a price calculator, the Kerni assistant and a structure that search engines and AI assistants can read well.',
+      'Сайт дрезденской компании по алмазному бурению получил калькулятор ориентировочной цены, помощника Kerni и структуру, которую хорошо читают поисковики и ИИ-ассистенты.',
+      'Сайт дрезденської компанії з алмазного буріння отримав калькулятор орієнтовної ціни, помічника Kerni та структуру, яку добре читають пошуковики й ШІ-асистенти.'
+    ),
+    facts: [
+      [
+        t('Rolle', 'Role', 'Роль', 'Роль'),
+        t(
+          'Umsetzung der Modernisierung (Pilotprojekt für ein befreundetes Unternehmen)',
+          'Implementation of the modernisation (pilot project for a friend’s company)',
+          'Реализация модернизации (пилотный проект для компании знакомого)',
+          'Реалізація модернізації (пілотний проєкт для компанії знайомого)'
+        ),
+      ],
+      [t('Status', 'Status', 'Статус', 'Статус'), t('Live', 'Live', 'Запущен', 'Запущено')],
+      [
+        t('Umfang', 'Scope', 'Масштаб', 'Масштаб'),
+        t(
+          'Richtpreis-Rechner mit PDF-Angebot, Assistent Kerni, FAQ mit 6 Fragen, HowTo-Anleitung, llms.txt und ai.txt',
+          'Price calculator with PDF quote, Kerni assistant, FAQ with 6 questions, HowTo guide, llms.txt and ai.txt',
+          'Калькулятор ориентировочной цены с PDF-предложением, помощник Kerni, FAQ из 6 вопросов, инструкция HowTo, llms.txt и ai.txt',
+          'Калькулятор орієнтовної ціни з PDF-пропозицією, помічник Kerni, FAQ із 6 питань, інструкція HowTo, llms.txt і ai.txt'
+        ),
+      ],
+      [
+        t('Messung', 'Measurement', 'Измерение', 'Вимірювання'),
+        t(
+          'AEO & GEO Readiness Report (websiteaeogeochecker.com) vom 10.11.2026: 93 von 100 Punkten',
+          'AEO & GEO Readiness Report (websiteaeogeochecker.com) of 10 Nov 2026: 93 out of 100 points',
+          'AEO & GEO Readiness Report (websiteaeogeochecker.com) от 10.11.2026: 93 балла из 100',
+          'AEO & GEO Readiness Report (websiteaeogeochecker.com) від 10.11.2026: 93 бали зі 100'
+        ),
+      ],
+    ],
+    jsonld: {
+      '@type': 'WebApplication',
+      name: 'Kernbohr-Expert',
+      applicationCategory: 'BusinessApplication',
+      url: 'https://kernbohr-expert.de/',
+      operatingSystem: 'Web',
+      description: t(
+        'Website eines Dresdner Betriebs für Kernbohrungen und Wanddurchbrüche mit Richtpreis-Rechner, PDF-Angebot und Assistent Kerni.',
+        'Website of a Dresden company for core drilling and wall openings with a price calculator, PDF quote and the Kerni assistant.',
+        'Сайт дрезденской компании по алмазному бурению и проёмам в стенах с калькулятором ориентировочной цены, PDF-предложением и помощником Kerni.',
+        'Сайт дрезденської компанії з алмазного буріння та отворів у стінах із калькулятором орієнтовної ціни, PDF-пропозицією та помічником Kerni.'
+      ),
+    },
+    body: [
+      { h2: t('Das Unternehmen', 'The company', 'Компания', 'Компанія') },
+      {
+        p: t(
+          'Kernbohr-Expert ist ein Dresdner Betrieb für Kernbohrungen und Wanddurchbrüche in Beton, Stahlbeton und Mauerwerk, mit Durchmessern von 14 bis 500 mm und Tiefen bis 2 m. Vor einem Auftrag steht meist die Preisfrage – dort setzt die Modernisierung an.',
+          'Kernbohr-Expert is a Dresden company for core drilling and wall openings in concrete, reinforced concrete and masonry, with diameters from 14 to 500 mm and depths up to 2 m. Before a job, the question is usually the price – that is where the modernisation starts.',
+          'Kernbohr-Expert — дрезденская компания по алмазному бурению и проёмам в стенах из бетона, железобетона и кирпичной кладки, диаметры от 14 до 500 мм, глубина до 2 м. Перед заказом обычно встаёт вопрос цены — с него и началась модернизация.',
+          'Kernbohr-Expert — дрезденська компанія з алмазного буріння та отворів у стінах із бетону, залізобетону й мурування, діаметри від 14 до 500 мм, глибина до 2 м. Перед замовленням зазвичай постає питання ціни — з нього й почалася модернізація.'
+        ),
+      },
+      { h2: t('Der Richtpreis-Rechner', 'The price calculator', 'Калькулятор ориентировочной цены', 'Калькулятор орієнтовної ціни') },
+      {
+        p: t(
+          'Unter „Richtpreis in 30 Sekunden“ gibt der Besucher folgende Angaben ein:',
+          'Under “Richtpreis in 30 Sekunden” (indicative price in 30 seconds) the visitor enters:',
+          'В блоке «Richtpreis in 30 Sekunden» (ориентировочная цена за 30 секунд) посетитель указывает:',
+          'У блоці «Richtpreis in 30 Sekunden» (орієнтовна ціна за 30 секунд) відвідувач указує:'
+        ),
+      },
+      {
+        ul: [
+          t('Material: Beton/Stahlbeton oder Mauerwerk', 'Material: concrete/reinforced concrete or masonry', 'Материал: бетон/железобетон или кирпичная кладка', 'Матеріал: бетон/залізобетон або мурування'),
+          t('Durchmesser in mm, Tiefe bzw. Wandstärke bis 200 cm und Anzahl der Bohrungen', 'Diameter in mm, depth or wall thickness up to 200 cm and number of holes', 'Диаметр в мм, глубина или толщина стены до 200 см и количество отверстий', 'Діаметр у мм, глибина або товщина стіни до 200 см і кількість отворів'),
+          t('Bohrrichtung: Standard, über Kopf oder schräg (mit Zuschlägen)', 'Drilling direction: standard, overhead or inclined (with surcharges)', 'Направление бурения: стандартное, потолочное или наклонное (с надбавками)', 'Напрямок буріння: стандартне, стельове або похиле (з надбавками)'),
+          t('Zeitpunkt: Werktag, Nacht (23–6 Uhr) oder Wochenende/Feiertag (mit Zuschlägen)', 'Time: weekday, night (23:00–06:00) or weekend/holiday (with surcharges)', 'Время: будний день, ночь (23–6 ч) или выходные/праздники (с надбавками)', 'Час: будній день, ніч (23–6 год) або вихідні/свята (з надбавками)'),
+          t('Zusatzleistungen: Wassersauger und Gerüst, jeweils pro Tag', 'Extras: water vacuum and scaffolding, each per day', 'Дополнительно: водосборщик и леса, каждое посуточно', 'Додатково: водозбирач і риштування, кожне подобово'),
+        ],
+      },
+      {
+        p: t(
+          'Das Ergebnis ist ein unverbindlicher Brutto-Richtpreis mit einsehbarer Berechnung. Daraus kann der Besucher direkt per WhatsApp oder E-Mail anfragen oder ein PDF-Angebot laden. Das PDF entsteht im Browser; dabei werden keine Daten übertragen. Grundlage ist die Preisliste 2026; Armierungsstahl ab 1,5 cm und Wartezeit werden separat berechnet.',
+          'The result is a non-binding gross indicative price with a visible calculation. From there the visitor can enquire directly by WhatsApp or email, or download a PDF quote. The PDF is created in the browser; no data is transmitted. The basis is the 2026 price list; reinforcing steel from 1.5 cm and waiting time are charged separately.',
+          'Результат — необязывающая ориентировочная цена брутто с видимым расчётом. Отсюда посетитель может сразу написать в WhatsApp или на e-mail либо скачать PDF-предложение. PDF создаётся в браузере, данные при этом не передаются. Основа — прайс-лист 2026 года; арматурная сталь от 1,5 см и время ожидания считаются отдельно.',
+          'Результат — необов’язкова орієнтовна ціна брутто з видимим розрахунком. Звідси відвідувач може одразу написати у WhatsApp чи на e-mail або завантажити PDF-пропозицію. PDF створюється в браузері, дані при цьому не передаються. Основа — прайс-лист 2026 року; арматурна сталь від 1,5 см і час очікування рахуються окремо.'
+        ),
+      },
+      { h2: t('Assistent Kerni', 'The Kerni assistant', 'Помощник Kerni', 'Помічник Kerni') },
+      {
+        p: t(
+          'Am Seitenende bietet „Kerni fragen“ drei direkte Wege: anrufen, per WhatsApp schreiben oder zum Angebot im Rechner springen.',
+          'At the end of the page, “Kerni fragen” (ask Kerni) offers three direct routes: call, write by WhatsApp or jump to the quote in the calculator.',
+          'В конце страницы блок «Kerni fragen» (спросить Kerni) предлагает три прямых пути: позвонить, написать в WhatsApp или перейти к предложению в калькуляторе.',
+          'Наприкінці сторінки блок «Kerni fragen» (запитати Kerni) пропонує три прямі шляхи: зателефонувати, написати у WhatsApp або перейти до пропозиції в калькуляторі.'
+        ),
+      },
+      {
+        h2: t(
+          'Struktur für Suchmaschinen und KI-Assistenten',
+          'Structure for search engines and AI assistants',
+          'Структура для поисковиков и ИИ-ассистентов',
+          'Структура для пошуковиків і ШІ-асистентів'
+        ),
+      },
+      {
+        ul: [
+          t(
+            '<strong>FAQ-Bereich mit 6 Fragen</strong> samt FAQPage-Markup sowie eine <strong>HowTo-Anleitung</strong> mit HowTo-Markup',
+            '<strong>FAQ section with 6 questions</strong> including FAQPage markup, plus a <strong>HowTo guide</strong> with HowTo markup',
+            '<strong>Раздел FAQ из 6 вопросов</strong> с разметкой FAQPage и <strong>инструкция HowTo</strong> с разметкой HowTo',
+            '<strong>Розділ FAQ із 6 питань</strong> з розміткою FAQPage та <strong>інструкція HowTo</strong> з розміткою HowTo'
+          ),
+          t(
+            'Direkte Antwort im ersten Absatz (54 Wörter) und 6 fragenbasierte Überschriften',
+            'A direct answer in the opening paragraph (54 words) and 6 question-based headings',
+            'Прямой ответ в первом абзаце (54 слова) и 6 заголовков-вопросов',
+            'Пряма відповідь у першому абзаці (54 слова) і 6 заголовків-питань'
+          ),
+          t(
+            '<strong>llms.txt</strong>, eine llms-Variantendatei und <strong>/.well-known/ai.txt</strong>',
+            '<strong>llms.txt</strong>, an llms variant file and <strong>/.well-known/ai.txt</strong>',
+            '<strong>llms.txt</strong>, вариант файла llms и <strong>/.well-known/ai.txt</strong>',
+            '<strong>llms.txt</strong>, варіант файлу llms і <strong>/.well-known/ai.txt</strong>'
+          ),
+          t(
+            'Die robots.txt lässt alle 10 geprüften KI-Crawler zu; insgesamt erkennt der Test 19 Arten strukturierter Daten',
+            'The robots.txt allows all 10 checked AI crawlers; overall the test detects 19 types of structured data',
+            'robots.txt допускает всех 10 проверенных ИИ-краулеров; всего тест находит 19 типов структурированных данных',
+            'robots.txt допускає всіх 10 перевірених ШІ-краулерів; загалом тест знаходить 19 типів структурованих даних'
+          ),
+        ],
+      },
+      { h2: t('Messergebnis', 'Measured result', 'Результат измерения', 'Результат вимірювання') },
+      {
+        p: t(
+          'Der AEO & GEO Readiness Report von websiteaeogeochecker.com (10.11.2026) bewertet die Startseite mit <strong>93 von 100</strong> Punkten:',
+          'The AEO & GEO Readiness Report from websiteaeogeochecker.com (10 Nov 2026) rates the home page <strong>93 out of 100</strong>:',
+          'AEO & GEO Readiness Report от websiteaeogeochecker.com (10.11.2026) оценивает главную страницу в <strong>93 из 100</strong> баллов:',
+          'AEO & GEO Readiness Report від websiteaeogeochecker.com (10.11.2026) оцінює головну сторінку в <strong>93 зі 100</strong> балів:'
+        ),
+      },
+      {
+        ul: [
+          t('AEO 86, GEO 88, KI-Crawler 100', 'AEO 86, GEO 88, AI crawlers 100', 'AEO 86, GEO 88, ИИ-краулеры 100', 'AEO 86, GEO 88, ШІ-краулери 100'),
+          t('Technik 100, Inhalt 89, Geschwindigkeit 99', 'Technical 100, content 89, page speed 99', 'Техника 100, контент 89, скорость 99', 'Техніка 100, контент 89, швидкість 99'),
+          t(
+            'Lighthouse-Performance 98, LCP 2,3 s, CLS 0, INP 0 ms',
+            'Lighthouse performance 98, LCP 2.3 s, CLS 0, INP 0 ms',
+            'Lighthouse performance 98, LCP 2,3 с, CLS 0, INP 0 мс',
+            'Lighthouse performance 98, LCP 2,3 с, CLS 0, INP 0 мс'
+          ),
+        ],
+      },
+      {
+        callout: t(
+          '<strong>Ehrlicher Hinweis:</strong> Das ist ein Pilotprojekt, und der Test stammt von einem Drittanbieter. Messwerte vor der Modernisierung liegen nicht vor, deshalb zeige ich nur den Stand danach. Offen sind laut Bericht Absätze mit Zahlen und Fakten sowie Links zu „Über uns“ und „Kontakt“. Aussagen zu Anfragen oder Umsatz macht diese Seite nicht.',
+          '<strong>Honest note:</strong> this is a pilot project, and the test comes from a third-party provider. There are no measurements from before the modernisation, so I only show the state afterwards. According to the report, paragraphs with numbers and facts and links to “About” and “Contact” are still open. This page makes no claims about enquiries or revenue.',
+          '<strong>Честная оговорка:</strong> это пилотный проект, а тест сделан сторонним сервисом. Измерений до модернизации нет, поэтому я показываю только состояние после. По отчёту остаются открытыми абзацы с цифрами и фактами, а также ссылки «О нас» и «Контакты». О заявках или выручке эта страница ничего не утверждает.',
+          '<strong>Чесне застереження:</strong> це пілотний проєкт, а тест зроблено сторонньою службою. Вимірювань до модернізації немає, тому я показую лише стан після. За звітом лишаються відкритими абзаци з цифрами та фактами, а також посилання «Про нас» і «Контакти». Про заявки чи виручку ця сторінка нічого не стверджує.'
+        ),
+      },
+    ],
+  },
 ];
 
 export const NOTES = [

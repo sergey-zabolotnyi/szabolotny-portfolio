@@ -163,6 +163,46 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/projekte/pflegeoasis/"/>
   </url>
   <url>
+    <loc>https://zabolotny.de/projekte/kernbohr-expert/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/projekte/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/projekte/kernbohr-expert/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/en/projects/kernbohr-expert/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/projekte/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/projekte/kernbohr-expert/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/ru/projects/kernbohr-expert/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/projekte/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/projekte/kernbohr-expert/"/>
+  </url>
+  <url>
+    <loc>https://zabolotny.de/ua/projects/kernbohr-expert/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://zabolotny.de/projekte/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zabolotny.de/en/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://zabolotny.de/ru/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://zabolotny.de/ua/projects/kernbohr-expert/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zabolotny.de/projekte/kernbohr-expert/"/>
+  </url>
+  <url>
     <loc>https://zabolotny.de/notizen/</loc>
     <lastmod>2026-10-25</lastmod>
     <priority>0.7</priority>
